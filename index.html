@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Merchants Digest — The Shopify Merchant Newsletter</title>
+    <meta
+      name="description"
+      content="Merchants Digest is a focused newsletter for Shopify merchants: growth insights, product updates, and tactics you can use this week."
+    />
+    <style>
+      :root {
+        --ink: #111114;
+        --ink-muted: #4a4b57;
+        --cream: #fbf6e9;
+        --sun: #ffb703;
+        --tangerine: #fb8500;
+        --sea: #219ebc;
+        --leaf: #2a9d8f;
+        --plum: #5c2d91;
+        --paper: #ffffff;
+        --shadow: 0 22px 50px rgba(17, 17, 20, 0.18);
+        --radius: 20px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana,
+          sans-serif;
+        color: var(--ink);
+        background: #ffffff;
+        min-height: 100vh;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", Georgia, serif;
+        margin: 0;
+      }
+
+      p {
+        color: var(--ink-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        overflow: hidden;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 26px 6vw;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #ffffff;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 0.4px;
+      }
+
+      .brand-logo {
+        height: 44px;
+        width: auto;
+        display: block;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+
+      .nav-links a {
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        opacity: 1;
+      }
+
+      .cta {
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: var(--ink);
+        color: var(--paper);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: var(--shadow);
+      }
+
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 4vw;
+        padding: 60px 6vw 80px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 4vw, 4rem);
+        line-height: 1.05;
+      }
+
+      .hero p {
+        margin-top: 18px;
+        font-size: 1.05rem;
+      }
+
+      .tagline {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.88rem;
+        box-shadow: inset 0 0 0 1px rgba(17, 17, 20, 0.08);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 26px;
+      }
+
+      .hero-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .hero-form input {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(17, 17, 20, 0.16);
+        font-size: 0.95rem;
+        min-width: 220px;
+      }
+
+      .hero-form button {
+        padding: 12px 18px;
+        border-radius: 12px;
+        border: none;
+        background: var(--ink);
+        color: var(--paper);
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .ghost {
+        padding: 12px 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(17, 17, 20, 0.2);
+        font-weight: 600;
+        background: transparent;
+      }
+
+      .hero-card {
+        background: var(--paper);
+        border-radius: var(--radius);
+        padding: 26px;
+        box-shadow: none;
+        position: relative;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: auto;
+        border-radius: 18px;
+        display: block;
+      }
+
+      .hero-card::after {
+        content: none;
+      }
+
+      .hero-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-top: 22px;
+      }
+
+      .metric {
+        background: #fdf2da;
+        border-radius: 14px;
+        padding: 14px;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.2rem;
+      }
+
+      .section {
+        padding: 80px 6vw;
+      }
+
+      .newsletter {
+        padding: 40px 6vw 80px;
+      }
+
+      .issue {
+        max-width: 720px;
+        margin: 0 auto;
+        border: 1px solid rgba(17, 17, 20, 0.08);
+        border-radius: 18px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 20px 44px rgba(17, 17, 20, 0.08);
+      }
+
+      .issue-top span {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.3px;
+      }
+
+      .issue-body {
+        padding: 28px 32px 36px;
+      }
+
+      .issue-title {
+        margin-top: 18px;
+      }
+
+      .issue-title h2 {
+        font-size: clamp(1.9rem, 3vw, 2.4rem);
+        line-height: 1.1;
+      }
+
+      .issue-title p {
+        margin-top: 10px;
+      }
+
+      .placeholder {
+        width: 100%;
+        height: 200px;
+        border-radius: 14px;
+        background: #f4f5f6;
+        border: 1px solid rgba(17, 17, 20, 0.08);
+        display: grid;
+        place-items: center;
+        color: rgba(17, 17, 20, 0.35);
+        font-weight: 600;
+      }
+
+      .issue-image {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        border: 1px solid rgba(17, 17, 20, 0.08);
+        display: block;
+      }
+
+      .section-block {
+        margin-top: 30px;
+      }
+
+      .section-block h3 {
+        font-size: 1.35rem;
+        margin-bottom: 10px;
+      }
+
+      .schema-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        font-size: 0.9rem;
+        justify-content: center;
+        margin: 16px 0 8px;
+        color: rgba(17, 17, 20, 0.7);
+      }
+
+      .note {
+        margin-top: 14px;
+        font-style: italic;
+      }
+
+      .icon-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      .icon-card {
+        display: grid;
+        gap: 10px;
+        align-items: start;
+        font-size: 0.92rem;
+      }
+
+      .icon-square {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #f6e08a, #f3c24b);
+      }
+
+      .icon-square.purple {
+        background: linear-gradient(135deg, #d2b4ff, #b48bff);
+      }
+
+      .icon-square.green {
+        background: linear-gradient(135deg, #a7e7cf, #6fc8a6);
+      }
+
+      .whats-new {
+        margin-top: 32px;
+      }
+
+      .whats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      .whats-card {
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        gap: 12px;
+        align-items: start;
+        font-size: 0.92rem;
+      }
+
+      .whats-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #d2b4ff, #b48bff);
+      }
+
+      .issue-table {
+        margin-top: 22px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(17, 17, 20, 0.08);
+      }
+
+      .issue-table header {
+        background: #0f7a5a;
+        color: #ffffff;
+        padding: 12px 16px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .issue-table table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.92rem;
+      }
+
+      .issue-table th,
+      .issue-table td {
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(17, 17, 20, 0.08);
+        vertical-align: top;
+      }
+
+      .issue-table th {
+        background: #f7f8f9;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .issue-footer {
+        margin-top: 26px;
+        border-top: 1px solid rgba(17, 17, 20, 0.08);
+        padding-top: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: rgba(17, 17, 20, 0.6);
+      }
+
+      .footer {
+        padding: 40px 6vw 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(17, 17, 20, 0.08);
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer small {
+        color: rgba(17, 17, 20, 0.6);
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <nav class="nav">
+        <div class="brand">
+          <img
+            class="brand-logo"
+            src="Primary Logo.png"
+            alt="Merchants Digest"
+          />
+        </div>
+        <div class="nav-links">
+          <a href="articles.html">Blogs</a>
+          <a href="newsletter.html">Newsletter</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div>
+          <div class="tagline">A weekly field guide for Shopify merchants</div>
+          <h1>Boost your business growth 5x with powerful insights.</h1>
+          <p>
+            Merchants Digest curates the sharpest plays in commerce — from
+            conversion wins to marketing pivots — then delivers a short,
+            actionable brief every week.
+          </p>
+          <form class="hero-form">
+            <input
+              type="email"
+              placeholder="Email address"
+              aria-label="Email address"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="hero-card">
+          <img
+            class="hero-image"
+            src="images/Home%20Page/Home%20page%20section1.png"
+            alt="Shopify growth snapshot"
+          />
+        </div>
+      </section>
+
+      <section class="newsletter" id="preview">
+        <div class="issue">
+          <div class="issue-body">
+            <img
+              class="issue-image"
+              src="images/Home%20Page/NL%20header.png"
+              alt="Newsletter header preview"
+            />
+            <div class="issue-title">
+              <h2>Boost your business growth 5x with powerful insights</h2>
+              <p>
+                Weekly Shopify strategies, AI tips, and growth frameworks trusted
+                by ecommerce founders.
+              </p>
+            </div>
+
+            <div class="section-block">
+              <h3>Grow your store organically by using AI-ready schema</h3>
+              <p>Search is shifting from keywords to AI-driven intent.</p>
+              <img
+                class="issue-image"
+                src="schema-preview.svg"
+                alt="Schema preview"
+              />
+              <p>
+                Updating your product and collection schema helps AI search
+                engines understand your catalog deeply.
+              </p>
+              <div class="schema-tags">
+                <span>USP</span>
+                <span>Alternatives</span>
+                <span>Material</span>
+                <span>Benefits</span>
+                <span>FAQs</span>
+              </div>
+              <p>
+                This improves visibility in AI answers, snapshots, and product
+                carousels - giving you free, compounding traffic.
+              </p>
+              <p class="note">If AI can read it, AI can recommend it.</p>
+            </div>
+
+            <div class="section-block">
+              <h3>Ads & Social Media - where AI gives you leverage</h3>
+              <img
+                class="issue-image"
+                src="ad-creative.svg"
+                alt="Ad creative preview"
+              />
+              <p>AI can automate and amplify your paid + organic performance.</p>
+              <div class="icon-row">
+                <div class="icon-card">
+                  <div class="icon-square"></div>
+                  <strong>Auto-generate high-performing ad variations</strong>
+                  <span>(copy + creatives)</span>
+                </div>
+                <div class="icon-card">
+                  <div class="icon-square purple"></div>
+                  <strong>Predict keywords, audiences, and creatives</strong>
+                  <span>that convert before spending money</span>
+                </div>
+                <div class="icon-card">
+                  <div class="icon-square green"></div>
+                  <strong>Create micro-creatives for TikTok/Reels</strong>
+                  <span>performing 2-3x better than normal brand videos</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-block whats-new">
+              <h3>What is new in Shopify this week</h3>
+              <img
+                class="issue-image"
+                src="shopify-update.svg"
+                alt="Shopify update preview"
+              />
+              <p>Stay updated with the platform changes that matter:</p>
+              <div class="whats-grid">
+                <div class="whats-card">
+                  <div class="whats-icon"></div>
+                  <div>
+                    <strong>AI semantic search</strong>
+                    <p>Now supported by Shopify Search & Discovery.</p>
+                  </div>
+                </div>
+                <div class="whats-card">
+                  <div class="whats-icon"></div>
+                  <div>
+                    <strong>Checkout extensibility updates</strong>
+                    <p>For upsell and post-purchase offers.</p>
+                  </div>
+                </div>
+                <div class="whats-card">
+                  <div class="whats-icon"></div>
+                  <div>
+                    <strong>Hydrogen + Oxygen updates</strong>
+                    <p>Improve custom storefront performance.</p>
+                  </div>
+                </div>
+                <div class="whats-card">
+                  <div class="whats-icon"></div>
+                  <div>
+                    <strong>New Shopify Functions</strong>
+                    <p>Deeper logic without disrupting checkout.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-block">
+              <h3>The secret AI tools top 1% Shopify brands quietly use</h3>
+              <p>Most brands use AI for content.</p>
+              <div class="issue-table">
+                <header>The top 1% use AI for growth systems</header>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Growth Function</th>
+                      <th>AI Tool Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>AI Product Research Engine</td>
+                      <td>Predict winning products before they trend</td>
+                    </tr>
+                    <tr>
+                      <td>AI Conversion Heatmaps</td>
+                      <td>See where visitors drop off and fix friction</td>
+                    </tr>
+                    <tr>
+                      <td>AI Creative Generators</td>
+                      <td>Produce 50-100 winning ad variations weekly</td>
+                    </tr>
+                    <tr>
+                      <td>AI Personalization Engines</td>
+                      <td>Adjust homepage and recommendations dynamically</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="note">
+                This is how top stores maintain stable ROAS even during CPM
+                spikes.
+              </p>
+            </div>
+
+            <div class="issue-footer">
+              <span>MerchantsDigest.com</span>
+              <span>Join 3,000+ Shopify founders every Friday.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="brand">
+          <img
+            class="brand-logo"
+            src="Primary Logo.png"
+            alt="Merchants Digest"
+          />
+        </div>
+        <small>© 2024 Merchantsdigest.com. Crafted for Shopify merchants.</small>
+      </footer>
+    </div>
+  </body>
+</html>

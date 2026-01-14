@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Articles — Merchants Digest</title>
+    <meta
+      name="description"
+      content="Read Merchants Digest articles built for Shopify merchants."
+    />
+    <style>
+      :root {
+        --ink: #111114;
+        --ink-muted: #4a4b57;
+        --paper: #ffffff;
+        --shadow: 0 18px 40px rgba(17, 17, 20, 0.1);
+        --radius: 20px;
+        --mint: #e6f4ef;
+        --green: #0f7a5a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana,
+          sans-serif;
+        color: var(--ink);
+        background: #ffffff;
+        min-height: 100vh;
+      }
+
+      h1,
+      h2 {
+        font-family: "Fraunces", Georgia, serif;
+        margin: 0;
+      }
+
+      p {
+        color: var(--ink-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 26px 6vw;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #ffffff;
+      }
+
+      .brand-logo {
+        height: 44px;
+        width: auto;
+        display: block;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      .nav-links a {
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        opacity: 1;
+      }
+
+      .cta {
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(17, 17, 20, 0.2);
+        font-weight: 600;
+      }
+
+      .hero {
+        padding: 60px 6vw 24px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 3vw, 2.6rem);
+      }
+
+
+      .feature {
+        padding: 0 6vw 40px;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+        gap: 22px;
+        align-items: stretch;
+        background: #ffffff;
+        border-radius: 26px;
+        border: 1px solid rgba(17, 17, 20, 0.08);
+        box-shadow: 0 18px 40px rgba(17, 17, 20, 0.1);
+        overflow: hidden;
+        max-width: 1020px;
+        margin: 0 auto;
+      }
+
+      .feature-media {
+        padding: 14px;
+        background: #f2f4f4;
+      }
+
+      .feature-media img {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        border-radius: 18px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .feature-copy {
+        padding: 24px 28px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .feature-copy h2 {
+        font-size: clamp(1.7rem, 2.4vw, 2.2rem);
+      }
+
+      .feature-copy p {
+        color: rgba(17, 17, 20, 0.7);
+      }
+
+      .feature-pill {
+        width: fit-content;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: #e7f2ff;
+        color: #1f4d8f;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .feature-meta {
+        color: rgba(17, 17, 20, 0.6);
+        font-size: 0.9rem;
+      }
+
+      .feature-cta {
+        width: fit-content;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background: #123f35;
+        color: #ffffff;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .articles {
+        padding: 0 6vw 80px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .articles.is-collapsed .extra-row {
+        display: none;
+      }
+
+      .card {
+        background: var(--paper);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: 0 12px 24px rgba(17, 17, 20, 0.08);
+        border: 1px solid rgba(17, 17, 20, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 420px;
+      }
+
+      .card-link {
+        color: inherit;
+        display: block;
+        height: 100%;
+      }
+
+      .card-link .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        height: 100%;
+      }
+
+      .card-link:hover .card {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.12);
+      }
+
+      .load-more {
+        padding: 0 6vw 80px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .load-more button {
+        padding: 12px 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(17, 17, 20, 0.18);
+        background: #ffffff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .thumb {
+        height: 220px;
+        border-radius: 16px;
+        background: #e9ecef;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .thumb-art {
+        width: 85%;
+        height: 75%;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #f1f4f6, #ffffff);
+        border: 1px solid rgba(17, 17, 20, 0.08);
+        position: relative;
+      }
+
+      .thumb-art::after {
+        content: "";
+        position: absolute;
+        inset: 16px 22px auto auto;
+        width: 70px;
+        height: 28px;
+        border-radius: 999px;
+        background: rgba(15, 122, 90, 0.12);
+      }
+
+      .meta {
+        font-size: 0.8rem;
+        color: rgba(17, 17, 20, 0.55);
+        margin-top: auto;
+      }
+
+      .card h2 {
+        min-height: 3.2em;
+      }
+
+      .footer {
+        padding: 30px 6vw 50px;
+        border-top: 1px solid rgba(17, 17, 20, 0.08);
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          gap: 12px;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-media img {
+          min-height: 220px;
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html">
+        <img class="brand-logo" src="Primary Logo.png" alt="Merchants Digest" />
+      </a>
+      <div class="nav-links">
+        <a href="articles.html">Blogs</a>
+        <a href="newsletter.html">Newsletter</a>
+      </div>
+    </nav>
+
+    <section class="feature">
+      <div class="feature-grid">
+        <div class="feature-media">
+          <img
+            src="images/Blogs/Visible%20in%20AI%20search.png"
+            alt="Visible in AI search"
+          />
+        </div>
+        <div class="feature-copy">
+          <span class="feature-pill">Latest</span>
+          <h2>How to Make Your Shopify Store and Products Visible in AI Search</h2>
+          <p>
+            AI answers are replacing blue links. Merchants who publish clearer,
+            structured content get referenced first and convert higher-intent
+            buyers.
+          </p>
+          <div class="feature-meta">Jan 2026 · Merchants Digest</div>
+          <a class="feature-cta" href="blog-ai-search.html">Read full article →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="articles is-collapsed" id="blog-grid">
+      <a class="card-link" href="blog-traffic-no-sales.html">
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="images/You%27re%20Getting%20Traffic.png"
+              alt="You're Getting Traffic"
+            />
+          </div>
+          <h2>You’re Getting Traffic — So Why Is Nobody Buying?</h2>
+          <div class="meta">Jan 2026 · 9 min read</div>
+        </article>
+      </a>
+      <a class="card-link" href="blog-traffic-quality.html">
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="images/Blogs/Not%20all%20Traffic.png"
+              alt="Not all traffic"
+            />
+          </div>
+          <h2>
+            Not All Traffic Is Equal: How to Attract Buyers, Not Just Visitors,
+            to Your Shopify Store
+          </h2>
+          <div class="meta">Jan 2026 · 9 min read</div>
+        </article>
+      </a>
+      <a class="card-link" href="blog-shopify-app-overload.html">
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="images/Shopify%20App%20Overload.png"
+              alt="Shopify App Overload"
+            />
+          </div>
+          <h2>
+            Shopify App Overload: How Too Many Tools Hurt Performance,
+            Conversion, and Profit
+          </h2>
+          <div class="meta">Jan 2026 · 9 min read</div>
+        </article>
+      </a>
+      <a class="card-link" href="blog-increase-aov.html">
+        <article class="card">
+          <div class="thumb">
+            <img src="images/Increase%20AOV.png" alt="Increase AOV" />
+          </div>
+          <h2>How to Increase Average Order Value on Shopify Without Relying on Discounts</h2>
+          <div class="meta">Jan 2026 · 10 min read</div>
+        </article>
+      </a>
+      <a class="card-link extra-row" href="blog-traffic-no-sales.html">
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="images/You%27re%20Getting%20Traffic.png"
+              alt="You're Getting Traffic"
+            />
+          </div>
+          <h2>You’re Getting Traffic — So Why Is Nobody Buying?</h2>
+          <div class="meta">Jan 2026 · 9 min read</div>
+        </article>
+      </a>
+      <a class="card-link extra-row" href="blog-traffic-quality.html">
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="images/Blogs/Not%20all%20Traffic.png"
+              alt="Not all traffic"
+            />
+          </div>
+          <h2>
+            Not All Traffic Is Equal: How to Attract Buyers, Not Just Visitors,
+            to Your Shopify Store
+          </h2>
+          <div class="meta">Jan 2026 · 9 min read</div>
+        </article>
+      </a>
+      <a class="card-link extra-row" href="blog-shopify-app-overload.html">
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="images/Shopify%20App%20Overload.png"
+              alt="Shopify App Overload"
+            />
+          </div>
+          <h2>
+            Shopify App Overload: How Too Many Tools Hurt Performance,
+            Conversion, and Profit
+          </h2>
+          <div class="meta">Jan 2026 · 9 min read</div>
+        </article>
+      </a>
+      <a class="card-link extra-row" href="blog-increase-aov.html">
+        <article class="card">
+          <div class="thumb">
+            <img src="images/Increase%20AOV.png" alt="Increase AOV" />
+          </div>
+          <h2>How to Increase Average Order Value on Shopify Without Relying on Discounts</h2>
+          <div class="meta">Jan 2026 · 10 min read</div>
+        </article>
+      </a>
+    </section>
+
+    <div class="load-more">
+      <button type="button" id="load-more">Load more</button>
+    </div>
+
+    <footer class="footer">
+      <p>More articles are on the way. Subscribe to get alerts.</p>
+      <a class="cta" href="newsletter.html">Join the newsletter</a>
+    </footer>
+    <script>
+      const grid = document.getElementById("blog-grid");
+      const loadMore = document.getElementById("load-more");
+
+      loadMore.addEventListener("click", () => {
+        grid.classList.remove("is-collapsed");
+        loadMore.remove();
+      });
+    </script>
+  </body>
+</html>
