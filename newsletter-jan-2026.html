@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>January 2026 Edition — Merchants Digest</title>
+    <meta
+      name="description"
+      content="January 2026 edition of Merchants Digest with Shopify growth insights and updates."
+    />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5FQK2WSDWH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-5FQK2WSDWH");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.merchantsdigest.com/#organization",
+            "name": "Merchants Digest",
+            "url": "https://www.merchantsdigest.com",
+            "logo": "https://www.merchantsdigest.com/Primary%20Logo.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.merchantsdigest.com/#website",
+            "url": "https://www.merchantsdigest.com",
+            "name": "Merchants Digest",
+            "publisher": { "@id": "https://www.merchantsdigest.com/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.merchantsdigest.com/newsletter-jan-2026.html",
+            "url": "https://www.merchantsdigest.com/newsletter-jan-2026.html",
+            "name": "January 2026 Edition — Merchants Digest",
+            "isPartOf": { "@id": "https://www.merchantsdigest.com/#website" },
+            "about": { "@id": "https://www.merchantsdigest.com/#organization" }
+          }
+        ]
+      }
+    </script>
+    <style>
+      :root {
+        --ink: #111114;
+        --ink-muted: #4a4b57;
+        --paper: #ffffff;
+        --radius: 20px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana,
+          sans-serif;
+        color: var(--ink);
+        background: #ffffff;
+        min-height: 100vh;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", Georgia, serif;
+        margin: 0;
+      }
+
+      p {
+        color: var(--ink-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 26px 6vw;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #ffffff;
+      }
+
+      .brand-logo {
+        height: 44px;
+        width: auto;
+        display: block;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      .nav-links a {
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        opacity: 1;
+      }
+
+      .newsletter {
+        padding: 40px 6vw 80px;
+      }
+
+      .issue {
+        max-width: 920px;
+        margin: 0 auto;
+        border: 1px solid rgba(17, 17, 20, 0.08);
+        border-radius: 18px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 20px 44px rgba(17, 17, 20, 0.08);
+      }
+
+      .issue-body {
+        padding: 28px 32px 36px;
+      }
+
+      .issue-title {
+        margin-top: 18px;
+      }
+
+      .issue-title h2 {
+        font-size: clamp(1.9rem, 3vw, 2.4rem);
+        line-height: 1.1;
+      }
+
+      .issue-title p {
+        margin-top: 10px;
+      }
+
+      .issue-image {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        border: 1px solid rgba(17, 17, 20, 0.08);
+        display: block;
+      }
+
+      .section-block {
+        margin-top: 30px;
+      }
+
+      .section-block h3 {
+        font-size: 1.35rem;
+        margin-bottom: 10px;
+      }
+
+      .schema-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        font-size: 0.9rem;
+        justify-content: center;
+        margin: 16px 0 8px;
+        color: rgba(17, 17, 20, 0.7);
+      }
+
+      .note {
+        margin-top: 14px;
+        font-style: italic;
+      }
+
+      .icon-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 24px;
+        margin-top: 16px;
+        align-items: start;
+      }
+
+      .icon-card {
+        display: grid;
+        gap: 10px;
+        align-items: start;
+        font-size: 0.92rem;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .icon-square {
+        width: 126px;
+        height: 126px;
+        border-radius: 0;
+        background: none;
+      }
+
+      .icon-square img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0;
+        display: block;
+      }
+
+      .whats-new {
+        margin-top: 32px;
+      }
+
+      .whats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 16px;
+      }
+
+      .whats-card {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 14px;
+        align-items: start;
+        font-size: 0.92rem;
+        min-height: 150px;
+      }
+
+      @media (max-width: 700px) {
+        .whats-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .whats-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 0;
+        background: none;
+        display: grid;
+        place-items: center;
+      }
+
+      .whats-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .whats-link {
+        display: block;
+        margin-top: 6px;
+        color: #1a5ad7;
+        font-weight: 600;
+      }
+
+      .issue-table {
+        margin-top: 22px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(17, 17, 20, 0.08);
+      }
+
+      .issue-table header {
+        background: #0f7a5a;
+        color: #ffffff;
+        padding: 12px 16px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .issue-table table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.92rem;
+      }
+
+      .issue-table th,
+      .issue-table td {
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(17, 17, 20, 0.08);
+        vertical-align: top;
+      }
+
+      .issue-table th {
+        background: #f7f8f9;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .issue-footer {
+        margin-top: 26px;
+        border-top: 1px solid rgba(17, 17, 20, 0.08);
+        padding-top: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.88rem;
+        color: rgba(17, 17, 20, 0.6);
+      }
+
+      .footer {
+        padding: 30px 6vw 50px;
+        border-top: 1px solid rgba(17, 17, 20, 0.08);
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 900px) {
+        .icon-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html">
+        <img class="brand-logo" src="Primary Logo.png" alt="Merchants Digest" />
+      </a>
+      <div class="nav-links">
+        <a href="articles.html">Blogs</a>
+        <a href="newsletter.html">Newsletter</a>
+      </div>
+    </nav>
+
+    <section class="newsletter">
+      <div class="issue">
+        <div class="issue-body">
+          <img
+            class="issue-image"
+            src="images/Home%20Page/NL%20header.png"
+            alt="Newsletter header preview"
+          />
+          <div class="issue-title">
+            <h2>Boost your business growth 5x with powerful insights</h2>
+            <p>January is a good time to reset how you think about growth.</p>
+            <p>
+              Merchants Digest is a free weekly newsletter that helps Shopify
+              merchants grow their stores through practical strategies,
+              AI-driven insights, and platform updates that matter.
+            </p>
+            <p>
+              Each issue focuses on ideas you can apply right away to drive
+              consistent, sustainable growth.
+            </p>
+          </div>
+
+          <div class="section-block">
+            <h3>Organic growth: why AI-ready schema matters now</h3>
+            <p>
+              Search is shifting from rankings to understanding. AI tools
+              surface products they can clearly interpret through structured,
+              well written product pages. When AI understands what you sell,
+              your products show up in answers and recommendations.
+            </p>
+            <img
+              class="issue-image"
+              src="images/Home%20Page/NL%201st%20section.png"
+              alt="AI-ready schema example"
+            />
+          </div>
+
+          <div class="section-block">
+            <h3>Ads & Social Media: what’s actually building trust right now</h3>
+            <img
+              class="issue-image"
+              src="images/Home%20Page/NL%20second%20section.png"
+              alt="Ad creative preview"
+            />
+            <p>
+              Social ads are working best when they feel human, familiar, and
+              native to the platform. Merchants seeing consistent results are
+              focusing less on polish and more on presence, repetition, and
+              credibility.
+            </p>
+            <div class="icon-row">
+              <div class="icon-card">
+                <div class="icon-square">
+                  <img
+                    src="images/Home%20Page/icon_micro_creatives.png"
+                    alt="Micro creatives"
+                  />
+                </div>
+                <strong>Create micro-creatives for TikTok and Reels</strong>
+                <span>performing 2–3× better than polished brand videos</span>
+              </div>
+              <div class="icon-card">
+                <div class="icon-square">
+                  <img
+                    src="images/Home%20Page/icon_founder_team.png"
+                    alt="Founder or team"
+                  />
+                </div>
+                <strong>Founder or team-face videos</strong>
+                <span>build trust faster than polished brand creatives</span>
+              </div>
+              <div class="icon-card">
+                <div class="icon-square">
+                  <img
+                    src="images/Home%20Page/icon_reviews_video.png"
+                    alt="Reviews video"
+                  />
+                </div>
+                <strong>Turn customer reviews into short video ads</strong>
+                <span>build trust faster than brand-written messaging</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block whats-new">
+            <h3>What is new in Shopify this week</h3>
+            <img
+              class="issue-image"
+              src="images/Home%20Page/NL3rd%20section.png"
+              alt="Shopify update preview"
+            />
+            <p>Stay updated with the platform changes that matter:</p>
+            <div class="whats-grid">
+              <div class="whats-card">
+                <div class="whats-icon">
+                  <img src="images/Home%20Page/icon_updates.png" alt="" />
+                </div>
+                <div>
+                  <strong>Winter ’26 Edition highlights</strong>
+                  <p>
+                    150+ updates across AI, checkout, storefronts, and
+                    operations — now live in Shopify’s Winter ’26 Edition.
+                    <a
+                      class="whats-link"
+                      href="https://www.shopify.com/editions/winter2026"
+                      >Learn More</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="whats-card">
+                <div class="whats-icon">
+                  <img src="images/Home%20Page/icon_ai.png" alt="" />
+                </div>
+                <div>
+                  <strong>AI across the Shopify platform</strong>
+                  <p>
+                    AI is now embedded across discovery, insights, and store
+                    workflows — not just search.
+                    <a
+                      class="whats-link"
+                      href="https://www.shopify.com/news/winter-26-edition-renaissance"
+                      >Learn More</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="whats-card">
+                <div class="whats-icon">
+                  <img src="images/Home%20Page/icon_checkout.png" alt="" />
+                </div>
+                <div>
+                  <strong>Checkout extensibility updates</strong>
+                  <p>
+                    New options for upsells and post-purchase without breaking
+                    checkout safety.
+                    <a
+                      class="whats-link"
+                      href="https://changelog.shopify.com/"
+                      >Learn More</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="whats-card">
+                <div class="whats-icon">
+                  <img src="images/Home%20Page/icon_catalog.png" alt="" />
+                </div>
+                <div>
+                  <strong>Catalog & product scalability improvements</strong>
+                  <p>
+                    Support for larger catalogs and high-variant products is
+                    rolling out.
+                    <a
+                      class="whats-link"
+                      href="https://www.shopify.com/editions/winter2026"
+                      >Learn More</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h3>Quiet changes top Shopify stores make to grow consistently</h3>
+            <p>
+              Most stores look for big wins. High-performing stores focus on
+              small improvements that remove friction and compound over time.
+            </p>
+            <div class="issue-table">
+              <header>Where small changes create outsized impact</header>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Growth Area</th>
+                    <th>What top stores quietly fix</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Product Pages</td>
+                    <td>
+                      Clarify the headline so it’s instantly clear who the
+                      product is for and why it matters
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Trust Signals</td>
+                    <td>
+                      Move reviews and social proof above the fold to reduce
+                      hesitation
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Checkout Flow</td>
+                    <td>Remove unnecessary fields to lower abandonment</td>
+                  </tr>
+                  <tr>
+                    <td>Store Performance</td>
+                    <td>
+                      Audit and remove unused apps to improve speed and
+                      conversions
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">
+              These changes don’t look dramatic. They’re how strong stores
+              improve conversion without increasing traffic or ad spend.
+            </p>
+          </div>
+
+          <div class="issue-footer">
+            <span>MerchantsDigest.com</span>
+            <span>Built for Shopify founders focused on sustainable growth.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <small>© 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>
+    </footer>
+  </body>
+</html>

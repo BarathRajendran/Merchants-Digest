@@ -284,7 +284,7 @@
       }
 
       .issue {
-        max-width: 720px;
+        max-width: 920px;
         margin: 0 auto;
         border: 1px solid rgba(17, 17, 20, 0.08);
         border-radius: 18px;
@@ -406,31 +406,45 @@
 
       .whats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
         margin-top: 16px;
       }
 
       .whats-card {
         display: grid;
-        grid-template-columns: 52px 1fr;
-        gap: 12px;
+        grid-template-columns: 72px 1fr;
+        gap: 14px;
         align-items: start;
         font-size: 0.92rem;
+        min-height: 150px;
+      }
+
+      @media (max-width: 700px) {
+        .whats-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .whats-link {
+        display: block;
+        margin-top: 6px;
+        color: #1a5ad7;
+        font-weight: 600;
       }
 
       .whats-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        background: #f0f4f8;
+        width: 72px;
+        height: 72px;
+        border-radius: 0;
+        background: none;
         display: grid;
         place-items: center;
       }
 
       .whats-icon img {
-        width: 70%;
-        height: 70%;
+        width: 100%;
+        height: 100%;
         object-fit: contain;
         display: block;
       }
@@ -486,9 +500,9 @@
         padding: 40px 6vw 60px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         border-top: 1px solid rgba(17, 17, 20, 0.08);
-        gap: 20px;
+        gap: 12px;
         flex-wrap: wrap;
       }
 
@@ -531,7 +545,7 @@
 
       <section class="hero">
         <div>
-          <div class="tagline">A weekly field guide for Shopify merchants</div>
+          <div class="tagline">A field guide for Shopify merchants</div>
           <h1>Boost your business growth 5x with powerful insights.</h1>
           <p>
             Merchants Digest curates the sharpest plays in commerce — from
@@ -575,53 +589,29 @@
                 January is a good time to reset how you think about growth.
               </p>
               <p>
-                Most stores don’t fail because of lack of traffic. They stall
-                because the effort they put in doesn’t compound.
-              </p>
-              <p>That’s why Merchants Digest exists.</p>
-              <p>
-                Merchants Digest is a free weekly newsletter focused on Shopify
-                growth—practical strategies, AI-driven insights, and proven
-                growth frameworks trusted by ecommerce founders.
+                Merchants Digest is a free weekly newsletter that helps Shopify
+                merchants grow their stores through practical strategies,
+                AI-driven insights, and platform updates that matter.
               </p>
               <p>
-                We curate patterns across organic growth, paid distribution,
-                platform updates, and emerging tools, so you don’t have to track
-                everything yourself.
-              </p>
-              <p>
-                Each issue is designed to be read quickly, understood easily,
-                and applied deliberately.
-              </p>
-              <p>
-                The goal is simple: help you make better growth decisions,
-                consistently.
+                Each issue focuses on ideas you can apply right away to drive
+                consistent, sustainable growth.
               </p>
             </div>
 
             <div class="section-block">
               <h3>Organic growth: why AI-ready schema matters now</h3>
-              <p>Search is quietly changing.</p>
               <p>
-                It is no longer only about ranking pages. It is about whether AI
-                systems actually understand what you sell.
-              </p>
-              <p>
-                When AI tools generate answers, summaries, or product
-                recommendations, they rely on clear signals. That includes well
-                written product descriptions, defined attributes, and
-                consistency across your store.
+                Search is shifting from rankings to understanding. AI tools
+                surface products they can clearly interpret through structured,
+                well written product pages. When AI understands what you sell,
+                your products show up in answers and recommendations.
               </p>
               <img
                 class="issue-image"
                 src="images/Home%20Page/NL%201st%20section.png"
                 alt="AI-ready schema example"
               />
-              <p>
-                That understanding is what helps your product appear in AI
-                answers and recommendations, sometimes even without creating new
-                content.
-              </p>
             </div>
 
             <div class="section-block">
@@ -675,7 +665,7 @@
               <h3>What is new in Shopify this week</h3>
               <img
                 class="issue-image"
-                src="shopify-update.svg"
+                src="images/Home%20Page/NL3rd%20section.png"
                 alt="Shopify update preview"
               />
               <p>Stay updated with the platform changes that matter:</p>
@@ -689,8 +679,10 @@
                     <p>
                       150+ updates across AI, checkout, storefronts, and
                       operations — now live in Shopify’s Winter ’26 Edition.
-                      <a href="https://www.shopify.com/editions/winter2026"
-                        >Learn more →</a
+                      <a
+                        class="whats-link"
+                        href="https://www.shopify.com/editions/winter2026"
+                        >Learn More</a
                       >
                     </p>
                   </div>
@@ -705,8 +697,9 @@
                       AI is now embedded across discovery, insights, and store
                       workflows — not just search.
                       <a
+                        class="whats-link"
                         href="https://www.shopify.com/news/winter-26-edition-renaissance"
-                        >See details →</a
+                        >Learn More</a
                       >
                     </p>
                   </div>
@@ -720,7 +713,11 @@
                     <p>
                       New options for upsells and post-purchase without breaking
                       checkout safety.
-                      <a href="https://changelog.shopify.com/">Reference →</a>
+                      <a
+                        class="whats-link"
+                        href="https://changelog.shopify.com/"
+                        >Learn More</a
+                      >
                     </p>
                   </div>
                 </div>
@@ -733,8 +730,10 @@
                     <p>
                       Support for larger catalogs and high-variant products is
                       rolling out.
-                      <a href="https://www.shopify.com/editions/winter2026"
-                        >See Winter ’26 news →</a
+                      <a
+                        class="whats-link"
+                        href="https://www.shopify.com/editions/winter2026"
+                        >Learn More</a
                       >
                     </p>
                   </div>
@@ -743,60 +742,67 @@
             </div>
 
             <div class="section-block">
-              <h3>The secret AI tools top 1% Shopify brands quietly use</h3>
-              <p>Most brands use AI for content.</p>
+              <h3>Quiet changes top Shopify stores make to grow consistently</h3>
+              <p>
+                Most stores look for big wins. High-performing stores focus on
+                small improvements that remove friction and compound over time.
+              </p>
               <div class="issue-table">
-                <header>The top 1% use AI for growth systems</header>
+                <header>Where small changes create outsized impact</header>
                 <table>
                   <thead>
                     <tr>
-                      <th>Growth Function</th>
-                      <th>AI Tool Type</th>
+                      <th>Growth Area</th>
+                      <th>What top stores quietly fix</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>AI Product Research Engine</td>
-                      <td>Predict winning products before they trend</td>
+                      <td>Product Pages</td>
+                      <td>
+                        Clarify the headline so it’s instantly clear who the
+                        product is for and why it matters
+                      </td>
                     </tr>
                     <tr>
-                      <td>AI Conversion Heatmaps</td>
-                      <td>See where visitors drop off and fix friction</td>
+                      <td>Trust Signals</td>
+                      <td>
+                        Move reviews and social proof above the fold to reduce
+                        hesitation
+                      </td>
                     </tr>
                     <tr>
-                      <td>AI Creative Generators</td>
-                      <td>Produce 50-100 winning ad variations weekly</td>
+                      <td>Checkout Flow</td>
+                      <td>
+                        Remove unnecessary fields to lower abandonment
+                      </td>
                     </tr>
                     <tr>
-                      <td>AI Personalization Engines</td>
-                      <td>Adjust homepage and recommendations dynamically</td>
+                      <td>Store Performance</td>
+                      <td>
+                        Audit and remove unused apps to improve speed and
+                        conversions
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p class="note">
-                This is how top stores maintain stable ROAS even during CPM
-                spikes.
+                These changes don’t look dramatic. They’re how strong stores
+                improve conversion without increasing traffic or ad spend.
               </p>
             </div>
 
             <div class="issue-footer">
               <span>MerchantsDigest.com</span>
-              <span>Join 3,000+ Shopify founders every Friday.</span>
+              <span>Built for Shopify founders focused on sustainable growth.</span>
             </div>
           </div>
         </div>
       </section>
 
       <footer class="footer">
-        <div class="brand">
-          <img
-            class="brand-logo"
-            src="Primary Logo.png"
-            alt="Merchants Digest"
-          />
-        </div>
-        <small>© 2024 Merchantsdigest.com. Crafted for Shopify merchants.</small>
+        <small>© 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>
       </footer>
     </div>
     <script>
