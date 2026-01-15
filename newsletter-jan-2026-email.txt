@@ -1,0 +1,134 @@
+<!-- Merchants Digest | January 2026 Newsletter -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
+  <tr>
+    <td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px; font-family:Arial, Helvetica, sans-serif; color:#111114;">
+        <tr>
+          <td style="padding:24px 16px 8px;">
+            <img src="https://www.merchantsdigest.com/images/Home%20Page/NL%20header.jpg" alt="Newsletter header" style="width:100%; height:auto; display:block; border-radius:12px; border:1px solid #e4e6ea;" />
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:8px 16px 0;">
+            <h2 style="margin:0; font-size:26px; line-height:1.2; font-family:Georgia, 'Times New Roman', serif;">Boost your business growth 5x with powerful insights</h2>
+            <p style="margin:12px 0 0; color:#4a4b57; line-height:1.6;">January is a good time to reset how you think about growth.</p>
+            <p style="margin:8px 0 0; color:#4a4b57; line-height:1.6;">Merchants Digest is a free weekly newsletter that helps Shopify merchants grow their stores through practical strategies, AI-driven insights, and platform updates that matter.</p>
+            <p style="margin:8px 0 0; color:#4a4b57; line-height:1.6;">Each issue focuses on ideas you can apply right away to drive consistent, sustainable growth.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:24px 16px 0;">
+            <h3 style="margin:0 0 8px; font-size:20px; font-family:Georgia, 'Times New Roman', serif;">Organic growth: why AI-ready schema matters now</h3>
+            <p style="margin:0; color:#4a4b57; line-height:1.6;">Search is shifting from rankings to understanding. AI tools surface products they can clearly interpret through structured, well written product pages. When AI understands what you sell, your products show up in answers and recommendations.</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px 0;">
+            <img src="https://www.merchantsdigest.com/images/Home%20Page/NL%201st%20section.jpg" alt="AI-ready schema example" style="width:100%; height:auto; display:block; border-radius:12px; border:1px solid #e4e6ea;" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:24px 16px 0;">
+            <h3 style="margin:0 0 8px; font-size:20px; font-family:Georgia, 'Times New Roman', serif;">Ads & Social Media: what’s actually building trust right now</h3>
+            <img src="https://www.merchantsdigest.com/images/Home%20Page/NL%20second%20section.jpg" alt="Ad creative preview" style="width:100%; height:auto; display:block; border-radius:12px; border:1px solid #e4e6ea;" />
+            <p style="margin:12px 0 0; color:#4a4b57; line-height:1.6;">Social ads are working best when they feel human, familiar, and native to the platform. Merchants seeing consistent results are focusing less on polish and more on presence, repetition, and credibility.</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td width="33%" align="center" valign="top" style="padding:8px;">
+                  <img src="https://www.merchantsdigest.com/images/Home%20Page/icon_micro_creatives.png" alt="Micro creatives" style="width:90px; height:auto; display:block;" />
+                  <p style="margin:8px 0 0; font-size:14px; color:#4a4b57; line-height:1.5;"><strong>Create micro-creatives for TikTok and Reels</strong><br />performing 2–3× better than polished brand videos</p>
+                </td>
+                <td width="33%" align="center" valign="top" style="padding:8px;">
+                  <img src="https://www.merchantsdigest.com/images/Home%20Page/icon_founder_team.png" alt="Founder or team" style="width:90px; height:auto; display:block;" />
+                  <p style="margin:8px 0 0; font-size:14px; color:#4a4b57; line-height:1.5;"><strong>Founder or team-face videos</strong><br />build trust faster than polished brand creatives</p>
+                </td>
+                <td width="33%" align="center" valign="top" style="padding:8px;">
+                  <img src="https://www.merchantsdigest.com/images/Home%20Page/icon_reviews_video.png" alt="Reviews video" style="width:90px; height:auto; display:block;" />
+                  <p style="margin:8px 0 0; font-size:14px; color:#4a4b57; line-height:1.5;"><strong>Turn customer reviews into short video ads</strong><br />build trust faster than brand-written messaging</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:24px 16px 0;">
+            <h3 style="margin:0 0 8px; font-size:20px; font-family:Georgia, 'Times New Roman', serif;">What is new in Shopify this week</h3>
+            <img src="https://www.merchantsdigest.com/images/Home%20Page/NL3rd%20section.jpg" alt="Shopify update preview" style="width:100%; height:auto; display:block; border-radius:12px; border:1px solid #e4e6ea;" />
+            <p style="margin:12px 0 0; color:#4a4b57; line-height:1.6;">Stay updated with the platform changes that matter:</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:8px 16px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td width="50%" valign="top" style="padding:8px;">
+                  <img src="https://www.merchantsdigest.com/images/Home%20Page/icon_updates.png" alt="" style="width:60px; height:auto; display:block;" />
+                  <p style="margin:8px 0 0; font-size:14px; color:#4a4b57; line-height:1.5;"><strong>Winter ’26 Edition highlights</strong><br />150+ updates across AI, checkout, storefronts, and operations — now live in Shopify’s Winter ’26 Edition.</p>
+                  <a href="https://www.shopify.com/editions/winter2026" style="color:#1a5ad7; font-weight:600; text-decoration:none;">Learn More</a>
+                </td>
+                <td width="50%" valign="top" style="padding:8px;">
+                  <img src="https://www.merchantsdigest.com/images/Home%20Page/icon_ai.png" alt="" style="width:60px; height:auto; display:block;" />
+                  <p style="margin:8px 0 0; font-size:14px; color:#4a4b57; line-height:1.5;"><strong>AI across the Shopify platform</strong><br />AI is now embedded across discovery, insights, and store workflows — not just search.</p>
+                  <a href="https://www.shopify.com/news/winter-26-edition-renaissance" style="color:#1a5ad7; font-weight:600; text-decoration:none;">Learn More</a>
+                </td>
+              </tr>
+              <tr>
+                <td width="50%" valign="top" style="padding:8px;">
+                  <img src="https://www.merchantsdigest.com/images/Home%20Page/icon_checkout.png" alt="" style="width:60px; height:auto; display:block;" />
+                  <p style="margin:8px 0 0; font-size:14px; color:#4a4b57; line-height:1.5;"><strong>Checkout extensibility updates</strong><br />New options for upsells and post-purchase without breaking checkout safety.</p>
+                  <a href="https://changelog.shopify.com/" style="color:#1a5ad7; font-weight:600; text-decoration:none;">Learn More</a>
+                </td>
+                <td width="50%" valign="top" style="padding:8px;">
+                  <img src="https://www.merchantsdigest.com/images/Home%20Page/icon_catalog.png" alt="" style="width:60px; height:auto; display:block;" />
+                  <p style="margin:8px 0 0; font-size:14px; color:#4a4b57; line-height:1.5;"><strong>Catalog & product scalability improvements</strong><br />Support for larger catalogs and high-variant products is rolling out.</p>
+                  <a href="https://www.shopify.com/editions/winter2026" style="color:#1a5ad7; font-weight:600; text-decoration:none;">Learn More</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:24px 16px 0;">
+            <h3 style="margin:0 0 8px; font-size:20px; font-family:Georgia, 'Times New Roman', serif;">Quiet changes top Shopify stores make to grow consistently</h3>
+            <p style="margin:0; color:#4a4b57; line-height:1.6;">Most stores look for big wins. High-performing stores focus on small improvements that remove friction and compound over time.</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px 24px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e4e6ea; border-radius:8px; overflow:hidden;">
+              <tr style="background:#0f7a5a; color:#ffffff;">
+                <th align="left" style="padding:10px 12px; font-size:14px;">Growth Area</th>
+                <th align="left" style="padding:10px 12px; font-size:14px;">What top stores quietly fix</th>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px; font-size:14px; color:#4a4b57;">Product Pages</td>
+                <td style="padding:10px 12px; font-size:14px; color:#4a4b57;">Clarify the headline so it’s instantly clear who the product is for and why it matters</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px; font-size:14px; color:#4a4b57;">Trust Signals</td>
+                <td style="padding:10px 12px; font-size:14px; color:#4a4b57;">Move reviews and social proof above the fold to reduce hesitation</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px; font-size:14px; color:#4a4b57;">Checkout Flow</td>
+                <td style="padding:10px 12px; font-size:14px; color:#4a4b57;">Remove unnecessary fields to lower abandonment</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px; font-size:14px; color:#4a4b57;">Store Performance</td>
+                <td style="padding:10px 12px; font-size:14px; color:#4a4b57;">Audit and remove unused apps to improve speed and conversions</td>
+              </tr>
+            </table>
+            <p style="margin:12px 0 0; color:#4a4b57; font-style:italic;">These changes don’t look dramatic. They’re how strong stores improve conversion without increasing traffic or ad spend.</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
