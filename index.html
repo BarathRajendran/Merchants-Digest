@@ -8,6 +8,36 @@
       name="description"
       content="Merchants Digest is a focused newsletter for Shopify merchants: growth insights, product updates, and tactics you can use this week."
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.merchantsdigest.com/#organization",
+            "name": "Merchants Digest",
+            "url": "https://www.merchantsdigest.com",
+            "logo": "https://www.merchantsdigest.com/Primary%20Logo.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.merchantsdigest.com/#website",
+            "url": "https://www.merchantsdigest.com",
+            "name": "Merchants Digest",
+            "publisher": { "@id": "https://www.merchantsdigest.com/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.merchantsdigest.com/",
+            "url": "https://www.merchantsdigest.com/",
+            "name": "Merchants Digest — The Shopify Merchant Newsletter",
+            "isPartOf": { "@id": "https://www.merchantsdigest.com/#website" },
+            "about": { "@id": "https://www.merchantsdigest.com/#organization" }
+          }
+        ]
+      }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -187,6 +217,12 @@
         color: var(--paper);
         font-weight: 600;
         cursor: pointer;
+      }
+
+      .form-message {
+        margin-top: 10px;
+        color: #0f7a5a;
+        font-weight: 600;
       }
 
       .ghost {
@@ -502,14 +538,19 @@
             conversion wins to marketing pivots — then delivers a short,
             actionable brief every week.
           </p>
-          <form class="hero-form">
+          <form class="hero-form" id="subscribe-form">
             <input
               type="email"
               placeholder="Email address"
               aria-label="Email address"
+              name="email"
+              required
             />
             <button type="submit">Subscribe</button>
           </form>
+          <div class="form-message" id="subscribe-message" hidden>
+            You are successfully subscribed to Merchants Digest.
+          </div>
         </div>
         <div class="hero-card">
           <img
@@ -758,5 +799,40 @@
         <small>© 2024 Merchantsdigest.com. Crafted for Shopify merchants.</small>
       </footer>
     </div>
+    <script>
+      const subscribeForm = document.getElementById("subscribe-form");
+      const subscribeMessage = document.getElementById("subscribe-message");
+
+      if (subscribeForm && subscribeMessage) {
+        subscribeForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const formData = new FormData(subscribeForm);
+          const payload = {
+            email: formData.get("email"),
+            page: window.location.pathname || "/",
+            token: "md_7fT9pL3xQ2vR8nK6Zb5yW1uC4eD0aH9s"
+          };
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbzLv8VAbIDgR3AQdsRoEAOmarFWW7kGe3ZlviwHR-O28OzWDBtaaCkJfdNwTnBp2XGY/exec",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload)
+            }
+          )
+            .then((response) => response.json())
+            .then(() => {
+              subscribeMessage.hidden = false;
+              subscribeForm.reset();
+            })
+            .catch(() => {
+              subscribeMessage.hidden = false;
+              subscribeMessage.textContent =
+                "Subscription failed. Please try again.";
+            });
+        });
+      }
+    </script>
   </body>
 </html>
