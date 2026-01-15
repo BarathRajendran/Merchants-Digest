@@ -807,23 +807,25 @@
         subscribeForm.addEventListener("submit", (event) => {
           event.preventDefault();
           const formData = new FormData(subscribeForm);
-          const payload = {
+          const payload = new URLSearchParams({
             email: formData.get("email"),
             page: window.location.pathname || "/",
             token: "md_7fT9pL3xQ2vR8nK6Zb5yW1uC4eD0aH9s"
-          };
+          });
 
           fetch(
             "https://script.google.com/macros/s/AKfycbzWq3sFpQTcwCkT38QkV75xgzztVlBq611bMUvtvbybQRNs5eWKvozcb7jemvkSCIpq/exec",
             {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(payload)
+              mode: "no-cors",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: payload.toString()
             }
           )
-            .then((response) => response.json())
             .then(() => {
               subscribeMessage.hidden = false;
+              subscribeMessage.textContent =
+                "You are successfully subscribed to Merchants Digest.";
               subscribeForm.reset();
             })
             .catch(() => {
