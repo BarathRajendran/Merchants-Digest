@@ -8,6 +8,19 @@
       name="description"
       content="Merchants Digest is a focused newsletter for Shopify merchants: growth insights, product updates, and tactics you can use this week."
     />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5FQK2WSDWH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-5FQK2WSDWH");
+    </script>
     <style>
       :root {
         --ink: #111114;
@@ -314,8 +327,9 @@
       .icon-row {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 16px;
+        gap: 24px;
         margin-top: 16px;
+        align-items: start;
       }
 
       .icon-card {
@@ -323,21 +337,31 @@
         gap: 10px;
         align-items: start;
         font-size: 0.92rem;
+        justify-items: center;
+        text-align: center;
       }
 
       .icon-square {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #f6e08a, #f3c24b);
+        width: 126px;
+        height: 126px;
+        border-radius: 0;
+        background: none;
+      }
+
+      .icon-square img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0;
+        display: block;
       }
 
       .icon-square.purple {
-        background: linear-gradient(135deg, #d2b4ff, #b48bff);
+        background: none;
       }
 
       .icon-square.green {
-        background: linear-gradient(135deg, #a7e7cf, #6fc8a6);
+        background: none;
       }
 
       .whats-new {
@@ -363,7 +387,16 @@
         width: 48px;
         height: 48px;
         border-radius: 12px;
-        background: linear-gradient(135deg, #d2b4ff, #b48bff);
+        background: #f0f4f8;
+        display: grid;
+        place-items: center;
+      }
+
+      .whats-icon img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+        display: block;
       }
 
       .issue-table {
@@ -498,60 +531,101 @@
             <div class="issue-title">
               <h2>Boost your business growth 5x with powerful insights</h2>
               <p>
-                Weekly Shopify strategies, AI tips, and growth frameworks trusted
-                by ecommerce founders.
+                January is a good time to reset how you think about growth.
+              </p>
+              <p>
+                Most stores don’t fail because of lack of traffic. They stall
+                because the effort they put in doesn’t compound.
+              </p>
+              <p>That’s why Merchants Digest exists.</p>
+              <p>
+                Merchants Digest is a free weekly newsletter focused on Shopify
+                growth—practical strategies, AI-driven insights, and proven
+                growth frameworks trusted by ecommerce founders.
+              </p>
+              <p>
+                We curate patterns across organic growth, paid distribution,
+                platform updates, and emerging tools, so you don’t have to track
+                everything yourself.
+              </p>
+              <p>
+                Each issue is designed to be read quickly, understood easily,
+                and applied deliberately.
+              </p>
+              <p>
+                The goal is simple: help you make better growth decisions,
+                consistently.
               </p>
             </div>
 
             <div class="section-block">
-              <h3>Grow your store organically by using AI-ready schema</h3>
-              <p>Search is shifting from keywords to AI-driven intent.</p>
+              <h3>Organic growth: why AI-ready schema matters now</h3>
+              <p>Search is quietly changing.</p>
+              <p>
+                It is no longer only about ranking pages. It is about whether AI
+                systems actually understand what you sell.
+              </p>
+              <p>
+                When AI tools generate answers, summaries, or product
+                recommendations, they rely on clear signals. That includes well
+                written product descriptions, defined attributes, and
+                consistency across your store.
+              </p>
               <img
                 class="issue-image"
-                src="schema-preview.svg"
-                alt="Schema preview"
+                src="images/Home%20Page/NL%201st%20section.png"
+                alt="AI-ready schema example"
               />
               <p>
-                Updating your product and collection schema helps AI search
-                engines understand your catalog deeply.
+                That understanding is what helps your product appear in AI
+                answers and recommendations, sometimes even without creating new
+                content.
               </p>
-              <div class="schema-tags">
-                <span>USP</span>
-                <span>Alternatives</span>
-                <span>Material</span>
-                <span>Benefits</span>
-                <span>FAQs</span>
-              </div>
-              <p>
-                This improves visibility in AI answers, snapshots, and product
-                carousels - giving you free, compounding traffic.
-              </p>
-              <p class="note">If AI can read it, AI can recommend it.</p>
             </div>
 
             <div class="section-block">
-              <h3>Ads & Social Media - where AI gives you leverage</h3>
+              <h3>Ads & Social Media: what’s actually building trust right now</h3>
               <img
                 class="issue-image"
-                src="ad-creative.svg"
+                src="images/Home%20Page/NL%20second%20section.png"
                 alt="Ad creative preview"
               />
-              <p>AI can automate and amplify your paid + organic performance.</p>
+              <p>
+                Social ads are working best when they feel human, familiar, and
+                native to the platform. Merchants seeing consistent results are
+                focusing less on polish and more on presence, repetition, and
+                credibility.
+              </p>
               <div class="icon-row">
                 <div class="icon-card">
-                  <div class="icon-square"></div>
-                  <strong>Auto-generate high-performing ad variations</strong>
-                  <span>(copy + creatives)</span>
+                  <div class="icon-square">
+                    <img
+                      src="images/Home%20Page/icon_micro_creatives.png"
+                      alt="Micro creatives"
+                    />
+                  </div>
+                  <strong>Create micro-creatives for TikTok and Reels</strong>
+                  <span>performing 2–3× better than polished brand videos</span>
                 </div>
                 <div class="icon-card">
-                  <div class="icon-square purple"></div>
-                  <strong>Predict keywords, audiences, and creatives</strong>
-                  <span>that convert before spending money</span>
+                  <div class="icon-square purple">
+                    <img
+                      src="images/Home%20Page/icon_founder_team.png"
+                      alt="Founder or team"
+                    />
+                  </div>
+                  <strong>Founder or team-face videos</strong>
+                  <span>build trust faster than polished brand creatives</span>
                 </div>
                 <div class="icon-card">
-                  <div class="icon-square green"></div>
-                  <strong>Create micro-creatives for TikTok/Reels</strong>
-                  <span>performing 2-3x better than normal brand videos</span>
+                  <div class="icon-square green">
+                    <img
+                      src="images/Home%20Page/icon_reviews_video.png"
+                      alt="Reviews video"
+                    />
+                  </div>
+                  <strong>Turn customer reviews into short video ads</strong>
+                  <span>build trust faster than brand-written messaging</span>
                 </div>
               </div>
             </div>
@@ -566,31 +640,62 @@
               <p>Stay updated with the platform changes that matter:</p>
               <div class="whats-grid">
                 <div class="whats-card">
-                  <div class="whats-icon"></div>
+                  <div class="whats-icon">
+                    <img src="images/Home%20Page/icon_updates.png" alt="" />
+                  </div>
                   <div>
-                    <strong>AI semantic search</strong>
-                    <p>Now supported by Shopify Search & Discovery.</p>
+                    <strong>Winter ’26 Edition highlights</strong>
+                    <p>
+                      150+ updates across AI, checkout, storefronts, and
+                      operations — now live in Shopify’s Winter ’26 Edition.
+                      <a href="https://www.shopify.com/editions/winter2026"
+                        >Learn more →</a
+                      >
+                    </p>
                   </div>
                 </div>
                 <div class="whats-card">
-                  <div class="whats-icon"></div>
+                  <div class="whats-icon">
+                    <img src="images/Home%20Page/icon_ai.png" alt="" />
+                  </div>
+                  <div>
+                    <strong>AI across the Shopify platform</strong>
+                    <p>
+                      AI is now embedded across discovery, insights, and store
+                      workflows — not just search.
+                      <a
+                        href="https://www.shopify.com/news/winter-26-edition-renaissance"
+                        >See details →</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="whats-card">
+                  <div class="whats-icon">
+                    <img src="images/Home%20Page/icon_checkout.png" alt="" />
+                  </div>
                   <div>
                     <strong>Checkout extensibility updates</strong>
-                    <p>For upsell and post-purchase offers.</p>
+                    <p>
+                      New options for upsells and post-purchase without breaking
+                      checkout safety.
+                      <a href="https://changelog.shopify.com/">Reference →</a>
+                    </p>
                   </div>
                 </div>
                 <div class="whats-card">
-                  <div class="whats-icon"></div>
-                  <div>
-                    <strong>Hydrogen + Oxygen updates</strong>
-                    <p>Improve custom storefront performance.</p>
+                  <div class="whats-icon">
+                    <img src="images/Home%20Page/icon_catalog.png" alt="" />
                   </div>
-                </div>
-                <div class="whats-card">
-                  <div class="whats-icon"></div>
                   <div>
-                    <strong>New Shopify Functions</strong>
-                    <p>Deeper logic without disrupting checkout.</p>
+                    <strong>Catalog & product scalability improvements</strong>
+                    <p>
+                      Support for larger catalogs and high-variant products is
+                      rolling out.
+                      <a href="https://www.shopify.com/editions/winter2026"
+                        >See Winter ’26 news →</a
+                      >
+                    </p>
                   </div>
                 </div>
               </div>

@@ -8,6 +8,19 @@
       name="description"
       content="Read Merchants Digest articles built for Shopify merchants."
     />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5FQK2WSDWH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-5FQK2WSDWH");
+    </script>
     <style>
       :root {
         --ink: #111114;
@@ -176,7 +189,7 @@
       .articles {
         padding: 0 6vw 80px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 24px;
         align-items: stretch;
       }
@@ -293,6 +306,16 @@
 
         .feature-media img {
           min-height: 220px;
+        }
+
+        .articles {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .articles {
+          grid-template-columns: 1fr;
         }
       }
     </style>
