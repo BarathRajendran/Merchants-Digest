@@ -5,6 +5,7 @@
     { "source": "/blogs", "destination": "/articles.html" },
     { "source": "/newsletter", "destination": "/newsletter.html" },
     { "source": "/newsletter/jan-2026", "destination": "/newsletter-jan-2026.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
     { "source": "/blog/traffic-no-sales", "destination": "/blog-traffic-no-sales.html" },
     { "source": "/blog/traffic-quality", "destination": "/blog-traffic-quality.html" },
     { "source": "/blog/shopify-app-overload", "destination": "/blog-shopify-app-overload.html" },
