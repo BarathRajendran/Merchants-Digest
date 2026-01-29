@@ -10,6 +10,7 @@
     { "source": "/blog/traffic-quality", "destination": "/blog-traffic-quality.html" },
     { "source": "/blog/shopify-app-overload", "destination": "/blog-shopify-app-overload.html" },
     { "source": "/blog/increase-aov", "destination": "/blog-increase-aov.html" },
-    { "source": "/blog/ai-search", "destination": "/blog-ai-search.html" }
+    { "source": "/blog/ai-search", "destination": "/blog-ai-search.html" },
+    { "source": "/blog/shopify-stores-do-not-fail-because-of-traffic", "destination": "/blog-shopify-stores-do-not-fail-because-of-traffic.html" }
   ]
 }
