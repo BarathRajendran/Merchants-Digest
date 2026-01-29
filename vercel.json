@@ -12,6 +12,8 @@
     { "source": "/blog/increase-aov", "destination": "/blog-increase-aov.html" },
     { "source": "/blog/ai-search", "destination": "/blog-ai-search.html" },
     { "source": "/blog/shopify-stores-do-not-fail-because-of-traffic", "destination": "/blog-shopify-stores-do-not-fail-because-of-traffic.html" },
-    { "source": "/blog/build-trust", "destination": "/blog-build-trust.html" }
+    { "source": "/blog/build-trust", "destination": "/blog-build-trust.html" },
+    { "source": "/blog/remove-buyer-doubts", "destination": "/blog-remove-buyer-doubts.html" },
+    { "source": "/blog/premium-without-fancy", "destination": "/blog-premium-without-fancy.html" }
   ]
 }
