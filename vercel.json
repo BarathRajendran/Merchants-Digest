@@ -11,6 +11,7 @@
     { "source": "/blog/shopify-app-overload", "destination": "/blog-shopify-app-overload.html" },
     { "source": "/blog/increase-aov", "destination": "/blog-increase-aov.html" },
     { "source": "/blog/ai-search", "destination": "/blog-ai-search.html" },
-    { "source": "/blog/shopify-stores-do-not-fail-because-of-traffic", "destination": "/blog-shopify-stores-do-not-fail-because-of-traffic.html" }
+    { "source": "/blog/shopify-stores-do-not-fail-because-of-traffic", "destination": "/blog-shopify-stores-do-not-fail-because-of-traffic.html" },
+    { "source": "/blog/build-trust", "destination": "/blog-build-trust.html" }
   ]
 }
