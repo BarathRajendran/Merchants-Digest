@@ -148,6 +148,13 @@
         padding: 28px 32px 36px;
       }
 
+      .issue-image.full-bleed {
+        margin-left: -32px;
+        margin-right: -32px;
+        width: calc(100% + 64px);
+        border-radius: 0;
+      }
+
       .issue-title {
         margin-top: 18px;
       }
@@ -367,7 +374,7 @@
       <div class="issue">
         <div class="issue-body">
           <img
-            class="issue-image"
+            class="issue-image full-bleed"
             src="/images/Newsletter/feb-hero.png"
             alt="February newsletter hero"
           />
