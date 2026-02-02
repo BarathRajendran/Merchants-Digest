@@ -148,11 +148,15 @@
         padding: 28px 32px 36px;
       }
 
-      .issue-image.full-bleed {
+      .full-bleed {
         margin-left: -32px;
         margin-right: -32px;
-        width: calc(100% + 64px);
+      }
+
+      .full-bleed .issue-image {
+        width: 100%;
         border-radius: 0;
+        display: block;
       }
 
       .issue-title {
@@ -373,11 +377,13 @@
     <section class="newsletter">
       <div class="issue">
         <div class="issue-body">
-          <img
-            class="issue-image full-bleed"
-            src="/images/Newsletter/feb-hero.png"
-            alt="February newsletter hero"
-          />
+          <div class="full-bleed">
+            <img
+              class="issue-image"
+              src="/images/Newsletter/feb-hero.png"
+              alt="February newsletter hero"
+            />
+          </div>
           <div class="issue-title">
             <h2>February 2026 Edition: clarity beats complexity</h2>
             <p>February growth is coming from cleanups, not experiments.</p>
@@ -630,11 +636,6 @@
             <p class="note">
               The stores improving right now are not doing more. They are
               making existing traffic easier to convert.
-            </p>
-            <p class="note">
-              Next month we’ll look at: where merchants are seeing repeat
-              purchases come back, how pricing clarity is becoming a conversion
-              lever, and why trust signals matter more than discounts.
             </p>
           </div>
 
