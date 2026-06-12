@@ -1,0 +1,16 @@
+{
+  "name": "merchants-digest",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "blog:research": "node scripts/blog-agent.mjs research",
+    "blog:draft": "node scripts/blog-agent.mjs draft",
+    "blog:queue": "node scripts/blog-agent.mjs queue",
+    "blog:approve": "node scripts/blog-agent.mjs approve",
+    "blog:publish": "node scripts/blog-agent.mjs publish",
+    "blog:release": "node scripts/blog-agent.mjs release",
+    "blog:run": "node scripts/blog-agent.mjs run",
+    "blog:sync": "node scripts/blog-agent.mjs sync",
+    "blog:help": "node scripts/blog-agent.mjs help"
+  }
+}

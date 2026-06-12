@@ -1,0 +1,128 @@
+{
+  "title": "Why Your Shipping, Returns, and Sizing Pages Are Now Growth Pages",
+  "slug": "policy-pages-growth-pages",
+  "description": "Why Shopify merchants should treat shipping, returns, and sizing pages as conversion and AI-discovery assets instead of legal leftovers.",
+  "excerpt": "Late-stage buyers and AI answer engines both look for risk-reducing details. Clear policy pages strengthen trust and make your store easier to summarize.",
+  "publishDate": "2026-06-18",
+  "scheduledDate": "2026-06-18",
+  "readTimeMinutes": 9,
+  "heroImageAlt": "Shipping, returns, and sizing policy pages as growth assets",
+  "heroImagePath": "/images/Blogs/generated-policy-pages-growth-pages.png",
+  "lead": "Most merchants still treat shipping, returns, and sizing pages like legal cleanup. Buyers do not. They use them to decide whether the store feels safe enough to purchase from.",
+  "introParagraphs": [
+    "That matters more now because buyers are not the only ones scanning these pages. Search systems, answer engines, and shopping assistants all benefit when risk-related information is clear, visible, and easy to connect back to the product.",
+    "If your policy pages are thin, generic, or inconsistent with the rest of your store, they do more than weaken trust. They reduce how confidently your store can be summarized and recommended.",
+    "The merchants who understand this stop treating policy pages like footnotes. They treat them like part of the selling system."
+  ],
+  "sections": [
+    {
+      "heading": "Policy pages are where late-stage hesitation becomes visible",
+      "paragraphs": [
+        "A buyer does not usually open your return or sizing page out of curiosity. They open it when they are close to buying and want reassurance.",
+        "That means these pages sit closer to revenue than most merchants think. They do not just answer operational questions. They remove the friction that keeps a product from feeling safe."
+      ],
+      "bullets": [
+        "Will this arrive in time",
+        "What happens if the fit is wrong",
+        "How hard is it to get money back",
+        "Is this merchant telling the whole story"
+      ]
+    },
+    {
+      "heading": "AI-driven discovery makes vague policy pages more expensive",
+      "paragraphs": [
+        "Search experiences increasingly summarize merchants before a click happens. When a system tries to understand your store, policy pages help explain the practical side of the buying experience.",
+        "That does not mean you need a special AI file or a separate policy schema strategy. It means the visible details on your pages need to be useful, specific, and consistent."
+      ],
+      "callout": "If your product page promises confidence but your policy pages create uncertainty, the store becomes harder to trust and harder to summarize.",
+      "bullets": [
+        "Specific shipping speeds are better than generic timelines",
+        "Clear return windows are better than soft language",
+        "Real sizing instructions are better than broad reassurance"
+      ]
+    },
+    {
+      "heading": "The strongest policy pages answer operational questions in plain language",
+      "paragraphs": [
+        "Good policy pages do not sound like they were written by a lawyer trying to disappear. They sound like a smart operator anticipating buyer doubt.",
+        "That tone matters because buyers are looking for direct answers, not polished vagueness."
+      ],
+      "bullets": [
+        "Processing time versus transit time",
+        "Where you ship and where you do not",
+        "Return eligibility and exclusions",
+        "Exchange steps and timing",
+        "Sizing method, measurement guidance, and edge cases",
+        "How to contact a human when something goes wrong"
+      ]
+    },
+    {
+      "heading": "Consistency matters more than page count",
+      "paragraphs": [
+        "Many stores already have the right information somewhere. The problem is that it is split across FAQs, footers, support replies, and product tabs that do not fully agree.",
+        "That inconsistency hurts both buyers and machines. The safer approach is not creating more pages. It is making the important answers match everywhere they appear."
+      ],
+      "bullets": [
+        "Product page delivery messaging should match the shipping page",
+        "Size claims in ads should match the sizing guide",
+        "Return messaging in email should match the published policy",
+        "Structured data should reflect what buyers can actually read on the page"
+      ]
+    },
+    {
+      "heading": "These pages can improve conversion without changing your offer",
+      "paragraphs": [
+        "Merchants often chase conversion gains through discounts, bundles, and redesigns before fixing the pages that answer risk. That order is backwards.",
+        "When a buyer understands delivery timing, fit, and returns clearly, the store feels easier to commit to. That can lift performance without any change to product, price, or traffic."
+      ],
+      "bullets": [
+        "Fewer last-minute doubts",
+        "Stronger checkout confidence",
+        "Lower support volume from repeated pre-purchase questions",
+        "Clearer signals for search and answer systems"
+      ]
+    },
+    {
+      "heading": "What to fix before your next campaign",
+      "paragraphs": [
+        "Pick the product category that creates the most hesitation. Then review the policy path around it. Not the legal wording alone, but the practical buying path.",
+        "A strong store does not wait for the buyer to hunt for reassurance. It puts the risk answers where they can actually reduce fear. That is why policy pages are now growth pages."
+      ],
+      "bullets": [
+        "Rewrite one policy page in plain language",
+        "Add direct links from product pages to the right risk answers",
+        "Remove contradictions across policy, product, and support copy",
+        "Bring sizing, shipping, and returns closer to the buy decision"
+      ]
+    }
+  ],
+  "status": "published",
+  "imageArchetype": "policy-operations",
+  "imageSceneSummary": "Packing-table and policy-doc scene with returns, sizing, and shipping cues in a grounded retail workspace.",
+  "overlayKicker": "Trust is operational",
+  "imagePrompt": "Photographic editorial cover showing a merchant packing an order at a side-angle workstation with folded garments, tape measure, clipboard forms, shipping label, boxes, and a laptop nearby. Warm tactile materials, afternoon light, human ecommerce operations, shallow depth of field, headline space on one side, no template graphics, no surreal effects.",
+  "imageStyleNotes": "Match the site's existing covers by using a distinct scene and camera angle. This one should feel warmer, more human, and more operational than the AI-trust article.",
+  "research": {
+    "whyNow": "Google's current AI search guidance keeps pointing back to visible text, structured data alignment, and helpful content. That makes policy clarity more important to both trust and discovery.",
+    "seoRationale": "The topic aligns with persistent merchant interest in conversion, returns, shipping friction, and product page confidence.",
+    "aeoRationale": "The article naturally answers common pre-purchase questions that AI systems and buyers both ask.",
+    "humanHook": "Every merchant has watched a near-buyer hesitate over delivery, fit, or return risk.",
+    "sourceNotes": [
+      {
+        "title": "Google Search Central: AI features and your website",
+        "url": "https://developers.google.com/search/docs/appearance/ai-features",
+        "note": "Google emphasizes visible text, structured data matching the page, and standard SEO best practices for AI features."
+      },
+      {
+        "title": "Google Search Central: Product snippet structured data",
+        "url": "https://developers.google.com/search/docs/appearance/structured-data/product-snippet",
+        "note": "Google highlights product, offer, and merchant listing information as relevant ecommerce markup areas."
+      },
+      {
+        "title": "Google Search Central: SEO Starter Guide",
+        "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+        "note": "Google recommends readable, well-organized text with headings and sections that help users navigate pages."
+      }
+    ]
+  }
+}

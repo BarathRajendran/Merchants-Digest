@@ -1,0 +1,74 @@
+# Merchants Digest Visual System
+
+The goal is not to make "AI images."
+The goal is to make weekly editorial covers that feel grounded, recognizable, and useful to Shopify operators.
+
+## Principles
+
+- Prefer real merchant situations over abstract tech metaphors.
+- Avoid robots, holograms, neon dashboards, floating UI, and sci-fi lighting.
+- Make the scene understandable in under two seconds.
+- Use believable work surfaces, packaging, labels, laptops, notebooks, products, and shipping cues.
+- Keep the composition restrained. One clear idea per cover.
+- Let the cover feel like a business publication, not a startup landing page.
+- Do not let consecutive posts reuse the same exact visual structure.
+
+## Archetypes
+
+### `merchant-workspace`
+- Founder or operator desk
+- Laptop, notebook, product sample, coffee, sticky notes
+- Good for strategy, discovery, SEO, AI search, analytics, positioning
+
+### `product-decision`
+- Product page, review notes, sizing chart, comparison details
+- Good for trust, conversion, PDP clarity, buying hesitation
+
+### `policy-operations`
+- Packing table, shipping card, return label, measuring tape, checklist
+- Good for shipping, returns, fulfillment, sizing, support expectations
+
+### `catalog-structure`
+- Product cards, tags, filters, labels, SKU or variant organization
+- Good for merchandising, catalog quality, product data, search structure
+
+### `merchant-hands`
+- Close or medium shot of hands doing merchant work
+- Tape, garment, package, return sheet, packing motion
+- Good for operational topics that need a more human and tactile feel
+
+### `overhead-checklist`
+- Top-down flat lay with checklist, labels, packaging, phone, laptop
+- Good for clarity, trust, AI-readiness, decision support
+
+## Variation Rules
+
+- Rotate archetypes across consecutive posts where possible.
+- Vary the camera angle: overhead, side angle, close crop, medium scene.
+- Vary the storytelling device: checklist, workspace, packing moment, product review setup, policy cue.
+- Do not ship two covers in the same week if they read like the same shot with different props.
+
+## Layout Rules
+
+- Reserve the upper-left for the title block.
+- Keep one dominant scene area and one secondary support area.
+- Use muted neutrals with small green or blue accents.
+- Include depth through layers and shadow, not surreal effects.
+- Never let the title sit on a noisy background.
+
+## Image QA
+
+Reject an image if it includes:
+- plastic-looking people
+- too-perfect glossy lighting
+- impossible UI layouts
+- random floating objects
+- generic "AI" symbols
+- fake hands, warped objects, or unreadable detail
+
+Approve an image if:
+- the scene feels like a real merchant moment
+- the props support the article idea
+- the composition is clean at thumbnail size
+- the cover still looks credible without the headline
+- it is visually distinct from the most recent covers

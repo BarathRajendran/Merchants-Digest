@@ -1,0 +1,28 @@
+{
+  "templates": [
+    {
+      "id": "merchant-workspace",
+      "label": "Merchant Workspace",
+      "sceneFocus": "desk, laptop, notes, product sample",
+      "accent": "#1e5f4d"
+    },
+    {
+      "id": "product-decision",
+      "label": "Product Decision",
+      "sceneFocus": "product page, review notes, decision cues",
+      "accent": "#1f4d8f"
+    },
+    {
+      "id": "policy-operations",
+      "label": "Policy Operations",
+      "sceneFocus": "packing table, return label, shipping and sizing details",
+      "accent": "#8c5a1f"
+    },
+    {
+      "id": "catalog-structure",
+      "label": "Catalog Structure",
+      "sceneFocus": "product cards, tags, filters, organization",
+      "accent": "#5a4d8f"
+    }
+  ]
+}
