@@ -14,6 +14,8 @@ Critical style rule:
 - Match the existing Merchants Digest pattern: each post should have its own scene and composition.
 - Do not reuse one template composition across multiple articles.
 - Prefer scene-based photographic covers over vector-layout covers.
+- Derive the image from the article's central argument, not just from surface nouns in the title.
+- Avoid solving every brief with a merchant desk, laptop, clipboard, or flat-lay unless the article is specifically about operator workflow.
 
 Composition rules:
 - Pick one dominant idea only.
@@ -21,11 +23,19 @@ Composition rules:
 - Specify camera angle or viewpoint.
 - Use props that are directly tied to the article topic.
 - Keep text inside the image to a minimum or none.
+- Prefer a visual story device that matches the article thesis:
+  - contrast
+  - consequence
+  - comparison
+  - evaluation
+  - operational moment
+  - decision tension
 
 Variation rules:
 - Choose an archetype and scene that is materially different from the last recent covers when possible.
 - Vary camera angle, prop mix, and storytelling device across weeks.
 - Avoid defaulting every article to a desk-with-laptop shot.
+- If two prompts would produce the same composition with different props, reject the weaker one and rewrite it.
 
 Reject directions that include:
 - robots
@@ -35,6 +45,8 @@ Reject directions that include:
 - stock-photo smile scenes
 - unreadable fake interface text
 - overdesigned infographic layouts
+- generic founder-at-laptop scenes without article-specific tension
+- repeated packaging-desk scenes for unrelated topics
 
 Return JSON with exactly these keys:
 - archetype

@@ -12,6 +12,11 @@ The goal is to make weekly editorial covers that feel grounded, recognizable, an
 - Keep the composition restrained. One clear idea per cover.
 - Let the cover feel like a business publication, not a startup landing page.
 - Do not let consecutive posts reuse the same exact visual structure.
+- Start from the article's thesis, not the article's keywords.
+- If the article is about a contrast, show contrast.
+- If the article is about confusion, show confusion.
+- If the article is about trust, show proof or reassurance.
+- If the article is about catalog logic, show structure or choice architecture.
 
 ## Archetypes
 
@@ -41,12 +46,36 @@ The goal is to make weekly editorial covers that feel grounded, recognizable, an
 - Top-down flat lay with checklist, labels, packaging, phone, laptop
 - Good for clarity, trust, AI-readiness, decision support
 
+### `comparison-scene`
+- Before-and-after, side-by-side, or two-path composition
+- Good for doubt removal, traffic quality, feature overload, and weak-versus-strong decision framing
+
+### `single-product-focus`
+- One product hero plus the exact context needed to evaluate it
+- Good for premium feel, product context, PDP quality, and AOV topics
+
+### `forum-discovery`
+- Research or conversation-driven discovery scene
+- Good for Reddit, community validation, social proof, and buyer research behavior
+
+## Story Devices
+
+- `contrast`: one side weak, one side strong
+- `consequence`: show what happens when the wrong choice is made
+- `evaluation`: buyer or merchant actively judging options
+- `pathway`: show movement from confusion to clarity
+- `proof`: show evidence, validation, or reassurance
+- `structure`: show organization, grouping, and hierarchy
+- `friction`: show overload, clutter, or decision fatigue
+
 ## Variation Rules
 
 - Rotate archetypes across consecutive posts where possible.
 - Vary the camera angle: overhead, side angle, close crop, medium scene.
 - Vary the storytelling device: checklist, workspace, packing moment, product review setup, policy cue.
 - Do not ship two covers in the same week if they read like the same shot with different props.
+- Do not let more than one post in a short batch rely on the same visual engine.
+- If a post is conceptually different, the image must be compositionally different too.
 
 ## Layout Rules
 
@@ -72,3 +101,4 @@ Approve an image if:
 - the composition is clean at thumbnail size
 - the cover still looks credible without the headline
 - it is visually distinct from the most recent covers
+- the image communicates the article's argument, not just its topic category
