@@ -1,0 +1,77 @@
+{
+  "title": "The Quiet Cost of Inconsistent Product Naming on Shopify",
+  "slug": "quiet-cost-inconsistent-product-naming",
+  "description": "Inconsistent product naming weakens search, merchandising, and buyer clarity. Shopify merchants lose more from naming confusion than they usually realize.",
+  "excerpt": "Naming problems look small until they start damaging search results, collection clarity, and buyer confidence across the store.",
+  "publishDate": "2026-03-10",
+  "scheduledDate": "2026-03-10",
+  "readTimeMinutes": 8,
+  "heroImageAlt": "Merchandiser organizing product names and labels for a Shopify catalog",
+  "heroImagePath": "/images/Blogs/generated-quiet-cost-inconsistent-product-naming.png",
+  "lead": "Product naming sounds like a small catalog detail until it starts confusing search, weakening collections, and making the store harder to understand at a glance.",
+  "introParagraphs": [
+    "Many Shopify stores end up with naming systems that reflect internal habits instead of buyer language. A few products use brand-heavy titles, others use category-first naming, and some bury the real product type behind decorative phrasing.",
+    "That inconsistency creates friction everywhere. Search becomes weaker, filters become less intuitive, and buyers have to work harder to understand what belongs together.",
+    "Naming is not just an SEO field. It is one of the quiet systems that holds discovery and clarity together."
+  ],
+  "sections": [
+    {
+      "heading": "Naming tells buyers how the catalog is organized",
+      "paragraphs": [
+        "A good title helps a shopper understand what the product is before they even click. A messy title adds interpretation work that should never be necessary.",
+        "When titles follow different logic across similar products, the whole store starts feeling less intentional."
+      ],
+      "bullets": [
+        "What kind of product this is",
+        "What makes it different from nearby options",
+        "How it belongs to a broader product family",
+        "Whether the store feels clear or improvised"
+      ]
+    },
+    {
+      "heading": "Search quality often degrades before merchants notice why",
+      "paragraphs": [
+        "Internal search depends on stable product signals. When naming varies too much, obvious matches become harder to retrieve and compare cleanly.",
+        "The result is not always catastrophic failure. More often, it is a slow drop in relevance, confidence, and browsing ease."
+      ],
+      "callout": "A store can have good products and still feel harder to search because the naming system keeps changing underneath the buyer.",
+      "bullets": [
+        "Similar items stop appearing together cleanly",
+        "Filters feel less useful because titles do too much work",
+        "Collections become harder to scan",
+        "Search becomes more dependent on guesswork"
+      ]
+    },
+    {
+      "heading": "Naming consistency also improves merchandising decisions",
+      "paragraphs": [
+        "A consistent naming system makes it easier to decide what belongs in a collection, what should be recommended together, and how new products should be introduced.",
+        "That is why this is not just a copy cleanup project. It is a merchandising quality issue."
+      ],
+      "bullets": [
+        "Define one naming pattern for each major product family",
+        "Keep modifiers predictable",
+        "Use buyer language before internal shorthand",
+        "Avoid stuffing every detail into the title"
+      ]
+    },
+    {
+      "heading": "What to fix this week",
+      "paragraphs": [
+        "Choose one category with at least ten products. Line up the titles and ask whether they look like they belong to the same system.",
+        "If they do not, fix the pattern before you add more search tooling or merchandising automation. Cleaner naming usually improves multiple surfaces at once."
+      ],
+      "bullets": [
+        "Audit one category for title consistency",
+        "Write one standard naming pattern",
+        "Correct the most confusing outliers first",
+        "Check whether collections and filters read more clearly afterward"
+      ]
+    }
+  ],
+  "status": "published",
+  "imageArchetype": "structure",
+  "overlayKicker": "Names shape discovery",
+  "imagePrompt": "Photographic editorial cover showing physical catalog labels, grouped products, naming cards, and merchandising structure. No generic laptop desk. No readable text.",
+  "imageStyleNotes": "Show organization and grouping rather than software. The image should feel systemic and tactile."
+}

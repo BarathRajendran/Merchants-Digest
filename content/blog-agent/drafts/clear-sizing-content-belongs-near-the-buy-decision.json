@@ -1,0 +1,77 @@
+{
+  "title": "Clear Sizing Content Belongs Closer to the Buy Decision",
+  "slug": "clear-sizing-content-belongs-near-the-buy-decision",
+  "description": "Sizing information reduces hesitation only when buyers can find it quickly. Merchants lose sales when fit guidance stays too far from the product decision.",
+  "excerpt": "Sizing guidance works best when it sits near the moment of doubt, not buried in distant pages buyers have to hunt down.",
+  "publishDate": "2026-06-03",
+  "scheduledDate": "2026-06-03",
+  "readTimeMinutes": 8,
+  "heroImageAlt": "Sizing guidance and product fit cues placed near an ecommerce buying decision",
+  "heroImagePath": "/images/Blogs/generated-clear-sizing-content-belongs-near-the-buy-decision.png",
+  "lead": "Sizing content only reduces hesitation when the buyer can reach it at the exact moment fit becomes a concern.",
+  "introParagraphs": [
+    "Many stores technically have sizing guidance, but it lives too far from the product decision. That forces the buyer to leave the flow, guess, or postpone the purchase.",
+    "Sizing is one of the clearest examples of a trust problem hiding inside content placement. The issue is not always missing information. It is often information that shows up too late.",
+    "Merchants who move sizing guidance closer to the buying path usually reduce both hesitation and support strain."
+  ],
+  "sections": [
+    {
+      "heading": "Fit doubt appears close to the buy action",
+      "paragraphs": [
+        "The buyer often feels uncertain when they are already deep into the product page. That means fit support has to appear near the moment of decision, not far away in a separate policy maze.",
+        "If the store makes sizing harder to reach than it should, the customer starts carrying more risk alone."
+      ],
+      "bullets": [
+        "How does this run",
+        "What size should I choose",
+        "What if I sit between options",
+        "What happens if I still get it wrong"
+      ]
+    },
+    {
+      "heading": "A sizing page is helpful, but it is not enough on its own",
+      "paragraphs": [
+        "Dedicated sizing pages still matter, especially for depth. But relying on them alone forces buyers to break their decision flow too often.",
+        "The stronger setup pairs deeper sizing guidance with more immediate fit cues where the product is being evaluated."
+      ],
+      "callout": "Fit content works best when the buyer does not have to leave the decision to find it.",
+      "bullets": [
+        "Short fit notes on the PDP",
+        "Visible links to deeper sizing guidance",
+        "Plain-language expectation setting",
+        "Return clarity that reduces the cost of getting it wrong"
+      ]
+    },
+    {
+      "heading": "Sizing clarity improves more than conversion",
+      "paragraphs": [
+        "When fit guidance improves, the upside is broader than sales. Support gets fewer repetitive questions, returns become easier to manage, and the store feels more transparent.",
+        "That is why sizing content should be treated like a growth lever instead of a support-only document."
+      ],
+      "bullets": [
+        "Less hesitation before purchase",
+        "Lower support friction",
+        "Better expectation alignment",
+        "Cleaner post-purchase trust"
+      ]
+    },
+    {
+      "heading": "What to fix this week",
+      "paragraphs": [
+        "Review one product with frequent fit questions and ask whether the sizing guidance appears close enough to the buying moment to matter.",
+        "Then move one useful fit cue higher and make one deeper resource easier to reach."
+      ],
+      "bullets": [
+        "Add one plain-language fit note to the PDP",
+        "Link to deeper sizing guidance visibly",
+        "Align return messaging with fit reassurance",
+        "Use real support questions to sharpen the content"
+      ]
+    }
+  ],
+  "status": "published",
+  "imageArchetype": "proof",
+  "overlayKicker": "Fit confidence needs proximity",
+  "imagePrompt": "Photographic editorial cover showing sizing guidance, garment measurement cues, and buyer fit reassurance close to the product decision. No readable text.",
+  "imageStyleNotes": "Focus on confidence and proximity, not generic policy paperwork."
+}

@@ -1,0 +1,77 @@
+{
+  "title": "The PDP Elements Buyers Notice First Are Not Always the Ones Merchants Obsess Over",
+  "slug": "pdp-elements-buyers-notice-first",
+  "description": "Buyers scan product pages differently than merchants build them. Shopify stores improve conversion when they prioritize the elements buyers notice first.",
+  "excerpt": "Merchants often obsess over modules buyers barely process. The biggest PDP gains usually come from tightening the first signals people actually notice.",
+  "publishDate": "2026-05-05",
+  "scheduledDate": "2026-05-05",
+  "readTimeMinutes": 8,
+  "heroImageAlt": "Buyer scanning the key elements of a product page in priority order",
+  "heroImagePath": "/images/Blogs/generated-pdp-elements-buyers-notice-first.png",
+  "lead": "Merchants know too much about their own product pages. Buyers know far less, move faster, and notice a different set of signals first.",
+  "introParagraphs": [
+    "That mismatch creates a common problem. The store puts heavy effort into sections the buyer reaches late, while the first few seconds still leave the most important questions underexplained.",
+    "A product page wins when the first visible elements reduce friction quickly. They do not need to say everything. They need to say the right things first.",
+    "That is why the best PDP audits start with buyer attention, not internal assumptions."
+  ],
+  "sections": [
+    {
+      "heading": "Buyers notice clarity before detail",
+      "paragraphs": [
+        "In the first scan, the buyer is usually answering simple questions. What is this. Is it for someone like me. Does this store feel safe enough to keep evaluating.",
+        "If those signals are weak, deeper modules rarely get a fair chance."
+      ],
+      "bullets": [
+        "Product framing",
+        "Image usefulness",
+        "Price context",
+        "Basic trust and shipping cues"
+      ]
+    },
+    {
+      "heading": "Merchants often overinvest in lower-priority modules",
+      "paragraphs": [
+        "Brands spend time on detailed storytelling blocks, complex feature sections, and secondary modules while the top of the page still leaves too much interpretation work.",
+        "That is not because those sections are useless. It is because they cannot rescue a weak first impression."
+      ],
+      "callout": "The first screen does more conversion work than merchants usually admit.",
+      "bullets": [
+        "Weak headline positioning",
+        "Images that look good but answer little",
+        "Delayed reassurance",
+        "Variant and fit confusion too early in the journey"
+      ]
+    },
+    {
+      "heading": "The fastest fixes usually happen near the top of the page",
+      "paragraphs": [
+        "When merchants realign the first visible signals, conversion often improves without full redesigns. Buyers simply understand the product faster.",
+        "That usually means better prioritization, not more copy."
+      ],
+      "bullets": [
+        "Clarify the product in one strong line",
+        "Use more helpful hero images",
+        "Place one key trust cue earlier",
+        "Remove distracting elements before the main decision"
+      ]
+    },
+    {
+      "heading": "What to fix this week",
+      "paragraphs": [
+        "Look at one PDP for five seconds and write down the first things a buyer can actually learn from it. That exercise usually reveals whether the page is leading with what matters.",
+        "Then improve one first-screen signal before touching deeper sections."
+      ],
+      "bullets": [
+        "Audit first-screen clarity",
+        "Tighten product framing",
+        "Improve the decision value of hero images",
+        "Move one reassurance element higher"
+      ]
+    }
+  ],
+  "status": "published",
+  "imageArchetype": "evaluation",
+  "overlayKicker": "Attention has an order",
+  "imagePrompt": "Photographic editorial cover showing a shopper or merchant prioritizing the first signals on a product page. The image should communicate scan order and decision focus. No readable text.",
+  "imageStyleNotes": "The concept is attention hierarchy, not just a generic product page."
+}
