@@ -572,78 +572,10 @@
         font-size: 15px;
       }
 
-      .feature {
-        padding: 28px 6vw 36px;
-      }
-
-      .feature-grid {
-        display: grid;
-        grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1fr);
-        gap: 0;
-        max-width: 1100px;
-        margin: 0 auto;
-        background: #ffffff;
-        border-radius: 28px;
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-
-      .feature-media {
-        padding: 0;
-        background: #f1f1f1;
-      }
-
-      .feature-media img {
-        width: 100%;
-        height: 100%;
-        min-height: 320px;
-        object-fit: cover;
-      }
-
-      .feature-copy {
-        padding: 28px;
-        display: grid;
-        gap: 14px;
-        align-content: center;
-      }
-
-      .feature-pill {
-        width: fit-content;
-        padding: 6px 11px;
-        border-radius: 999px;
-        background: #f3f4f4;
-        color: rgba(17, 17, 20, 0.62);
-        font-size: 0.82rem;
-        font-weight: 600;
-      }
-
-      .feature-copy h2 {
-        font-size: clamp(2rem, 3vw, 3rem);
-        line-height: 1.05;
-        max-width: 12ch;
-      }
-
-      .feature-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        color: rgba(17, 17, 20, 0.62);
-      }
-
-      .feature-cta {
-        width: fit-content;
-        padding: 11px 16px;
-        border-radius: 14px;
-        background: var(--accent);
-        color: #ffffff;
-        font-weight: 600;
-      }
-
       .archive {
         max-width: 1100px;
         margin: 0 auto;
-        padding: 0 6vw 80px;
+        padding: 28px 6vw 80px;
         display: grid;
         gap: 26px;
       }
@@ -666,24 +598,24 @@
       .articles-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        gap: 20px;
       }
 
       .card {
         height: 100%;
         background: #ffffff;
         border-radius: var(--radius);
-        padding: 14px;
+        padding: 10px 10px 14px;
         box-shadow: none;
         border: 1px solid rgba(17, 17, 20, 0.05);
         display: grid;
-        gap: 12px;
+        gap: 14px;
       }
 
       .thumb {
         aspect-ratio: 4 / 3;
         min-height: 0;
-        border-radius: 18px;
+        border-radius: 14px;
         overflow: hidden;
         background: #eceff1;
       }
@@ -696,8 +628,9 @@
 
       .card-copy {
         display: grid;
-        gap: 12px;
+        gap: 10px;
         align-content: start;
+        padding: 0 2px;
       }
 
       .card-meta {
@@ -705,16 +638,13 @@
         flex-wrap: wrap;
         gap: 8px;
         color: rgba(17, 17, 20, 0.58);
-        font-size: 0.94rem;
+        font-size: 0.92rem;
       }
 
       .card h3 {
-        font-size: 1.2rem;
-        line-height: 1.14;
-      }
-
-      .card-cta {
-        color: var(--accent);
+        font-size: 1.08rem;
+        line-height: 1.28;
+        font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 600;
       }
 
@@ -728,17 +658,12 @@
       }
 
       @media (max-width: 960px) {
-        .feature-grid {
-          grid-template-columns: 1fr;
-        }
-
         .articles-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
       @media (max-width: 720px) {
-        .feature-copy,
         .card {
           padding: 18px;
         }
@@ -763,32 +688,28 @@
       </div>
     </nav>
 
-    <section class="feature">
-      <div class="feature-grid">
-        <div class="feature-media">
-          <img src="/images/Blogs/generated-policy-pages-growth-pages.png" alt="Shipping, returns, and sizing policy pages as growth assets" />
-        </div>
-        <div class="feature-copy">
-          <span class="feature-pill">Featured</span>
-          <h2>Why Your Shipping, Returns, and Sizing Pages Are Now Growth Pages</h2>
-          <p>Late-stage buyers and AI answer engines both look for risk-reducing details. Clear policy pages strengthen trust and make your store easier to summarize.</p>
-          <div class="feature-meta">
-            <span>June 18, 2026</span>
-            <span>·</span>
-            <span>9 min read</span>
-          </div>
-          <a class="feature-cta" href="/blog/policy-pages-growth-pages">Read article →</a>
-        </div>
-      </div>
-    </section>
-
     <section class="archive">
       <section class="archive-group">
         <div class="archive-group-head">
           <h2>Jun 2026</h2>
-          <span>3 articles</span>
+          <span>4 articles</span>
         </div>
         <div class="articles-grid">
+          <a class="card-link" href="/blog/policy-pages-growth-pages">
+            <article class="card">
+              <div class="thumb">
+                <img src="/images/Blogs/generated-policy-pages-growth-pages.png" alt="Shipping, returns, and sizing policy pages as growth assets" />
+              </div>
+              <div class="card-copy">
+                <div class="card-meta">
+                  <span>June 18, 2026</span>
+                  <span>·</span>
+                  <span>9 min read</span>
+                </div>
+                <h3>Why Your Shipping, Returns, and Sizing Pages Are Now Growth Pages</h3>
+              </div>
+            </article>
+          </a>
           <a class="card-link" href="/blog/ai-shopping-agent-ready-store">
             <article class="card">
               <div class="thumb">
@@ -801,8 +722,6 @@
                   <span>10 min read</span>
                 </div>
                 <h3>What AI Shopping Agents Need From Your Shopify Store Before They Recommend You</h3>
-                <p>As AI shopping flows expand, stores that communicate product facts, policies, and trust clearly are easier for agents to surface and easier for buyers to trust.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -818,8 +737,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>The Stores That Convert Better Usually Answer Questions Earlier</h3>
-                <p>Buyers convert more easily when stores answer the right questions before hesitation has time to build. Timing matters more than merchants think.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -835,8 +752,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Clear Sizing Content Belongs Closer to the Buy Decision</h3>
-                <p>Sizing guidance works best when it sits near the moment of doubt, not buried in distant pages buyers have to hunt down.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -860,8 +775,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Search Visibility Improves When Product Data Stops Being an Afterthought</h3>
-                <p>Product data affects discovery more than many merchants expect. Cleaner titles, attributes, and structure support both search visibility and buyer confidence.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -877,8 +790,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Your Store Can Feel More Trustworthy Without Looking More Corporate</h3>
-                <p>Many merchants confuse trust with corporate polish. Buyers usually respond more to clear signals, calm structure, and consistent execution.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -894,8 +805,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>How Better Product Grouping Improves Both Conversion and Discovery</h3>
-                <p>Grouping is not just catalog housekeeping. Better product grouping makes the store easier to browse, easier to trust, and easier to discover.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -911,8 +820,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>The PDP Elements Buyers Notice First Are Not Always the Ones Merchants Obsess Over</h3>
-                <p>Merchants often obsess over modules buyers barely process. The biggest PDP gains usually come from tightening the first signals people actually notice.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -936,8 +843,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>How to Make Bundle Offers Feel Helpful Instead of Pushy</h3>
-                <p>The best bundles feel like useful guidance, not forced upsells. Merchants win when the offer supports the product decision instead of interrupting it.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -953,8 +858,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Shopify Theme Decisions Hurt When Merchants Optimize for Looks Before Clarity</h3>
-                <p>A strong-looking storefront can still be hard to buy from. Theme decisions get expensive when merchants prioritize style before clarity and buyer confidence.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -970,8 +873,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Why Shopify Merchants Should Treat FAQ Content as Revenue Content</h3>
-                <p>Most Shopify FAQs are underused. Strong FAQ content removes buying friction, supports discovery, and helps merchants answer hesitation before support gets involved.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -987,8 +888,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Product Reviews Help Less When Your Product Page Doesn't Explain the Basics</h3>
-                <p>Reviews are strongest when they reinforce clarity. When the product page skips basic explanation, reviews end up doing work they were never built to do.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1012,8 +911,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>AI-Friendly Stores Are Usually Just Better-Structured Stores</h3>
-                <p>The stores that perform better in AI-driven discovery usually are not using secret tactics. They are easier to understand, compare, and summarize.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1029,8 +926,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Audit Your Mobile Product Pages Before You Buy More Traffic</h3>
-                <p>Traffic does not help when the mobile product page still hides clarity, trust, and decision support behind weak layout choices.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1046,8 +941,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>The Quiet Cost of Inconsistent Product Naming on Shopify</h3>
-                <p>Naming problems look small until they start damaging search results, collection clarity, and buyer confidence across the store.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1063,8 +956,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Why Returning Visitors Still Leave Without Buying on Shopify</h3>
-                <p>A returning visitor is usually trying to finish a decision, not start one. Stores lose these buyers when they leave key questions unresolved.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1088,8 +979,6 @@
                   <span>9 min read</span>
                 </div>
                 <h3>Shopify Search Gets Better When Your Catalog Stops Fighting It</h3>
-                <p>When Shopify search feels weak, the real issue is often catalog structure. Better naming and cleaner product logic can improve discovery faster than more tooling.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1105,8 +994,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>The Fastest Way to Improve Conversion Is Usually Better Product Context</h3>
-                <p>Buyers hesitate when stores describe products without explaining fit, use case, and trade-offs. Better context usually beats more persuasion.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1122,8 +1009,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Your Best-Selling Product Page Is Teaching You What the Rest of Your Store Lacks</h3>
-                <p>The gap between your best product page and the rest of your store usually reveals missing clarity, better sequencing, and weaker decision support.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1139,8 +1024,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Why Collection Pages Matter More Than Most Shopify Merchants Think</h3>
-                <p>Most merchants treat collection pages like category shelves. Strong stores use them to reduce friction, sharpen discovery, and move buyers closer to the right product.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1156,8 +1039,6 @@
                   <span>10 min read</span>
                 </div>
                 <h3>Reddit Is Becoming a Buyer Discovery Channel (And Most Merchants Are Missing It)</h3>
-                <p>February highlights a channel shift: buyers are using Reddit to evaluate products before purchase, and merchants can learn to show up credibly.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1181,8 +1062,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>If Your Shopify Store Needs Explaining, It's Already Losing Sales</h3>
-                <p>A practical breakdown of why confusing stores lose sales even when they have traffic, and what merchants should simplify first.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1198,8 +1077,6 @@
                   <span>8 min read</span>
                 </div>
                 <h3>Trust Is a System, Not a Section on Your Shopify Store</h3>
-                <p>Trust does not live in badges or reviews alone. This piece explains how strong Shopify stores reduce doubt across the whole buying journey.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1215,8 +1092,6 @@
                   <span>10 min read</span>
                 </div>
                 <h3>How to Make Your Shopify Store and Products Visible in AI Search</h3>
-                <p>AI answers are replacing blue links. Merchants who publish clearer, structured content get referenced first and convert higher-intent buyers.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1232,8 +1107,6 @@
                   <span>9 min read</span>
                 </div>
                 <h3>Stop Adding Features to Your Product Page. Start Removing Buyer Doubts</h3>
-                <p>Most conversion problems come from unresolved hesitation, not missing features. This article shows how to reduce doubt where buyers feel it.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1249,8 +1122,6 @@
                   <span>10 min read</span>
                 </div>
                 <h3>How to Increase Average Order Value on Shopify Without Relying on Discounts</h3>
-                <p>AOV grows when the buying experience creates relevance, not just bigger discounts. This piece breaks down the levers that actually help.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1266,8 +1137,6 @@
                   <span>9 min read</span>
                 </div>
                 <h3>Why Some Shopify Stores Feel Premium Without Looking Fancy</h3>
-                <p>Premium is often a byproduct of coherence, not decoration. This article explains the quiet signals that make stores feel worth more.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1283,8 +1152,6 @@
                   <span>9 min read</span>
                 </div>
                 <h3>Shopify App Overload: How Too Many Tools Hurt Performance, Conversion, and Profit</h3>
-                <p>More apps do not automatically create more growth. This article shows where tool sprawl quietly erodes speed, trust, and margin.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1300,8 +1167,6 @@
                   <span>9 min read</span>
                 </div>
                 <h3>Not All Traffic Is Equal: How to Attract Buyers, Not Just Visitors, to Your Shopify Store</h3>
-                <p>Traffic is only useful when the right people arrive with the right expectations. This article explains how to attract buyers, not just clicks.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>
@@ -1317,8 +1182,6 @@
                   <span>9 min read</span>
                 </div>
                 <h3>You're Getting Traffic - So Why Is Nobody Buying?</h3>
-                <p>When traffic is present but sales lag, the problem is usually friction, mismatch, or missing reassurance. This piece breaks down the pattern.</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>

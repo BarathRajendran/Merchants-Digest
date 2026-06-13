@@ -1068,9 +1068,7 @@ function renderArticlesPage(posts) {
     return "<!DOCTYPE html><html><body><p>No published posts yet.</p></body></html>";
   }
 
-  const featured = posts.find((post) => post.featured) || posts[0];
-  const rest = posts.filter((post) => post.slug !== featured.slug);
-  const archiveGroups = groupPostsByMonth(rest);
+  const archiveGroups = groupPostsByMonth(posts);
   const graph = {
     "@context": "https://schema.org",
     "@graph": [
@@ -1141,8 +1139,6 @@ ${groupedPosts
                   <span>${post.readTimeMinutes} min read</span>
                 </div>
                 <h3>${escapeHtml(post.title)}</h3>
-                <p>${escapeHtml(post.excerpt)}</p>
-                <div class="card-cta">Read article →</div>
               </div>
             </article>
           </a>`
@@ -1232,78 +1228,10 @@ ${groupedPosts
         font-size: 15px;
       }
 
-      .feature {
-        padding: 28px 6vw 36px;
-      }
-
-      .feature-grid {
-        display: grid;
-        grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1fr);
-        gap: 0;
-        max-width: 1100px;
-        margin: 0 auto;
-        background: #ffffff;
-        border-radius: 28px;
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-
-      .feature-media {
-        padding: 0;
-        background: #f1f1f1;
-      }
-
-      .feature-media img {
-        width: 100%;
-        height: 100%;
-        min-height: 320px;
-        object-fit: cover;
-      }
-
-      .feature-copy {
-        padding: 28px;
-        display: grid;
-        gap: 14px;
-        align-content: center;
-      }
-
-      .feature-pill {
-        width: fit-content;
-        padding: 6px 11px;
-        border-radius: 999px;
-        background: #f3f4f4;
-        color: rgba(17, 17, 20, 0.62);
-        font-size: 0.82rem;
-        font-weight: 600;
-      }
-
-      .feature-copy h2 {
-        font-size: clamp(2rem, 3vw, 3rem);
-        line-height: 1.05;
-        max-width: 12ch;
-      }
-
-      .feature-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        color: rgba(17, 17, 20, 0.62);
-      }
-
-      .feature-cta {
-        width: fit-content;
-        padding: 11px 16px;
-        border-radius: 14px;
-        background: var(--accent);
-        color: #ffffff;
-        font-weight: 600;
-      }
-
       .archive {
         max-width: 1100px;
         margin: 0 auto;
-        padding: 0 6vw 80px;
+        padding: 28px 6vw 80px;
         display: grid;
         gap: 26px;
       }
@@ -1326,24 +1254,24 @@ ${groupedPosts
       .articles-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        gap: 20px;
       }
 
       .card {
         height: 100%;
         background: #ffffff;
         border-radius: var(--radius);
-        padding: 14px;
+        padding: 10px 10px 14px;
         box-shadow: none;
         border: 1px solid rgba(17, 17, 20, 0.05);
         display: grid;
-        gap: 12px;
+        gap: 14px;
       }
 
       .thumb {
         aspect-ratio: 4 / 3;
         min-height: 0;
-        border-radius: 18px;
+        border-radius: 14px;
         overflow: hidden;
         background: #eceff1;
       }
@@ -1356,8 +1284,9 @@ ${groupedPosts
 
       .card-copy {
         display: grid;
-        gap: 12px;
+        gap: 10px;
         align-content: start;
+        padding: 0 2px;
       }
 
       .card-meta {
@@ -1365,16 +1294,13 @@ ${groupedPosts
         flex-wrap: wrap;
         gap: 8px;
         color: rgba(17, 17, 20, 0.58);
-        font-size: 0.94rem;
+        font-size: 0.92rem;
       }
 
       .card h3 {
-        font-size: 1.2rem;
-        line-height: 1.14;
-      }
-
-      .card-cta {
-        color: var(--accent);
+        font-size: 1.08rem;
+        line-height: 1.28;
+        font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 600;
       }
 
@@ -1388,17 +1314,12 @@ ${groupedPosts
       }
 
       @media (max-width: 960px) {
-        .feature-grid {
-          grid-template-columns: 1fr;
-        }
-
         .articles-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
       @media (max-width: 720px) {
-        .feature-copy,
         .card {
           padding: 18px;
         }
@@ -1422,25 +1343,6 @@ ${groupedPosts
         <a href="/newsletter">Newsletter</a>
       </div>
     </nav>
-
-    <section class="feature">
-      <div class="feature-grid">
-        <div class="feature-media">
-          <img src="${escapeHtmlAttr(featured.heroImagePath)}" alt="${escapeHtmlAttr(featured.heroImageAlt)}" />
-        </div>
-        <div class="feature-copy">
-          <span class="feature-pill">Featured</span>
-          <h2>${escapeHtml(featured.title)}</h2>
-          <p>${escapeHtml(featured.excerpt)}</p>
-          <div class="feature-meta">
-            <span>${formatFullDate(featured.publishDate)}</span>
-            <span>·</span>
-            <span>${featured.readTimeMinutes} min read</span>
-          </div>
-          <a class="feature-cta" href="/blog/${featured.slug}">Read article →</a>
-        </div>
-      </div>
-    </section>
 
     <section class="archive">
 ${archiveHtml}
