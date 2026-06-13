@@ -1232,27 +1232,8 @@ ${groupedPosts
         font-size: 15px;
       }
 
-      .page-intro {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 40px 6vw 20px;
-        display: grid;
-        gap: 10px;
-      }
-
-      .page-intro h1 {
-        font-size: clamp(2.2rem, 4vw, 3.6rem);
-        line-height: 1.02;
-        max-width: 11ch;
-      }
-
-      .page-intro p {
-        max-width: 60ch;
-        font-size: 1.02rem;
-      }
-
       .feature {
-        padding: 8px 6vw 36px;
+        padding: 28px 6vw 36px;
       }
 
       .feature-grid {
@@ -1441,11 +1422,6 @@ ${groupedPosts
         <a href="/newsletter">Newsletter</a>
       </div>
     </nav>
-
-    <section class="page-intro">
-      <h1>Articles for Shopify merchants who run the store.</h1>
-      <p>Practical reads on conversion, trust, merchandising, and discoverability.</p>
-    </section>
 
     <section class="feature">
       <div class="feature-grid">
