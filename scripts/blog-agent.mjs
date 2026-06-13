@@ -1327,19 +1327,6 @@ ${groupedPosts
         gap: 26px;
       }
 
-      .archive-head {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        align-items: center;
-        flex-wrap: wrap;
-        padding-top: 8px;
-      }
-
-      .archive-head p {
-        max-width: 56ch;
-      }
-
       .archive-group {
         display: grid;
         gap: 14px;
@@ -1480,12 +1467,6 @@ ${groupedPosts
     </section>
 
     <section class="archive">
-      <div class="archive-head">
-        <div>
-          <h2>Archive</h2>
-          <p>${posts.length} published articles across conversion, trust, merchandising, and discoverability.</p>
-        </div>
-      </div>
 ${archiveHtml}
     </section>
 
