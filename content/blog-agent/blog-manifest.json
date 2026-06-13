@@ -12,7 +12,7 @@
       "heroImageAlt": "Shipping, returns, and sizing policy pages as growth assets",
       "imagePrompt": "Photographic editorial cover showing a merchant packing an order at a side-angle workstation with folded garments, tape measure, clipboard forms, shipping label, boxes, and a laptop nearby. Warm tactile materials, afternoon light, human ecommerce operations, shallow depth of field, headline space on one side, no template graphics, no surreal effects.",
       "imageStyleNotes": "Match the site's existing covers by using a distinct scene and camera angle. This one should feel warmer, more human, and more operational than the AI-trust article.",
-      "featured": false,
+      "featured": true,
       "status": "published"
     },
     {
@@ -357,7 +357,7 @@
       "heroImageAlt": "Visible in AI search",
       "imagePrompt": "",
       "imageStyleNotes": "",
-      "featured": true,
+      "featured": false,
       "status": "published"
     },
     {
