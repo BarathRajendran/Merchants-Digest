@@ -72,6 +72,11 @@
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
+        --paper-soft: #f6f4ee;
+        --line: rgba(17, 17, 20, 0.08);
+        --accent: #123f35;
+        --accent-soft: #e8f0ed;
+        --shadow: 0 18px 40px rgba(17, 17, 20, 0.08);
       }
 
       * {
@@ -82,7 +87,9 @@
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(243, 235, 218, 0.85), transparent 32%),
+          linear-gradient(180deg, #fcfbf7 0%, #ffffff 18%);
       }
 
       h1,
@@ -110,7 +117,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: #ffffff;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .brand-logo {
@@ -138,11 +146,34 @@
       }
 
       .article {
-        padding: 60px 6vw 80px;
+        padding: 36px 6vw 90px;
         display: grid;
-        gap: 26px;
-        max-width: 920px;
+        gap: 32px;
+        max-width: 1220px;
         margin: 0 auto;
+      }
+
+      .article-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .article-copy,
+      .article-image-wrap,
+      .article-rail,
+      .article-body {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .article-copy {
+        border-radius: 30px;
+        padding: 34px;
+        display: grid;
+        gap: 18px;
       }
 
       .eyebrow {
@@ -152,16 +183,123 @@
         color: rgba(17, 17, 20, 0.5);
       }
 
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: rgba(17, 17, 20, 0.65);
+        font-size: 0.95rem;
+      }
+
+      .meta-pill {
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .title-wrap {
+        display: grid;
+        gap: 14px;
+      }
+
+      .title-wrap h1 {
+        font-size: clamp(2.4rem, 4.4vw, 4.3rem);
+        line-height: 1.02;
+        max-width: 12ch;
+      }
+
       .lead {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.75;
+      }
+
+      .article-image-wrap {
+        border-radius: 30px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fcf8ef 0%, #ffffff 100%);
       }
 
       .article-image {
         width: 100%;
-        height: auto;
-        border-radius: 18px;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
         border: 1px solid rgba(17, 17, 20, 0.1);
-        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.08);
+        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.06);
+      }
+
+      .article-layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .article-rail {
+        position: sticky;
+        top: 96px;
+        border-radius: 24px;
+        padding: 24px 22px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .rail-kicker {
+        font-size: 0.84rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(17, 17, 20, 0.45);
+      }
+
+      .rail-block {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rail-label {
+        font-size: 0.9rem;
+        color: rgba(17, 17, 20, 0.5);
+      }
+
+      .rail-value {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .rail-toc {
+        display: grid;
+        gap: 10px;
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .rail-toc a {
+        color: var(--ink-muted);
+      }
+
+      .back-link {
+        width: fit-content;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .article-body {
+        border-radius: 28px;
+        padding: 32px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .body-intro {
+        display: grid;
+        gap: 16px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
       }
 
       .callout {
@@ -190,6 +328,15 @@
         gap: 12px;
       }
 
+      .section h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+
+      .section + .section {
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 17, 20, 0.06);
+      }
+
       .footer {
         padding: 30px 6vw 50px;
         border-top: 1px solid rgba(17, 17, 20, 0.08);
@@ -206,6 +353,31 @@
 
       .footer a:hover {
         text-decoration: underline;
+      }
+
+      @media (max-width: 1040px) {
+        .article-hero,
+        .article-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .article-rail {
+          position: static;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .article-copy,
+        .article-image-wrap,
+        .article-body,
+        .article-rail {
+          padding: 22px;
+          border-radius: 24px;
+        }
+
+        .article-image {
+          min-height: 280px;
+        }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -224,15 +396,58 @@
     </nav>
 
     <article class="article">
-      <div class="eyebrow">Merchants Digest · Blog</div>
-      <h1>Why Your Shipping, Returns, and Sizing Pages Are Now Growth Pages</h1>
-      <img class="article-image" src="/images/Blogs/generated-policy-pages-growth-pages.png" alt="Shipping, returns, and sizing policy pages as growth assets" />
-      <p class="lead">Most merchants still treat shipping, returns, and sizing pages like legal cleanup. Buyers do not. They use them to decide whether the store feels safe enough to purchase from.</p>
-      <p>That matters more now because buyers are not the only ones scanning these pages. Search systems, answer engines, and shopping assistants all benefit when risk-related information is clear, visible, and easy to connect back to the product.</p>
+      <section class="article-hero">
+        <div class="article-copy">
+          <div class="eyebrow">Merchants Digest · Blog</div>
+          <div class="article-meta">
+            <span class="meta-pill">Shopify operators</span>
+            <span>June 18, 2026</span>
+            <span>·</span>
+            <span>9 min read</span>
+          </div>
+          <div class="title-wrap">
+            <h1>Why Your Shipping, Returns, and Sizing Pages Are Now Growth Pages</h1>
+            <p class="lead">Most merchants still treat shipping, returns, and sizing pages like legal cleanup. Buyers do not. They use them to decide whether the store feels safe enough to purchase from.</p>
+          </div>
+        </div>
+        <div class="article-image-wrap">
+          <img class="article-image" src="/images/Blogs/generated-policy-pages-growth-pages.png" alt="Shipping, returns, and sizing policy pages as growth assets" />
+        </div>
+      </section>
+
+      <section class="article-layout">
+        <aside class="article-rail">
+          <a class="back-link" href="/blogs">← Back to blogs</a>
+          <div class="rail-block">
+            <div class="rail-kicker">Article brief</div>
+            <div class="rail-label">Published</div>
+            <div class="rail-value">June 18, 2026</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">Reading time</div>
+            <div class="rail-value">9 minutes</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">In this article</div>
+            <ol class="rail-toc">
+<li><a href="#policy-pages-are-where-late-stage-hesitation-becomes-visible">Policy pages are where late-stage hesitation becomes visible</a></li>
+<li><a href="#ai-driven-discovery-makes-vague-policy-pages-more-expensive">AI-driven discovery makes vague policy pages more expensive</a></li>
+<li><a href="#the-strongest-policy-pages-answer-operational-questions-in-plain-language">The strongest policy pages answer operational questions in plain language</a></li>
+<li><a href="#consistency-matters-more-than-page-count">Consistency matters more than page count</a></li>
+<li><a href="#these-pages-can-improve-conversion-without-changing-your-offer">These pages can improve conversion without changing your offer</a></li>
+<li><a href="#what-to-fix-before-your-next-campaign">What to fix before your next campaign</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <div class="article-body">
+          <div class="body-intro">
+            <div class="eyebrow">What this is really about</div>
+            <p>That matters more now because buyers are not the only ones scanning these pages. Search systems, answer engines, and shopping assistants all benefit when risk-related information is clear, visible, and easy to connect back to the product.</p>
       <p>If your policy pages are thin, generic, or inconsistent with the rest of your store, they do more than weaken trust. They reduce how confidently your store can be summarized and recommended.</p>
       <p>The merchants who understand this stop treating policy pages like footnotes. They treat them like part of the selling system.</p>
-
-      <div class="section">
+          </div>
+      <section class="section" id="policy-pages-are-where-late-stage-hesitation-becomes-visible">
         <h2>Policy pages are where late-stage hesitation becomes visible</h2>
         <p>A buyer does not usually open your return or sizing page out of curiosity. They open it when they are close to buying and want reassurance.</p>
         <p>That means these pages sit closer to revenue than most merchants think. They do not just answer operational questions. They remove the friction that keeps a product from feeling safe.</p>
@@ -242,9 +457,9 @@
           <li>How hard is it to get money back</li>
           <li>Is this merchant telling the whole story</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="ai-driven-discovery-makes-vague-policy-pages-more-expensive">
         <h2>AI-driven discovery makes vague policy pages more expensive</h2>
         <div class="callout">If your product page promises confidence but your policy pages create uncertainty, the store becomes harder to trust and harder to summarize.</div>
         <p>Search experiences increasingly summarize merchants before a click happens. When a system tries to understand your store, policy pages help explain the practical side of the buying experience.</p>
@@ -254,9 +469,9 @@
           <li>Clear return windows are better than soft language</li>
           <li>Real sizing instructions are better than broad reassurance</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="the-strongest-policy-pages-answer-operational-questions-in-plain-language">
         <h2>The strongest policy pages answer operational questions in plain language</h2>
         <p>Good policy pages do not sound like they were written by a lawyer trying to disappear. They sound like a smart operator anticipating buyer doubt.</p>
         <p>That tone matters because buyers are looking for direct answers, not polished vagueness.</p>
@@ -268,9 +483,9 @@
           <li>Sizing method, measurement guidance, and edge cases</li>
           <li>How to contact a human when something goes wrong</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="consistency-matters-more-than-page-count">
         <h2>Consistency matters more than page count</h2>
         <p>Many stores already have the right information somewhere. The problem is that it is split across FAQs, footers, support replies, and product tabs that do not fully agree.</p>
         <p>That inconsistency hurts both buyers and machines. The safer approach is not creating more pages. It is making the important answers match everywhere they appear.</p>
@@ -280,9 +495,9 @@
           <li>Return messaging in email should match the published policy</li>
           <li>Structured data should reflect what buyers can actually read on the page</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="these-pages-can-improve-conversion-without-changing-your-offer">
         <h2>These pages can improve conversion without changing your offer</h2>
         <p>Merchants often chase conversion gains through discounts, bundles, and redesigns before fixing the pages that answer risk. That order is backwards.</p>
         <p>When a buyer understands delivery timing, fit, and returns clearly, the store feels easier to commit to. That can lift performance without any change to product, price, or traffic.</p>
@@ -292,9 +507,9 @@
           <li>Lower support volume from repeated pre-purchase questions</li>
           <li>Clearer signals for search and answer systems</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="what-to-fix-before-your-next-campaign">
         <h2>What to fix before your next campaign</h2>
         <p>Pick the product category that creates the most hesitation. Then review the policy path around it. Not the legal wording alone, but the practical buying path.</p>
         <p>A strong store does not wait for the buyer to hunt for reassurance. It puts the risk answers where they can actually reduce fear. That is why policy pages are now growth pages.</p>
@@ -304,7 +519,9 @@
           <li>Remove contradictions across policy, product, and support copy</li>
           <li>Bring sizing, shipping, and returns closer to the buy decision</li>
         </ul>
-      </div>
+      </section>
+        </div>
+      </section>
     </article>
     <footer class="footer">
       <small>&copy; 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>

@@ -72,6 +72,11 @@
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
+        --paper-soft: #f6f4ee;
+        --line: rgba(17, 17, 20, 0.08);
+        --accent: #123f35;
+        --accent-soft: #e8f0ed;
+        --shadow: 0 18px 40px rgba(17, 17, 20, 0.08);
       }
 
       * {
@@ -82,7 +87,9 @@
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(243, 235, 218, 0.85), transparent 32%),
+          linear-gradient(180deg, #fcfbf7 0%, #ffffff 18%);
       }
 
       h1,
@@ -110,7 +117,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: #ffffff;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .brand-logo {
@@ -138,11 +146,34 @@
       }
 
       .article {
-        padding: 60px 6vw 80px;
+        padding: 36px 6vw 90px;
         display: grid;
-        gap: 26px;
-        max-width: 920px;
+        gap: 32px;
+        max-width: 1220px;
         margin: 0 auto;
+      }
+
+      .article-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .article-copy,
+      .article-image-wrap,
+      .article-rail,
+      .article-body {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .article-copy {
+        border-radius: 30px;
+        padding: 34px;
+        display: grid;
+        gap: 18px;
       }
 
       .eyebrow {
@@ -152,16 +183,123 @@
         color: rgba(17, 17, 20, 0.5);
       }
 
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: rgba(17, 17, 20, 0.65);
+        font-size: 0.95rem;
+      }
+
+      .meta-pill {
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .title-wrap {
+        display: grid;
+        gap: 14px;
+      }
+
+      .title-wrap h1 {
+        font-size: clamp(2.4rem, 4.4vw, 4.3rem);
+        line-height: 1.02;
+        max-width: 12ch;
+      }
+
       .lead {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.75;
+      }
+
+      .article-image-wrap {
+        border-radius: 30px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fcf8ef 0%, #ffffff 100%);
       }
 
       .article-image {
         width: 100%;
-        height: auto;
-        border-radius: 18px;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
         border: 1px solid rgba(17, 17, 20, 0.1);
-        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.08);
+        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.06);
+      }
+
+      .article-layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .article-rail {
+        position: sticky;
+        top: 96px;
+        border-radius: 24px;
+        padding: 24px 22px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .rail-kicker {
+        font-size: 0.84rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(17, 17, 20, 0.45);
+      }
+
+      .rail-block {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rail-label {
+        font-size: 0.9rem;
+        color: rgba(17, 17, 20, 0.5);
+      }
+
+      .rail-value {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .rail-toc {
+        display: grid;
+        gap: 10px;
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .rail-toc a {
+        color: var(--ink-muted);
+      }
+
+      .back-link {
+        width: fit-content;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .article-body {
+        border-radius: 28px;
+        padding: 32px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .body-intro {
+        display: grid;
+        gap: 16px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
       }
 
       .callout {
@@ -190,6 +328,15 @@
         gap: 12px;
       }
 
+      .section h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+
+      .section + .section {
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 17, 20, 0.06);
+      }
+
       .footer {
         padding: 30px 6vw 50px;
         border-top: 1px solid rgba(17, 17, 20, 0.08);
@@ -206,6 +353,31 @@
 
       .footer a:hover {
         text-decoration: underline;
+      }
+
+      @media (max-width: 1040px) {
+        .article-hero,
+        .article-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .article-rail {
+          position: static;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .article-copy,
+        .article-image-wrap,
+        .article-body,
+        .article-rail {
+          padding: 22px;
+          border-radius: 24px;
+        }
+
+        .article-image {
+          min-height: 280px;
+        }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -224,15 +396,56 @@
     </nav>
 
     <article class="article">
-      <div class="eyebrow">Merchants Digest · Blog</div>
-      <h1>The Stores That Convert Better Usually Answer Questions Earlier</h1>
-      <img class="article-image" src="/images/Blogs/generated-stores-that-convert-better-answer-questions-earlier.png" alt="Storefront decision path where buyer questions are resolved earlier" />
-      <p class="lead">A lot of conversion improvement comes from one simple shift: answering the right buyer questions earlier than the store does today.</p>
-      <p>Merchants often assume the issue is not enough information. More often, the problem is timing. The answer exists, but it appears too late to reduce the hesitation that matters.</p>
+      <section class="article-hero">
+        <div class="article-copy">
+          <div class="eyebrow">Merchants Digest · Blog</div>
+          <div class="article-meta">
+            <span class="meta-pill">Shopify operators</span>
+            <span>June 10, 2026</span>
+            <span>·</span>
+            <span>8 min read</span>
+          </div>
+          <div class="title-wrap">
+            <h1>The Stores That Convert Better Usually Answer Questions Earlier</h1>
+            <p class="lead">A lot of conversion improvement comes from one simple shift: answering the right buyer questions earlier than the store does today.</p>
+          </div>
+        </div>
+        <div class="article-image-wrap">
+          <img class="article-image" src="/images/Blogs/generated-stores-that-convert-better-answer-questions-earlier.png" alt="Storefront decision path where buyer questions are resolved earlier" />
+        </div>
+      </section>
+
+      <section class="article-layout">
+        <aside class="article-rail">
+          <a class="back-link" href="/blogs">← Back to blogs</a>
+          <div class="rail-block">
+            <div class="rail-kicker">Article brief</div>
+            <div class="rail-label">Published</div>
+            <div class="rail-value">June 10, 2026</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">Reading time</div>
+            <div class="rail-value">8 minutes</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">In this article</div>
+            <ol class="rail-toc">
+<li><a href="#timing-is-part-of-clarity">Timing is part of clarity</a></li>
+<li><a href="#delayed-reassurance-creates-unnecessary-friction">Delayed reassurance creates unnecessary friction</a></li>
+<li><a href="#the-fix-is-usually-sequencing-not-volume">The fix is usually sequencing, not volume</a></li>
+<li><a href="#what-to-fix-this-week">What to fix this week</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <div class="article-body">
+          <div class="body-intro">
+            <div class="eyebrow">What this is really about</div>
+            <p>Merchants often assume the issue is not enough information. More often, the problem is timing. The answer exists, but it appears too late to reduce the hesitation that matters.</p>
       <p>Buyers make small trust decisions all the way through the path. Every delayed answer gives uncertainty more time to grow.</p>
       <p>The stores that convert better tend to move reassurance closer to the moments where buyers actually need it.</p>
-
-      <div class="section">
+          </div>
+      <section class="section" id="timing-is-part-of-clarity">
         <h2>Timing is part of clarity</h2>
         <p>An answer can be correct and still be badly placed. If the buyer only sees it after doubt has already formed, the store is solving the question too late.</p>
         <p>That is why page sequencing matters so much. Good stores do not just say the right thing. They say it at the right moment.</p>
@@ -242,9 +455,9 @@
           <li>Return reassurance before commitment weakens</li>
           <li>Use-case clarity before comparison expands</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="delayed-reassurance-creates-unnecessary-friction">
         <h2>Delayed reassurance creates unnecessary friction</h2>
         <div class="callout">Stores lose momentum when the right answers arrive after the decision has already started to wobble.</div>
         <p>When a question gets answered too late, the buyer often starts doing extra work. They scroll, open another page, compare tabs, or leave and come back later.</p>
@@ -255,9 +468,9 @@
           <li>Repeat visits driven by uncertainty</li>
           <li>More dependence on support or reviews to close gaps</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="the-fix-is-usually-sequencing-not-volume">
         <h2>The fix is usually sequencing, not volume</h2>
         <p>Merchants do not always need more copy. They often need better placement. One strong answer moved higher can outperform a whole new section added lower.</p>
         <p>That is why sequence audits can produce fast wins without full rewrites.</p>
@@ -267,9 +480,9 @@
           <li>Reduce the delay between doubt and reassurance</li>
           <li>Treat FAQs and policies like active decision support</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="what-to-fix-this-week">
         <h2>What to fix this week</h2>
         <p>Walk one buying path and mark the first moment each major question appears in the buyer's head. Then mark where the store actually answers it.</p>
         <p>Any large gap between those two moments is conversion friction you can probably fix without redesigning the whole site.</p>
@@ -279,7 +492,9 @@
           <li>Move it closer to the real hesitation point</li>
           <li>Re-check whether the page now feels easier to finish</li>
         </ul>
-      </div>
+      </section>
+        </div>
+      </section>
     </article>
     <footer class="footer">
       <small>&copy; 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>

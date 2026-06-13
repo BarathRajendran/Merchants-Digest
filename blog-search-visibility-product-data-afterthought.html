@@ -72,6 +72,11 @@
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
+        --paper-soft: #f6f4ee;
+        --line: rgba(17, 17, 20, 0.08);
+        --accent: #123f35;
+        --accent-soft: #e8f0ed;
+        --shadow: 0 18px 40px rgba(17, 17, 20, 0.08);
       }
 
       * {
@@ -82,7 +87,9 @@
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(243, 235, 218, 0.85), transparent 32%),
+          linear-gradient(180deg, #fcfbf7 0%, #ffffff 18%);
       }
 
       h1,
@@ -110,7 +117,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: #ffffff;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .brand-logo {
@@ -138,11 +146,34 @@
       }
 
       .article {
-        padding: 60px 6vw 80px;
+        padding: 36px 6vw 90px;
         display: grid;
-        gap: 26px;
-        max-width: 920px;
+        gap: 32px;
+        max-width: 1220px;
         margin: 0 auto;
+      }
+
+      .article-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .article-copy,
+      .article-image-wrap,
+      .article-rail,
+      .article-body {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .article-copy {
+        border-radius: 30px;
+        padding: 34px;
+        display: grid;
+        gap: 18px;
       }
 
       .eyebrow {
@@ -152,16 +183,123 @@
         color: rgba(17, 17, 20, 0.5);
       }
 
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: rgba(17, 17, 20, 0.65);
+        font-size: 0.95rem;
+      }
+
+      .meta-pill {
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .title-wrap {
+        display: grid;
+        gap: 14px;
+      }
+
+      .title-wrap h1 {
+        font-size: clamp(2.4rem, 4.4vw, 4.3rem);
+        line-height: 1.02;
+        max-width: 12ch;
+      }
+
       .lead {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.75;
+      }
+
+      .article-image-wrap {
+        border-radius: 30px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fcf8ef 0%, #ffffff 100%);
       }
 
       .article-image {
         width: 100%;
-        height: auto;
-        border-radius: 18px;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
         border: 1px solid rgba(17, 17, 20, 0.1);
-        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.08);
+        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.06);
+      }
+
+      .article-layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .article-rail {
+        position: sticky;
+        top: 96px;
+        border-radius: 24px;
+        padding: 24px 22px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .rail-kicker {
+        font-size: 0.84rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(17, 17, 20, 0.45);
+      }
+
+      .rail-block {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rail-label {
+        font-size: 0.9rem;
+        color: rgba(17, 17, 20, 0.5);
+      }
+
+      .rail-value {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .rail-toc {
+        display: grid;
+        gap: 10px;
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .rail-toc a {
+        color: var(--ink-muted);
+      }
+
+      .back-link {
+        width: fit-content;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .article-body {
+        border-radius: 28px;
+        padding: 32px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .body-intro {
+        display: grid;
+        gap: 16px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
       }
 
       .callout {
@@ -190,6 +328,15 @@
         gap: 12px;
       }
 
+      .section h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+
+      .section + .section {
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 17, 20, 0.06);
+      }
+
       .footer {
         padding: 30px 6vw 50px;
         border-top: 1px solid rgba(17, 17, 20, 0.08);
@@ -206,6 +353,31 @@
 
       .footer a:hover {
         text-decoration: underline;
+      }
+
+      @media (max-width: 1040px) {
+        .article-hero,
+        .article-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .article-rail {
+          position: static;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .article-copy,
+        .article-image-wrap,
+        .article-body,
+        .article-rail {
+          padding: 22px;
+          border-radius: 24px;
+        }
+
+        .article-image {
+          min-height: 280px;
+        }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -224,15 +396,56 @@
     </nav>
 
     <article class="article">
-      <div class="eyebrow">Merchants Digest · Blog</div>
-      <h1>Search Visibility Improves When Product Data Stops Being an Afterthought</h1>
-      <img class="article-image" src="/images/Blogs/generated-search-visibility-product-data-afterthought.png" alt="Structured product data preparation for search and discovery" />
-      <p class="lead">Search visibility often gets discussed like a pure traffic problem when the deeper issue is product data quality.</p>
-      <p>Titles, attributes, variants, descriptions, and category relationships all help systems understand what your products are and when they are relevant.</p>
+      <section class="article-hero">
+        <div class="article-copy">
+          <div class="eyebrow">Merchants Digest · Blog</div>
+          <div class="article-meta">
+            <span class="meta-pill">Shopify operators</span>
+            <span>May 26, 2026</span>
+            <span>·</span>
+            <span>8 min read</span>
+          </div>
+          <div class="title-wrap">
+            <h1>Search Visibility Improves When Product Data Stops Being an Afterthought</h1>
+            <p class="lead">Search visibility often gets discussed like a pure traffic problem when the deeper issue is product data quality.</p>
+          </div>
+        </div>
+        <div class="article-image-wrap">
+          <img class="article-image" src="/images/Blogs/generated-search-visibility-product-data-afterthought.png" alt="Structured product data preparation for search and discovery" />
+        </div>
+      </section>
+
+      <section class="article-layout">
+        <aside class="article-rail">
+          <a class="back-link" href="/blogs">← Back to blogs</a>
+          <div class="rail-block">
+            <div class="rail-kicker">Article brief</div>
+            <div class="rail-label">Published</div>
+            <div class="rail-value">May 26, 2026</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">Reading time</div>
+            <div class="rail-value">8 minutes</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">In this article</div>
+            <ol class="rail-toc">
+<li><a href="#product-data-helps-both-machines-and-people">Product data helps both machines and people</a></li>
+<li><a href="#weak-product-data-creates-weak-discovery-paths">Weak product data creates weak discovery paths</a></li>
+<li><a href="#good-product-data-is-a-compounding-asset">Good product data is a compounding asset</a></li>
+<li><a href="#what-to-fix-this-week">What to fix this week</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <div class="article-body">
+          <div class="body-intro">
+            <div class="eyebrow">What this is really about</div>
+            <p>Titles, attributes, variants, descriptions, and category relationships all help systems understand what your products are and when they are relevant.</p>
       <p>When product data is rushed, inconsistent, or incomplete, search gets weaker and buyers get less useful context once they arrive.</p>
       <p>That is why product data should be treated like a storefront asset, not just a backend chore.</p>
-
-      <div class="section">
+          </div>
+      <section class="section" id="product-data-helps-both-machines-and-people">
         <h2>Product data helps both machines and people</h2>
         <p>The best product data is not written for search engines alone. It also makes the catalog easier to browse, compare, and trust for real buyers.</p>
         <p>That overlap is useful because it keeps search work connected to actual storefront quality.</p>
@@ -242,9 +455,9 @@
           <li>Consistent variant logic</li>
           <li>Descriptions that explain real differences</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="weak-product-data-creates-weak-discovery-paths">
         <h2>Weak product data creates weak discovery paths</h2>
         <div class="callout">When product data is messy, discovery usually gets softer before it gets obviously broken.</div>
         <p>A store can still get indexed with poor data, but it usually becomes harder to understand and harder to retrieve well. That loss often spreads across search, collections, and internal recommendations.</p>
@@ -255,9 +468,9 @@
           <li>Filters become less informative</li>
           <li>Answer engines have less confidence in summarization</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="good-product-data-is-a-compounding-asset">
         <h2>Good product data is a compounding asset</h2>
         <p>Once the catalog becomes cleaner, multiple surfaces improve at the same time. That is why this work often has more leverage than merchants expect.</p>
         <p>Better product data supports discovery, merchandising, and buyer understanding all at once.</p>
@@ -267,9 +480,9 @@
           <li>Better recommendations</li>
           <li>Easier AI and answer-engine interpretation</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="what-to-fix-this-week">
         <h2>What to fix this week</h2>
         <p>Take one product family and review the data as if you were preparing the store for someone else to understand cold. The gaps usually become obvious quickly.</p>
         <p>Then fix the most repeated data weakness first. Small consistency wins go a long way.</p>
@@ -279,7 +492,9 @@
           <li>Improve one missing or weak field</li>
           <li>Check whether the products become easier to group and retrieve</li>
         </ul>
-      </div>
+      </section>
+        </div>
+      </section>
     </article>
     <footer class="footer">
       <small>&copy; 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>

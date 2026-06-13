@@ -37,6 +37,28 @@ Variation rules:
 - Avoid defaulting every article to a desk-with-laptop shot.
 - If two prompts would produce the same composition with different props, reject the weaker one and rewrite it.
 
+Tone rotation rules:
+- Rotate the photographic tone, not just the props.
+- Pick one primary tone family per cover and make it explicit in `styleNotes`.
+- Approved tone families:
+  - documentary retail photography
+  - refined studio still life
+  - warm observational commerce scene
+  - tactile close-up detail shot
+  - quiet interface-and-product vignette
+  - editorial contrast composition
+- Do not reuse the same tone family for consecutive posts when avoidable.
+- If the article is operational, favor tactile or documentary tones.
+- If the article is about trust or premium feel, favor warm observational or refined still life tones.
+- If the article is about structure or comparison, favor editorial contrast composition or quiet interface-and-product vignette.
+
+Execution rules for realism:
+- Prefer imperfect but believable framing over polished stock-photo symmetry.
+- Use real-material language: cardboard, tissue, garment texture, matte labels, fingerprints, folded inserts, natural shadows.
+- Avoid glassy gradients, hyper-clean CGI reflections, and showroom-perfect lighting.
+- If a human appears, show partial presence or natural task focus rather than staged smiling portraits.
+- Favor lens and crop variety: overhead, waist-level side angle, close crop, shelf-height, hand-level.
+
 Reject directions that include:
 - robots
 - floating UI

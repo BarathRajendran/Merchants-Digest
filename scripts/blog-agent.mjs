@@ -631,6 +631,9 @@ function validateDraft(draft) {
 }
 
 function renderBlogPage(draft) {
+  const tocHtml = draft.sections
+    .map((section) => `<li><a href="#${escapeHtmlAttr(slugify(section.heading))}">${escapeHtml(section.heading)}</a></li>`)
+    .join("\n");
   const introHtml = draft.introParagraphs
     .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
     .join("\n      ");
@@ -648,10 +651,10 @@ function renderBlogPage(draft) {
       const paragraphs = (section.paragraphs || [])
         .map((paragraph) => `        <p>${escapeHtml(paragraph)}</p>`)
         .join("\n");
-      return `      <div class="section">
+      return `      <section class="section" id="${escapeHtmlAttr(slugify(section.heading))}">
         <h2>${escapeHtml(section.heading)}</h2>${callout}
 ${paragraphs}${bullets}
-      </div>`;
+      </section>`;
     })
     .join("\n\n");
 
@@ -679,6 +682,11 @@ ${paragraphs}${bullets}
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
+        --paper-soft: #f6f4ee;
+        --line: rgba(17, 17, 20, 0.08);
+        --accent: #123f35;
+        --accent-soft: #e8f0ed;
+        --shadow: 0 18px 40px rgba(17, 17, 20, 0.08);
       }
 
       * {
@@ -689,7 +697,9 @@ ${paragraphs}${bullets}
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(243, 235, 218, 0.85), transparent 32%),
+          linear-gradient(180deg, #fcfbf7 0%, #ffffff 18%);
       }
 
       h1,
@@ -717,7 +727,8 @@ ${paragraphs}${bullets}
         position: sticky;
         top: 0;
         z-index: 10;
-        background: #ffffff;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .brand-logo {
@@ -745,11 +756,34 @@ ${paragraphs}${bullets}
       }
 
       .article {
-        padding: 60px 6vw 80px;
+        padding: 36px 6vw 90px;
         display: grid;
-        gap: 26px;
-        max-width: 920px;
+        gap: 32px;
+        max-width: 1220px;
         margin: 0 auto;
+      }
+
+      .article-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .article-copy,
+      .article-image-wrap,
+      .article-rail,
+      .article-body {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .article-copy {
+        border-radius: 30px;
+        padding: 34px;
+        display: grid;
+        gap: 18px;
       }
 
       .eyebrow {
@@ -759,16 +793,123 @@ ${paragraphs}${bullets}
         color: rgba(17, 17, 20, 0.5);
       }
 
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: rgba(17, 17, 20, 0.65);
+        font-size: 0.95rem;
+      }
+
+      .meta-pill {
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .title-wrap {
+        display: grid;
+        gap: 14px;
+      }
+
+      .title-wrap h1 {
+        font-size: clamp(2.4rem, 4.4vw, 4.3rem);
+        line-height: 1.02;
+        max-width: 12ch;
+      }
+
       .lead {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.75;
+      }
+
+      .article-image-wrap {
+        border-radius: 30px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fcf8ef 0%, #ffffff 100%);
       }
 
       .article-image {
         width: 100%;
-        height: auto;
-        border-radius: 18px;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
         border: 1px solid rgba(17, 17, 20, 0.1);
-        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.08);
+        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.06);
+      }
+
+      .article-layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .article-rail {
+        position: sticky;
+        top: 96px;
+        border-radius: 24px;
+        padding: 24px 22px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .rail-kicker {
+        font-size: 0.84rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(17, 17, 20, 0.45);
+      }
+
+      .rail-block {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rail-label {
+        font-size: 0.9rem;
+        color: rgba(17, 17, 20, 0.5);
+      }
+
+      .rail-value {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .rail-toc {
+        display: grid;
+        gap: 10px;
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .rail-toc a {
+        color: var(--ink-muted);
+      }
+
+      .back-link {
+        width: fit-content;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .article-body {
+        border-radius: 28px;
+        padding: 32px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .body-intro {
+        display: grid;
+        gap: 16px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
       }
 
       .callout {
@@ -797,6 +938,15 @@ ${paragraphs}${bullets}
         gap: 12px;
       }
 
+      .section h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+
+      .section + .section {
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 17, 20, 0.06);
+      }
+
       .footer {
         padding: 30px 6vw 50px;
         border-top: 1px solid rgba(17, 17, 20, 0.08);
@@ -813,6 +963,31 @@ ${paragraphs}${bullets}
 
       .footer a:hover {
         text-decoration: underline;
+      }
+
+      @media (max-width: 1040px) {
+        .article-hero,
+        .article-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .article-rail {
+          position: static;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .article-copy,
+        .article-image-wrap,
+        .article-body,
+        .article-rail {
+          padding: 22px;
+          border-radius: 24px;
+        }
+
+        .article-image {
+          min-height: 280px;
+        }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -831,13 +1006,53 @@ ${paragraphs}${bullets}
     </nav>
 
     <article class="article">
-      <div class="eyebrow">Merchants Digest · Blog</div>
-      <h1>${escapeHtml(draft.title)}</h1>
-      <img class="article-image" src="${escapeHtmlAttr(draft.heroImagePath)}" alt="${escapeHtmlAttr(draft.heroImageAlt)}" />
-      <p class="lead">${escapeHtml(draft.lead)}</p>
-      ${introHtml}
+      <section class="article-hero">
+        <div class="article-copy">
+          <div class="eyebrow">Merchants Digest · Blog</div>
+          <div class="article-meta">
+            <span class="meta-pill">Shopify operators</span>
+            <span>${formatFullDate(draft.publishDate)}</span>
+            <span>·</span>
+            <span>${draft.readTimeMinutes} min read</span>
+          </div>
+          <div class="title-wrap">
+            <h1>${escapeHtml(draft.title)}</h1>
+            <p class="lead">${escapeHtml(draft.lead)}</p>
+          </div>
+        </div>
+        <div class="article-image-wrap">
+          <img class="article-image" src="${escapeHtmlAttr(draft.heroImagePath)}" alt="${escapeHtmlAttr(draft.heroImageAlt)}" />
+        </div>
+      </section>
 
+      <section class="article-layout">
+        <aside class="article-rail">
+          <a class="back-link" href="/blogs">← Back to blogs</a>
+          <div class="rail-block">
+            <div class="rail-kicker">Article brief</div>
+            <div class="rail-label">Published</div>
+            <div class="rail-value">${formatFullDate(draft.publishDate)}</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">Reading time</div>
+            <div class="rail-value">${draft.readTimeMinutes} minutes</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">In this article</div>
+            <ol class="rail-toc">
+${tocHtml}
+            </ol>
+          </div>
+        </aside>
+
+        <div class="article-body">
+          <div class="body-intro">
+            <div class="eyebrow">What this is really about</div>
+            ${introHtml}
+          </div>
 ${sectionsHtml}
+        </div>
+      </section>
     </article>
     <footer class="footer">
       <small>&copy; 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>
@@ -855,6 +1070,7 @@ function renderArticlesPage(posts) {
 
   const featured = posts.find((post) => post.featured) || posts[0];
   const rest = posts.filter((post) => post.slug !== featured.slug);
+  const archiveGroups = groupPostsByMonth(rest);
   const graph = {
     "@context": "https://schema.org",
     "@graph": [
@@ -903,18 +1119,37 @@ function renderArticlesPage(posts) {
     ]
   };
 
-  const cardsHtml = rest
+  const archiveHtml = archiveGroups
     .map(
-      (post) => `      <a class="card-link" href="/blog/${post.slug}">
-        <article class="card">
-          <div class="thumb">
-            <img src="${escapeHtmlAttr(post.heroImagePath)}" alt="${escapeHtmlAttr(post.heroImageAlt)}" />
-          </div>
-          <h2>${escapeHtml(post.title)}</h2>
-          <p>${escapeHtml(post.excerpt)}</p>
-          <div class="meta">${formatMonthYear(post.publishDate)} · ${post.readTimeMinutes} min read</div>
-        </article>
-      </a>`
+      ({ label, posts: groupedPosts }, groupIndex) => `      <section class="archive-group">
+        <div class="archive-group-head">
+          <h2>${escapeHtml(label)}</h2>
+          <span>${groupedPosts.length} article${groupedPosts.length === 1 ? "" : "s"}</span>
+        </div>
+        <div class="articles-grid">
+${groupedPosts
+  .map(
+    (post, index) => `          <a class="card-link ${groupIndex === 0 && index === 0 ? "card-link--wide" : ""}" href="/blog/${post.slug}">
+            <article class="card ${groupIndex === 0 && index === 0 ? "card--wide" : ""}">
+              <div class="thumb">
+                <img src="${escapeHtmlAttr(post.heroImagePath)}" alt="${escapeHtmlAttr(post.heroImageAlt)}" />
+              </div>
+              <div class="card-copy">
+                <div class="card-meta">
+                  <span>${formatFullDate(post.publishDate)}</span>
+                  <span>·</span>
+                  <span>${post.readTimeMinutes} min read</span>
+                </div>
+                <h3>${escapeHtml(post.title)}</h3>
+                <p>${escapeHtml(post.excerpt)}</p>
+                <div class="card-cta">Read article →</div>
+              </div>
+            </article>
+          </a>`
+  )
+  .join("\n")}
+        </div>
+      </section>`
     )
     .join("\n");
 
@@ -942,7 +1177,12 @@ function renderArticlesPage(posts) {
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
-        --radius: 20px;
+        --paper-soft: #f8f5ed;
+        --radius: 24px;
+        --line: rgba(17, 17, 20, 0.08);
+        --accent: #123f35;
+        --accent-soft: #e8f0ed;
+        --shadow: 0 16px 38px rgba(17, 17, 20, 0.08);
       }
 
       * {
@@ -953,11 +1193,14 @@ function renderArticlesPage(posts) {
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(243, 235, 218, 0.8), transparent 34%),
+          linear-gradient(180deg, #fcfbf7 0%, #ffffff 20%);
       }
 
       h1,
-      h2 {
+      h2,
+      h3 {
         font-family: "Fraunces", Georgia, serif;
         margin: 0;
       }
@@ -981,7 +1224,8 @@ function renderArticlesPage(posts) {
         position: sticky;
         top: 0;
         z-index: 10;
-        background: #ffffff;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .brand-logo {
@@ -995,91 +1239,223 @@ function renderArticlesPage(posts) {
         font-size: 15px;
       }
 
+      .page-hero {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 34px 6vw 42px;
+      }
+
+      .page-hero-shell {
+        display: grid;
+        gap: 18px;
+        padding: 34px;
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.84);
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.84rem;
+        font-weight: 600;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4.6rem);
+        line-height: 0.98;
+        max-width: 10ch;
+      }
+
+      .page-hero-copy {
+        max-width: 64ch;
+      }
+
+      .page-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: rgba(17, 17, 20, 0.65);
+      }
+
+      .page-stat {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #f4f2eb;
+      }
+
       .feature {
-        padding: 0 6vw 40px;
+        padding: 0 6vw 34px;
       }
 
       .feature-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
-        gap: 22px;
-        background: #ffffff;
-        border-radius: 26px;
-        border: 1px solid rgba(17, 17, 20, 0.08);
-        box-shadow: 0 18px 40px rgba(17, 17, 20, 0.1);
-        overflow: hidden;
-        max-width: 1020px;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 24px;
+        max-width: 1220px;
         margin: 0 auto;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 32px;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        overflow: hidden;
       }
 
       .feature-media {
-        padding: 14px;
-        background: #f2f4f4;
+        padding: 16px;
+        background: linear-gradient(180deg, #f5f0e4 0%, #fbfbfb 100%);
       }
 
       .feature-media img {
         width: 100%;
         height: 100%;
-        min-height: 220px;
-        border-radius: 18px;
+        min-height: 340px;
+        border-radius: 22px;
         object-fit: cover;
       }
 
       .feature-copy {
-        padding: 24px 28px;
+        padding: 34px;
         display: grid;
         gap: 16px;
+        align-content: center;
       }
 
       .feature-pill {
         width: fit-content;
-        padding: 6px 14px;
+        padding: 7px 12px;
         border-radius: 999px;
-        background: #e7f2ff;
-        color: #1f4d8f;
+        background: #f4f2eb;
+        color: rgba(17, 17, 20, 0.68);
         font-size: 0.82rem;
         font-weight: 600;
       }
 
+      .feature-copy h2 {
+        font-size: clamp(2rem, 3.2vw, 3.2rem);
+        line-height: 1.04;
+      }
+
+      .feature-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        color: rgba(17, 17, 20, 0.62);
+      }
+
       .feature-cta {
         width: fit-content;
-        padding: 10px 16px;
-        border-radius: 12px;
-        background: #123f35;
+        padding: 12px 18px;
+        border-radius: 14px;
+        background: var(--accent);
         color: #ffffff;
         font-weight: 600;
       }
 
-      .articles {
+      .archive {
+        max-width: 1220px;
+        margin: 0 auto;
         padding: 0 6vw 80px;
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 24px;
+        gap: 34px;
+      }
+
+      .archive-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: end;
+        flex-wrap: wrap;
+      }
+
+      .archive-head p {
+        max-width: 62ch;
+      }
+
+      .archive-group {
+        display: grid;
+        gap: 18px;
+      }
+
+      .archive-group-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: baseline;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 12px;
+        color: rgba(17, 17, 20, 0.62);
+      }
+
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .card-link--wide {
+        grid-column: span 2;
       }
 
       .card {
-        background: var(--paper);
+        height: 100%;
+        background: rgba(255, 255, 255, 0.92);
         border-radius: var(--radius);
-        padding: 18px;
-        box-shadow: 0 12px 24px rgba(17, 17, 20, 0.08);
+        padding: 16px;
+        box-shadow: var(--shadow);
         border: 1px solid rgba(17, 17, 20, 0.05);
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        min-height: 460px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .card--wide {
+        grid-template-columns: minmax(260px, 0.96fr) minmax(0, 1fr);
+        align-items: stretch;
       }
 
       .thumb {
-        height: 220px;
-        border-radius: 16px;
+        min-height: 212px;
+        border-radius: 18px;
         overflow: hidden;
-        background: #e9ecef;
+        background: #eceff1;
+      }
+
+      .card--wide .thumb {
+        min-height: 280px;
       }
 
       .thumb img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      .card-copy {
+        display: grid;
+        gap: 12px;
+        align-content: start;
+      }
+
+      .card-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: rgba(17, 17, 20, 0.58);
+        font-size: 0.94rem;
+      }
+
+      .card h3 {
+        font-size: 1.48rem;
+        line-height: 1.14;
+      }
+
+      .card-cta {
+        color: var(--accent);
+        font-weight: 600;
       }
 
       .footer {
@@ -1091,18 +1467,31 @@ function renderArticlesPage(posts) {
         flex-wrap: wrap;
       }
 
-      @media (max-width: 900px) {
-        .feature-grid {
+      @media (max-width: 1080px) {
+        .feature-grid,
+        .card--wide {
           grid-template-columns: 1fr;
         }
 
-        .articles {
+        .articles-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .card-link--wide {
+          grid-column: auto;
         }
       }
 
-      @media (max-width: 640px) {
-        .articles {
+      @media (max-width: 720px) {
+        .page-hero-shell,
+        .feature-copy,
+        .feature-media,
+        .card {
+          padding: 20px;
+          border-radius: 24px;
+        }
+
+        .articles-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -1122,23 +1511,46 @@ function renderArticlesPage(posts) {
       </div>
     </nav>
 
+    <section class="page-hero">
+      <div class="page-hero-shell">
+        <div class="eyebrow">Merchants Digest archive</div>
+        <h1>Practical reads for Shopify teams that run the store.</h1>
+        <p class="page-hero-copy">We are organizing the archive more like a strong SaaS editorial hub: one lead story, clearer reading hierarchy, and a cleaner month-by-month index instead of a flat wall of posts.</p>
+        <div class="page-stats">
+          <span class="page-stat">${posts.length} published articles</span>
+          <span class="page-stat">Conversion, trust, SEO, AI visibility</span>
+          <span class="page-stat">Written for operators, not marketers</span>
+        </div>
+      </div>
+    </section>
+
     <section class="feature">
       <div class="feature-grid">
         <div class="feature-media">
           <img src="${escapeHtmlAttr(featured.heroImagePath)}" alt="${escapeHtmlAttr(featured.heroImageAlt)}" />
         </div>
         <div class="feature-copy">
-          <span class="feature-pill">Latest</span>
+          <span class="feature-pill">Featured article</span>
           <h2>${escapeHtml(featured.title)}</h2>
           <p>${escapeHtml(featured.excerpt)}</p>
-          <div>${formatMonthYear(featured.publishDate)} · Merchants Digest</div>
-          <a class="feature-cta" href="/blog/${featured.slug}">Read full article -></a>
+          <div class="feature-meta">
+            <span>${formatFullDate(featured.publishDate)}</span>
+            <span>·</span>
+            <span>${featured.readTimeMinutes} min read</span>
+          </div>
+          <a class="feature-cta" href="/blog/${featured.slug}">Read featured article →</a>
         </div>
       </div>
     </section>
 
-    <section class="articles">
-${cardsHtml}
+    <section class="archive">
+      <div class="archive-head">
+        <div>
+          <h2>Archive</h2>
+          <p>Borrowing the best parts of Intercom, Webflow, and Vercel: a strong lead story, clear editorial meta, and grouped browsing that makes older posts feel intentional instead of buried.</p>
+        </div>
+      </div>
+${archiveHtml}
     </section>
 
     <footer class="footer">
@@ -1369,6 +1781,27 @@ function formatSourceNotes(sourceNotes) {
 function formatMonthYear(dateString) {
   const date = new Date(`${dateString}T00:00:00Z`);
   return date.toLocaleString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
+}
+
+function formatFullDate(dateString) {
+  const date = new Date(`${dateString}T00:00:00Z`);
+  return date.toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+}
+
+function groupPostsByMonth(posts) {
+  const groups = [];
+  for (const post of posts) {
+    const label = formatMonthYear(post.publishDate);
+    const lastGroup = groups[groups.length - 1];
+    if (lastGroup && lastGroup.label === label) {
+      lastGroup.posts.push(post);
+      continue;
+    }
+
+    groups.push({ label, posts: [post] });
+  }
+
+  return groups;
 }
 
 function slugify(value) {

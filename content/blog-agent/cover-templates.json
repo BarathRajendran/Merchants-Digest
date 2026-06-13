@@ -23,6 +23,36 @@
       "label": "Catalog Structure",
       "sceneFocus": "product cards, tags, filters, organization",
       "accent": "#5a4d8f"
+    },
+    {
+      "id": "merchant-hands",
+      "label": "Merchant Hands",
+      "sceneFocus": "close human crop, tactile work, packing, labeling, product handling",
+      "accent": "#7a5b3f"
+    },
+    {
+      "id": "overhead-checklist",
+      "label": "Overhead Checklist",
+      "sceneFocus": "top-down planning scene, checklist, packaging, phone, laptop",
+      "accent": "#2f5f5a"
+    },
+    {
+      "id": "comparison-scene",
+      "label": "Comparison Scene",
+      "sceneFocus": "side-by-side contrast, weak vs strong setup, decision framing",
+      "accent": "#8a4a3b"
+    },
+    {
+      "id": "single-product-focus",
+      "label": "Single Product Focus",
+      "sceneFocus": "one product hero with decision context, premium evaluation scene",
+      "accent": "#3f587f"
+    },
+    {
+      "id": "forum-discovery",
+      "label": "Forum Discovery",
+      "sceneFocus": "conversation, research cues, discovery workflow, validation scene",
+      "accent": "#5a6a3f"
     }
   ]
 }

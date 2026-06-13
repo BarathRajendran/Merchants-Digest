@@ -72,6 +72,11 @@
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
+        --paper-soft: #f6f4ee;
+        --line: rgba(17, 17, 20, 0.08);
+        --accent: #123f35;
+        --accent-soft: #e8f0ed;
+        --shadow: 0 18px 40px rgba(17, 17, 20, 0.08);
       }
 
       * {
@@ -82,7 +87,9 @@
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(243, 235, 218, 0.85), transparent 32%),
+          linear-gradient(180deg, #fcfbf7 0%, #ffffff 18%);
       }
 
       h1,
@@ -110,7 +117,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: #ffffff;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .brand-logo {
@@ -138,11 +146,34 @@
       }
 
       .article {
-        padding: 60px 6vw 80px;
+        padding: 36px 6vw 90px;
         display: grid;
-        gap: 26px;
-        max-width: 920px;
+        gap: 32px;
+        max-width: 1220px;
         margin: 0 auto;
+      }
+
+      .article-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .article-copy,
+      .article-image-wrap,
+      .article-rail,
+      .article-body {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .article-copy {
+        border-radius: 30px;
+        padding: 34px;
+        display: grid;
+        gap: 18px;
       }
 
       .eyebrow {
@@ -152,16 +183,123 @@
         color: rgba(17, 17, 20, 0.5);
       }
 
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: rgba(17, 17, 20, 0.65);
+        font-size: 0.95rem;
+      }
+
+      .meta-pill {
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .title-wrap {
+        display: grid;
+        gap: 14px;
+      }
+
+      .title-wrap h1 {
+        font-size: clamp(2.4rem, 4.4vw, 4.3rem);
+        line-height: 1.02;
+        max-width: 12ch;
+      }
+
       .lead {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.75;
+      }
+
+      .article-image-wrap {
+        border-radius: 30px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fcf8ef 0%, #ffffff 100%);
       }
 
       .article-image {
         width: 100%;
-        height: auto;
-        border-radius: 18px;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
         border: 1px solid rgba(17, 17, 20, 0.1);
-        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.08);
+        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.06);
+      }
+
+      .article-layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .article-rail {
+        position: sticky;
+        top: 96px;
+        border-radius: 24px;
+        padding: 24px 22px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .rail-kicker {
+        font-size: 0.84rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(17, 17, 20, 0.45);
+      }
+
+      .rail-block {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rail-label {
+        font-size: 0.9rem;
+        color: rgba(17, 17, 20, 0.5);
+      }
+
+      .rail-value {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .rail-toc {
+        display: grid;
+        gap: 10px;
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .rail-toc a {
+        color: var(--ink-muted);
+      }
+
+      .back-link {
+        width: fit-content;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .article-body {
+        border-radius: 28px;
+        padding: 32px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .body-intro {
+        display: grid;
+        gap: 16px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
       }
 
       .callout {
@@ -190,6 +328,15 @@
         gap: 12px;
       }
 
+      .section h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+
+      .section + .section {
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 17, 20, 0.06);
+      }
+
       .footer {
         padding: 30px 6vw 50px;
         border-top: 1px solid rgba(17, 17, 20, 0.08);
@@ -206,6 +353,31 @@
 
       .footer a:hover {
         text-decoration: underline;
+      }
+
+      @media (max-width: 1040px) {
+        .article-hero,
+        .article-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .article-rail {
+          position: static;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .article-copy,
+        .article-image-wrap,
+        .article-body,
+        .article-rail {
+          padding: 22px;
+          border-radius: 24px;
+        }
+
+        .article-image {
+          min-height: 280px;
+        }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -224,15 +396,56 @@
     </nav>
 
     <article class="article">
-      <div class="eyebrow">Merchants Digest · Blog</div>
-      <h1>Product Reviews Help Less When Your Product Page Doesn't Explain the Basics</h1>
-      <img class="article-image" src="/images/Blogs/generated-product-reviews-help-less-when-basics-unclear.png" alt="Shopper comparing product details and review proof on a retail display" />
-      <p class="lead">Reviews are useful, but many merchants ask them to solve the wrong problem. Social proof helps after a buyer understands the product. It does not replace the need for basic clarity.</p>
-      <p>A product page should first explain what the item is, who it is for, how it differs, and what trade-offs matter. Reviews are there to support confidence, not carry the entire explanation layer.</p>
+      <section class="article-hero">
+        <div class="article-copy">
+          <div class="eyebrow">Merchants Digest · Blog</div>
+          <div class="article-meta">
+            <span class="meta-pill">Shopify operators</span>
+            <span>April 7, 2026</span>
+            <span>·</span>
+            <span>8 min read</span>
+          </div>
+          <div class="title-wrap">
+            <h1>Product Reviews Help Less When Your Product Page Doesn't Explain the Basics</h1>
+            <p class="lead">Reviews are useful, but many merchants ask them to solve the wrong problem. Social proof helps after a buyer understands the product. It does not replace the need for basic clarity.</p>
+          </div>
+        </div>
+        <div class="article-image-wrap">
+          <img class="article-image" src="/images/Blogs/generated-product-reviews-help-less-when-basics-unclear.png" alt="Shopper comparing product details and review proof on a retail display" />
+        </div>
+      </section>
+
+      <section class="article-layout">
+        <aside class="article-rail">
+          <a class="back-link" href="/blogs">← Back to blogs</a>
+          <div class="rail-block">
+            <div class="rail-kicker">Article brief</div>
+            <div class="rail-label">Published</div>
+            <div class="rail-value">April 7, 2026</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">Reading time</div>
+            <div class="rail-value">8 minutes</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">In this article</div>
+            <ol class="rail-toc">
+<li><a href="#reviews-are-strongest-when-they-reinforce-a-clear-page">Reviews are strongest when they reinforce a clear page</a></li>
+<li><a href="#when-basics-are-missing-buyers-start-doing-detective-work">When basics are missing, buyers start doing detective work</a></li>
+<li><a href="#better-basics-make-reviews-more-persuasive">Better basics make reviews more persuasive</a></li>
+<li><a href="#what-to-fix-this-week">What to fix this week</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <div class="article-body">
+          <div class="body-intro">
+            <div class="eyebrow">What this is really about</div>
+            <p>A product page should first explain what the item is, who it is for, how it differs, and what trade-offs matter. Reviews are there to support confidence, not carry the entire explanation layer.</p>
       <p>When the product basics stay vague, buyers start reading reviews like a rescue mechanism. They dig through other people's experiences to answer questions the store should have answered directly.</p>
       <p>That can still lead to a sale, but it is slower, riskier, and less reliable than a page that does its own communication well.</p>
-
-      <div class="section">
+          </div>
+      <section class="section" id="reviews-are-strongest-when-they-reinforce-a-clear-page">
         <h2>Reviews are strongest when they reinforce a clear page</h2>
         <p>Social proof works best when it confirms what the product page already explains. That makes the buyer feel that the claim and the lived experience line up.</p>
         <p>If the product page is weak, reviews become a substitute for basic information. That is a much heavier burden.</p>
@@ -242,9 +455,9 @@
           <li>Real-world use</li>
           <li>Quality consistency</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="when-basics-are-missing-buyers-start-doing-detective-work">
         <h2>When basics are missing, buyers start doing detective work</h2>
         <div class="callout">Reviews should validate the story. They should not have to write it from scratch.</div>
         <p>Instead of moving toward purchase, the shopper starts scanning review snippets for clues. That creates more effort and more room for confusion.</p>
@@ -255,9 +468,9 @@
           <li>How does it compare with alternatives</li>
           <li>What are the limitations or trade-offs</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="better-basics-make-reviews-more-persuasive">
         <h2>Better basics make reviews more persuasive</h2>
         <p>A strong page and good reviews amplify each other. The page gives the buyer a framework, then the reviews make that framework feel credible.</p>
         <p>That is usually where the real conversion lift comes from. Not more review widgets, but better coordination between product explanation and customer proof.</p>
@@ -267,9 +480,9 @@
           <li>Use supporting review content instead of review overload</li>
           <li>Let social proof support confidence, not replace structure</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="what-to-fix-this-week">
         <h2>What to fix this week</h2>
         <p>Take one product that relies heavily on reviews and ask a hard question: if the reviews disappeared, would the page still explain the product well enough to sell it.</p>
         <p>If the answer is no, fix the product communication first. Then let the reviews do the job they are actually good at.</p>
@@ -279,7 +492,9 @@
           <li>Use reviews to support the strongest buying questions</li>
           <li>Reduce dependence on review scavenging</li>
         </ul>
-      </div>
+      </section>
+        </div>
+      </section>
     </article>
     <footer class="footer">
       <small>&copy; 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>

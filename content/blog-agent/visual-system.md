@@ -77,6 +77,28 @@ The goal is to make weekly editorial covers that feel grounded, recognizable, an
 - Do not let more than one post in a short batch rely on the same visual engine.
 - If a post is conceptually different, the image must be compositionally different too.
 
+## Tone System
+
+The image variation should come from tone as much as from subject matter.
+
+Approved tone families:
+- `documentary retail`: natural light, real surfaces, lived-in merchant environment
+- `refined still life`: cleaner composition, premium materials, restrained set styling
+- `warm observational`: human presence, believable task moment, soft imperfection
+- `tactile close-up`: crop into materials, hands, labels, packaging, garment detail
+- `quiet interface vignette`: restrained interface fragment plus physical retail context
+- `editorial contrast`: side-by-side or split-scene framing to show a strong vs weak state
+
+Tone rules:
+- Consecutive covers should not share the same tone family unless the topic demands it.
+- Tone should match the argument:
+  - friction or confusion -> editorial contrast or tactile close-up
+  - trust or premium feel -> warm observational or refined still life
+  - structure or discoverability -> quiet interface vignette or editorial contrast
+  - operations -> documentary retail or warm observational
+- Avoid making every image look like the same production set with different props.
+- Let some covers feel photographic and some feel editorially staged, but all should remain believable.
+
 ## Layout Rules
 
 - Reserve the upper-left for the title block.

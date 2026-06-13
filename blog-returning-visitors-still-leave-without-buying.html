@@ -72,6 +72,11 @@
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
+        --paper-soft: #f6f4ee;
+        --line: rgba(17, 17, 20, 0.08);
+        --accent: #123f35;
+        --accent-soft: #e8f0ed;
+        --shadow: 0 18px 40px rgba(17, 17, 20, 0.08);
       }
 
       * {
@@ -82,7 +87,9 @@
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(243, 235, 218, 0.85), transparent 32%),
+          linear-gradient(180deg, #fcfbf7 0%, #ffffff 18%);
       }
 
       h1,
@@ -110,7 +117,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: #ffffff;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .brand-logo {
@@ -138,11 +146,34 @@
       }
 
       .article {
-        padding: 60px 6vw 80px;
+        padding: 36px 6vw 90px;
         display: grid;
-        gap: 26px;
-        max-width: 920px;
+        gap: 32px;
+        max-width: 1220px;
         margin: 0 auto;
+      }
+
+      .article-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .article-copy,
+      .article-image-wrap,
+      .article-rail,
+      .article-body {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .article-copy {
+        border-radius: 30px;
+        padding: 34px;
+        display: grid;
+        gap: 18px;
       }
 
       .eyebrow {
@@ -152,16 +183,123 @@
         color: rgba(17, 17, 20, 0.5);
       }
 
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: rgba(17, 17, 20, 0.65);
+        font-size: 0.95rem;
+      }
+
+      .meta-pill {
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .title-wrap {
+        display: grid;
+        gap: 14px;
+      }
+
+      .title-wrap h1 {
+        font-size: clamp(2.4rem, 4.4vw, 4.3rem);
+        line-height: 1.02;
+        max-width: 12ch;
+      }
+
       .lead {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.75;
+      }
+
+      .article-image-wrap {
+        border-radius: 30px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fcf8ef 0%, #ffffff 100%);
       }
 
       .article-image {
         width: 100%;
-        height: auto;
-        border-radius: 18px;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
         border: 1px solid rgba(17, 17, 20, 0.1);
-        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.08);
+        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.06);
+      }
+
+      .article-layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .article-rail {
+        position: sticky;
+        top: 96px;
+        border-radius: 24px;
+        padding: 24px 22px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .rail-kicker {
+        font-size: 0.84rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(17, 17, 20, 0.45);
+      }
+
+      .rail-block {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rail-label {
+        font-size: 0.9rem;
+        color: rgba(17, 17, 20, 0.5);
+      }
+
+      .rail-value {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .rail-toc {
+        display: grid;
+        gap: 10px;
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .rail-toc a {
+        color: var(--ink-muted);
+      }
+
+      .back-link {
+        width: fit-content;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .article-body {
+        border-radius: 28px;
+        padding: 32px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .body-intro {
+        display: grid;
+        gap: 16px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
       }
 
       .callout {
@@ -190,6 +328,15 @@
         gap: 12px;
       }
 
+      .section h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+
+      .section + .section {
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 17, 20, 0.06);
+      }
+
       .footer {
         padding: 30px 6vw 50px;
         border-top: 1px solid rgba(17, 17, 20, 0.08);
@@ -206,6 +353,31 @@
 
       .footer a:hover {
         text-decoration: underline;
+      }
+
+      @media (max-width: 1040px) {
+        .article-hero,
+        .article-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .article-rail {
+          position: static;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .article-copy,
+        .article-image-wrap,
+        .article-body,
+        .article-rail {
+          padding: 22px;
+          border-radius: 24px;
+        }
+
+        .article-image {
+          min-height: 280px;
+        }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -224,15 +396,56 @@
     </nav>
 
     <article class="article">
-      <div class="eyebrow">Merchants Digest · Blog</div>
-      <h1>Why Returning Visitors Still Leave Without Buying on Shopify</h1>
-      <img class="article-image" src="/images/Blogs/generated-returning-visitors-still-leave-without-buying.png" alt="Buyer evaluating a Shopify product multiple times before purchasing" />
-      <p class="lead">A returning visitor is rarely a weak lead. More often, it is a buyer who wants to purchase but still cannot close one last gap in confidence.</p>
-      <p>Merchants often celebrate return visits as proof that interest is strong. That part is true. But interest alone does not explain why the person still has not bought.</p>
+      <section class="article-hero">
+        <div class="article-copy">
+          <div class="eyebrow">Merchants Digest · Blog</div>
+          <div class="article-meta">
+            <span class="meta-pill">Shopify operators</span>
+            <span>March 3, 2026</span>
+            <span>·</span>
+            <span>8 min read</span>
+          </div>
+          <div class="title-wrap">
+            <h1>Why Returning Visitors Still Leave Without Buying on Shopify</h1>
+            <p class="lead">A returning visitor is rarely a weak lead. More often, it is a buyer who wants to purchase but still cannot close one last gap in confidence.</p>
+          </div>
+        </div>
+        <div class="article-image-wrap">
+          <img class="article-image" src="/images/Blogs/generated-returning-visitors-still-leave-without-buying.png" alt="Buyer evaluating a Shopify product multiple times before purchasing" />
+        </div>
+      </section>
+
+      <section class="article-layout">
+        <aside class="article-rail">
+          <a class="back-link" href="/blogs">← Back to blogs</a>
+          <div class="rail-block">
+            <div class="rail-kicker">Article brief</div>
+            <div class="rail-label">Published</div>
+            <div class="rail-value">March 3, 2026</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">Reading time</div>
+            <div class="rail-value">8 minutes</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">In this article</div>
+            <ol class="rail-toc">
+<li><a href="#a-return-visit-usually-means-the-buyer-is-still-evaluating-risk">A return visit usually means the buyer is still evaluating risk</a></li>
+<li><a href="#retargeting-does-not-fix-what-the-page-still-fails-to-answer">Retargeting does not fix what the page still fails to answer</a></li>
+<li><a href="#the-page-often-needs-better-sequencing-not-more-content">The page often needs better sequencing, not more content</a></li>
+<li><a href="#what-to-fix-this-week">What to fix this week</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <div class="article-body">
+          <div class="body-intro">
+            <div class="eyebrow">What this is really about</div>
+            <p>Merchants often celebrate return visits as proof that interest is strong. That part is true. But interest alone does not explain why the person still has not bought.</p>
       <p>Usually the problem is not that the buyer needs more persuasion. It is that the store still leaves an important question unresolved around fit, trust, delivery, price framing, or product clarity.</p>
       <p>If a buyer comes back twice and still leaves, your store is not suffering from lack of attention. It is suffering from unfinished reassurance.</p>
-
-      <div class="section">
+          </div>
+      <section class="section" id="a-return-visit-usually-means-the-buyer-is-still-evaluating-risk">
         <h2>A return visit usually means the buyer is still evaluating risk</h2>
         <p>Repeat sessions often look positive in analytics, but they can also be a warning. The buyer is still circling the decision instead of moving through it.</p>
         <p>That usually happens when the store gives enough reason to care, but not enough reason to feel safe committing.</p>
@@ -242,9 +455,9 @@
           <li>Is this worth the price compared with alternatives</li>
           <li>What happens if shipping or returns become a problem</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="retargeting-does-not-fix-what-the-page-still-fails-to-answer">
         <h2>Retargeting does not fix what the page still fails to answer</h2>
         <div class="callout">Bringing a buyer back is not the same as helping them decide.</div>
         <p>A common reaction is to push harder with email, retargeting, and reminder flows. Those can help, but they do not solve the underlying friction on the store.</p>
@@ -255,9 +468,9 @@
           <li>Reduce vague claims that force interpretation</li>
           <li>Match policy messaging with product promises</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="the-page-often-needs-better-sequencing-not-more-content">
         <h2>The page often needs better sequencing, not more content</h2>
         <p>Many underperforming pages already contain the right facts somewhere. The problem is that the important reassurance appears too late or in the wrong form.</p>
         <p>Returning visitors do not need more noise. They need the right confidence signals placed closer to the moment of decision.</p>
@@ -267,9 +480,9 @@
           <li>Make trade-offs explicit instead of hiding them</li>
           <li>Let policies support the page instead of sitting far away in the footer</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="what-to-fix-this-week">
         <h2>What to fix this week</h2>
         <p>Pick one product with healthy return traffic but weak conversion. Read the page like someone who wants to buy but is still looking for a reason not to.</p>
         <p>Then fix the single biggest hesitation gap first. In many stores, returning visitors start converting when one practical question finally gets answered well.</p>
@@ -279,7 +492,9 @@
           <li>Rewrite one section to answer it directly</li>
           <li>Check whether support, reviews, and policy pages reinforce the same answer</li>
         </ul>
-      </div>
+      </section>
+        </div>
+      </section>
     </article>
     <footer class="footer">
       <small>&copy; 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>

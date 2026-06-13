@@ -72,6 +72,11 @@
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
+        --paper-soft: #f6f4ee;
+        --line: rgba(17, 17, 20, 0.08);
+        --accent: #123f35;
+        --accent-soft: #e8f0ed;
+        --shadow: 0 18px 40px rgba(17, 17, 20, 0.08);
       }
 
       * {
@@ -82,7 +87,9 @@
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(243, 235, 218, 0.85), transparent 32%),
+          linear-gradient(180deg, #fcfbf7 0%, #ffffff 18%);
       }
 
       h1,
@@ -110,7 +117,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: #ffffff;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .brand-logo {
@@ -138,11 +146,34 @@
       }
 
       .article {
-        padding: 60px 6vw 80px;
+        padding: 36px 6vw 90px;
         display: grid;
-        gap: 26px;
-        max-width: 920px;
+        gap: 32px;
+        max-width: 1220px;
         margin: 0 auto;
+      }
+
+      .article-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .article-copy,
+      .article-image-wrap,
+      .article-rail,
+      .article-body {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .article-copy {
+        border-radius: 30px;
+        padding: 34px;
+        display: grid;
+        gap: 18px;
       }
 
       .eyebrow {
@@ -152,16 +183,123 @@
         color: rgba(17, 17, 20, 0.5);
       }
 
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        color: rgba(17, 17, 20, 0.65);
+        font-size: 0.95rem;
+      }
+
+      .meta-pill {
+        width: fit-content;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .title-wrap {
+        display: grid;
+        gap: 14px;
+      }
+
+      .title-wrap h1 {
+        font-size: clamp(2.4rem, 4.4vw, 4.3rem);
+        line-height: 1.02;
+        max-width: 12ch;
+      }
+
       .lead {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.75;
+      }
+
+      .article-image-wrap {
+        border-radius: 30px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fcf8ef 0%, #ffffff 100%);
       }
 
       .article-image {
         width: 100%;
-        height: auto;
-        border-radius: 18px;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
         border: 1px solid rgba(17, 17, 20, 0.1);
-        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.08);
+        box-shadow: 0 18px 30px rgba(17, 17, 20, 0.06);
+      }
+
+      .article-layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .article-rail {
+        position: sticky;
+        top: 96px;
+        border-radius: 24px;
+        padding: 24px 22px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .rail-kicker {
+        font-size: 0.84rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(17, 17, 20, 0.45);
+      }
+
+      .rail-block {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rail-label {
+        font-size: 0.9rem;
+        color: rgba(17, 17, 20, 0.5);
+      }
+
+      .rail-value {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .rail-toc {
+        display: grid;
+        gap: 10px;
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .rail-toc a {
+        color: var(--ink-muted);
+      }
+
+      .back-link {
+        width: fit-content;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .article-body {
+        border-radius: 28px;
+        padding: 32px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .body-intro {
+        display: grid;
+        gap: 16px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
       }
 
       .callout {
@@ -190,6 +328,15 @@
         gap: 12px;
       }
 
+      .section h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+
+      .section + .section {
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 17, 20, 0.06);
+      }
+
       .footer {
         padding: 30px 6vw 50px;
         border-top: 1px solid rgba(17, 17, 20, 0.08);
@@ -206,6 +353,31 @@
 
       .footer a:hover {
         text-decoration: underline;
+      }
+
+      @media (max-width: 1040px) {
+        .article-hero,
+        .article-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .article-rail {
+          position: static;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .article-copy,
+        .article-image-wrap,
+        .article-body,
+        .article-rail {
+          padding: 22px;
+          border-radius: 24px;
+        }
+
+        .article-image {
+          min-height: 280px;
+        }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -224,15 +396,57 @@
     </nav>
 
     <article class="article">
-      <div class="eyebrow">Merchants Digest · Blog</div>
-      <h1>Your Best-Selling Product Page Is Teaching You What the Rest of Your Store Lacks</h1>
-      <img class="article-image" src="/images/Blogs/generated-best-product-page-teaches-rest-of-store.png" alt="Merchant reviewing a high-performing Shopify product page with notes" />
-      <p class="lead">Most merchants look at their best-selling product page and see validation. They should also see a diagnostic tool. In many Shopify stores, one strong page quietly exposes what the rest of the catalog still does poorly.</p>
-      <p>A top-performing product page often works because it answers more questions, creates less friction, and feels safer to buy from. The mistake is treating that success like an exception instead of a pattern worth copying.</p>
+      <section class="article-hero">
+        <div class="article-copy">
+          <div class="eyebrow">Merchants Digest · Blog</div>
+          <div class="article-meta">
+            <span class="meta-pill">Shopify operators</span>
+            <span>February 12, 2026</span>
+            <span>·</span>
+            <span>8 min read</span>
+          </div>
+          <div class="title-wrap">
+            <h1>Your Best-Selling Product Page Is Teaching You What the Rest of Your Store Lacks</h1>
+            <p class="lead">Most merchants look at their best-selling product page and see validation. They should also see a diagnostic tool. In many Shopify stores, one strong page quietly exposes what the rest of the catalog still does poorly.</p>
+          </div>
+        </div>
+        <div class="article-image-wrap">
+          <img class="article-image" src="/images/Blogs/generated-best-product-page-teaches-rest-of-store.png" alt="Merchant reviewing a high-performing Shopify product page with notes" />
+        </div>
+      </section>
+
+      <section class="article-layout">
+        <aside class="article-rail">
+          <a class="back-link" href="/blogs">← Back to blogs</a>
+          <div class="rail-block">
+            <div class="rail-kicker">Article brief</div>
+            <div class="rail-label">Published</div>
+            <div class="rail-value">February 12, 2026</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">Reading time</div>
+            <div class="rail-value">8 minutes</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">In this article</div>
+            <ol class="rail-toc">
+<li><a href="#your-best-page-often-has-better-decision-support-not-just-a-better-product">Your best page often has better decision support, not just a better product</a></li>
+<li><a href="#compare-page-structure-before-you-compare-conversion-rates">Compare page structure before you compare conversion rates</a></li>
+<li><a href="#the-difference-is-often-in-sequencing-not-amount-of-content">The difference is often in sequencing, not amount of content</a></li>
+<li><a href="#use-the-best-page-to-create-a-repeatable-page-standard">Use the best page to create a repeatable page standard</a></li>
+<li><a href="#what-to-fix-this-week">What to fix this week</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <div class="article-body">
+          <div class="body-intro">
+            <div class="eyebrow">What this is really about</div>
+            <p>A top-performing product page often works because it answers more questions, creates less friction, and feels safer to buy from. The mistake is treating that success like an exception instead of a pattern worth copying.</p>
       <p>Weak pages usually do not fail for mysterious reasons. They fail because they leave too much decision work unresolved. The stronger page tends to solve that work more clearly.</p>
       <p>If you want faster improvement across the catalog, stop auditing random pages first. Start with the page that already wins.</p>
-
-      <div class="section">
+          </div>
+      <section class="section" id="your-best-page-often-has-better-decision-support-not-just-a-better-product">
         <h2>Your best page often has better decision support, not just a better product</h2>
         <p>Yes, some products are simply easier to sell. But many best sellers also benefit from a page that explains fit, value, use case, and risk more clearly than the rest of the store.</p>
         <p>That means the lesson is not only product-market fit. It is also page execution.</p>
@@ -242,9 +456,9 @@
           <li>More obvious use cases</li>
           <li>Stronger trust and shipping clarity</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="compare-page-structure-before-you-compare-conversion-rates">
         <h2>Compare page structure before you compare conversion rates</h2>
         <div class="callout">The fastest conversion audit is often a side-by-side reading session, not a reporting project.</div>
         <p>Many merchants jump straight into analytics. That helps, but the structural differences are often visible before you even open a dashboard.</p>
@@ -255,9 +469,9 @@
           <li>How soon risk answers appear</li>
           <li>Whether the buy path feels calm or overloaded</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="the-difference-is-often-in-sequencing-not-amount-of-content">
         <h2>The difference is often in sequencing, not amount of content</h2>
         <p>A better product page does not always have more copy. It often has better ordering. The buyer sees the right reassurance at the right moment.</p>
         <p>That is why copying content volume rarely helps. What matters is where the important answers appear and how naturally the page moves from attention to confidence.</p>
@@ -267,9 +481,9 @@
           <li>Group supporting details instead of scattering them</li>
           <li>Remove decorative sections that interrupt evaluation</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="use-the-best-page-to-create-a-repeatable-page-standard">
         <h2>Use the best page to create a repeatable page standard</h2>
         <p>Once you understand why one page works, turn that into a page system. Not a rigid template, but a quality standard for how Shopify pages should explain products.</p>
         <p>That is how one good page becomes storewide leverage instead of an isolated success.</p>
@@ -279,9 +493,9 @@
           <li>Clarify image roles and sequence</li>
           <li>Decide which questions every page must answer</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="section">
+      <section class="section" id="what-to-fix-this-week">
         <h2>What to fix this week</h2>
         <p>Choose your best seller and one weaker page in the same category. Review them side by side and note where the stronger page makes the decision easier.</p>
         <p>Then fix one weakness at a time across the weaker page. In most stores, the real opportunity is not hunting for a hero product. It is making more pages behave like the one that already works.</p>
@@ -291,7 +505,9 @@
           <li>Add missing risk answers</li>
           <li>Turn the result into a repeatable PDP checklist</li>
         </ul>
-      </div>
+      </section>
+        </div>
+      </section>
     </article>
     <footer class="footer">
       <small>&copy; 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>
