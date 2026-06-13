@@ -1121,7 +1121,7 @@ function renderArticlesPage(posts) {
 
   const archiveHtml = archiveGroups
     .map(
-      ({ label, posts: groupedPosts }, groupIndex) => `      <section class="archive-group">
+      ({ label, posts: groupedPosts }) => `      <section class="archive-group">
         <div class="archive-group-head">
           <h2>${escapeHtml(label)}</h2>
           <span>${groupedPosts.length} article${groupedPosts.length === 1 ? "" : "s"}</span>
@@ -1129,8 +1129,8 @@ function renderArticlesPage(posts) {
         <div class="articles-grid">
 ${groupedPosts
   .map(
-    (post, index) => `          <a class="card-link ${groupIndex === 0 && index === 0 ? "card-link--wide" : ""}" href="/blog/${post.slug}">
-            <article class="card ${groupIndex === 0 && index === 0 ? "card--wide" : ""}">
+    (post) => `          <a class="card-link" href="/blog/${post.slug}">
+            <article class="card">
               <div class="thumb">
                 <img src="${escapeHtmlAttr(post.heroImagePath)}" alt="${escapeHtmlAttr(post.heroImageAlt)}" />
               </div>
@@ -1177,12 +1177,10 @@ ${groupedPosts
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
-        --paper-soft: #f8f5ed;
-        --radius: 24px;
+        --radius: 22px;
         --line: rgba(17, 17, 20, 0.08);
         --accent: #123f35;
-        --accent-soft: #e8f0ed;
-        --shadow: 0 16px 38px rgba(17, 17, 20, 0.08);
+        --shadow: 0 12px 28px rgba(17, 17, 20, 0.06);
       }
 
       * {
@@ -1193,9 +1191,7 @@ ${groupedPosts
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background:
-          radial-gradient(circle at top left, rgba(243, 235, 218, 0.8), transparent 34%),
-          linear-gradient(180deg, #fcfbf7 0%, #ffffff 20%);
+        background: #fcfbf8;
       }
 
       h1,
@@ -1220,12 +1216,9 @@ ${groupedPosts
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 26px 6vw;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        backdrop-filter: blur(16px);
-        background: rgba(255, 255, 255, 0.82);
+        padding: 24px 6vw;
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
       }
 
       .brand-logo {
@@ -1239,105 +1232,75 @@ ${groupedPosts
         font-size: 15px;
       }
 
-      .page-hero {
-        max-width: 1220px;
+      .page-intro {
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 34px 6vw 42px;
-      }
-
-      .page-hero-shell {
+        padding: 40px 6vw 20px;
         display: grid;
-        gap: 18px;
-        padding: 34px;
-        border: 1px solid var(--line);
-        border-radius: 32px;
-        background: rgba(255, 255, 255, 0.84);
-        box-shadow: var(--shadow);
+        gap: 10px;
       }
 
-      .eyebrow {
-        width: fit-content;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-size: 0.84rem;
-        font-weight: 600;
+      .page-intro h1 {
+        font-size: clamp(2.2rem, 4vw, 3.6rem);
+        line-height: 1.02;
+        max-width: 11ch;
       }
 
-      .page-hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4.6rem);
-        line-height: 0.98;
-        max-width: 10ch;
-      }
-
-      .page-hero-copy {
-        max-width: 64ch;
-      }
-
-      .page-stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        color: rgba(17, 17, 20, 0.65);
-      }
-
-      .page-stat {
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: #f4f2eb;
+      .page-intro p {
+        max-width: 60ch;
+        font-size: 1.02rem;
       }
 
       .feature {
-        padding: 0 6vw 34px;
+        padding: 8px 6vw 36px;
       }
 
       .feature-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-        gap: 24px;
-        max-width: 1220px;
+        grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1fr);
+        gap: 0;
+        max-width: 1100px;
         margin: 0 auto;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 32px;
+        background: #ffffff;
+        border-radius: 28px;
         border: 1px solid var(--line);
         box-shadow: var(--shadow);
         overflow: hidden;
       }
 
       .feature-media {
-        padding: 16px;
-        background: linear-gradient(180deg, #f5f0e4 0%, #fbfbfb 100%);
+        padding: 0;
+        background: #f1f1f1;
       }
 
       .feature-media img {
         width: 100%;
         height: 100%;
-        min-height: 340px;
-        border-radius: 22px;
+        min-height: 320px;
         object-fit: cover;
       }
 
       .feature-copy {
-        padding: 34px;
+        padding: 28px;
         display: grid;
-        gap: 16px;
+        gap: 14px;
         align-content: center;
       }
 
       .feature-pill {
         width: fit-content;
-        padding: 7px 12px;
+        padding: 6px 11px;
         border-radius: 999px;
-        background: #f4f2eb;
-        color: rgba(17, 17, 20, 0.68);
+        background: #f3f4f4;
+        color: rgba(17, 17, 20, 0.62);
         font-size: 0.82rem;
         font-weight: 600;
       }
 
       .feature-copy h2 {
-        font-size: clamp(2rem, 3.2vw, 3.2rem);
-        line-height: 1.04;
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.05;
+        max-width: 12ch;
       }
 
       .feature-meta {
@@ -1349,7 +1312,7 @@ ${groupedPosts
 
       .feature-cta {
         width: fit-content;
-        padding: 12px 18px;
+        padding: 11px 16px;
         border-radius: 14px;
         background: var(--accent);
         color: #ffffff;
@@ -1357,28 +1320,29 @@ ${groupedPosts
       }
 
       .archive {
-        max-width: 1220px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 0 6vw 80px;
         display: grid;
-        gap: 34px;
+        gap: 26px;
       }
 
       .archive-head {
         display: flex;
         justify-content: space-between;
         gap: 20px;
-        align-items: end;
+        align-items: center;
         flex-wrap: wrap;
+        padding-top: 8px;
       }
 
       .archive-head p {
-        max-width: 62ch;
+        max-width: 56ch;
       }
 
       .archive-group {
         display: grid;
-        gap: 18px;
+        gap: 14px;
       }
 
       .archive-group-head {
@@ -1394,38 +1358,26 @@ ${groupedPosts
       .articles-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .card-link--wide {
-        grid-column: span 2;
+        gap: 18px;
       }
 
       .card {
         height: 100%;
-        background: rgba(255, 255, 255, 0.92);
+        background: #ffffff;
         border-radius: var(--radius);
-        padding: 16px;
-        box-shadow: var(--shadow);
+        padding: 14px;
+        box-shadow: none;
         border: 1px solid rgba(17, 17, 20, 0.05);
         display: grid;
-        gap: 14px;
-      }
-
-      .card--wide {
-        grid-template-columns: minmax(260px, 0.96fr) minmax(0, 1fr);
-        align-items: stretch;
+        gap: 12px;
       }
 
       .thumb {
-        min-height: 212px;
+        aspect-ratio: 4 / 3;
+        min-height: 0;
         border-radius: 18px;
         overflow: hidden;
         background: #eceff1;
-      }
-
-      .card--wide .thumb {
-        min-height: 280px;
       }
 
       .thumb img {
@@ -1449,7 +1401,7 @@ ${groupedPosts
       }
 
       .card h3 {
-        font-size: 1.48rem;
+        font-size: 1.2rem;
         line-height: 1.14;
       }
 
@@ -1467,28 +1419,20 @@ ${groupedPosts
         flex-wrap: wrap;
       }
 
-      @media (max-width: 1080px) {
-        .feature-grid,
-        .card--wide {
+      @media (max-width: 960px) {
+        .feature-grid {
           grid-template-columns: 1fr;
         }
 
         .articles-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-
-        .card-link--wide {
-          grid-column: auto;
-        }
       }
 
       @media (max-width: 720px) {
-        .page-hero-shell,
         .feature-copy,
-        .feature-media,
         .card {
-          padding: 20px;
-          border-radius: 24px;
+          padding: 18px;
         }
 
         .articles-grid {
@@ -1511,17 +1455,9 @@ ${groupedPosts
       </div>
     </nav>
 
-    <section class="page-hero">
-      <div class="page-hero-shell">
-        <div class="eyebrow">Merchants Digest archive</div>
-        <h1>Practical reads for Shopify teams that run the store.</h1>
-        <p class="page-hero-copy">We are organizing the archive more like a strong SaaS editorial hub: one lead story, clearer reading hierarchy, and a cleaner month-by-month index instead of a flat wall of posts.</p>
-        <div class="page-stats">
-          <span class="page-stat">${posts.length} published articles</span>
-          <span class="page-stat">Conversion, trust, SEO, AI visibility</span>
-          <span class="page-stat">Written for operators, not marketers</span>
-        </div>
-      </div>
+    <section class="page-intro">
+      <h1>Articles for Shopify merchants who run the store.</h1>
+      <p>Practical reads on conversion, trust, merchandising, and discoverability.</p>
     </section>
 
     <section class="feature">
@@ -1530,7 +1466,7 @@ ${groupedPosts
           <img src="${escapeHtmlAttr(featured.heroImagePath)}" alt="${escapeHtmlAttr(featured.heroImageAlt)}" />
         </div>
         <div class="feature-copy">
-          <span class="feature-pill">Featured article</span>
+          <span class="feature-pill">Featured</span>
           <h2>${escapeHtml(featured.title)}</h2>
           <p>${escapeHtml(featured.excerpt)}</p>
           <div class="feature-meta">
@@ -1538,7 +1474,7 @@ ${groupedPosts
             <span>·</span>
             <span>${featured.readTimeMinutes} min read</span>
           </div>
-          <a class="feature-cta" href="/blog/${featured.slug}">Read featured article →</a>
+          <a class="feature-cta" href="/blog/${featured.slug}">Read article →</a>
         </div>
       </div>
     </section>
@@ -1547,7 +1483,7 @@ ${groupedPosts
       <div class="archive-head">
         <div>
           <h2>Archive</h2>
-          <p>Practical reads for Shopify merchants on conversion, trust, merchandising, and discoverability. Browse the latest thinking and revisit the archive by month.</p>
+          <p>${posts.length} published articles across conversion, trust, merchandising, and discoverability.</p>
         </div>
       </div>
 ${archiveHtml}

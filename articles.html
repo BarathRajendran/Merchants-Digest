@@ -517,12 +517,10 @@
         --ink: #111114;
         --ink-muted: #4a4b57;
         --paper: #ffffff;
-        --paper-soft: #f8f5ed;
-        --radius: 24px;
+        --radius: 22px;
         --line: rgba(17, 17, 20, 0.08);
         --accent: #123f35;
-        --accent-soft: #e8f0ed;
-        --shadow: 0 16px 38px rgba(17, 17, 20, 0.08);
+        --shadow: 0 12px 28px rgba(17, 17, 20, 0.06);
       }
 
       * {
@@ -533,9 +531,7 @@
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         color: var(--ink);
-        background:
-          radial-gradient(circle at top left, rgba(243, 235, 218, 0.8), transparent 34%),
-          linear-gradient(180deg, #fcfbf7 0%, #ffffff 20%);
+        background: #fcfbf8;
       }
 
       h1,
@@ -560,12 +556,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 26px 6vw;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        backdrop-filter: blur(16px);
-        background: rgba(255, 255, 255, 0.82);
+        padding: 24px 6vw;
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
       }
 
       .brand-logo {
@@ -579,105 +572,75 @@
         font-size: 15px;
       }
 
-      .page-hero {
-        max-width: 1220px;
+      .page-intro {
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 34px 6vw 42px;
-      }
-
-      .page-hero-shell {
+        padding: 40px 6vw 20px;
         display: grid;
-        gap: 18px;
-        padding: 34px;
-        border: 1px solid var(--line);
-        border-radius: 32px;
-        background: rgba(255, 255, 255, 0.84);
-        box-shadow: var(--shadow);
+        gap: 10px;
       }
 
-      .eyebrow {
-        width: fit-content;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-size: 0.84rem;
-        font-weight: 600;
+      .page-intro h1 {
+        font-size: clamp(2.2rem, 4vw, 3.6rem);
+        line-height: 1.02;
+        max-width: 11ch;
       }
 
-      .page-hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4.6rem);
-        line-height: 0.98;
-        max-width: 10ch;
-      }
-
-      .page-hero-copy {
-        max-width: 64ch;
-      }
-
-      .page-stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        color: rgba(17, 17, 20, 0.65);
-      }
-
-      .page-stat {
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: #f4f2eb;
+      .page-intro p {
+        max-width: 60ch;
+        font-size: 1.02rem;
       }
 
       .feature {
-        padding: 0 6vw 34px;
+        padding: 8px 6vw 36px;
       }
 
       .feature-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-        gap: 24px;
-        max-width: 1220px;
+        grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1fr);
+        gap: 0;
+        max-width: 1100px;
         margin: 0 auto;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 32px;
+        background: #ffffff;
+        border-radius: 28px;
         border: 1px solid var(--line);
         box-shadow: var(--shadow);
         overflow: hidden;
       }
 
       .feature-media {
-        padding: 16px;
-        background: linear-gradient(180deg, #f5f0e4 0%, #fbfbfb 100%);
+        padding: 0;
+        background: #f1f1f1;
       }
 
       .feature-media img {
         width: 100%;
         height: 100%;
-        min-height: 340px;
-        border-radius: 22px;
+        min-height: 320px;
         object-fit: cover;
       }
 
       .feature-copy {
-        padding: 34px;
+        padding: 28px;
         display: grid;
-        gap: 16px;
+        gap: 14px;
         align-content: center;
       }
 
       .feature-pill {
         width: fit-content;
-        padding: 7px 12px;
+        padding: 6px 11px;
         border-radius: 999px;
-        background: #f4f2eb;
-        color: rgba(17, 17, 20, 0.68);
+        background: #f3f4f4;
+        color: rgba(17, 17, 20, 0.62);
         font-size: 0.82rem;
         font-weight: 600;
       }
 
       .feature-copy h2 {
-        font-size: clamp(2rem, 3.2vw, 3.2rem);
-        line-height: 1.04;
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.05;
+        max-width: 12ch;
       }
 
       .feature-meta {
@@ -689,7 +652,7 @@
 
       .feature-cta {
         width: fit-content;
-        padding: 12px 18px;
+        padding: 11px 16px;
         border-radius: 14px;
         background: var(--accent);
         color: #ffffff;
@@ -697,28 +660,29 @@
       }
 
       .archive {
-        max-width: 1220px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 0 6vw 80px;
         display: grid;
-        gap: 34px;
+        gap: 26px;
       }
 
       .archive-head {
         display: flex;
         justify-content: space-between;
         gap: 20px;
-        align-items: end;
+        align-items: center;
         flex-wrap: wrap;
+        padding-top: 8px;
       }
 
       .archive-head p {
-        max-width: 62ch;
+        max-width: 56ch;
       }
 
       .archive-group {
         display: grid;
-        gap: 18px;
+        gap: 14px;
       }
 
       .archive-group-head {
@@ -734,38 +698,26 @@
       .articles-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .card-link--wide {
-        grid-column: span 2;
+        gap: 18px;
       }
 
       .card {
         height: 100%;
-        background: rgba(255, 255, 255, 0.92);
+        background: #ffffff;
         border-radius: var(--radius);
-        padding: 16px;
-        box-shadow: var(--shadow);
+        padding: 14px;
+        box-shadow: none;
         border: 1px solid rgba(17, 17, 20, 0.05);
         display: grid;
-        gap: 14px;
-      }
-
-      .card--wide {
-        grid-template-columns: minmax(260px, 0.96fr) minmax(0, 1fr);
-        align-items: stretch;
+        gap: 12px;
       }
 
       .thumb {
-        min-height: 212px;
+        aspect-ratio: 4 / 3;
+        min-height: 0;
         border-radius: 18px;
         overflow: hidden;
         background: #eceff1;
-      }
-
-      .card--wide .thumb {
-        min-height: 280px;
       }
 
       .thumb img {
@@ -789,7 +741,7 @@
       }
 
       .card h3 {
-        font-size: 1.48rem;
+        font-size: 1.2rem;
         line-height: 1.14;
       }
 
@@ -807,28 +759,20 @@
         flex-wrap: wrap;
       }
 
-      @media (max-width: 1080px) {
-        .feature-grid,
-        .card--wide {
+      @media (max-width: 960px) {
+        .feature-grid {
           grid-template-columns: 1fr;
         }
 
         .articles-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-
-        .card-link--wide {
-          grid-column: auto;
-        }
       }
 
       @media (max-width: 720px) {
-        .page-hero-shell,
         .feature-copy,
-        .feature-media,
         .card {
-          padding: 20px;
-          border-radius: 24px;
+          padding: 18px;
         }
 
         .articles-grid {
@@ -851,17 +795,9 @@
       </div>
     </nav>
 
-    <section class="page-hero">
-      <div class="page-hero-shell">
-        <div class="eyebrow">Merchants Digest archive</div>
-        <h1>Practical reads for Shopify teams that run the store.</h1>
-        <p class="page-hero-copy">We are organizing the archive more like a strong SaaS editorial hub: one lead story, clearer reading hierarchy, and a cleaner month-by-month index instead of a flat wall of posts.</p>
-        <div class="page-stats">
-          <span class="page-stat">30 published articles</span>
-          <span class="page-stat">Conversion, trust, SEO, AI visibility</span>
-          <span class="page-stat">Written for operators, not marketers</span>
-        </div>
-      </div>
+    <section class="page-intro">
+      <h1>Articles for Shopify merchants who run the store.</h1>
+      <p>Practical reads on conversion, trust, merchandising, and discoverability.</p>
     </section>
 
     <section class="feature">
@@ -870,7 +806,7 @@
           <img src="/images/Blogs/Visible%20in%20AI%20search.jpg" alt="Visible in AI search" />
         </div>
         <div class="feature-copy">
-          <span class="feature-pill">Featured article</span>
+          <span class="feature-pill">Featured</span>
           <h2>How to Make Your Shopify Store and Products Visible in AI Search</h2>
           <p>AI answers are replacing blue links. Merchants who publish clearer, structured content get referenced first and convert higher-intent buyers.</p>
           <div class="feature-meta">
@@ -878,7 +814,7 @@
             <span>·</span>
             <span>10 min read</span>
           </div>
-          <a class="feature-cta" href="/blog/ai-search">Read featured article →</a>
+          <a class="feature-cta" href="/blog/ai-search">Read article →</a>
         </div>
       </div>
     </section>
@@ -887,7 +823,7 @@
       <div class="archive-head">
         <div>
           <h2>Archive</h2>
-          <p>Practical reads for Shopify merchants on conversion, trust, merchandising, and discoverability. Browse the latest thinking and revisit the archive by month.</p>
+          <p>30 published articles across conversion, trust, merchandising, and discoverability.</p>
         </div>
       </div>
       <section class="archive-group">
@@ -896,8 +832,8 @@
           <span>4 articles</span>
         </div>
         <div class="articles-grid">
-          <a class="card-link card-link--wide" href="/blog/policy-pages-growth-pages">
-            <article class="card card--wide">
+          <a class="card-link" href="/blog/policy-pages-growth-pages">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-policy-pages-growth-pages.png" alt="Shipping, returns, and sizing policy pages as growth assets" />
               </div>
@@ -913,8 +849,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/ai-shopping-agent-ready-store">
-            <article class="card ">
+          <a class="card-link" href="/blog/ai-shopping-agent-ready-store">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-ai-shopping-agent-ready-store.png" alt="AI shopping agent evaluating a Shopify store" />
               </div>
@@ -930,8 +866,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/stores-that-convert-better-answer-questions-earlier">
-            <article class="card ">
+          <a class="card-link" href="/blog/stores-that-convert-better-answer-questions-earlier">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-stores-that-convert-better-answer-questions-earlier.png" alt="Storefront decision path where buyer questions are resolved earlier" />
               </div>
@@ -947,8 +883,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/clear-sizing-content-belongs-near-the-buy-decision">
-            <article class="card ">
+          <a class="card-link" href="/blog/clear-sizing-content-belongs-near-the-buy-decision">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-clear-sizing-content-belongs-near-the-buy-decision.png" alt="Sizing guidance and product fit cues placed near an ecommerce buying decision" />
               </div>
@@ -972,8 +908,8 @@
           <span>4 articles</span>
         </div>
         <div class="articles-grid">
-          <a class="card-link " href="/blog/search-visibility-product-data-afterthought">
-            <article class="card ">
+          <a class="card-link" href="/blog/search-visibility-product-data-afterthought">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-search-visibility-product-data-afterthought.png" alt="Structured product data preparation for search and discovery" />
               </div>
@@ -989,8 +925,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/trustworthy-without-looking-corporate">
-            <article class="card ">
+          <a class="card-link" href="/blog/trustworthy-without-looking-corporate">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-trustworthy-without-looking-corporate.png" alt="Warm but credible retail scene showing trust through clarity and consistency" />
               </div>
@@ -1006,8 +942,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/better-product-grouping-conversion-discovery">
-            <article class="card ">
+          <a class="card-link" href="/blog/better-product-grouping-conversion-discovery">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-better-product-grouping-conversion-discovery.png" alt="Products being grouped into clearer families for browsing and discovery" />
               </div>
@@ -1023,8 +959,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/pdp-elements-buyers-notice-first">
-            <article class="card ">
+          <a class="card-link" href="/blog/pdp-elements-buyers-notice-first">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-pdp-elements-buyers-notice-first.png" alt="Buyer scanning the key elements of a product page in priority order" />
               </div>
@@ -1048,8 +984,8 @@
           <span>4 articles</span>
         </div>
         <div class="articles-grid">
-          <a class="card-link " href="/blog/bundle-offers-helpful-instead-of-pushy">
-            <article class="card ">
+          <a class="card-link" href="/blog/bundle-offers-helpful-instead-of-pushy">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-bundle-offers-helpful-instead-of-pushy.png" alt="Complementary ecommerce products arranged as a thoughtful bundle decision" />
               </div>
@@ -1065,8 +1001,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/theme-decisions-looks-before-clarity">
-            <article class="card ">
+          <a class="card-link" href="/blog/theme-decisions-looks-before-clarity">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-theme-decisions-looks-before-clarity.png" alt="Beautiful but confusing storefront contrasted with a clearer buying experience" />
               </div>
@@ -1082,8 +1018,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/faq-content-revenue-content">
-            <article class="card ">
+          <a class="card-link" href="/blog/faq-content-revenue-content">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-faq-content-revenue-content.png" alt="Buyer question and answer content organized as part of a product decision flow" />
               </div>
@@ -1099,8 +1035,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/product-reviews-help-less-when-basics-unclear">
-            <article class="card ">
+          <a class="card-link" href="/blog/product-reviews-help-less-when-basics-unclear">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-product-reviews-help-less-when-basics-unclear.png" alt="Shopper comparing product details and review proof on a retail display" />
               </div>
@@ -1124,8 +1060,8 @@
           <span>4 articles</span>
         </div>
         <div class="articles-grid">
-          <a class="card-link " href="/blog/ai-friendly-stores-better-structured-stores">
-            <article class="card ">
+          <a class="card-link" href="/blog/ai-friendly-stores-better-structured-stores">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-ai-friendly-stores-better-structured-stores.png" alt="Structured retail product evaluation scene with clear product and trust signals" />
               </div>
@@ -1141,8 +1077,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/audit-mobile-product-pages-before-more-traffic">
-            <article class="card ">
+          <a class="card-link" href="/blog/audit-mobile-product-pages-before-more-traffic">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-audit-mobile-product-pages-before-more-traffic.png" alt="Merchant reviewing a mobile Shopify product page for buying friction" />
               </div>
@@ -1158,8 +1094,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/quiet-cost-inconsistent-product-naming">
-            <article class="card ">
+          <a class="card-link" href="/blog/quiet-cost-inconsistent-product-naming">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-quiet-cost-inconsistent-product-naming.png" alt="Merchandiser organizing product names and labels for a Shopify catalog" />
               </div>
@@ -1175,8 +1111,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/returning-visitors-still-leave-without-buying">
-            <article class="card ">
+          <a class="card-link" href="/blog/returning-visitors-still-leave-without-buying">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-returning-visitors-still-leave-without-buying.png" alt="Buyer evaluating a Shopify product multiple times before purchasing" />
               </div>
@@ -1200,8 +1136,8 @@
           <span>5 articles</span>
         </div>
         <div class="articles-grid">
-          <a class="card-link " href="/blog/shopify-search-better-catalog-stops-fighting-it">
-            <article class="card ">
+          <a class="card-link" href="/blog/shopify-search-better-catalog-stops-fighting-it">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-shopify-search-better-catalog-stops-fighting-it.png" alt="Catalog structure review for Shopify search improvement" />
               </div>
@@ -1217,8 +1153,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/faster-way-improve-conversion-better-product-context">
-            <article class="card ">
+          <a class="card-link" href="/blog/faster-way-improve-conversion-better-product-context">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-faster-way-improve-conversion-better-product-context.png" alt="Product context materials and merchant notes arranged beside a Shopify product page" />
               </div>
@@ -1234,8 +1170,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/best-product-page-teaches-rest-of-store">
-            <article class="card ">
+          <a class="card-link" href="/blog/best-product-page-teaches-rest-of-store">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-best-product-page-teaches-rest-of-store.png" alt="Merchant reviewing a high-performing Shopify product page with notes" />
               </div>
@@ -1251,8 +1187,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/collection-pages-matter-more">
-            <article class="card ">
+          <a class="card-link" href="/blog/collection-pages-matter-more">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/generated-collection-pages-matter-more.png" alt="Shopify collection page planning materials on a merchant desk" />
               </div>
@@ -1268,8 +1204,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/reddit-buyer-discovery">
-            <article class="card ">
+          <a class="card-link" href="/blog/reddit-buyer-discovery">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/Reddit%20is%20becoming.png" alt="Reddit buyer discovery" />
               </div>
@@ -1293,8 +1229,8 @@
           <span>8 articles</span>
         </div>
         <div class="articles-grid">
-          <a class="card-link " href="/blog/shopify-stores-do-not-fail-because-of-traffic">
-            <article class="card ">
+          <a class="card-link" href="/blog/shopify-stores-do-not-fail-because-of-traffic">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/Shopify%20stores%20do%20not%20fail.png" alt="Shopify stores do not fail because of traffic" />
               </div>
@@ -1310,8 +1246,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/build-trust">
-            <article class="card ">
+          <a class="card-link" href="/blog/build-trust">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/Buildtrust.png" alt="Trust signals across a Shopify store" />
               </div>
@@ -1327,8 +1263,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/remove-buyer-doubts">
-            <article class="card ">
+          <a class="card-link" href="/blog/remove-buyer-doubts">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/Start%20Removing%20Buyer%20Doubts.png" alt="Start removing buyer doubts" />
               </div>
@@ -1344,8 +1280,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/increase-aov">
-            <article class="card ">
+          <a class="card-link" href="/blog/increase-aov">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Increase%20AOV.jpg" alt="Increase average order value" />
               </div>
@@ -1361,8 +1297,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/premium-without-fancy">
-            <article class="card ">
+          <a class="card-link" href="/blog/premium-without-fancy">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/Why%20Some%20Shopify%20Stores%20Feel%20Premium.png" alt="Premium without fancy design" />
               </div>
@@ -1378,8 +1314,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/shopify-app-overload">
-            <article class="card ">
+          <a class="card-link" href="/blog/shopify-app-overload">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Shopify%20App%20Overload.jpg" alt="Shopify app overload" />
               </div>
@@ -1395,8 +1331,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/traffic-quality">
-            <article class="card ">
+          <a class="card-link" href="/blog/traffic-quality">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/Blogs/Not%20all%20Traffic.jpg" alt="Not all traffic is equal" />
               </div>
@@ -1412,8 +1348,8 @@
               </div>
             </article>
           </a>
-          <a class="card-link " href="/blog/traffic-no-sales">
-            <article class="card ">
+          <a class="card-link" href="/blog/traffic-no-sales">
+            <article class="card">
               <div class="thumb">
                 <img src="/images/You%27re%20Getting%20Traffic.jpg" alt="Traffic but no sales" />
               </div>
