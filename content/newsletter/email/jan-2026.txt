@@ -7,6 +7,12 @@ This is the first issue of Merchants Digest, so a quick word on what it is. Each
 
 January is when a lot of merchants write a big new growth plan. I would suggest the opposite: spend the month fixing whatever makes your current visitors hesitate. It is less exciting, and it usually pays off sooner.
 
+IN THIS ISSUE
+1. Search now reads your product pages
+2. Ads that look less like ads
+3. Shopify changes worth knowing
+4. One thing to do this week
+
 SEARCH IS STARTING TO READ YOUR PRODUCT PAGES, NOT JUST RANK THEM
 
 Google's AI results and assistants like ChatGPT now summarise products and stores before anyone clicks. They do best with pages that say plainly what a product is, who it is for, and what buying it involves: price, delivery, returns, sizing.
@@ -17,13 +23,15 @@ So a vague product page is now a discovery problem as well as a conversion probl
 - Are price, delivery time and return terms written as text on the page, not buried in images or tabs?
 - Do your product titles, types and variants match what the page actually says?
 
-I wrote about this in more detail here: https://www.merchantsdigest.com/blog/ai-search
+From the blog: How to Make Your Shopify Store and Products Visible in AI Search https://www.merchantsdigest.com/blog/ai-search
 
 ADS THAT LOOK LESS LIKE ADS ARE HOLDING UP BETTER
 
 The ads I see working for smaller stores look like they belong on the platform. A founder or someone from the team talking to camera. A short clip of the product being used. A real review read out loud. Being recognisable and consistent seems to matter more than polish.
 
 If you only try one thing: take your best customer review and turn it into a 15-second captioned video. It costs almost nothing, and it tells you quickly whether that format works for your buyers.
+
+"Being recognisable and consistent seems to matter more than polish."
 
 SHOPIFY CHANGES WORTH KNOWING
 
@@ -42,6 +50,10 @@ If you have time for more, these small fixes are usually worth it:
 - Move reviews closer to the buy button.
 - Remove checkout fields you do not actually need.
 - Uninstall one app you no longer use. Fewer apps usually means a faster store.
+
+Your first screen on mobile has to answer three questions before anyone scrolls.
+
+From the blog: Audit Your Mobile Product Pages Before You Buy More Traffic https://www.merchantsdigest.com/blog/audit-mobile-product-pages-before-more-traffic
 
 That is it for this month. Hit reply and tell me what you are working on in your store. I read the replies, and they shape what I write next.
 

@@ -21,14 +21,19 @@
         "Are price, delivery time and return terms written as text on the page, not buried in images or tabs?",
         "Do your product titles, types and variants match what the page actually says?"
       ],
-      "link": { "href": "/blog/ai-search", "text": "I wrote about this in more detail here" }
+      "short": "Search now reads your product pages",
+      "topic": "ai-search",
+      "article": "ai-search"
     },
     {
       "heading": "Ads that look less like ads are holding up better",
       "paragraphs": [
         "The ads I see working for smaller stores look like they belong on the platform. A founder or someone from the team talking to camera. A short clip of the product being used. A real review read out loud. Being recognisable and consistent seems to matter more than polish.",
         "If you only try one thing: take your best customer review and turn it into a 15-second captioned video. It costs almost nothing, and it tells you quickly whether that format works for your buyers."
-      ]
+      ],
+      "short": "Ads that look less like ads",
+      "topic": "conversion",
+      "pullquote": "Being recognisable and consistent seems to matter more than polish."
     },
     {
       "heading": "Shopify changes worth knowing",
@@ -51,7 +56,9 @@
           "href": "https://www.shopify.com/news/winter-26-edition-renaissance",
           "label": "Shopify's announcement"
         }
-      ]
+      ],
+      "short": "Shopify changes worth knowing",
+      "style": "updates"
     },
     {
       "heading": "One thing to do this week",
@@ -63,10 +70,15 @@
         "Move reviews closer to the buy button.",
         "Remove checkout fields you do not actually need.",
         "Uninstall one app you no longer use. Fewer apps usually means a faster store."
-      ]
+      ],
+      "short": "One thing to do this week",
+      "style": "action",
+      "figure": "phone-fold",
+      "article": "audit-mobile-product-pages-before-more-traffic"
     }
   ],
   "closing": [
     "That is it for this month. Hit reply and tell me what you are working on in your store. I read the replies, and they shape what I write next."
-  ]
+  ],
+  "readMinutes": 4
 }
