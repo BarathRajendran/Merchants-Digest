@@ -649,6 +649,10 @@ ${footer()}`;
 // ---------- newsletter ----------
 // Issues live in content/newsletter/<slug>.json and render three ways: the web archive page,
 // an email-ready HTML file and a plain-text file (content/newsletter/email/) for an email service.
+//
+// Section fields: heading, short (for "In this issue"), paragraphs, bullets (string or {text, href, label}),
+// topic (topic slug, colours the badge), style ("updates" | "action"), article (post slug, shows its cover
+// as a card), figure ("phone-fold" | "ad-mismatch"), pullquote.
 
 const absLink = (href) => (href.startsWith("/") ? abs(href) : href);
 
@@ -656,6 +660,59 @@ function issueBlocks(section) {
   const items = (section.bullets || []).map((b) => (typeof b === "string" ? { text: b } : b));
   return { paragraphs: section.paragraphs || [], items, link: section.link };
 }
+
+const sectionId = (section, index) => `s${index + 1}-${slugify(section.short || section.heading).slice(0, 40)}`;
+
+const FIGURES = {
+  "phone-fold": {
+    caption: "Your first screen on mobile has to answer three questions before anyone scrolls.",
+    web: `<div class="fig-phone">
+            <div class="phone" aria-hidden="true">
+              <div class="phone-notch"></div>
+              <div class="ph-img"></div>
+              <div class="ph-line w90"></div><div class="ph-line w60"></div>
+              <div class="ph-price"></div>
+              <div class="ph-btn">Add to cart</div>
+              <div class="ph-fold"><span>Before the scroll</span></div>
+              <div class="ph-line w80 faint"></div><div class="ph-line w70 faint"></div>
+            </div>
+            <ol class="phone-checks">
+              <li><strong>What is it?</strong><span>Said plainly in the first line, not left to the photo.</span></li>
+              <li><strong>Who is it for?</strong><span>The buyer should recognise themselves.</span></li>
+              <li><strong>When does it arrive?</strong><span>A delivery estimate near the button.</span></li>
+            </ol>
+          </div>`,
+    email: (cell) =>
+      cell(`<p style="margin:0 0 10px;font-size:13px;font-weight:600;color:#6b766f;text-transform:uppercase;letter-spacing:0.06em;">Before the scroll, your first screen should answer</p>
+<p style="margin:0 0 6px;font-size:16px;color:#1b2a23;"><strong>1. What is it?</strong> Said plainly in the first line.</p>
+<p style="margin:0 0 6px;font-size:16px;color:#1b2a23;"><strong>2. Who is it for?</strong> The buyer should recognise themselves.</p>
+<p style="margin:0;font-size:16px;color:#1b2a23;"><strong>3. When does it arrive?</strong> A delivery estimate near the button.</p>`)
+  },
+  "ad-mismatch": {
+    caption: "The click promised speed. The page opened with fabric. Lead the page with the same promise as the ad.",
+    web: `<div class="fig-mismatch">
+            <div class="mm-card mm-ad">
+              <small>Your ad</small>
+              <div class="mm-thumb" aria-hidden="true"></div>
+              <strong>Ships in 2 days. Free returns.</strong>
+              <span class="mm-cta" aria-hidden="true">Shop now</span>
+            </div>
+            <div class="mm-vs" aria-label="does not match">≠</div>
+            <div class="mm-card mm-page">
+              <small>Product page, first line</small>
+              <div class="mm-thumb" aria-hidden="true"></div>
+              <strong>Hand-woven from 100% organic cotton.</strong>
+              <span class="mm-note">Delivery info: three scrolls down</span>
+            </div>
+          </div>`,
+    email: (cell) =>
+      `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 8px;"><tr>
+<td width="47%" valign="top" style="padding:14px;border:1px solid #e7e4dc;border-radius:10px;background:#ffffff;"><p style="margin:0 0 6px;font-size:12px;color:#6b766f;text-transform:uppercase;letter-spacing:0.06em;">Your ad</p><p style="margin:0;font-size:16px;font-weight:600;color:#1b2a23;">Ships in 2 days. Free returns.</p></td>
+<td width="6%" align="center" style="font-size:22px;color:#c2410c;font-weight:700;">&ne;</td>
+<td width="47%" valign="top" style="padding:14px;border:1px solid #e7e4dc;border-radius:10px;background:#ffffff;"><p style="margin:0 0 6px;font-size:12px;color:#6b766f;text-transform:uppercase;letter-spacing:0.06em;">Product page, first line</p><p style="margin:0;font-size:16px;font-weight:600;color:#1b2a23;">Hand-woven from 100% organic cotton.</p></td>
+</tr></table>`
+  }
+};
 
 function renderNewsletterIndex(issues) {
   return `${head({
@@ -674,10 +731,14 @@ function renderNewsletterIndex(issues) {
         ${issues
           .map(
             (i) => `<li>
-          <time datetime="${i.date}">${esc(i.label)}</time>
+          <div class="ll-issue"><strong>Issue ${i.number}</strong><time datetime="${i.date}">${esc(i.label)}</time></div>
           <div>
             <h2><a href="/newsletter/${i.slug}">${esc(i.subject)}</a></h2>
             <p>${esc(i.preview)}</p>
+            <p class="ll-topics">${i.sections
+              .filter((s) => s.topic)
+              .map((s) => `<span class="kicker t-${s.topic}">${esc(topicBySlug.get(s.topic)?.navName || "")}</span>`)
+              .join(" ")}</p>
           </div>
         </li>`
           )
@@ -694,20 +755,79 @@ function issueItemHtml(i) {
   return `<li>${esc(i.text)} <a href="${esc(i.href)}"${external}>${esc(i.label || "Read more")}</a></li>`;
 }
 
-function renderIssue(issue, { newer, older } = {}) {
+function articleCard(post, label = "From the blog") {
+  if (!post) return "";
+  const topic = topicBySlug.get(post.topic);
+  return `<a class="nl-article${topic ? ` t-${topic.slug}` : ""}" href="${postUrl(post)}">
+            <img src="${cover(post, 800)}" alt="" width="800" height="450" loading="lazy" />
+            <span class="nl-article-body">
+              <small>${esc(label)}</small>
+              <strong>${esc(post.title)}</strong>
+              <em>${post.readTimeMinutes} min read · Read the article →</em>
+            </span>
+          </a>`;
+}
+
+function renderIssue(issue, { newer, older, postsBySlug = new Map() } = {}) {
   const sections = issue.sections
-    .map((section) => {
+    .map((section, index) => {
       const { paragraphs, items, link } = issueBlocks(section);
-      return [
-        `          <h2>${esc(section.heading)}</h2>`,
-        ...paragraphs.map((p) => `          <p>${esc(p)}</p>`),
-        items.length ? `          <ul>${items.map(issueItemHtml).join("")}</ul>` : "",
-        link ? `          <p><a href="${esc(link.href)}">${esc(link.text)} →</a></p>` : ""
-      ]
-        .filter(Boolean)
-        .join("\n");
+      const id = sectionId(section, index);
+      const topic = section.topic ? topicBySlug.get(section.topic) : null;
+      const figure = section.figure ? FIGURES[section.figure] : null;
+      const post = section.article ? postsBySlug.get(section.article) : null;
+      const style = section.style || "default";
+
+      let list = "";
+      if (items.length && style === "updates") {
+        list = `<div class="nl-updates">${items
+          .map(
+            (i) => `
+            <div class="nl-update">
+              <p>${esc(i.text)}</p>
+              ${i.href ? `<a href="${esc(i.href)}" rel="noopener" target="_blank">${esc(i.label || "Read more")} →</a>` : ""}
+            </div>`
+          )
+          .join("")}
+          </div>`;
+      } else if (items.length && style === "action") {
+        list = `<ul class="nl-checklist">${items.map((i) => `<li>${esc(i.text)}</li>`).join("")}</ul>`;
+      } else if (items.length) {
+        list = `<ul>${items.map(issueItemHtml).join("")}</ul>`;
+      }
+
+      const label =
+        style === "action"
+          ? `<span class="nl-label nl-label--action">Try this week</span>`
+          : style === "updates"
+            ? `<span class="nl-label nl-label--updates">Platform</span>`
+            : topic
+              ? `<span class="kicker t-${topic.slug}">${esc(topic.name)}</span>`
+              : "";
+
+      return `
+          <section id="${id}" class="nl-section nl-section--${style}">
+            ${label}
+            <h2>${esc(section.heading)}</h2>
+            ${paragraphs.map((p) => `<p>${esc(p)}</p>`).join("\n            ")}
+            ${list}
+            ${section.pullquote ? `<blockquote class="nl-quote"><p>${esc(section.pullquote)}</p></blockquote>` : ""}
+            ${figure ? `<figure class="nl-figure">${figure.web}<figcaption>${esc(figure.caption)}</figcaption></figure>` : ""}
+            ${post ? articleCard(post, style === "action" ? "Go deeper" : "From the blog") : ""}
+            ${link ? `<p><a href="${esc(link.href)}">${esc(link.text)} →</a></p>` : ""}
+          </section>`;
     })
-    .join("\n");
+    .join("");
+
+  const toc = issue.sections
+    .map((section, index) => {
+      const topic = section.topic ? topicBySlug.get(section.topic) : null;
+      const tag =
+        section.style === "action" ? "Try this" : section.style === "updates" ? "Platform" : topic ? topic.navName : "";
+      const cls = section.style === "action" ? "t-catalog" : section.style === "updates" ? "t-product-pages" : topic ? `t-${topic.slug}` : "";
+      return `<li><a href="#${sectionId(section, index)}"><span class="nl-toc-tag ${cls}">${esc(tag)}</span>${esc(section.short || section.heading)}</a></li>`;
+    })
+    .join("\n              ");
 
   return `${head({
     title: issue.subject,
@@ -735,17 +855,32 @@ function renderIssue(issue, { newer, older } = {}) {
       <div class="letter-shell">
         <nav class="crumbs" aria-label="Breadcrumb"><a href="/newsletter">Newsletter</a><span aria-hidden="true">/</span><span>${esc(issue.label)}</span></nav>
         <article class="letter">
-          <header class="letter-head">
-            <p class="letter-from"><img src="/assets/logo-mark.svg" alt="" width="28" height="16" /><span><strong>${esc(site.author.name)}</strong> at ${esc(site.name)}</span></p>
+          <header class="nl-mast">
+            <div class="nl-mast-top">
+              <span class="nl-brand"><img src="/assets/logo-mark.svg" alt="" width="28" height="16" />Merchants Digest</span>
+              <span>Issue ${issue.number} · ${esc(issue.label)}</span>
+            </div>
             <h1>${esc(issue.subject)}</h1>
-            <p class="meta"><time datetime="${issue.date}">${esc(issue.label)}</time><span>Issue ${issue.number}</span></p>
+            <p class="nl-dek">${esc(issue.preview)}</p>
+            <p class="nl-meta">${esc(site.author.name)} at ${esc(site.name)} · ${issue.readMinutes || 4} min read</p>
           </header>
+
           <div class="letter-body prose">
-          <p>${esc(issue.greeting)}</p>
-${issue.intro.map((p) => `          <p>${esc(p)}</p>`).join("\n")}
+            <p class="nl-greeting">${esc(issue.greeting)}</p>
+            ${issue.intro.map((p) => `<p>${esc(p)}</p>`).join("\n            ")}
+
+            <nav class="nl-toc" aria-label="In this issue">
+              <h2>In this issue</h2>
+              <ol>
+              ${toc}
+              </ol>
+            </nav>
 ${sections}
-${issue.closing.map((p) => `          <p>${esc(p)}</p>`).join("\n")}
-          <p class="signoff">${esc(site.author.name)}<br /><span>${esc(site.author.role)}</span></p>
+
+            <div class="nl-close">
+              ${issue.closing.map((p) => `<p>${esc(p)}</p>`).join("\n              ")}
+              <p class="signoff"><img src="/assets/logo-mark.svg" alt="" width="34" height="19" /><span>${esc(site.author.name)}<br /><small>${esc(site.author.role)}</small></span></p>
+            </div>
           </div>
         </article>
         <nav class="pager${newer && older ? "" : " pager--single"}" aria-label="More issues">
@@ -759,26 +894,72 @@ ${footer()}`;
 }
 
 // Email version: table layout and inline styles so it renders in Gmail, Outlook and Apple Mail.
-// Paste into the email service's HTML editor and keep the service's own unsubscribe footer.
-function renderIssueEmail(issue) {
+// Images use absolute URLs. Paste into the email service's HTML editor and keep its unsubscribe footer.
+function renderIssueEmail(issue, { postsBySlug = new Map() } = {}) {
   const ink = "#1b2a23";
-  const p = (t) => `<p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:${ink};">${t}</p>`;
-  const a = (href, text) => `<a href="${esc(absLink(href))}" style="color:#0e7a50;">${esc(text)}</a>`;
-  const li = (i) =>
-    `<li style="margin:0 0 8px;font-size:16px;line-height:1.55;color:${ink};">${esc(i.text)}${i.href ? ` ${a(i.href, i.label || "Read more")}` : ""}</li>`;
+  const muted = "#6b766f";
+  const green = "#0e7a50";
+  const p = (t, extra = "") => `<p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:${ink};${extra}">${t}</p>`;
+  const a = (href, text) => `<a href="${esc(absLink(href))}" style="color:${green};font-weight:600;">${esc(text)}</a>`;
+  const label = (text, color, bg) =>
+    `<p style="margin:28px 0 8px;"><span style="display:inline-block;padding:3px 10px;border-radius:999px;background:${bg};color:${color};font-size:12px;font-weight:600;">${esc(text)}</span></p>`;
+  const box = (inner, bg = "#f7f5ef", border = "#e7e4dc") =>
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;"><tr><td style="padding:18px 20px;background:${bg};border:1px solid ${border};border-radius:12px;">${inner}</td></tr></table>`;
+  const topicColors = {
+    conversion: ["#c2410c", "#fff0e6"],
+    "product-pages": ["#1d4ed8", "#e9efff"],
+    trust: ["#0e7a50", "#e6f5ec"],
+    "ai-search": ["#7c3aed", "#f1eaff"],
+    catalog: ["#a16207", "#fdf3d7"]
+  };
+
   const body = issue.sections
     .map((section) => {
       const { paragraphs, items, link } = issueBlocks(section);
-      return [
-        `<h2 style="margin:28px 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:21px;line-height:1.3;color:${ink};">${esc(section.heading)}</h2>`,
-        ...paragraphs.map((t) => p(esc(t))),
-        items.length ? `<ul style="margin:0 0 16px;padding-left:20px;">${items.map(li).join("")}</ul>` : "",
-        link ? p(a(link.href, `${link.text} →`)) : ""
-      ]
-        .filter(Boolean)
-        .join("\n");
+      const style = section.style || "default";
+      const topic = section.topic ? topicBySlug.get(section.topic) : null;
+      const post = section.article ? postsBySlug.get(section.article) : null;
+      const figure = section.figure ? FIGURES[section.figure] : null;
+      const parts = [];
+      if (style === "action") parts.push(label("Try this week", "#a16207", "#fdf3d7"));
+      else if (style === "updates") parts.push(label("Platform", "#1d4ed8", "#e9efff"));
+      else if (topic) parts.push(label(topic.name, ...topicColors[topic.slug]));
+      parts.push(`<h2 style="margin:0 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.3;color:${ink};">${esc(section.heading)}</h2>`);
+      const inner = paragraphs.map((t) => p(esc(t)));
+      if (items.length && style === "updates") {
+        inner.push(
+          ...items.map((i) =>
+            box(`${p(esc(i.text), "margin:0 0 8px;")}${i.href ? `<p style="margin:0;font-size:14px;">${a(i.href, `${i.label || "Read more"} →`)}</p>` : ""}`, "#ffffff")
+          )
+        );
+      } else if (items.length && style === "action") {
+        inner.push(
+          `<ul style="margin:0 0 4px;padding-left:20px;">${items.map((i) => `<li style="margin:0 0 8px;font-size:16px;line-height:1.55;color:${ink};">${esc(i.text)}</li>`).join("")}</ul>`
+        );
+      } else if (items.length) {
+        inner.push(
+          `<ul style="margin:0 0 16px;padding-left:20px;">${items
+            .map((i) => `<li style="margin:0 0 8px;font-size:16px;line-height:1.55;color:${ink};">${esc(i.text)}${i.href ? ` ${a(i.href, i.label || "Read more")}` : ""}</li>`)
+            .join("")}</ul>`
+        );
+      }
+      if (style === "action") parts.push(box(inner.join("\n"), "#fffaf0", "#f3e3bf"));
+      else parts.push(...inner);
+      if (section.pullquote)
+        parts.push(`<p style="margin:6px 0 18px;padding-left:16px;border-left:3px solid ${green};font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:19px;line-height:1.45;color:${ink};">${esc(section.pullquote)}</p>`);
+      if (figure) {
+        parts.push(figure.email((html) => box(html, "#ffffff")));
+        parts.push(p(esc(figure.caption), `font-size:14px;color:${muted};`));
+      }
+      if (post) {
+        parts.push(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border:1px solid #e7e4dc;border-radius:12px;"><tr><td style="padding:0;"><a href="${abs(postUrl(post))}"><img src="${abs(cover(post, 800))}" width="600" alt="" style="display:block;width:100%;height:auto;border-radius:12px 12px 0 0;" /></a></td></tr><tr><td style="padding:14px 18px;"><p style="margin:0 0 4px;font-size:12px;color:${muted};text-transform:uppercase;letter-spacing:0.06em;">From the blog</p><p style="margin:0 0 6px;font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:1.3;"><a href="${abs(postUrl(post))}" style="color:${ink};text-decoration:none;">${esc(post.title)}</a></p><p style="margin:0;font-size:14px;">${a(postUrl(post), "Read the article →")}</p></td></tr></table>`);
+      }
+      if (link) parts.push(p(a(link.href, `${link.text} →`)));
+      return parts.join("\n");
     })
     .join("\n");
+
+  const toc = issue.sections.map((s) => `<li style="margin:0 0 4px;font-size:15px;color:${ink};">${esc(s.short || s.heading)}</li>`).join("");
   const webUrl = abs(`/newsletter/${issue.slug}`);
   return `<!DOCTYPE html>
 <html lang="en">
@@ -787,18 +968,27 @@ function renderIssueEmail(issue) {
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>${esc(issue.subject)}</title>
 </head>
-<body style="margin:0;padding:0;background:#ffffff;">
+<body style="margin:0;padding:0;background:#f4f2ec;">
 <span style="display:none;max-height:0;overflow:hidden;">${esc(issue.preview)}</span>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:24px 16px;">
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
-<tr><td style="padding:0 0 20px;font-size:13px;color:#6b766f;">${esc(site.name)} · ${esc(issue.label)} · <a href="${webUrl}" style="color:#6b766f;">Read on the web</a></td></tr>
-<tr><td>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f4f2ec;"><tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;background:#ffffff;border-radius:16px;border:1px solid #e7e4dc;">
+<tr><td bgcolor="#e8f6ee" style="padding:22px 28px 24px;background:#e8f6ee;border-radius:16px 16px 0 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+<td style="font-size:14px;font-weight:700;color:${ink};"><img src="${abs("/assets/logo-mark-email.png")}" width="28" height="15" alt="" style="vertical-align:middle;margin-right:8px;" />Merchants Digest</td>
+<td align="right" style="font-size:13px;color:${muted};">Issue ${issue.number} · ${esc(issue.label)}</td>
+</tr></table>
+<h1 style="margin:18px 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:28px;line-height:1.2;color:${ink};">${esc(issue.subject)}</h1>
+<p style="margin:0;font-size:15px;line-height:1.5;color:#3f5a4c;">${esc(issue.preview)}</p>
+</td></tr>
+<tr><td style="padding:26px 28px 8px;">
 ${p(esc(issue.greeting))}
 ${issue.intro.map((t) => p(esc(t))).join("\n")}
+${box(`<p style="margin:0 0 8px;font-size:12px;font-weight:600;color:${muted};text-transform:uppercase;letter-spacing:0.06em;">In this issue</p><ol style="margin:0;padding-left:20px;">${toc}</ol>`)}
 ${body}
 ${issue.closing.map((t) => p(esc(t))).join("\n")}
-${p(`${esc(site.author.name)}<br /><span style="color:#6b766f;font-size:14px;">${esc(site.author.role)}</span>`)}
+${p(`<strong>${esc(site.author.name)}</strong><br /><span style="color:${muted};font-size:14px;">${esc(site.author.role)}</span>`)}
 </td></tr>
+<tr><td style="padding:16px 28px 22px;border-top:1px solid #e7e4dc;font-size:13px;color:${muted};"><a href="${webUrl}" style="color:${muted};">Read this issue on the web</a> · <a href="${site.origin}" style="color:${muted};">merchantsdigest.com</a></td></tr>
 </table>
 </td></tr></table>
 </body>
@@ -806,14 +996,19 @@ ${p(`${esc(site.author.name)}<br /><span style="color:#6b766f;font-size:14px;">$
 `;
 }
 
-function renderIssueText(issue) {
+function renderIssueText(issue, { postsBySlug = new Map() } = {}) {
   const lines = [`Subject: ${issue.subject}`, `Preview: ${issue.preview}`, "", issue.greeting, ""];
   issue.intro.forEach((t) => lines.push(t, ""));
+  lines.push("IN THIS ISSUE", ...issue.sections.map((s, i) => `${i + 1}. ${s.short || s.heading}`), "");
   for (const section of issue.sections) {
     const { paragraphs, items, link } = issueBlocks(section);
     lines.push(section.heading.toUpperCase(), "");
     paragraphs.forEach((t) => lines.push(t, ""));
     if (items.length) lines.push(...items.map((i) => `- ${i.text}${i.href ? ` ${absLink(i.href)}` : ""}`), "");
+    if (section.pullquote) lines.push(`"${section.pullquote}"`, "");
+    if (section.figure && FIGURES[section.figure]) lines.push(FIGURES[section.figure].caption, "");
+    const post = section.article ? postsBySlug.get(section.article) : null;
+    if (post) lines.push(`From the blog: ${post.title} ${abs(postUrl(post))}`, "");
     if (link) lines.push(`${link.text}: ${absLink(link.href)}`, "");
   }
   issue.closing.forEach((t) => lines.push(t, ""));
@@ -973,12 +1168,13 @@ export async function buildSite({ quiet = false } = {}) {
   await out("articles.html", renderArchive(posts));
   for (const topic of topics) await out(`topic-${topic.slug}.html`, renderTopic(topic, posts));
   const issues = await loadIssues();
+  const postsBySlug = new Map(posts.map((p) => [p.slug, p]));
   await out("newsletter.html", renderNewsletterIndex(issues));
   await mkdir(path.join(root, "content", "newsletter", "email"), { recursive: true });
   for (const [i, issue] of issues.entries()) {
-    await out(`newsletter-${issue.slug}.html`, renderIssue(issue, { newer: issues[i - 1], older: issues[i + 1] }));
-    await out(`content/newsletter/email/${issue.slug}.html`, renderIssueEmail(issue));
-    await out(`content/newsletter/email/${issue.slug}.txt`, renderIssueText(issue));
+    await out(`newsletter-${issue.slug}.html`, renderIssue(issue, { newer: issues[i - 1], older: issues[i + 1], postsBySlug }));
+    await out(`content/newsletter/email/${issue.slug}.html`, renderIssueEmail(issue, { postsBySlug }));
+    await out(`content/newsletter/email/${issue.slug}.txt`, renderIssueText(issue, { postsBySlug }));
   }
   await out("privacy-policy.html", renderPrivacy(await readFile(path.join(root, "content", "pages", "privacy-policy.html"), "utf8")));
   await out("404.html", render404(posts));

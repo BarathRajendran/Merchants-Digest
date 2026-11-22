@@ -15,14 +15,20 @@
         "Search for almost any product and you will often find Reddit threads near the top. \"Is this brand worth it?\" \"What should I look for?\" \"What is a good alternative to X?\" Those threads rank on Google, get quoted in AI answers, and stay around for years.",
         "The merchants who do well there do not promote themselves. They answer questions as someone who knows the category, explain the trade-offs honestly, and let other people bring up their brand. It is slow, and it fails if you treat it like an ad channel. But one genuinely helpful answer can keep sending the right visitors for a long time."
       ],
-      "link": { "href": "/blog/reddit-buyer-discovery", "text": "The full breakdown is on the site" }
+      "short": "Reddit is where buyers do their homework",
+      "topic": "ai-search",
+      "article": "reddit-buyer-discovery",
+      "pullquote": "One genuinely helpful answer can keep sending the right visitors for a long time."
     },
     {
       "heading": "Stop tweaking your ads every week",
       "paragraphs": [
         "A shift I have been seeing: merchants changing their ads less often, on purpose. Fewer creatives, left running longer, with one clear message repeated. Familiarity takes time to build, and constant refreshes keep resetting it.",
         "Before you change your next ad, check one thing. Does the ad's main promise match the first line of the product page it sends people to? If the ad says \"ships in two days\" and the page opens with fabric details, fix the page first. That mismatch probably costs you more than a tired creative does."
-      ]
+      ],
+      "short": "Stop tweaking your ads every week",
+      "topic": "conversion",
+      "figure": "ad-mismatch"
     },
     {
       "heading": "Shopify changes worth knowing",
@@ -42,7 +48,9 @@
           "href": "https://www.shopify.com/editions/winter2026",
           "label": "Winter '26 Edition"
         }
-      ]
+      ],
+      "short": "Shopify changes worth knowing",
+      "style": "updates"
     },
     {
       "heading": "Five small fixes worth a look",
@@ -52,11 +60,15 @@
         "Cut your homepage down to two main actions.",
         "Swap one styled product photo for one that shows the product in use.",
         "Replace a long FAQ with three direct answers near the product. Most people never scroll to the bottom."
-      ]
+      ],
+      "short": "Five small fixes",
+      "style": "action",
+      "article": "policy-pages-growth-pages"
     }
   ],
   "closing": [
     "None of this is dramatic. It is just making the traffic you already have easier to convert.",
     "As always, hit reply if any of this is relevant to your store. I would like to hear what is working for you."
-  ]
+  ],
+  "readMinutes": 4
 }
