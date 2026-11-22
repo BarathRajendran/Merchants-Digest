@@ -1,0 +1,185 @@
+{
+  "study": "apparel-pdp-2026",
+  "title": "What 90 Shopify fashion brands show on their product pages",
+  "fieldwork": {
+    "start": "2026-11-22",
+    "end": "2026-11-22"
+  },
+  "sample": {
+    "audited": 90,
+    "candidates": 117,
+    "excluded": 27,
+    "description": "Established direct-to-consumer apparel, footwear and accessories brands, each verified as running on Shopify. One in-stock product page per store; gift cards, samples and add-ons excluded."
+  },
+  "buyerFacing": {
+    "deliveryTimeframe": {
+      "count": 21,
+      "pct": 23
+    },
+    "returnsTerms": {
+      "count": 45,
+      "pct": 50
+    },
+    "sizeGuidance": {
+      "count": 52,
+      "pct": 58
+    },
+    "allThree": {
+      "count": 15,
+      "pct": 17
+    },
+    "neitherDeliveryNorReturns": {
+      "count": 41,
+      "pct": 46
+    },
+    "reviewWidget": {
+      "count": 69,
+      "pct": 77
+    },
+    "noReviewSignal": {
+      "count": 18,
+      "pct": 20
+    }
+  },
+  "structuredData": {
+    "productSchema": {
+      "count": 80,
+      "pct": 89
+    },
+    "price": {
+      "count": 77,
+      "pct": 86
+    },
+    "availability": {
+      "count": 78,
+      "pct": 87
+    },
+    "brand": {
+      "count": 80,
+      "pct": 89
+    },
+    "gtin": {
+      "count": 35,
+      "pct": 39
+    },
+    "aggregateRating": {
+      "count": 32,
+      "pct": 36
+    },
+    "shippingDetails": {
+      "count": 17,
+      "pct": 19
+    },
+    "returnPolicy": {
+      "count": 19,
+      "pct": 21
+    },
+    "invalidJsonLd": {
+      "count": 5,
+      "pct": 6
+    },
+    "reviewsShownButNotInSchema": {
+      "count": 40,
+      "pct": 44
+    }
+  },
+  "pageWeight": {
+    "thirdPartyScriptHostsMedian": 6,
+    "thirdPartyScriptHostsMax": 20,
+    "tenOrMoreHosts": {
+      "count": 22,
+      "pct": 24
+    },
+    "hostBuckets": [
+      {
+        "label": "0 to 3",
+        "count": 23
+      },
+      {
+        "label": "4 to 6",
+        "count": 25
+      },
+      {
+        "label": "7 to 9",
+        "count": 20
+      },
+      {
+        "label": "10 or more",
+        "count": 22
+      }
+    ],
+    "vendorCategories": [
+      {
+        "label": "Email and SMS marketing",
+        "stores": 68
+      },
+      {
+        "label": "Reviews and UGC",
+        "stores": 56
+      },
+      {
+        "label": "Consent and privacy",
+        "stores": 25
+      },
+      {
+        "label": "Testing and personalisation",
+        "stores": 24
+      },
+      {
+        "label": "Creator and affiliate",
+        "stores": 24
+      },
+      {
+        "label": "Public code CDNs",
+        "stores": 24
+      },
+      {
+        "label": "Support chat and help desk",
+        "stores": 23
+      },
+      {
+        "label": "Analytics, tags and ads",
+        "stores": 15
+      },
+      {
+        "label": "Delivery, returns and stock alerts",
+        "stores": 15
+      },
+      {
+        "label": "Video and shoppable content",
+        "stores": 9
+      }
+    ],
+    "htmlKBMedian": 791
+  },
+  "aiAccess": {
+    "robotsFetched": {
+      "count": 89,
+      "pct": 99
+    },
+    "blocksAnyAiCrawler": {
+      "count": 3,
+      "pct": 3
+    },
+    "llmsTxtPresent": {
+      "count": 83,
+      "pct": 92
+    },
+    "refundPolicyPage": {
+      "count": 79,
+      "pct": 88
+    },
+    "shippingPolicyPage": {
+      "count": 76,
+      "pct": 84
+    }
+  },
+  "method": {
+    "calibration": "Five product pages marked as having no delivery timeframe were reopened in a full browser after scripts loaded; none showed one.",
+    "limitations": [
+      "Checks read the HTML a store sends before JavaScript runs. That is also what many AI crawlers read, but widgets added later by scripts can be missed, so text checks are a lower bound.",
+      "One product page per store. A store may show more on other products.",
+      "The sample is established brands, which are likely better resourced than the average Shopify store."
+    ]
+  }
+}

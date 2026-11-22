@@ -37,6 +37,14 @@ async function rewrites() {
 createServer(async (req, res) => {
   try {
     let pathname = decodeURIComponent(new URL(req.url, "http://localhost").pathname);
+    // Serverless functions in /api, loaded the way Vercel does (default export handler(req, res)).
+    if (pathname.startsWith("/api/")) {
+      const file = path.join(root, `${pathname.replace(/\.js$/, "")}.js`);
+      if (!file.startsWith(path.join(root, "api"))) throw new Error("outside api");
+      const mod = await import(`${file}?t=${Date.now()}`);
+      await mod.default(req, res);
+      return;
+    }
     const map = await rewrites();
     if (map.has(pathname)) pathname = map.get(pathname);
     let file = path.join(root, pathname);

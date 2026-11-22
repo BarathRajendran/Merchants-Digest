@@ -44,6 +44,26 @@ For `Run blog`, the expected workflow is:
 - Do not invent studies, quotes, or precise data without a source
 - Optimize for people-first usefulness, not keyword stuffing
 
+## Editorial direction (from November 2026)
+
+Merchants Digest competes on things others cannot copy: original research, real examples, tools, and the author's first-hand experience. Generic advice that could appear on any Shopify blog is not good enough.
+
+- Every post must contain at least one piece of evidence: a figure from our own research (`content/research/*/summary.json`), a primary source (Shopify changelog or docs, Google documentation), a worked example, or a link to a Merchants Digest tool
+- Where a post's topic overlaps a research study, cite the study's figure and link to it
+- The author is anonymous. Refer to them as a former Shopify app founder who has built and run several Shopify apps; never name them or their current employer
+- First-person notes from the author are welcome where the app-founder perspective adds something real (apps, scripts, support tickets, installs and uninstalls)
+- Never name or identify a store in published content. Use aggregates, or describe an example without details that could identify it
+- If second-hand coverage is the only source, say who made the claim
+- Prefer charts, diagrams and screenshots of our own tools over AI-generated cover art for new work
+
+## Research workflow
+
+- Candidate lists and per-store results live in `research-data/` (gitignored, never deployed). Nothing store-level is ever committed or published
+- `node scripts/research/audit-pdp.mjs research-data/<study>/candidates.txt` runs the product page audit (public pages only, a few requests per store)
+- `node scripts/research/summarize-pdp.mjs research-data/<study>/raw.json content/research/<study>/summary.json` writes the aggregate-only summary that the site reads
+- Write the report in `content/research/<study>/report.json`. Numbers are pulled from `summary.json` by path; never type figures into the report text by hand without checking them against the summary
+- Checks are shared with the public tool in `lib/pdp-checks.mjs`, so the Product page checker (`/tools/product-page-checker`, served by `api/check-product-page.js`) always measures pages the same way the research did
+
 ## Image rules
 
 - Do not ship generic AI-looking covers

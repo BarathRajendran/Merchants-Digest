@@ -134,7 +134,7 @@ function head({ title, description, canonical, image, type = "website", schema, 
 
 function header(current) {
   const link = (href, label, key) =>
-    `<a href="${href}"${current === key ? ' aria-current="page"' : ""}>${label}</a>`;
+    `<a href="${href}"${key && (current === key || (key === "articles" && String(current).startsWith("topic:"))) ? ' aria-current="page"' : ""}>${label}</a>`;
   return `
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -146,9 +146,11 @@ function header(current) {
         </a>
         <a class="button button--small header-cta" href="#subscribe">Subscribe</a>
         <nav class="site-nav" aria-label="Primary">
+          ${link("/research", "Research", "research")}
+          ${link("/tools", "Tools", "tools")}
           ${link("/blogs", "Articles", "articles")}
-          ${topics.map((t) => link(topicUrl(t), esc(t.navName), `topic:${t.slug}`)).join("\n          ")}
           ${link("/newsletter", "Newsletter", "newsletter")}
+          ${link("/about", "About", "about")}
           <a class="button button--small" href="#subscribe">Subscribe</a>
         </nav>
       </div>
@@ -192,11 +194,15 @@ function footer() {
             </ul>
           </div>
           <div>
-            <h2>Read</h2>
+            <h2>Merchants Digest</h2>
             <ul>
+              <li><a href="/research">Research</a></li>
+              <li><a href="/tools/product-page-checker">Product page checker</a></li>
               <li><a href="/blogs">All articles</a></li>
               <li><a href="/newsletter">Newsletter archive</a></li>
               <li><a href="/feed.xml">RSS feed</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/editorial-standards">Editorial standards</a></li>
               <li><a href="/privacy-policy">Privacy policy</a></li>
             </ul>
           </div>
@@ -248,7 +254,7 @@ function card(post, { excerpt = true, kicker = true, eager = false } = {}) {
 
 // ---------- pages ----------
 
-function renderHome(posts) {
+function renderHome(posts, studies = []) {
   const [lead, ...rest] = posts;
   const latest = rest.slice(0, 5);
   const shown = new Set([lead, ...latest].map((p) => p.slug));
@@ -305,6 +311,20 @@ function renderHome(posts) {
           </ul>
         </div>
       </section>
+
+${
+        studies[0]
+          ? `<section class="research-band" aria-labelledby="rb-title">
+        <div class="rb-copy">
+          <span class="kicker t-ai-search">New research</span>
+          <h2 id="rb-title"><a href="/research/${studies[0].report.slug}">${esc(studies[0].report.title)}</a></h2>
+          <p>${esc(studies[0].report.dek)}</p>
+          <p class="rb-actions"><a class="button" href="/research/${studies[0].report.slug}">Read the findings</a><a class="rb-link" href="/tools/product-page-checker">Check your own page →</a></p>
+        </div>
+        <div class="rb-stats">${studies[0].report.keyFindings.map((f) => keyFinding(f, studies[0].summary)).join("")}</div>
+      </section>`
+          : ""
+      }
 
       <section class="front" aria-label="Latest articles">
         <article class="lead-story">
@@ -642,6 +662,286 @@ ${subscribeBand(`post-${draft.slug}`)}
           ${next ? `<a class="next" href="${postUrl(next)}"><small>Older →</small><strong>${esc(next.title)}</strong></a>` : ""}
         </nav>
       </div>
+    </main>
+${footer()}`;
+}
+
+// ---------- research, tools and about ----------
+// Research studies live in content/research/<slug>/ as report.json (the writing) and summary.json
+// (aggregate figures produced by scripts/research/summarize-pdp.mjs). Numbers in the page are read from
+// summary.json by path, so the text and charts can never disagree with the data.
+
+const getPath = (obj, p) => p.split(".").reduce((o, k) => (o == null ? o : o[k]), obj);
+
+function barChart(chart, summary) {
+  const n = summary.sample.audited;
+  const rows = chart.bars.map((bar) => {
+    let count;
+    let pct;
+    if (bar.path) ({ count, pct } = getPath(summary, bar.path));
+    else {
+      count = summary.pageWeight.hostBuckets[bar.bucket].count;
+      pct = Math.round((count / n) * 100);
+    }
+    return { label: bar.label, count, pct };
+  });
+  return `<figure class="chart">
+            <table class="barchart">
+              <caption>${esc(chart.title)} <span>Base: ${n} stores</span></caption>
+              <thead class="visually-hidden"><tr><th scope="col">Measure</th><th scope="col">Share of stores</th></tr></thead>
+              <tbody>
+                ${rows
+                  .map(
+                    (r) => `<tr>
+                  <th scope="row">${esc(r.label)}</th>
+                  <td><span class="bar-track"><span class="bar" style="width:${Math.max(r.pct, 0.6)}%"></span></span><span class="bar-val">${r.pct}%</span><span class="bar-tip" role="tooltip">${r.count} of ${n} stores</span></td>
+                </tr>`
+                  )
+                  .join("\n                ")}
+              </tbody>
+            </table>
+          </figure>`;
+}
+
+function keyFinding(f, summary) {
+  const big = f.value ? `${getPath(summary, f.value)}${f.suffix || ""}` : `${getPath(summary, f.path).pct}%`;
+  return `<div class="finding"><strong>${esc(big)}</strong><span>${esc(f.label)}</span></div>`;
+}
+
+export async function loadStudies() {
+  const dir = path.join(root, "content", "research");
+  if (!existsSync(dir)) return [];
+  const slugs = (await readdir(dir, { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name);
+  const studies = [];
+  for (const slug of slugs) {
+    const reportPath = path.join(dir, slug, "report.json");
+    const summaryPath = path.join(dir, slug, "summary.json");
+    if (!existsSync(reportPath) || !existsSync(summaryPath)) continue;
+    studies.push({ report: await readJson(reportPath), summary: await readJson(summaryPath) });
+  }
+  return studies.sort((a, b) => b.report.date.localeCompare(a.report.date));
+}
+
+const researchUrl = (report) => `/research/${report.slug}`;
+
+function renderResearchReport({ report, summary }) {
+  const canonical = researchUrl(report);
+  const n = summary.sample.audited;
+  return `${head({
+    title: report.title,
+    description: report.dek,
+    canonical,
+    type: "article",
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        organization,
+        website,
+        {
+          "@type": "Article",
+          headline: report.title,
+          description: report.dek,
+          datePublished: report.date,
+          author: { "@id": organization["@id"] },
+          publisher: { "@id": organization["@id"] },
+          mainEntityOfPage: abs(canonical)
+        }
+      ]
+    }
+  })}${header("research")}
+    <main id="main" class="wrap">
+      <article class="report">
+        <header class="article-head report-head">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="/research">Research</a><span aria-hidden="true">/</span><span>${esc(report.kicker)}</span></nav>
+          <span class="kicker t-ai-search">${esc(report.kicker)}</span>
+          <h1>${esc(report.title)}</h1>
+          <p class="dek">${esc(report.dek)}</p>
+          <p class="meta report-meta"><time datetime="${report.date}">${fmtLongDate(report.date)}</time><span>${n} stores checked</span><span><a href="#method">How we did it</a></span></p>
+        </header>
+
+        <section class="findings" aria-label="Key findings">
+          ${report.keyFindings.map((f) => keyFinding(f, summary)).join("\n          ")}
+        </section>
+
+        <div class="report-body">
+          ${report.sections
+            .map(
+              (s, i) => `
+          <section class="report-section" id="${esc(s.id)}">
+            <span class="report-num">${String(i + 1).padStart(2, "0")}</span>
+            <h2>${esc(s.heading)}</h2>
+            <div class="prose">${s.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
+            ${barChart(s.chart, summary)}
+            ${s.note ? `<aside class="author-note"><strong>From the author</strong><p>${esc(s.note)}</p></aside>` : ""}
+            <p class="takeaway"><strong>What to do</strong>${esc(s.takeaway)}</p>
+          </section>`
+            )
+            .join("")}
+
+          <section class="report-section report-actions" id="actions">
+            <span class="nl-label nl-label--action">Try this week</span>
+            <h2>Five fixes, in order of effort</h2>
+            <ul class="nl-checklist">${report.actions.map((a) => `<li>${esc(a)}</li>`).join("")}</ul>
+            <a class="button" href="/tools/product-page-checker">Check your own product page</a>
+          </section>
+
+          <section class="report-section method" id="method">
+            <h2>How we did it</h2>
+            <div class="prose">
+              <p>${esc(summary.sample.description)} We started with ${summary.sample.candidates} candidate brands and checked the ${n} we could verify and reach. Fieldwork took place on ${fmtLongDate(summary.fieldwork.end)}.</p>
+              <p>For each store we fetched one product page and checked the text a buyer sees, the page's structured data, and the outside scripts it loads. We also checked each store's robots.txt file, policy pages and llms.txt file. ${esc(summary.method.calibration)}</p>
+              <h3>Limitations</h3>
+              <ul>${summary.method.limitations.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>
+              <h3>Privacy</h3>
+              <p>We do not name the stores we checked. Store-level records are kept private; this report publishes totals only. If you run one of the stores and want to know your own results, use the <a href="/tools/product-page-checker">product page checker</a>.</p>
+            </div>
+          </section>
+        </div>
+      </article>
+${subscribeBand(`research-${report.slug}`)}
+    </main>
+${footer()}`;
+}
+
+function renderResearchIndex(studies) {
+  return `${head({
+    title: "Research",
+    description: "Original research on what Shopify stores actually do, with methods shown and stores kept anonymous.",
+    canonical: "/research",
+    schema: { "@context": "https://schema.org", "@graph": [organization, website] }
+  })}${header("research")}
+    <main id="main" class="wrap">
+      <header class="page-head">
+        <span class="kicker t-ai-search">Research</span>
+        <h1>What Shopify stores actually do</h1>
+        <p>We check real stores and publish the totals, with the method and its limits shown. We never name the stores, and store-level data stays private.</p>
+      </header>
+      <div class="study-list">
+        ${studies
+          .map(
+            ({ report, summary }) => `<article class="study-card">
+          <div>
+            <span class="kicker t-ai-search">${esc(report.kicker)}</span>
+            <h2><a href="${researchUrl(report)}">${esc(report.title)}</a></h2>
+            <p>${esc(report.dek)}</p>
+            <p class="meta"><time datetime="${report.date}">${fmtDate(report.date)}</time><span>${summary.sample.audited} stores</span></p>
+          </div>
+          <div class="study-stats">${report.keyFindings.slice(0, 2).map((f) => keyFinding(f, summary)).join("")}</div>
+        </article>`
+          )
+          .join("\n        ")}
+      </div>
+${subscribeBand("research")}
+    </main>
+${footer()}`;
+}
+
+const CHECKS = [
+  { key: "deliveryStated", group: "pdp", label: "Delivery timeframe on the page", bench: "buyerFacing.deliveryTimeframe", fix: "Add an estimated delivery date or timeframe next to the buy button." },
+  { key: "returnsStated", group: "pdp", label: "Returns terms on the page", bench: "buyerFacing.returnsTerms", fix: "Summarise your returns policy in one sentence near the buy button, for example '30-day free returns'." },
+  { key: "sizeGuidance", group: "pdp", label: "Size or fit guidance", bench: "buyerFacing.sizeGuidance", fix: "Write sizing advice as text on the page, not only as an image of a chart." },
+  { key: "reviewSignal", group: "pdp", label: "Reviews shown", bench: "buyerFacing.reviewWidget", fix: "We did not find a review widget in the page's HTML. If you do show reviews, they probably load later through a script, which search and AI crawlers can miss. If you do not, even a few honest reviews help." },
+  { key: "aggregateRating", group: "schema", label: "Rating readable by search and AI", bench: "structuredData.aggregateRating", fix: "Turn on structured data or rich snippets in your review app's settings." },
+  { key: "hasProductSchema", group: "schema", label: "Product structured data", bench: "structuredData.productSchema", fix: "Your theme should output Product structured data. Ask your theme developer if it is missing." },
+  { key: "gtin", group: "schema", label: "Barcode (GTIN) in structured data", bench: "structuredData.gtin", fix: "Fill in the barcode field for each variant in Shopify." },
+  { key: "shippingDetails", group: "schema", label: "Shipping details in structured data", bench: "structuredData.shippingDetails", fix: "Set up shipping in Google Merchant Center, or add shipping details to your theme's structured data." },
+  { key: "returnPolicy", group: "schema", label: "Return policy in structured data", bench: "structuredData.returnPolicy", fix: "Set up your return policy in Google Merchant Center, or add it to your theme's structured data." }
+];
+
+function renderChecker(studies) {
+  const study = studies[0];
+  const s = study?.summary;
+  const bench = Object.fromEntries(CHECKS.map((c) => [c.key, s ? getPath(s, c.bench).pct : null]));
+  const config = {
+    checks: CHECKS.map(({ key, group, label, fix }) => ({ key, group, label, fix, bench: bench[key] })),
+    n: s?.sample.audited,
+    medianHosts: s?.pageWeight.thirdPartyScriptHostsMedian,
+    studyUrl: study ? researchUrl(study.report) : "/research"
+  };
+  return `${head({
+    title: "Product page checker",
+    description: "Check one of your Shopify product pages for the details buyers and AI assistants look for, and compare it with 90 fashion brands.",
+    canonical: "/tools/product-page-checker",
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [organization, website, { "@type": "WebApplication", name: "Product page checker", applicationCategory: "BusinessApplication", url: abs("/tools/product-page-checker"), offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }]
+    }
+  })}${header("tools")}
+    <main id="main" class="wrap">
+      <header class="page-head">
+        <span class="kicker t-conversion">Free tool</span>
+        <h1>Product page checker</h1>
+        <p>Paste one of your Shopify product pages. We check it for the details buyers and AI assistants look for, and show how ${config.n} fashion brands in <a href="${config.studyUrl}">our research</a> compare.</p>
+      </header>
+      <section class="checker">
+        <form class="checker-form" id="checker-form">
+          <label for="checker-url">Product page address</label>
+          <div class="checker-row">
+            <input id="checker-url" name="url" type="text" inputmode="url" placeholder="yourstore.com/products/your-best-seller" autocomplete="url" required />
+            <button class="button" type="submit">Check page</button>
+          </div>
+          <p class="fineprint">Works with Shopify stores. We fetch the page once and do not store the address or the results.</p>
+        </form>
+        <div id="checker-status" class="checker-status" role="status" aria-live="polite"></div>
+        <div id="checker-results" class="checker-results" hidden></div>
+      </section>
+      <section class="checker-about prose">
+        <h2>What this checks, and what it does not</h2>
+        <p>The checker reads the page the way many search and AI crawlers do: the HTML your store sends before any scripts run. If a detail is added later by an app, it may not be detected here, and it may not be seen by those crawlers either.</p>
+        <p>It checks one page at a time. Try your best-seller first, then a product that sells less well.</p>
+      </section>
+${subscribeBand("tool-checker")}
+    </main>
+    <script type="application/json" id="checker-config">${JSON.stringify(config).replace(/</g, "\\u003c")}</script>
+    <script src="/assets/checker.js?v=${VERSION}" defer></script>
+${footer()}`;
+}
+
+function renderToolsIndex() {
+  return `${head({
+    title: "Tools",
+    description: "Free tools for Shopify merchants from Merchants Digest.",
+    canonical: "/tools",
+    schema: { "@context": "https://schema.org", "@graph": [organization, website] }
+  })}${header("tools")}
+    <main id="main" class="wrap">
+      <header class="page-head">
+        <span class="kicker t-conversion">Tools</span>
+        <h1>Free tools for Shopify merchants</h1>
+        <p>Small, practical tools built on the same checks as our research. No sign-up needed.</p>
+      </header>
+      <div class="study-list">
+        <article class="study-card">
+          <div>
+            <span class="kicker t-conversion">Free tool</span>
+            <h2><a href="/tools/product-page-checker">Product page checker</a></h2>
+            <p>Check one product page for delivery, returns, sizing, reviews and the structured data search and AI tools read. Compare it with 90 fashion brands.</p>
+          </div>
+        </article>
+      </div>
+${subscribeBand("tools")}
+    </main>
+${footer()}`;
+}
+
+function renderSimplePage({ slug, title, kicker, description, body, current }) {
+  return `${head({
+    title,
+    description,
+    canonical: `/${slug}`,
+    schema: { "@context": "https://schema.org", "@graph": [organization, website] }
+  })}${header(current || slug)}
+    <main id="main" class="wrap">
+      <div class="doc">
+        <header class="page-head">
+          <span class="kicker">${esc(kicker)}</span>
+          <h1>${esc(title)}</h1>
+        </header>
+        <div class="prose">
+${body}
+        </div>
+      </div>
+${subscribeBand(slug)}
     </main>
 ${footer()}`;
 }
@@ -1111,7 +1411,7 @@ ${items}
 `;
 }
 
-function renderSitemap(posts, issues) {
+function renderSitemap(posts, issues, studies = []) {
   const latest = posts[0].publishDate;
   const urls = [
     ["/", latest],
@@ -1120,6 +1420,12 @@ function renderSitemap(posts, issues) {
     ...posts.map((p) => [postUrl(p), p.updatedDate || p.publishDate]),
     ["/newsletter", null],
     ...issues.map((i) => [`/newsletter/${i.slug}`, null]),
+    ["/research", studies[0]?.report.date || null],
+    ...studies.map(({ report }) => [`/research/${report.slug}`, report.date]),
+    ["/tools", null],
+    ["/tools/product-page-checker", null],
+    ["/about", null],
+    ["/editorial-standards", null],
     ["/privacy-policy", null]
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -1129,7 +1435,7 @@ ${urls.map(([u, d]) => `  <url><loc>${abs(u)}</loc>${d ? `<lastmod>${d}</lastmod
 `;
 }
 
-export function renderVercelConfig(posts, issues = []) {
+export function renderVercelConfig(posts, issues = [], studies = []) {
   const rewrites = [
     ["/", "/index.html"],
     ["/home", "/index.html"],
@@ -1137,6 +1443,12 @@ export function renderVercelConfig(posts, issues = []) {
     ["/newsletter", "/newsletter.html"],
     ...issues.map((i) => [`/newsletter/${i.slug}`, `/newsletter-${i.slug}.html`]),
     ["/privacy-policy", "/privacy-policy.html"],
+    ["/about", "/about.html"],
+    ["/editorial-standards", "/editorial-standards.html"],
+    ["/research", "/research.html"],
+    ...studies.map(({ report }) => [`/research/${report.slug}`, `/research-${report.slug}.html`]),
+    ["/tools", "/tools.html"],
+    ["/tools/product-page-checker", "/tools-product-page-checker.html"],
     ...topics.map((t) => [topicUrl(t), `/topic-${t.slug}.html`]),
     ...posts.map((p) => [postUrl(p), `/blog-${p.slug}.html`])
   ].map(([source, destination]) => ({ source, destination }));
@@ -1175,7 +1487,21 @@ export async function buildSite({ quiet = false } = {}) {
     await out(`blog-${post.slug}.html`, renderPost(draft, { prev: posts[i - 1], next: posts[i + 1], related }));
   }
 
-  await out("index.html", renderHome(posts));
+  const studies = await loadStudies();
+  await out("index.html", renderHome(posts, studies));
+  await out("research.html", renderResearchIndex(studies));
+  for (const study of studies) await out(`research-${study.report.slug}.html`, renderResearchReport(study));
+  await out("tools.html", renderToolsIndex());
+  await out("tools-product-page-checker.html", renderChecker(studies));
+  const page = async (slug) => readFile(path.join(root, "content", "pages", `${slug}.html`), "utf8").then((t) => t.replace(/<!--[\s\S]*?-->\s*/g, ""));
+  await out(
+    "about.html",
+    renderSimplePage({ slug: "about", title: "About Merchants Digest", kicker: "About", description: "Who writes Merchants Digest, why it is anonymous, and how it stays independent.", body: await page("about") })
+  );
+  await out(
+    "editorial-standards.html",
+    renderSimplePage({ slug: "editorial-standards", title: "Editorial standards", kicker: "About", current: "about", description: "How Merchants Digest researches, sources, uses AI and corrects its work.", body: await page("editorial-standards") })
+  );
   await out("articles.html", renderArchive(posts));
   for (const topic of topics) await out(`topic-${topic.slug}.html`, renderTopic(topic, posts));
   const issues = await loadIssues();
@@ -1190,9 +1516,9 @@ export async function buildSite({ quiet = false } = {}) {
   await out("privacy-policy.html", renderPrivacy(await readFile(path.join(root, "content", "pages", "privacy-policy.html"), "utf8")));
   await out("404.html", render404(posts));
   await out("feed.xml", renderFeed(posts));
-  await out("sitemap.xml", renderSitemap(posts, issues));
+  await out("sitemap.xml", renderSitemap(posts, issues, studies));
   await out("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${abs("/sitemap.xml")}\n`);
-  await out("vercel.json", renderVercelConfig(posts, issues));
+  await out("vercel.json", renderVercelConfig(posts, issues, studies));
 
   if (!quiet) console.log(`Built ${written.length} files from ${posts.length} published posts.`);
   return written;
