@@ -1,0 +1,5 @@
+
+# Private research data: store-level records are never published
+research-data/
+.vscode/
+.claude/settings.local.json

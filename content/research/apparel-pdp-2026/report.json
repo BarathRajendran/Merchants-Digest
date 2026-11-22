@@ -1,0 +1,115 @@
+{
+  "slug": "apparel-pdp-2026",
+  "date": "2026-11-22",
+  "kicker": "Original research",
+  "title": "What 90 Shopify fashion brands show on their product pages",
+  "dek": "We checked one product page from each of 90 established Shopify apparel, footwear and accessories brands. AI assistants can reach almost all of them. What they find there is thinner than you would expect.",
+  "keyFindings": [
+    { "path": "buyerFacing.deliveryTimeframe", "label": "state a delivery timeframe on the product page" },
+    { "path": "structuredData.reviewsShownButNotInSchema", "label": "show reviews that machines cannot read" },
+    { "path": "structuredData.shippingDetails", "label": "describe shipping in their structured data" },
+    { "value": "pageWeight.thirdPartyScriptHostsMedian", "suffix": "", "label": "other companies' scripts on the median product page" }
+  ],
+  "sections": [
+    {
+      "id": "buyer-questions",
+      "heading": "Most product pages skip the delivery question",
+      "paragraphs": [
+        "Every buyer wants to know when an order will arrive, whether they can send it back, and whether it will fit. We looked for each of those on the product page itself, not in the footer or on a separate policy page.",
+        "Fewer than one in four pages stated a delivery timeframe. Half stated returns terms. Nearly half of the stores stated neither, which leaves the buyer to go looking at exactly the moment they are deciding."
+      ],
+      "chart": {
+        "title": "Share of product pages that state each answer",
+        "bars": [
+          { "label": "Size guidance", "path": "buyerFacing.sizeGuidance" },
+          { "label": "Returns terms", "path": "buyerFacing.returnsTerms" },
+          { "label": "Delivery timeframe", "path": "buyerFacing.deliveryTimeframe" },
+          { "label": "All three", "path": "buyerFacing.allThree" }
+        ]
+      },
+      "takeaway": "Put an estimated delivery date and a one-line returns summary next to the buy button. It is the cheapest conversion fix in this report."
+    },
+    {
+      "id": "reviews",
+      "heading": "Reviews are shown to people but hidden from machines",
+      "paragraphs": [
+        "Most stores display reviews. Far fewer include the rating in the product's structured data, the machine-readable summary that search engines and AI tools read.",
+        "Review apps usually load their widgets with JavaScript after the page arrives. Unless the rating is also written into the page's structured data, a crawler reading the original page can miss it entirely. In our sample, 44% of stores showed reviews that were not in their structured data."
+      ],
+      "chart": {
+        "title": "Reviews: what people see versus what machines can read",
+        "bars": [
+          { "label": "Shows a review widget", "path": "buyerFacing.reviewWidget" },
+          { "label": "Rating in structured data", "path": "structuredData.aggregateRating" },
+          { "label": "Shown but not in structured data", "path": "structuredData.reviewsShownButNotInSchema" }
+        ]
+      },
+      "takeaway": "Open your review app's settings and look for structured data or rich snippets. If it is off, turn it on, then check a product page with Google's Rich Results Test."
+    },
+    {
+      "id": "structured-data",
+      "heading": "Structured data covers the basics, not the details",
+      "paragraphs": [
+        "Almost every store had Product structured data with a price, availability and brand. Shopify themes handle that by default.",
+        "The details that help a product stand out in shopping results were much rarer. Fewer than four in ten included a GTIN, the product barcode that shopping engines use to match items. Only about one in five described shipping or returns in their structured data, even though Google supports both for product listings."
+      ],
+      "chart": {
+        "title": "Share of product pages whose structured data includes each field",
+        "bars": [
+          { "label": "Product structured data", "path": "structuredData.productSchema" },
+          { "label": "Brand", "path": "structuredData.brand" },
+          { "label": "Availability", "path": "structuredData.availability" },
+          { "label": "Price", "path": "structuredData.price" },
+          { "label": "GTIN (barcode)", "path": "structuredData.gtin" },
+          { "label": "Return policy", "path": "structuredData.returnPolicy" },
+          { "label": "Shipping details", "path": "structuredData.shippingDetails" }
+        ]
+      },
+      "takeaway": "Fill in the barcode field for your products in Shopify, and set up shipping and returns in Google Merchant Center so they appear alongside your listings."
+    },
+    {
+      "id": "scripts",
+      "heading": "The median product page loads code from six other companies",
+      "paragraphs": [
+        "We counted the distinct outside domains each product page loaded scripts from, ignoring Shopify's own. The median was six. A quarter of stores loaded scripts from ten or more.",
+        "Email and SMS tools were the most common, followed by review apps. None of these is a problem on its own. The cost is cumulative: every script is something the page has to fetch and run before a buyer can do anything."
+      ],
+      "chart": {
+        "title": "Outside script domains per product page",
+        "bars": [
+          { "label": "0 to 3", "bucket": 0 },
+          { "label": "4 to 6", "bucket": 1 },
+          { "label": "7 to 9", "bucket": 2 },
+          { "label": "10 or more", "bucket": 3 }
+        ]
+      },
+      "note": "I have built and run several Shopify apps. Almost every app that adds something to the storefront adds a script, and most merchants never remove them when they stop using the app. If you have uninstalled apps, check that their code went with them.",
+      "takeaway": "List the apps that put something on your product page. For each one, ask whether it earned its place in the last 90 days. Remove the ones that did not."
+    },
+    {
+      "id": "ai-access",
+      "heading": "AI access is not the problem. Content is.",
+      "paragraphs": [
+        "Only 3% of stores blocked any AI crawler in their robots.txt file. And 92% served an llms.txt file, a set of instructions for AI agents. In the files we sampled, most followed the same template generated by Shopify, pointing agents to Shopify's shopping tools, rather than being written by the store.",
+        "So the platform has opened the door. What an assistant finds once it gets there is the product page, and as the rest of this report shows, that is where most of the gaps are."
+      ],
+      "chart": {
+        "title": "AI access and policy pages",
+        "bars": [
+          { "label": "Serves an llms.txt file", "path": "aiAccess.llmsTxtPresent" },
+          { "label": "Has a refund policy page", "path": "aiAccess.refundPolicyPage" },
+          { "label": "Has a shipping policy page", "path": "aiAccess.shippingPolicyPage" },
+          { "label": "Blocks an AI crawler", "path": "aiAccess.blocksAnyAiCrawler" }
+        ]
+      },
+      "takeaway": "Do not spend time on AI access settings. Spend it on making your product pages say plainly what an assistant would need to recommend you."
+    }
+  ],
+  "actions": [
+    "Add an estimated delivery date next to the buy button.",
+    "Summarise your returns policy in one sentence on every product page.",
+    "Turn on structured data in your review app and confirm it with Google's Rich Results Test.",
+    "Fill in product barcodes (GTINs) in Shopify.",
+    "Remove leftover scripts from apps you no longer use."
+  ]
+}

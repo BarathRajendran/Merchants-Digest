@@ -7,23 +7,23 @@ export const site = {
   origin: "https://www.merchantsdigest.com",
   gaId: "G-5FQK2WSDWH",
   // Signs newsletter issues. Kept anonymous for now; set person: true and a real name to show one.
-  author: { name: "The editor", role: "Merchants Digest", person: false },
-  tagline: "Practical writing for Shopify merchants",
+  author: { name: "The editor", role: "Former Shopify app founder, Merchants Digest", person: false },
+  tagline: "Research, tools and guides for Shopify merchants",
   description:
-    "Practical articles for Shopify merchants on conversion, product pages, trust, catalog structure, and how AI search finds what you sell.",
+    "Original research, free tools and practical guides for Shopify merchants, from a former Shopify app founder.",
   // Home hero. `title` may contain <em> for the highlighted phrase.
   hero: {
     title: "Make your Shopify store <em>easier to buy from.</em>",
     lede:
-      "Plain-English articles on conversion, product pages, trust, and getting found in AI search. Written for the people who actually run the store.",
+      "Original research, free tools and plain-English guides from a former Shopify app founder. We check what real stores do, show our method, and skip the growth hacks.",
     points: [
-      { topic: "conversion", icon: "↗", title: "Fixes you can ship this week", body: "Specific changes to pages you already have, not theory." },
-      { topic: "ai-search", icon: "✦", title: "What changed in search and AI", body: "And whether it matters for a store your size." },
-      { topic: "trust", icon: "✓", title: "Honest trade-offs", body: "No growth hacks, no 5x promises, no app upsells." }
+      { topic: "ai-search", icon: "%", title: "Original research", body: "We check real Shopify stores and publish what they actually do." },
+      { topic: "conversion", icon: "✓", title: "Free tools", body: "Check your own product page against 90 fashion brands." },
+      { topic: "trust", icon: "↗", title: "Shopify changes, triaged", body: "What changed this month, and whether it matters for your store." }
     ]
   },
   footerBlurb:
-    "Independent, practical writing for Shopify merchants, operators, and founders. Clear trade-offs, real store situations, no fluff.",
+    "Original research, free tools and practical guides for Shopify merchants. Written by a former Shopify app founder. No paid placements.",
   subscribe: {
     title: "Get new articles in your inbox.",
     body:

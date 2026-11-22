@@ -65,6 +65,30 @@
       "destination": "/privacy-policy.html"
     },
     {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/editorial-standards",
+      "destination": "/editorial-standards.html"
+    },
+    {
+      "source": "/research",
+      "destination": "/research.html"
+    },
+    {
+      "source": "/research/apparel-pdp-2026",
+      "destination": "/research-apparel-pdp-2026.html"
+    },
+    {
+      "source": "/tools",
+      "destination": "/tools.html"
+    },
+    {
+      "source": "/tools/product-page-checker",
+      "destination": "/tools-product-page-checker.html"
+    },
+    {
       "source": "/topics/conversion",
       "destination": "/topic-conversion.html"
     },
