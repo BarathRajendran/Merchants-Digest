@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "site:build": "node scripts/build-site.mjs",
+    "site:images": "node scripts/optimize-images.mjs",
+    "site:dev": "node scripts/dev-server.mjs",
     "blog:research": "node scripts/blog-agent.mjs research",
     "blog:draft": "node scripts/blog-agent.mjs draft",
     "blog:queue": "node scripts/blog-agent.mjs queue",

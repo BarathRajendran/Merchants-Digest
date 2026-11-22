@@ -73,5 +73,6 @@
   "imageArchetype": "proof",
   "overlayKicker": "Trust does not need a suit",
   "imagePrompt": "Photographic editorial cover showing a warm, credible retail scene that feels trustworthy without feeling corporate. No readable text.",
-  "imageStyleNotes": "The image should show confidence, calm, and human credibility."
+  "imageStyleNotes": "The image should show confidence, calm, and human credibility.",
+  "topic": "trust"
 }

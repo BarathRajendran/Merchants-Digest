@@ -3,853 +3,392 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Merchants Digest — The Shopify Merchant Newsletter</title>
-    <meta
-      name="description"
-      content="Merchants Digest is a focused newsletter for Shopify merchants: growth insights, product updates, and tactics you can use this week."
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://www.merchantsdigest.com/#organization",
-            "name": "Merchants Digest",
-            "url": "https://www.merchantsdigest.com",
-            "logo": "https://www.merchantsdigest.com/Primary%20Logo.png"
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://www.merchantsdigest.com/#website",
-            "url": "https://www.merchantsdigest.com",
-            "name": "Merchants Digest",
-            "publisher": { "@id": "https://www.merchantsdigest.com/#organization" },
-            "inLanguage": "en"
-          },
-          {
-            "@type": "WebPage",
-            "@id": "https://www.merchantsdigest.com/",
-            "url": "https://www.merchantsdigest.com/",
-            "name": "Merchants Digest — The Shopify Merchant Newsletter",
-            "isPartOf": { "@id": "https://www.merchantsdigest.com/#website" },
-            "about": { "@id": "https://www.merchantsdigest.com/#organization" }
-          }
-        ]
-      }
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-5FQK2WSDWH"
-    ></script>
+    <title>Merchants Digest — Practical writing for Shopify merchants</title>
+    <meta name="description" content="Practical articles for Shopify merchants on conversion, product pages, trust, catalog structure, and how AI search finds what you sell." />
+    <link rel="canonical" href="https://www.merchantsdigest.com/" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:site_name" content="Merchants Digest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Merchants Digest" />
+    <meta property="og:description" content="Practical articles for Shopify merchants on conversion, product pages, trust, catalog structure, and how AI search finds what you sell." />
+    <meta property="og:url" content="https://www.merchantsdigest.com/" />
+    <meta property="og:image" content="https://www.merchantsdigest.com/images/covers/policy-pages-growth-pages-1600.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merchants Digest" href="/feed.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" />
+    <link rel="stylesheet" href="/assets/site.css?v=0f9547d4" />
+    
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.merchantsdigest.com/#organization","name":"Merchants Digest","url":"https://www.merchantsdigest.com","logo":"https://www.merchantsdigest.com/Primary%20Logo.png"},{"@type":"WebSite","@id":"https://www.merchantsdigest.com/#website","url":"https://www.merchantsdigest.com","name":"Merchants Digest","description":"Practical articles for Shopify merchants on conversion, product pages, trust, catalog structure, and how AI search finds what you sell.","publisher":{"@id":"https://www.merchantsdigest.com/#organization"},"inLanguage":"en"}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FQK2WSDWH"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-5FQK2WSDWH");
     </script>
-    <style>
-      :root {
-        --ink: #111114;
-        --ink-muted: #4a4b57;
-        --cream: #fbf6e9;
-        --sun: #ffb703;
-        --tangerine: #fb8500;
-        --sea: #219ebc;
-        --leaf: #2a9d8f;
-        --plum: #5c2d91;
-        --paper: #ffffff;
-        --shadow: 0 22px 50px rgba(17, 17, 20, 0.18);
-        --radius: 20px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana,
-          sans-serif;
-        color: var(--ink);
-        background: #ffffff;
-        min-height: 100vh;
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-family: "Fraunces", Georgia, serif;
-        margin: 0;
-      }
-
-      p {
-        color: var(--ink-muted);
-        line-height: 1.7;
-        margin: 0;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .page {
-        overflow: hidden;
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 26px 6vw;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background: #ffffff;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        font-weight: 700;
-        font-size: 18px;
-        letter-spacing: 0.4px;
-      }
-
-      .brand-logo {
-        height: 44px;
-        width: auto;
-        display: block;
-        border: none;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-        font-weight: 500;
-        font-size: 15px;
-      }
-
-
-      .nav-links a {
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-      }
-
-      .nav-links a:hover {
-        opacity: 1;
-      }
-
-      .cta {
-        padding: 12px 22px;
-        border-radius: 999px;
-        background: var(--ink);
-        color: var(--paper);
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        box-shadow: var(--shadow);
-      }
-
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        gap: 4vw;
-        padding: 60px 6vw 80px;
-        align-items: center;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.6rem, 4vw, 4rem);
-        line-height: 1.05;
-      }
-
-      .hero p {
-        margin-top: 18px;
-        font-size: 1.05rem;
-      }
-
-      .tagline {
-        display: inline-flex;
-        gap: 10px;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.7);
-        padding: 8px 16px;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: 0.88rem;
-        box-shadow: inset 0 0 0 1px rgba(17, 17, 20, 0.08);
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 26px;
-      }
-
-      .hero-form {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 26px;
-      }
-
-      .hero-form input {
-        padding: 12px 14px;
-        border-radius: 12px;
-        border: 1px solid rgba(17, 17, 20, 0.16);
-        font-size: 0.95rem;
-        min-width: 220px;
-      }
-
-      .hero-form button {
-        padding: 12px 18px;
-        border-radius: 12px;
-        border: none;
-        background: var(--ink);
-        color: var(--paper);
-        font-weight: 600;
-        cursor: pointer;
-      }
-
-      .form-message {
-        margin-top: 10px;
-        color: #0f7a5a;
-        font-weight: 600;
-      }
-
-      .ghost {
-        padding: 12px 22px;
-        border-radius: 999px;
-        border: 1px solid rgba(17, 17, 20, 0.2);
-        font-weight: 600;
-        background: transparent;
-      }
-
-      .hero-card {
-        background: var(--paper);
-        border-radius: var(--radius);
-        padding: 26px;
-        box-shadow: none;
-        position: relative;
-      }
-
-      .hero-image {
-        width: 100%;
-        height: auto;
-        border-radius: 18px;
-        display: block;
-      }
-
-      .hero-card::after {
-        content: none;
-      }
-
-      .hero-card > * {
-        position: relative;
-        z-index: 1;
-      }
-
-      .metric-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 16px;
-        margin-top: 22px;
-      }
-
-      .metric {
-        background: #fdf2da;
-        border-radius: 14px;
-        padding: 14px;
-      }
-
-      .metric strong {
-        display: block;
-        font-size: 1.2rem;
-      }
-
-      .section {
-        padding: 80px 6vw;
-      }
-
-      .newsletter {
-        padding: 40px 6vw 80px;
-      }
-
-      .issue {
-        max-width: 920px;
-        margin: 0 auto;
-        border: 1px solid rgba(17, 17, 20, 0.08);
-        border-radius: 18px;
-        overflow: hidden;
-        background: #ffffff;
-        box-shadow: 0 20px 44px rgba(17, 17, 20, 0.08);
-      }
-
-      .issue-top span {
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.35rem;
-        letter-spacing: 0.3px;
-      }
-
-      .issue-body {
-        padding: 28px 32px 36px;
-      }
-
-      .issue-title {
-        margin-top: 18px;
-      }
-
-      .issue-title h2 {
-        font-size: clamp(1.9rem, 3vw, 2.4rem);
-        line-height: 1.1;
-      }
-
-      .issue-title p {
-        margin-top: 10px;
-      }
-
-      .placeholder {
-        width: 100%;
-        height: 200px;
-        border-radius: 14px;
-        background: #f4f5f6;
-        border: 1px solid rgba(17, 17, 20, 0.08);
-        display: grid;
-        place-items: center;
-        color: rgba(17, 17, 20, 0.35);
-        font-weight: 600;
-      }
-
-      .issue-image {
-        width: 100%;
-        height: auto;
-        border-radius: 14px;
-        border: 1px solid rgba(17, 17, 20, 0.08);
-        display: block;
-      }
-
-      .section-block {
-        margin-top: 30px;
-      }
-
-      .section-block h3 {
-        font-size: 1.35rem;
-        margin-bottom: 10px;
-      }
-
-      .schema-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        font-size: 0.9rem;
-        justify-content: center;
-        margin: 16px 0 8px;
-        color: rgba(17, 17, 20, 0.7);
-      }
-
-      .note {
-        margin-top: 14px;
-        font-style: italic;
-      }
-
-      .icon-row {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 24px;
-        margin-top: 16px;
-        align-items: start;
-      }
-
-      .icon-card {
-        display: grid;
-        gap: 10px;
-        align-items: start;
-        font-size: 0.92rem;
-        justify-items: center;
-        text-align: center;
-      }
-
-      .icon-square {
-        width: 126px;
-        height: 126px;
-        border-radius: 0;
-        background: none;
-      }
-
-      .icon-square img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border-radius: 0;
-        display: block;
-      }
-
-      .icon-square.purple {
-        background: none;
-      }
-
-      .icon-square.green {
-        background: none;
-      }
-
-      .whats-new {
-        margin-top: 32px;
-      }
-
-      .whats-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
-        margin-top: 16px;
-      }
-
-      .whats-card {
-        display: grid;
-        grid-template-columns: 72px 1fr;
-        gap: 14px;
-        align-items: start;
-        font-size: 0.92rem;
-        min-height: 150px;
-      }
-
-      @media (max-width: 700px) {
-        .whats-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .whats-link {
-        display: block;
-        margin-top: 6px;
-        color: #1a5ad7;
-        font-weight: 600;
-      }
-
-      .whats-icon {
-        width: 72px;
-        height: 72px;
-        border-radius: 0;
-        background: none;
-        display: grid;
-        place-items: center;
-      }
-
-      .whats-icon img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display: block;
-      }
-
-      .issue-table {
-        margin-top: 22px;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid rgba(17, 17, 20, 0.08);
-      }
-
-      .issue-table header {
-        background: #0f7a5a;
-        color: #ffffff;
-        padding: 12px 16px;
-        font-weight: 600;
-        text-align: center;
-      }
-
-      .issue-table table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.92rem;
-      }
-
-      .issue-table th,
-      .issue-table td {
-        padding: 12px 14px;
-        border-bottom: 1px solid rgba(17, 17, 20, 0.08);
-        vertical-align: top;
-      }
-
-      .issue-table th {
-        background: #f7f8f9;
-        font-weight: 600;
-        text-align: left;
-      }
-
-      .issue-footer {
-        margin-top: 26px;
-        border-top: 1px solid rgba(17, 17, 20, 0.08);
-        padding-top: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-        font-size: 0.88rem;
-        color: rgba(17, 17, 20, 0.6);
-      }
-
-      .footer {
-        padding: 40px 6vw 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top: 1px solid rgba(17, 17, 20, 0.08);
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .footer small {
-        color: rgba(17, 17, 20, 0.6);
-      }
-
-      @media (max-width: 900px) {
-        .hero {
-          grid-template-columns: 1fr;
-        }
-
-      }
-    
-
-      .footer small,
-      .footer a {
-        color: rgba(17, 17, 20, 0.6);
-      }
-
-      .footer a:hover {
-        text-decoration: underline;
-      }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <div class="page">
-      <nav class="nav">
-        <div class="brand">
-          <img
-            class="brand-logo"
-            src="/Primary Logo.png"
-            alt="Merchants Digest"
-          />
-        </div>
-        <div class="nav-links">
-          <a href="/blogs">Blogs</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Merchants Digest home">
+          <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="34" height="19" />
+          <span class="brand-name"><b>Merchants</b> <span>Digest</span></span>
+        </a>
+        <a class="button button--small header-cta" href="#subscribe">Subscribe</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/blogs">Articles</a>
+          <a href="/topics/conversion">Conversion</a>
+          <a href="/topics/product-pages">Product pages</a>
+          <a href="/topics/trust">Trust</a>
+          <a href="/topics/ai-search">AI search</a>
+          <a href="/topics/catalog">Catalog</a>
           <a href="/newsletter">Newsletter</a>
-        </div>
-      </nav>
-
-      <section class="hero">
+          <a class="button button--small" href="#subscribe">Subscribe</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="wrap">
+      <section class="home-hero" aria-labelledby="hero-title">
         <div>
-          <div class="tagline">A field guide for Shopify merchants</div>
-          <h1>Boost your business growth 5x with powerful insights.</h1>
-          <p>
-            Merchants Digest curates the sharpest plays in commerce — from
-            conversion wins to marketing pivots — then delivers a short,
-            actionable brief every week.
-          </p>
-          <form class="hero-form" id="subscribe-form">
-            <input
-              type="email"
-              placeholder="Email address"
-              aria-label="Email address"
-              name="email"
-              required
-            />
-            <button type="submit">Subscribe</button>
+          <span class="kicker">Free for Shopify merchants</span>
+          <h1 id="hero-title">Make your Shopify store <em>easier to buy from.</em></h1>
+          <p class="lede">Plain-English articles on conversion, product pages, trust, and getting found in AI search. Written for the people who actually run the store.</p>
+          <form class="subscribe-form js-subscribe" data-source="home-hero">
+            <label class="visually-hidden" for="email-hero">Email address</label>
+            <input id="email-hero" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email" required />
+            <button class="button" type="submit">Get the articles</button>
+            <p class="form-message" role="status" aria-live="polite"></p>
           </form>
-          <div class="form-message" id="subscribe-message" hidden>
-            You are successfully subscribed to Merchants Digest.
-          </div>
+          <p class="proof"><span>Free</span><span>30 practical articles so far</span><span>Unsubscribe anytime</span></p>
         </div>
         <div class="hero-card">
-          <img
-            class="hero-image"
-            src="/images/Home%20Page/Home%20page%20section1.jpg"
-            alt="Shopify growth snapshot"
-          />
+          <h2>What you will find here</h2>
+          <ul>
+            <li class="t-conversion"><span class="dot" aria-hidden="true">↗</span><div><strong>Fixes you can ship this week</strong><span class="sub">Specific changes to pages you already have, not theory.</span></div></li>
+            <li class="t-ai-search"><span class="dot" aria-hidden="true">✦</span><div><strong>What changed in search and AI</strong><span class="sub">And whether it matters for a store your size.</span></div></li>
+            <li class="t-trust"><span class="dot" aria-hidden="true">✓</span><div><strong>Honest trade-offs</strong><span class="sub">No growth hacks, no 5x promises, no app upsells.</span></div></li>
+          </ul>
         </div>
       </section>
 
-      <section class="newsletter" id="preview">
-        <div class="issue">
-          <div class="issue-body">
-            <img
-              class="issue-image"
-              src="/images/Home%20Page/NL%20header.jpg"
-              alt="Newsletter header preview"
-            />
-            <div class="issue-title">
-              <h2>Boost your business growth 5x with powerful insights</h2>
-              <p>
-                January is a good time to reset how you think about growth.
-              </p>
-              <p>
-                Merchants Digest is a free weekly newsletter that helps Shopify
-                merchants grow their stores through practical strategies,
-                AI-driven insights, and platform updates that matter.
-              </p>
-              <p>
-                Each issue focuses on ideas you can apply right away to drive
-                consistent, sustainable growth.
-              </p>
-            </div>
+      <section class="front" aria-label="Latest articles">
+        <article class="lead-story">
+          <div class="card-media">
+            <img src="/images/covers/policy-pages-growth-pages-1600.jpg" srcset="/images/covers/policy-pages-growth-pages-800.jpg 800w, /images/covers/policy-pages-growth-pages-1600.jpg 1600w" sizes="(min-width: 980px) 720px, 100vw" alt="Shipping, returns, and sizing policy pages as growth assets" width="1600" height="900" fetchpriority="high" />
+          </div>
+          <a class="kicker t-trust" href="/topics/trust">Trust &amp; policies</a>
+          <h2><a href="/blog/policy-pages-growth-pages">Why Your Shipping, Returns, and Sizing Pages Are Now Growth Pages</a></h2>
+          <p class="dek">Late-stage buyers and AI answer engines both look for risk-reducing details. Clear policy pages strengthen trust and make your store easier to summarize.</p>
+          <p class="meta"><time datetime="2026-06-18">Jun 18, 2026</time><span>9 min read</span></p>
+        </article>
 
-            <div class="section-block">
-              <h3>Organic growth: why AI-ready schema matters now</h3>
-              <p>
-                Search is shifting from rankings to understanding. AI tools
-                surface products they can clearly interpret through structured,
-                well written product pages. When AI understands what you sell,
-                your products show up in answers and recommendations.
-              </p>
-              <img
-                class="issue-image"
-                src="/images/Home%20Page/NL%201st%20section.jpg"
-                alt="AI-ready schema example"
-              />
-            </div>
+        <aside class="latest" aria-labelledby="latest-title">
+          <h2 id="latest-title">Recently published</h2>
+          <ol>
+            <li>
+              <a class="kicker t-ai-search" href="/topics/ai-search">AI search &amp; discovery</a>
+              <h3><a href="/blog/ai-shopping-agent-ready-store">What AI Shopping Agents Need From Your Shopify Store Before They Recommend You</a></h3>
+              <p class="meta"><time datetime="2026-06-16">Jun 16, 2026</time><span>10 min</span></p>
+            </li>
+            <li>
+              <a class="kicker t-conversion" href="/topics/conversion">Conversion</a>
+              <h3><a href="/blog/stores-that-convert-better-answer-questions-earlier">The Stores That Convert Better Usually Answer Questions Earlier</a></h3>
+              <p class="meta"><time datetime="2026-06-10">Jun 10, 2026</time><span>8 min</span></p>
+            </li>
+            <li>
+              <a class="kicker t-product-pages" href="/topics/product-pages">Product pages</a>
+              <h3><a href="/blog/clear-sizing-content-belongs-near-the-buy-decision">Clear Sizing Content Belongs Closer to the Buy Decision</a></h3>
+              <p class="meta"><time datetime="2026-06-03">Jun 3, 2026</time><span>8 min</span></p>
+            </li>
+            <li>
+              <a class="kicker t-ai-search" href="/topics/ai-search">AI search &amp; discovery</a>
+              <h3><a href="/blog/search-visibility-product-data-afterthought">Search Visibility Improves When Product Data Stops Being an Afterthought</a></h3>
+              <p class="meta"><time datetime="2026-05-26">May 26, 2026</time><span>8 min</span></p>
+            </li>
+            <li>
+              <a class="kicker t-trust" href="/topics/trust">Trust &amp; policies</a>
+              <h3><a href="/blog/trustworthy-without-looking-corporate">Your Store Can Feel More Trustworthy Without Looking More Corporate</a></h3>
+              <p class="meta"><time datetime="2026-05-19">May 19, 2026</time><span>8 min</span></p>
+            </li>
+          </ol>
+          <a class="all" href="/blogs">Browse all 30 articles <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </aside>
+      </section>
 
-            <div class="section-block">
-              <h3>Ads & Social Media: what’s actually building trust right now</h3>
-              <img
-                class="issue-image"
-                src="/images/Home%20Page/NL%20second%20section.jpg"
-                alt="Ad creative preview"
-              />
-              <p>
-                Social ads are working best when they feel human, familiar, and
-                native to the platform. Merchants seeing consistent results are
-                focusing less on polish and more on presence, repetition, and
-                credibility.
-              </p>
-              <div class="icon-row">
-                <div class="icon-card">
-                  <div class="icon-square">
-                    <img
-                      src="/images/Home%20Page/icon_micro_creatives.png"
-                      alt="Micro creatives"
-                    />
-                  </div>
-                  <strong>Create micro-creatives for TikTok and Reels</strong>
-                  <span>performing 2–3× better than polished brand videos</span>
-                </div>
-                <div class="icon-card">
-                  <div class="icon-square purple">
-                    <img
-                      src="/images/Home%20Page/icon_founder_team.png"
-                      alt="Founder or team"
-                    />
-                  </div>
-                  <strong>Founder or team-face videos</strong>
-                  <span>build trust faster than polished brand creatives</span>
-                </div>
-                <div class="icon-card">
-                  <div class="icon-square green">
-                    <img
-                      src="/images/Home%20Page/icon_reviews_video.png"
-                      alt="Reviews video"
-                    />
-                  </div>
-                  <strong>Turn customer reviews into short video ads</strong>
-                  <span>build trust faster than brand-written messaging</span>
-                </div>
-              </div>
-            </div>
+      <nav class="topic-index" aria-label="Topics">
+        <a class="t-conversion" href="/topics/conversion">
+          <strong>Conversion</strong>
+          <span>Why visitors leave without buying, and the fixes that make existing traffic convert.</span>
+          <em>9 articles</em>
+        </a>
+        <a class="t-product-pages" href="/topics/product-pages">
+          <strong>Product pages</strong>
+          <span>What buyers look for on a product page, and how to answer it before they have to ask.</span>
+          <em>6 articles</em>
+        </a>
+        <a class="t-trust" href="/topics/trust">
+          <strong>Trust &amp; policies</strong>
+          <span>Reviews, policies, and the small signals that make a store feel safe to buy from.</span>
+          <em>6 articles</em>
+        </a>
+        <a class="t-ai-search" href="/topics/ai-search">
+          <strong>AI search &amp; discovery</strong>
+          <span>How search engines, AI assistants, and communities decide which stores to surface.</span>
+          <em>5 articles</em>
+        </a>
+        <a class="t-catalog" href="/topics/catalog">
+          <strong>Catalog &amp; merchandising</strong>
+          <span>Collections, naming, and product data that help buyers and search find the right item.</span>
+          <em>4 articles</em>
+        </a>
+      </nav>
 
-            <div class="section-block whats-new">
-              <h3>What is new in Shopify this week</h3>
-              <img
-                class="issue-image"
-                src="/images/Home%20Page/NL3rd%20section.jpg"
-                alt="Shopify update preview"
-              />
-              <p>Stay updated with the platform changes that matter:</p>
-              <div class="whats-grid">
-                <div class="whats-card">
-                  <div class="whats-icon">
-                    <img src="/images/Home%20Page/icon_updates.png" alt="" />
-                  </div>
-                  <div>
-                    <strong>Winter ’26 Edition highlights</strong>
-                    <p>
-                      150+ updates across AI, checkout, storefronts, and
-                      operations — now live in Shopify’s Winter ’26 Edition.
-                      <a
-                        class="whats-link"
-                        href="https://www.shopify.com/editions/winter2026"
-                        >Learn More</a
-                      >
-                    </p>
-                  </div>
-                </div>
-                <div class="whats-card">
-                  <div class="whats-icon">
-                    <img src="/images/Home%20Page/icon_ai.png" alt="" />
-                  </div>
-                  <div>
-                    <strong>AI across the Shopify platform</strong>
-                    <p>
-                      AI is now embedded across discovery, insights, and store
-                      workflows — not just search.
-                      <a
-                        class="whats-link"
-                        href="https://www.shopify.com/news/winter-26-edition-renaissance"
-                        >Learn More</a
-                      >
-                    </p>
-                  </div>
-                </div>
-                <div class="whats-card">
-                  <div class="whats-icon">
-                    <img src="/images/Home%20Page/icon_checkout.png" alt="" />
-                  </div>
-                  <div>
-                    <strong>Checkout extensibility updates</strong>
-                    <p>
-                      New options for upsells and post-purchase without breaking
-                      checkout safety.
-                      <a
-                        class="whats-link"
-                        href="https://changelog.shopify.com/"
-                        >Learn More</a
-                      >
-                    </p>
-                  </div>
-                </div>
-                <div class="whats-card">
-                  <div class="whats-icon">
-                    <img src="/images/Home%20Page/icon_catalog.png" alt="" />
-                  </div>
-                  <div>
-                    <strong>Catalog & product scalability improvements</strong>
-                    <p>
-                      Support for larger catalogs and high-variant products is
-                      rolling out.
-                      <a
-                        class="whats-link"
-                        href="https://www.shopify.com/editions/winter2026"
-                        >Learn More</a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section class="subscribe-band" id="subscribe" aria-labelledby="subscribe-title">
+        <div>
+          <h2 id="subscribe-title">Get new articles in your inbox.</h2>
+          <p>Merchants Digest is free. Each email brings the latest articles and the Shopify changes worth knowing about, written for the person who actually runs the store.</p>
+        </div>
+        <form class="subscribe-form js-subscribe" data-source="home">
+          <label class="visually-hidden" for="email-home">Email address</label>
+          <input id="email-home" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email" required />
+          <button class="button" type="submit">Subscribe</button>
+          <p class="form-message" role="status" aria-live="polite"></p>
+          <p class="fineprint">Free. Unsubscribe anytime. <a href="/privacy-policy" style="color:inherit">Privacy policy</a>.</p>
+        </form>
+      </section>
 
-            <div class="section-block">
-              <h3>Quiet changes top Shopify stores make to grow consistently</h3>
-              <p>
-                Most stores look for big wins. High-performing stores focus on
-                small improvements that remove friction and compound over time.
-              </p>
-              <div class="issue-table">
-                <header>Where small changes create outsized impact</header>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Growth Area</th>
-                      <th>What top stores quietly fix</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Product Pages</td>
-                      <td>
-                        Clarify the headline so it’s instantly clear who the
-                        product is for and why it matters
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Trust Signals</td>
-                      <td>
-                        Move reviews and social proof above the fold to reduce
-                        hesitation
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Checkout Flow</td>
-                      <td>
-                        Remove unnecessary fields to lower abandonment
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Store Performance</td>
-                      <td>
-                        Audit and remove unused apps to improve speed and
-                        conversions
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="note">
-                These changes don’t look dramatic. They’re how strong stores
-                improve conversion without increasing traffic or ad spend.
-              </p>
+      <section class="topic-block t-conversion" aria-labelledby="t-conversion">
+        <div class="section-head">
+          <div>
+            <h2 id="t-conversion">Conversion</h2>
+            <p>Why visitors leave without buying, and the fixes that make existing traffic convert.</p>
+          </div>
+          <a class="more" href="/topics/conversion">All 9 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="grid grid--3">
+          <article class="card" data-topic="conversion">
+            <div class="card-media">
+              <img src="/images/covers/bundle-offers-helpful-instead-of-pushy-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
             </div>
+            
+            <h3><a href="/blog/bundle-offers-helpful-instead-of-pushy">How to Make Bundle Offers Feel Helpful Instead of Pushy</a></h3>
+            <p class="excerpt">The best bundles feel like useful guidance, not forced upsells. Merchants win when the offer supports the product decision instead of interrupting it.</p>
+            <p class="meta"><time datetime="2026-04-28">Apr 28, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="conversion">
+            <div class="card-media">
+              <img src="/images/covers/theme-decisions-looks-before-clarity-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/theme-decisions-looks-before-clarity">Shopify Theme Decisions Hurt When Merchants Optimize for Looks Before Clarity</a></h3>
+            <p class="excerpt">A strong-looking storefront can still be hard to buy from. Theme decisions get expensive when merchants prioritize style before clarity and buyer confidence.</p>
+            <p class="meta"><time datetime="2026-04-21">Apr 21, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="conversion">
+            <div class="card-media">
+              <img src="/images/covers/returning-visitors-still-leave-without-buying-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/returning-visitors-still-leave-without-buying">Why Returning Visitors Still Leave Without Buying on Shopify</a></h3>
+            <p class="excerpt">A returning visitor is usually trying to finish a decision, not start one. Stores lose these buyers when they leave key questions unresolved.</p>
+            <p class="meta"><time datetime="2026-03-03">Mar 3, 2026</time><span>8 min read</span></p>
+          </article>
+        </div>
+      </section>
+      <section class="topic-block t-product-pages" aria-labelledby="t-product-pages">
+        <div class="section-head">
+          <div>
+            <h2 id="t-product-pages">Product pages</h2>
+            <p>What buyers look for on a product page, and how to answer it before they have to ask.</p>
+          </div>
+          <a class="more" href="/topics/product-pages">All 6 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="grid grid--3">
+          <article class="card" data-topic="product-pages">
+            <div class="card-media">
+              <img src="/images/covers/pdp-elements-buyers-notice-first-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/pdp-elements-buyers-notice-first">The PDP Elements Buyers Notice First Are Not Always the Ones Merchants Obsess Over</a></h3>
+            <p class="excerpt">Merchants often obsess over modules buyers barely process. The biggest PDP gains usually come from tightening the first signals people actually notice.</p>
+            <p class="meta"><time datetime="2026-05-05">May 5, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="product-pages">
+            <div class="card-media">
+              <img src="/images/covers/faq-content-revenue-content-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/faq-content-revenue-content">Why Shopify Merchants Should Treat FAQ Content as Revenue Content</a></h3>
+            <p class="excerpt">Most Shopify FAQs are underused. Strong FAQ content removes buying friction, supports discovery, and helps merchants answer hesitation before support gets involved.</p>
+            <p class="meta"><time datetime="2026-04-14">Apr 14, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="product-pages">
+            <div class="card-media">
+              <img src="/images/covers/audit-mobile-product-pages-before-more-traffic-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/audit-mobile-product-pages-before-more-traffic">Audit Your Mobile Product Pages Before You Buy More Traffic</a></h3>
+            <p class="excerpt">Traffic does not help when the mobile product page still hides clarity, trust, and decision support behind weak layout choices.</p>
+            <p class="meta"><time datetime="2026-03-17">Mar 17, 2026</time><span>8 min read</span></p>
+          </article>
+        </div>
+      </section>
+      <section class="topic-block t-trust" aria-labelledby="t-trust">
+        <div class="section-head">
+          <div>
+            <h2 id="t-trust">Trust &amp; policies</h2>
+            <p>Reviews, policies, and the small signals that make a store feel safe to buy from.</p>
+          </div>
+          <a class="more" href="/topics/trust">All 6 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="grid grid--3">
+          <article class="card" data-topic="trust">
+            <div class="card-media">
+              <img src="/images/covers/product-reviews-help-less-when-basics-unclear-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/product-reviews-help-less-when-basics-unclear">Product Reviews Help Less When Your Product Page Doesn't Explain the Basics</a></h3>
+            <p class="excerpt">Reviews are strongest when they reinforce clarity. When the product page skips basic explanation, reviews end up doing work they were never built to do.</p>
+            <p class="meta"><time datetime="2026-04-07">Apr 7, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="trust">
+            <div class="card-media">
+              <img src="/images/covers/build-trust-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/build-trust">Trust Is a System, Not a Section on Your Shopify Store</a></h3>
+            <p class="excerpt">Trust does not live in badges or reviews alone. This piece explains how strong Shopify stores reduce doubt across the whole buying journey.</p>
+            <p class="meta"><time datetime="2026-01-25">Jan 25, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="trust">
+            <div class="card-media">
+              <img src="/images/covers/remove-buyer-doubts-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/remove-buyer-doubts">Stop Adding Features to Your Product Page. Start Removing Buyer Doubts</a></h3>
+            <p class="excerpt">Most conversion problems come from unresolved hesitation, not missing features. This article shows how to reduce doubt where buyers feel it.</p>
+            <p class="meta"><time datetime="2026-01-21">Jan 21, 2026</time><span>9 min read</span></p>
+          </article>
+        </div>
+      </section>
+      <section class="topic-block t-ai-search" aria-labelledby="t-ai-search">
+        <div class="section-head">
+          <div>
+            <h2 id="t-ai-search">AI search &amp; discovery</h2>
+            <p>How search engines, AI assistants, and communities decide which stores to surface.</p>
+          </div>
+          <a class="more" href="/topics/ai-search">All 5 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="grid grid--3">
+          <article class="card" data-topic="ai-search">
+            <div class="card-media">
+              <img src="/images/covers/ai-friendly-stores-better-structured-stores-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/ai-friendly-stores-better-structured-stores">AI-Friendly Stores Are Usually Just Better-Structured Stores</a></h3>
+            <p class="excerpt">The stores that perform better in AI-driven discovery usually are not using secret tactics. They are easier to understand, compare, and summarize.</p>
+            <p class="meta"><time datetime="2026-03-24">Mar 24, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="ai-search">
+            <div class="card-media">
+              <img src="/images/covers/reddit-buyer-discovery-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/reddit-buyer-discovery">Reddit Is Becoming a Buyer Discovery Channel (And Most Merchants Are Missing It)</a></h3>
+            <p class="excerpt">February highlights a channel shift: buyers are using Reddit to evaluate products before purchase, and merchants can learn to show up credibly.</p>
+            <p class="meta"><time datetime="2026-02-04">Feb 4, 2026</time><span>10 min read</span></p>
+          </article>
+          <article class="card" data-topic="ai-search">
+            <div class="card-media">
+              <img src="/images/covers/ai-search-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/ai-search">How to Make Your Shopify Store and Products Visible in AI Search</a></h3>
+            <p class="excerpt">AI answers are replacing blue links. Merchants who publish clearer, structured content get referenced first and convert higher-intent buyers.</p>
+            <p class="meta"><time datetime="2026-01-22">Jan 22, 2026</time><span>10 min read</span></p>
+          </article>
+        </div>
+      </section>
+      <section class="topic-block t-catalog" aria-labelledby="t-catalog">
+        <div class="section-head">
+          <div>
+            <h2 id="t-catalog">Catalog &amp; merchandising</h2>
+            <p>Collections, naming, and product data that help buyers and search find the right item.</p>
+          </div>
+          <a class="more" href="/topics/catalog">All 4 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="grid grid--3">
+          <article class="card" data-topic="catalog">
+            <div class="card-media">
+              <img src="/images/covers/better-product-grouping-conversion-discovery-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/better-product-grouping-conversion-discovery">How Better Product Grouping Improves Both Conversion and Discovery</a></h3>
+            <p class="excerpt">Grouping is not just catalog housekeeping. Better product grouping makes the store easier to browse, easier to trust, and easier to discover.</p>
+            <p class="meta"><time datetime="2026-05-12">May 12, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="catalog">
+            <div class="card-media">
+              <img src="/images/covers/quiet-cost-inconsistent-product-naming-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/quiet-cost-inconsistent-product-naming">The Quiet Cost of Inconsistent Product Naming on Shopify</a></h3>
+            <p class="excerpt">Naming problems look small until they start damaging search results, collection clarity, and buyer confidence across the store.</p>
+            <p class="meta"><time datetime="2026-03-10">Mar 10, 2026</time><span>8 min read</span></p>
+          </article>
+          <article class="card" data-topic="catalog">
+            <div class="card-media">
+              <img src="/images/covers/shopify-search-better-catalog-stops-fighting-it-800.jpg" alt="" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            
+            <h3><a href="/blog/shopify-search-better-catalog-stops-fighting-it">Shopify Search Gets Better When Your Catalog Stops Fighting It</a></h3>
+            <p class="excerpt">When Shopify search feels weak, the real issue is often catalog structure. Better naming and cleaner product logic can improve discovery faster than more tooling.</p>
+            <p class="meta"><time datetime="2026-02-24">Feb 24, 2026</time><span>9 min read</span></p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-            <div class="issue-footer">
-              <span>MerchantsDigest.com</span>
-              <span>Built for Shopify founders focused on sustainable growth.</span>
-            </div>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="/">
+              <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="34" height="19" />
+              <span class="brand-name"><b>Merchants</b> <span>Digest</span></span>
+            </a>
+            <p>Independent, practical writing for Shopify merchants, operators, and founders. Clear trade-offs, real store situations, no fluff.</p>
+          </div>
+          <div>
+            <h2>Topics</h2>
+            <ul>
+              <li><a href="/topics/conversion">Conversion</a></li>
+              <li><a href="/topics/product-pages">Product pages</a></li>
+              <li><a href="/topics/trust">Trust &amp; policies</a></li>
+              <li><a href="/topics/ai-search">AI search &amp; discovery</a></li>
+              <li><a href="/topics/catalog">Catalog &amp; merchandising</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Read</h2>
+            <ul>
+              <li><a href="/blogs">All articles</a></li>
+              <li><a href="/newsletter">Newsletter archive</a></li>
+              <li><a href="/feed.xml">RSS feed</a></li>
+              <li><a href="/privacy-policy">Privacy policy</a></li>
+            </ul>
           </div>
         </div>
-      </section>
-
-      <footer class="footer">
-        <small>© 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>
-        <small><a href="/privacy-policy">Privacy Policy</a></small>
-      </footer>
-    </div>
-    <script>
-      const subscribeForm = document.getElementById("subscribe-form");
-      const subscribeMessage = document.getElementById("subscribe-message");
-
-      if (subscribeForm && subscribeMessage) {
-        subscribeForm.addEventListener("submit", (event) => {
-          event.preventDefault();
-          const formData = new FormData(subscribeForm);
-          const payload = new URLSearchParams({
-            email: formData.get("email"),
-            page: window.location.pathname || "/",
-            token: "md_7fT9pL3xQ2vR8nK6Zb5yW1uC4eD0aH9s"
-          });
-
-          fetch(
-            "https://script.google.com/macros/s/AKfycbyNhbx8owb3PQXtCWy3FPgwdevB0ajKWwKoN0xquG7J5cp52ia3Tr5LkCVTp7JRn8CB6A/exec",
-            {
-              method: "POST",
-              mode: "no-cors",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: payload.toString()
-            }
-          )
-            .then(() => {
-              subscribeMessage.hidden = false;
-              subscribeMessage.textContent =
-                "You are successfully subscribed to Merchants Digest.";
-              subscribeForm.reset();
-            })
-            .catch(() => {
-              subscribeMessage.hidden = false;
-              subscribeMessage.textContent =
-                "Subscription failed. Please try again.";
-            });
-        });
-      }
-    </script>
+        <div class="footer-base">
+          <span>&copy; 2026 merchantsdigest.com. Independent writing for Shopify merchants.</span>
+          <span>Not affiliated with Shopify Inc.</span>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js?v=0f9547d4" defer></script>
   </body>
 </html>

@@ -70,3 +70,14 @@ When running the workflow, update the relevant files as needed:
 - `images/Blogs/`
 
 Do not update `articles.html` or `vercel.json` for queued-only posts unless they are being published.
+
+## Site generator
+
+Every public page is generated. Do not hand-edit `index.html`, `articles.html`, `blog-*.html`, `topic-*.html`, `newsletter*.html`, `privacy-policy.html`, `404.html`, `feed.xml`, `sitemap.xml`, or `vercel.json`: edits are overwritten on the next build.
+
+- Article bodies: `content/blog-agent/drafts/<slug>.json`; post list and status: `blog-manifest.json`
+- Every post needs a `topic`: one of `conversion`, `product-pages`, `trust`, `ai-search`, `catalog` (see `scripts/site-config.mjs`). Set it explicitly when drafting; the keyword fallback is only a safety net
+- Site copy, topics, and newsletter issues: `scripts/site-config.mjs`; issue bodies: `content/newsletter/`; privacy policy: `content/pages/`
+- Templates: `scripts/build-site.mjs`; styles and scripts: `assets/site.css`, `assets/site.js`
+- `npm run site:images` makes web-sized covers in `images/covers/` (macOS `sips`); `npm run site:build` regenerates the site; `npm run site:dev` serves it locally with production routes
+- `blog:publish`, `blog:release`, and `blog:sync` already run both steps

@@ -17,16 +17,36 @@
       "destination": "/newsletter.html"
     },
     {
-      "source": "/newsletter/jan-2026",
-      "destination": "/newsletter-jan-2026.html"
-    },
-    {
       "source": "/newsletter/feb-2026",
       "destination": "/newsletter-feb-2026.html"
     },
     {
+      "source": "/newsletter/jan-2026",
+      "destination": "/newsletter-jan-2026.html"
+    },
+    {
       "source": "/privacy-policy",
       "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/topics/conversion",
+      "destination": "/topic-conversion.html"
+    },
+    {
+      "source": "/topics/product-pages",
+      "destination": "/topic-product-pages.html"
+    },
+    {
+      "source": "/topics/trust",
+      "destination": "/topic-trust.html"
+    },
+    {
+      "source": "/topics/ai-search",
+      "destination": "/topic-ai-search.html"
+    },
+    {
+      "source": "/topics/catalog",
+      "destination": "/topic-catalog.html"
     },
     {
       "source": "/blog/policy-pages-growth-pages",
@@ -147,6 +167,26 @@
     {
       "source": "/blog/traffic-no-sales",
       "destination": "/blog-traffic-no-sales.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/images/covers/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     }
   ]
 }

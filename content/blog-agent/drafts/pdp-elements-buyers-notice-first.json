@@ -73,5 +73,6 @@
   "imageArchetype": "evaluation",
   "overlayKicker": "Attention has an order",
   "imagePrompt": "Photographic editorial cover showing a shopper or merchant prioritizing the first signals on a product page. The image should communicate scan order and decision focus. No readable text.",
-  "imageStyleNotes": "The concept is attention hierarchy, not just a generic product page."
+  "imageStyleNotes": "The concept is attention hierarchy, not just a generic product page.",
+  "topic": "product-pages"
 }

@@ -73,5 +73,6 @@
   "imageArchetype": "consequence",
   "overlayKicker": "Interest is not enough",
   "imagePrompt": "Photographic editorial cover showing a buyer revisiting a product decision with unresolved hesitation. Realistic ecommerce evaluation moment, premium retail feel, no readable text, no generic desk scene.",
-  "imageStyleNotes": "Use contrast between interest and uncertainty. The image should feel like a near-purchase that still has friction."
+  "imageStyleNotes": "Use contrast between interest and uncertainty. The image should feel like a near-purchase that still has friction.",
+  "topic": "conversion"
 }

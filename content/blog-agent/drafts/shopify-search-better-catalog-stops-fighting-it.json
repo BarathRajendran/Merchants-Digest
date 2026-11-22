@@ -94,5 +94,6 @@
     "aeoRationale": "The article directly answers why search underperforms and what operational fixes matter first.",
     "humanHook": "Most merchants have searched their own store and seen confusing results.",
     "sourceNotes": []
-  }
+  },
+  "topic": "catalog"
 }
