@@ -1,0 +1,51 @@
+Subject: Fix what makes visitors hesitate before you plan for growth
+Preview: Why search now reads your product pages, ads that look less like ads, and the Winter '26 changes worth your time.
+
+Hi,
+
+This is the first issue of Merchants Digest, so a quick word on what it is. Each issue covers a few things I think matter for Shopify stores right now, explained plainly, with at least one thing you can act on. If it is not useful, unsubscribing takes one click.
+
+January is when a lot of merchants write a big new growth plan. I would suggest the opposite: spend the month fixing whatever makes your current visitors hesitate. It is less exciting, and it usually pays off sooner.
+
+SEARCH IS STARTING TO READ YOUR PRODUCT PAGES, NOT JUST RANK THEM
+
+Google's AI results and assistants like ChatGPT now summarise products and stores before anyone clicks. They do best with pages that say plainly what a product is, who it is for, and what buying it involves: price, delivery, returns, sizing.
+
+So a vague product page is now a discovery problem as well as a conversion problem. What I would check first:
+
+- Does the first line of each product page say what the product is and who it is for?
+- Are price, delivery time and return terms written as text on the page, not buried in images or tabs?
+- Do your product titles, types and variants match what the page actually says?
+
+I wrote about this in more detail here: https://www.merchantsdigest.com/blog/ai-search
+
+ADS THAT LOOK LESS LIKE ADS ARE HOLDING UP BETTER
+
+The ads I see working for smaller stores look like they belong on the platform. A founder or someone from the team talking to camera. A short clip of the product being used. A real review read out loud. Being recognisable and consistent seems to matter more than polish.
+
+If you only try one thing: take your best customer review and turn it into a 15-second captioned video. It costs almost nothing, and it tells you quickly whether that format works for your buyers.
+
+SHOPIFY CHANGES WORTH KNOWING
+
+Shopify's Winter '26 Edition shipped a long list of updates (Shopify puts it at more than 150). Most of them will not change your week. These are the ones I would look at:
+
+- Checkout extensibility: more ways to add upsells and post-purchase offers without editing checkout code. Worth a look if you still rely on an old checkout customisation. https://changelog.shopify.com/
+- Bigger catalogs and products with lots of variants: support is rolling out. Relevant if you have been splitting products just to get around variant limits. https://www.shopify.com/editions/winter2026
+- AI across the admin: Shopify is building AI into discovery, reporting and day-to-day store tasks. Try it on something low-stakes before you trust it with product copy. https://www.shopify.com/news/winter-26-edition-renaissance
+
+ONE THING TO DO THIS WEEK
+
+Open your best-selling product page on your phone and read only what shows before you scroll. If someone new could not tell what it is, who it is for, and when it would arrive, fix that before you spend more on traffic.
+
+If you have time for more, these small fixes are usually worth it:
+
+- Move reviews closer to the buy button.
+- Remove checkout fields you do not actually need.
+- Uninstall one app you no longer use. Fewer apps usually means a faster store.
+
+That is it for this month. Hit reply and tell me what you are working on in your store. I read the replies, and they shape what I write next.
+
+The editor
+Merchants Digest
+
+Read on the web: https://www.merchantsdigest.com/newsletter/jan-2026

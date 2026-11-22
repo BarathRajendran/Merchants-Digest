@@ -719,18 +719,34 @@ a.kicker:hover { filter: saturate(1.3) brightness(0.97); }
 
 /* ---------- Newsletter ---------- */
 
-.issue-list { list-style: none; margin: 0 0 64px; padding: 0; border-top: 1px solid var(--rule); }
-.issue-list li { position: relative; display: grid; gap: 16px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
-@media (min-width: 720px) { .issue-list li { grid-template-columns: 220px 1fr; gap: 28px; align-items: center; } }
-.issue-list img { aspect-ratio: 3 / 2; width: 100%; object-fit: cover; border-radius: var(--radius); background: var(--paper-sunk); }
-.issue-list h2 { font-family: var(--serif); font-size: 24px; line-height: 1.2; margin-top: 6px; }
-.issue-list h2 a { text-decoration: none; }
-.issue-list h2 a::after { content: ""; position: absolute; inset: 0; }
-.issue-list li:hover h2 a { text-decoration: underline; text-decoration-color: var(--rule-strong); }
-.issue-list p { color: var(--ink-2); margin-top: 6px; }
+.letter-list { list-style: none; margin: 0 0 56px; padding: 0; border-top: 1px solid var(--rule); }
+.letter-list li { position: relative; display: grid; gap: 6px 32px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+@media (min-width: 720px) { .letter-list li { grid-template-columns: 160px 1fr; } }
+.letter-list time { font-size: 14px; font-weight: 600; color: var(--accent-ink); padding-top: 4px; }
+.letter-list h2 { font-family: var(--serif); font-size: 24px; line-height: 1.22; }
+.letter-list h2 a { text-decoration: none; }
+.letter-list h2 a::after { content: ""; position: absolute; inset: 0; }
+.letter-list li:hover h2 a { text-decoration: underline; text-decoration-color: var(--rule-strong); }
+.letter-list p { color: var(--ink-2); margin-top: 6px; max-width: 64ch; }
 
-.issue-shell { max-width: 860px; margin: 0 auto; padding: 28px 0 48px; }
-.issue-shell .crumbs { margin-bottom: 18px; }
+.letter-shell { max-width: 720px; margin: 0 auto; padding: 28px 0 8px; }
+.letter {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 28px 22px 32px;
+  margin-bottom: 32px;
+}
+@media (min-width: 720px) { .letter { padding: 44px 56px 48px; } }
+.letter-head { padding-bottom: 22px; margin-bottom: 26px; border-bottom: 1px solid var(--rule); }
+.letter-from { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-3); }
+.letter-from strong { color: var(--ink); font-weight: 600; }
+.letter-head h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 38px); line-height: 1.12; letter-spacing: -0.015em; margin: 14px 0 10px; }
+.letter-body.prose { font-size: 19px; line-height: 1.62; }
+.letter-body.prose h2 { font-size: 24px; margin-top: 1.8em; }
+.letter-body .signoff { margin-top: 2em; font-weight: 600; }
+.letter-body .signoff span { font-family: var(--sans); font-size: 14px; font-weight: 400; color: var(--ink-3); }
 
 /* ---------- Simple prose pages (privacy, 404) ---------- */
 

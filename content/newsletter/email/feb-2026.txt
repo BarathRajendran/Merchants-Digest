@@ -1,0 +1,43 @@
+Subject: Fewer experiments, more cleanup
+Preview: Reddit as the place buyers do their homework, why to stop tweaking ads every week, and five small fixes.
+
+Hi,
+
+A pattern I kept noticing this month: the stores making progress are not adding things. They are removing confusion. Fewer ads, left running longer. Shorter FAQs. Clearer delivery dates. Here is what that looks like in practice.
+
+REDDIT IS WHERE BUYERS DO THEIR HOMEWORK
+
+Search for almost any product and you will often find Reddit threads near the top. "Is this brand worth it?" "What should I look for?" "What is a good alternative to X?" Those threads rank on Google, get quoted in AI answers, and stay around for years.
+
+The merchants who do well there do not promote themselves. They answer questions as someone who knows the category, explain the trade-offs honestly, and let other people bring up their brand. It is slow, and it fails if you treat it like an ad channel. But one genuinely helpful answer can keep sending the right visitors for a long time.
+
+The full breakdown is on the site: https://www.merchantsdigest.com/blog/reddit-buyer-discovery
+
+STOP TWEAKING YOUR ADS EVERY WEEK
+
+A shift I have been seeing: merchants changing their ads less often, on purpose. Fewer creatives, left running longer, with one clear message repeated. Familiarity takes time to build, and constant refreshes keep resetting it.
+
+Before you change your next ad, check one thing. Does the ad's main promise match the first line of the product page it sends people to? If the ad says "ships in two days" and the page opens with fabric details, fix the page first. That mismatch probably costs you more than a tired creative does.
+
+SHOPIFY CHANGES WORTH KNOWING
+
+- Inventory transfers are more flexible. You can edit shipment line items at any stage, receive stock without naming a Shopify origin, and send to destinations that are not set up in advance. Useful if you move stock between locations or work with a 3PL. https://changelog.shopify.com/posts/greater-flexibility-for-inventory-transfers
+- Better return reasons. A new Return Reason Definitions API gives more detailed data on why products come back. If returns are a real cost for you, ask your returns app whether it supports this yet. https://changelog.shopify.com/posts/enhanced-return-reasons
+- Winter '26 Edition is still rolling out, so some of last month's features may not be in your admin yet. https://www.shopify.com/editions/winter2026
+
+FIVE SMALL FIXES WORTH A LOOK
+
+- Put an estimated delivery date next to the buy button. It answers the question buyers most often email about.
+- Remove one app you do not need. Speed still matters.
+- Cut your homepage down to two main actions.
+- Swap one styled product photo for one that shows the product in use.
+- Replace a long FAQ with three direct answers near the product. Most people never scroll to the bottom.
+
+None of this is dramatic. It is just making the traffic you already have easier to convert.
+
+As always, hit reply if any of this is relevant to your store. I would like to hear what is working for you.
+
+The editor
+Merchants Digest
+
+Read on the web: https://www.merchantsdigest.com/newsletter/feb-2026
