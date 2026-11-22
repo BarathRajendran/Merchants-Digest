@@ -1,0 +1,58 @@
+Subject: Google I/O made AI Mode the front door
+Preview: Universal Cart and AI Mode at Google I/O, what buyers actually look at on a product page, and an AI channel report in your admin.
+
+Hi,
+
+Google I/O on May 19 was mostly about AI, as expected. The shopping announcements are the ones worth your attention, because they change where a buyer first meets your product.
+
+IN THIS ISSUE
+1. Google I/O: AI Mode and Universal Cart
+2. What buyers notice first on a product page
+3. Shopify changes worth knowing
+4. Three checks for this week
+
+AI MODE IS BECOMING THE MAIN WAY PEOPLE SEARCH
+
+Google said AI Mode now has more than a billion monthly users and announced Universal Cart, a shopping cart that follows a product across Google's apps and tracks price drops and stock. It was announced for Search and the Gemini app in the US over the summer. Google also introduced the Universal Commerce Protocol, an open standard for AI agents that shop.
+
+A second core update started on May 21, so rankings were noisy into June. Do not read too much into a single week of traffic.
+
+For a Shopify store, the practical takeaway is that your Google Merchant Center feed now matters as much as your website. Titles, prices, availability and shipping details in that feed are what AI Mode reads first.
+
+From the blog: Search Visibility Improves When Product Data Stops Being an Afterthought https://www.merchantsdigest.com/blog/search-visibility-product-data-afterthought
+
+BUYERS LOOK AT FEWER THINGS THAN YOU THINK
+
+Merchants spend weeks on product page sections that buyers scroll straight past. What buyers actually check first is short: the photos, the price, whether it fits their situation, and when it will arrive.
+
+Before adding anything new to a product page, make sure those four are impossible to miss on a phone.
+
+"Get the first four things right before you add a fifth."
+
+From the blog: The PDP Elements Buyers Notice First Are Not Always the Ones Merchants Obsess Over https://www.merchantsdigest.com/blog/pdp-elements-buyers-notice-first
+
+SHOPIFY CHANGES WORTH KNOWING
+
+- AI channels now have their own page in the admin, under Sales channels > Agentic. It shows sessions and orders from AI assistants, which is the first honest view most stores get of this traffic. https://www.shopify.com/blog/agentic-commerce
+- Discounts can now be assigned to specific Markets. Useful if a promotion should run in one country and not another. https://changelog.shopify.com/
+- Shopify Messaging added SMS marketing automations alongside email. https://changelog.shopify.com/
+
+THREE CHECKS FOR THIS WEEK
+
+- Open Google Merchant Center and fix anything listed under product issues, starting with missing shipping or return details.
+- Open Sales channels > Agentic in your admin and note what it shows today, so you have a baseline.
+- Look at how your products are grouped. If a new visitor cannot tell your collections apart, neither can a search engine.
+
+From the blog: How Better Product Grouping Improves Both Conversion and Discovery https://www.merchantsdigest.com/blog/better-product-grouping-conversion-discovery
+
+That is May. Reply and tell me what your Agentic channel page shows. I am curious how much AI traffic stores of different sizes actually see.
+
+The editor
+Merchants Digest
+
+SOURCES
+- Google: 100 things announced at I/O 2026: https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/
+- Google Search Status Dashboard: https://status.search.google.com/
+- Shopify Changelog: https://changelog.shopify.com/
+
+Read on the web: https://www.merchantsdigest.com/newsletter/may-2026

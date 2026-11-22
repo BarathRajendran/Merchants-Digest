@@ -1,0 +1,58 @@
+Subject: Google can now check out for you. Decide if you want that.
+Preview: Checkout inside AI Mode reaches Shopify stores, Meta becomes an AI channel, and why your conversion rate may suddenly look different.
+
+Hi,
+
+September is when AI shopping stopped being something to read about and started showing up in the admin. If you sell in the US, there may be a setting waiting for you.
+
+IN THIS ISSUE
+1. Google AI Mode checkout reaches Shopify
+2. Why your conversion rate may jump
+3. Shopify changes worth knowing
+4. Twenty minutes in your admin
+
+CHECKOUT INSIDE GOOGLE AI MODE IS REACHING SHOPIFY STORES
+
+Google has been rolling out checkout inside AI Mode and Gemini, built on its Universal Commerce Protocol. In September, eligible US Shopify merchants started getting emails about it, and reports say enrollment was automatic. You stay the merchant of record, and you can opt out under Sales channels > Agentic.
+
+Meta also appeared as a separate AI channel in the admin on September 8, with products shared through the Shopify Catalog by default.
+
+Neither is good or bad on its own. The question is whether your product data and policies are clear enough to sell without a buyer ever seeing your product page.
+
+"If a buyer can purchase without seeing your page, your product data is your page."
+
+From the blog: What AI Shopping Agents Need From Your Shopify Store Before They Recommend You https://www.merchantsdigest.com/blog/ai-shopping-agent-ready-store
+
+YOUR CONVERSION RATE MAY CHANGE WITHOUT ANYTHING CHANGING
+
+Shopify updated how sessions are counted in analytics later in September, including how some bot traffic is filtered. Session counts, and therefore conversion rates, may not line up with earlier months.
+
+Before you celebrate a jump or panic about a drop, check whether it lines up with the date the change rolled out. Add a note in your own records so next year's comparison makes sense.
+
+From the blog: The Stores That Convert Better Usually Answer Questions Earlier https://www.merchantsdigest.com/blog/stores-that-convert-better-answer-questions-earlier
+
+SHOPIFY CHANGES WORTH KNOWING
+
+- A redesigned admin started rolling out on September 15 to every store. Things are in slightly different places, but nothing you rely on was removed. https://changelog.shopify.com/
+- Variants can now hold up to 20 barcodes, which helps if the same item has different GTINs across suppliers or marketplaces. https://changelog.shopify.com/
+- You can collect WhatsApp marketing consent at checkout, and POS can now create local delivery orders. https://www.shopify.com/blog/shopify-retail-roundup-september-2026-v11-15-11-16
+
+TWENTY MINUTES IN YOUR ADMIN
+
+- Open Sales channels > Agentic and check which AI channels can see your products. Make a deliberate choice about each one.
+- Make sure every product has a correct barcode or GTIN. AI shopping surfaces use it to match your products.
+- Write down the date of the analytics change next to your September numbers.
+
+From the blog: Why Your Shipping, Returns, and Sizing Pages Are Now Growth Pages https://www.merchantsdigest.com/blog/policy-pages-growth-pages
+
+That is September. If you opted out of Google's checkout, or decided to stay in, reply and tell me why. I would like to share how other merchants are thinking about it.
+
+The editor
+Merchants Digest
+
+SOURCES
+- Google Merchant Center Help: https://support.google.com/merchants
+- Shopify Changelog: https://changelog.shopify.com/
+- Shopify Retail Roundup, September 2026: https://www.shopify.com/blog/shopify-retail-roundup-september-2026-v11-15-11-16
+
+Read on the web: https://www.merchantsdigest.com/newsletter/sep-2026

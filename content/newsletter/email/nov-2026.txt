@@ -1,0 +1,59 @@
+Subject: BFCM week: what to leave alone
+Preview: A core update during peak season, clarity beats countdown timers, and the deadlines waiting in January.
+
+Hi,
+
+Black Friday is November 27 and Cyber Monday is November 30. This issue is short on purpose. The best thing most stores can do this week is stop changing things.
+
+IN THIS ISSUE
+1. A core update during peak season
+2. Clarity beats countdown timers
+3. Shopify changes worth knowing
+4. Final checks before Friday
+
+A CORE UPDATE IS ROLLING OUT DURING PEAK SEASON
+
+Google started its November core update on November 10. Rankings may move around for a couple of weeks, right as holiday traffic peaks.
+
+Do not respond by rewriting pages or changing URLs mid-rollout. Let it finish, then compare full weeks. Meanwhile, more buyers are checking deals through AI assistants and price trackers, which reward clear, honest pricing more than clever copy.
+
+"During a core update in BFCM week, the best SEO move is usually no move."
+
+From the blog: How to Make Your Shopify Store and Products Visible in AI Search https://www.merchantsdigest.com/blog/ai-search
+
+CLARITY BEATS COUNTDOWN TIMERS
+
+Holiday buyers are comparing more stores than usual, and they are tired of fake urgency. What actually moves them is certainty: the real discount, the real delivery date, and what happens if the gift does not fit.
+
+If you change only one thing this week, make your delivery cut-off and return window visible near the buy button.
+
+From the blog: Your Store Can Feel More Trustworthy Without Looking More Corporate https://www.merchantsdigest.com/blog/trustworthy-without-looking-corporate
+
+SHOPIFY CHANGES WORTH KNOWING
+
+Nothing here needs action this week. These are dates to put in the calendar for January.
+
+- Apps must move to expiring offline access tokens before January 1, 2027. If you use custom or private apps, ask whoever built them whether they are ready. https://changelog.shopify.com/
+- POS receipts customised with the Liquid editor need to move to the new unified receipt template by January 1, 2027. https://www.shopify.com/blog/shopify-retail-roundup-july-2026
+- Shop Promise claims for earlier qualifying orders close on December 16. https://changelog.shopify.com/
+
+FINAL CHECKS BEFORE FRIDAY
+
+- Place a full test order with your sale discount applied, on a phone.
+- Check stock levels on your top ten products and set low-stock alerts.
+- Confirm who is watching orders and support messages over the weekend.
+- Freeze theme and app changes until December 1.
+
+From the blog: Stop Adding Features to Your Product Page. Start Removing Buyer Doubts https://www.merchantsdigest.com/blog/remove-buyer-doubts
+
+Good luck this week. After the weekend, reply and tell me one thing that worked and one that did not. I will share what merchants learned in December's issue.
+
+The editor
+Merchants Digest
+
+SOURCES
+- Google Search Status Dashboard: https://status.search.google.com/
+- Shopify Changelog: https://changelog.shopify.com/
+- Shopify Retail Roundup, July 2026: https://www.shopify.com/blog/shopify-retail-roundup-july-2026
+
+Read on the web: https://www.merchantsdigest.com/newsletter/nov-2026

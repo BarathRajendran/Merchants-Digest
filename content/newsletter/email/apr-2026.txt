@@ -1,0 +1,62 @@
+Subject: Write the part the spec sheet leaves out
+Preview: What the March core update seemed to reward, bundles that help instead of push, and B2B tools reaching every plan.
+
+Hi,
+
+Google's March core update finished rolling out on April 8. Updates like this are never fully explained, but the pattern people noticed is useful for any store, whether or not your rankings moved.
+
+IN THIS ISSUE
+1. What the March core update seemed to reward
+2. Bundles that help instead of push
+3. Shopify changes worth knowing
+4. Fix the basics before more reviews
+
+PAGES THAT ONLY REPEAT THE MANUFACTURER LOST GROUND
+
+The March 2026 core update ran from late March to April 8. Analyses of the results kept pointing the same way: generic pages that offered nothing beyond the manufacturer's spec sheet tended to drop, and brands with a clear product range and their own point of view tended to hold up.
+
+That matches what AI answers look for too. A page that only lists dimensions gives a search engine or an assistant nothing to quote. A page that explains who the product suits, how it compares and what people usually ask gives it plenty.
+
+- Add one paragraph per product that only you could write: who it is really for, and who should pick something else.
+- Answer the two or three questions customers email you about, on the page itself.
+- Do not rewrite everything at once. Start with the products that already get traffic.
+
+From the blog: Why Shopify Merchants Should Treat FAQ Content as Revenue Content https://www.merchantsdigest.com/blog/faq-content-revenue-content
+
+BUNDLES SHOULD FEEL LIKE ADVICE
+
+A good bundle answers the question 'what else will I need?' before the buyer has to work it out. A bad one is a discount wrapped around things nobody asked for.
+
+Test your bundles against one question: would a knowledgeable shop assistant suggest this combination? If not, the bundle is probably hurting trust more than it is helping order value.
+
+"The best bundles feel like guidance. The worst feel like a quota."
+
+From the blog: How to Make Bundle Offers Feel Helpful Instead of Pushy https://www.merchantsdigest.com/blog/bundle-offers-helpful-instead-of-pushy
+
+SHOPIFY CHANGES WORTH KNOWING
+
+- Core B2B features, such as company accounts and wholesale pricing, were reported as moving to Basic, Grow and Advanced plans in early April, not just Plus. Worth a look if you handle wholesale orders by email today. https://changelog.shopify.com/
+- Scripts editing locked on April 15. Existing scripts keep running until June 30, then stop. https://changelog.shopify.com/
+- POS updates through April changed how some custom discounts are calculated. If you sell in person, check a few discounted receipts. https://www.shopify.com/blog/retail-release-roundup
+
+FIX THE BASICS BEFORE YOU CHASE MORE REVIEWS
+
+Reviews help most when the product page has already done its job. If buyers cannot tell the size, the materials or the delivery time, five stars will not save the sale.
+
+- Pick one top product and rewrite its first paragraph so it says something the spec sheet does not.
+- Move your three most-asked questions next to the buy button.
+- If you use Scripts, confirm your migration plan is in place before June.
+
+From the blog: Product Reviews Help Less When Your Product Page Doesn't Explain the Basics https://www.merchantsdigest.com/blog/product-reviews-help-less-when-basics-unclear
+
+That is April. If your traffic moved during the core update and you want a second opinion on why, reply with the page and I will take a look.
+
+The editor
+Merchants Digest
+
+SOURCES
+- Google Search Status Dashboard: https://status.search.google.com/
+- Shopify Changelog: https://changelog.shopify.com/
+- Shopify Retail Roundup: https://www.shopify.com/blog/retail-release-roundup
+
+Read on the web: https://www.merchantsdigest.com/newsletter/apr-2026

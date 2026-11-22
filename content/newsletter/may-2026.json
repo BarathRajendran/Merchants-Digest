@@ -1,0 +1,78 @@
+{
+  "slug": "may-2026",
+  "label": "May 2026",
+  "date": "2026-05-22",
+  "compiled": "November 2026",
+  "readMinutes": 5,
+  "subject": "Google I/O made AI Mode the front door",
+  "preview": "Universal Cart and AI Mode at Google I/O, what buyers actually look at on a product page, and an AI channel report in your admin.",
+  "greeting": "Hi,",
+  "intro": [
+    "Google I/O on May 19 was mostly about AI, as expected. The shopping announcements are the ones worth your attention, because they change where a buyer first meets your product."
+  ],
+  "sections": [
+    {
+      "heading": "AI Mode is becoming the main way people search",
+      "short": "Google I/O: AI Mode and Universal Cart",
+      "topic": "ai-search",
+      "paragraphs": [
+        "Google said AI Mode now has more than a billion monthly users and announced Universal Cart, a shopping cart that follows a product across Google's apps and tracks price drops and stock. It was announced for Search and the Gemini app in the US over the summer. Google also introduced the Universal Commerce Protocol, an open standard for AI agents that shop.",
+        "A second core update started on May 21, so rankings were noisy into June. Do not read too much into a single week of traffic.",
+        "For a Shopify store, the practical takeaway is that your Google Merchant Center feed now matters as much as your website. Titles, prices, availability and shipping details in that feed are what AI Mode reads first."
+      ],
+      "article": "search-visibility-product-data-afterthought"
+    },
+    {
+      "heading": "Buyers look at fewer things than you think",
+      "short": "What buyers notice first on a product page",
+      "topic": "conversion",
+      "paragraphs": [
+        "Merchants spend weeks on product page sections that buyers scroll straight past. What buyers actually check first is short: the photos, the price, whether it fits their situation, and when it will arrive.",
+        "Before adding anything new to a product page, make sure those four are impossible to miss on a phone."
+      ],
+      "pullquote": "Get the first four things right before you add a fifth.",
+      "article": "pdp-elements-buyers-notice-first"
+    },
+    {
+      "heading": "Shopify changes worth knowing",
+      "short": "Shopify changes worth knowing",
+      "style": "updates",
+      "bullets": [
+        {
+          "text": "AI channels now have their own page in the admin, under Sales channels > Agentic. It shows sessions and orders from AI assistants, which is the first honest view most stores get of this traffic.",
+          "href": "https://www.shopify.com/blog/agentic-commerce",
+          "label": "Shopify on agentic commerce"
+        },
+        {
+          "text": "Discounts can now be assigned to specific Markets. Useful if a promotion should run in one country and not another.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "Shopify Messaging added SMS marketing automations alongside email.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        }
+      ]
+    },
+    {
+      "heading": "Three checks for this week",
+      "short": "Three checks for this week",
+      "style": "action",
+      "bullets": [
+        "Open Google Merchant Center and fix anything listed under product issues, starting with missing shipping or return details.",
+        "Open Sales channels > Agentic in your admin and note what it shows today, so you have a baseline.",
+        "Look at how your products are grouped. If a new visitor cannot tell your collections apart, neither can a search engine."
+      ],
+      "article": "better-product-grouping-conversion-discovery"
+    }
+  ],
+  "closing": [
+    "That is May. Reply and tell me what your Agentic channel page shows. I am curious how much AI traffic stores of different sizes actually see."
+  ],
+  "sources": [
+    { "title": "Google: 100 things announced at I/O 2026", "url": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" },
+    { "title": "Google Search Status Dashboard", "url": "https://status.search.google.com/" },
+    { "title": "Shopify Changelog", "url": "https://changelog.shopify.com/" }
+  ]
+}

@@ -17,6 +17,42 @@
       "destination": "/newsletter.html"
     },
     {
+      "source": "/newsletter/nov-2026",
+      "destination": "/newsletter-nov-2026.html"
+    },
+    {
+      "source": "/newsletter/oct-2026",
+      "destination": "/newsletter-oct-2026.html"
+    },
+    {
+      "source": "/newsletter/sep-2026",
+      "destination": "/newsletter-sep-2026.html"
+    },
+    {
+      "source": "/newsletter/aug-2026",
+      "destination": "/newsletter-aug-2026.html"
+    },
+    {
+      "source": "/newsletter/jul-2026",
+      "destination": "/newsletter-jul-2026.html"
+    },
+    {
+      "source": "/newsletter/jun-2026",
+      "destination": "/newsletter-jun-2026.html"
+    },
+    {
+      "source": "/newsletter/may-2026",
+      "destination": "/newsletter-may-2026.html"
+    },
+    {
+      "source": "/newsletter/apr-2026",
+      "destination": "/newsletter-apr-2026.html"
+    },
+    {
+      "source": "/newsletter/mar-2026",
+      "destination": "/newsletter-mar-2026.html"
+    },
+    {
       "source": "/newsletter/feb-2026",
       "destination": "/newsletter-feb-2026.html"
     },
