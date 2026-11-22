@@ -6,6 +6,8 @@ export const site = {
   domain: "merchantsdigest.com",
   origin: "https://www.merchantsdigest.com",
   gaId: "G-5FQK2WSDWH",
+  // Signs newsletter issues. Kept anonymous for now; set person: true and a real name to show one.
+  author: { name: "The editor", role: "Merchants Digest", person: false },
   tagline: "Practical writing for Shopify merchants",
   description:
     "Practical articles for Shopify merchants on conversion, product pages, trust, catalog structure, and how AI search finds what you sell.",
@@ -59,25 +61,5 @@ export const topics = [
     name: "Catalog & merchandising",
     navName: "Catalog",
     description: "Collections, naming, and product data that help buyers and search find the right item."
-  }
-];
-
-// Newsletter issues, newest first. Bodies live in content/newsletter/<slug>.html.
-export const issues = [
-  {
-    slug: "feb-2026",
-    label: "February 2026",
-    title: "February 2026: clarity beats complexity",
-    summary:
-      "Growth is coming from cleanups, not experiments: Reddit as a buyer discovery channel, message alignment, and the Shopify updates worth acting on.",
-    image: "/images/Newsletter/feb-hero.png"
-  },
-  {
-    slug: "jan-2026",
-    label: "January 2026",
-    title: "January 2026: resetting how you think about growth",
-    summary:
-      "Why AI-ready product pages matter for organic discovery, what is building trust in social ads, and the quiet fixes top Shopify stores make.",
-    image: "/images/Home%20Page/NL%20header.jpg"
   }
 ];

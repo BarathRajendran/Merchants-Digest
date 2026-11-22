@@ -5,7 +5,8 @@
 //   content/blog-agent/drafts/<slug>.json   article bodies
 //   content/newsletter/*.html               newsletter issue bodies
 //   content/pages/*.html                    simple pages (privacy policy)
-//   scripts/site-config.mjs                 topics, newsletter issues, site copy
+//   content/newsletter/<slug>.json          newsletter issues (web page + email exports)
+//   scripts/site-config.mjs                 topics, author, site copy
 //
 // Output (repo root, served as-is by Vercel):
 //   index.html, articles.html, topic-<slug>.html, blog-<slug>.html, newsletter*.html,
@@ -13,12 +14,12 @@
 //
 // Usage: node scripts/build-site.mjs        (npm run site:build)
 
-import { readFile, writeFile, stat } from "node:fs/promises";
+import { readFile, writeFile, stat, readdir, mkdir } from "node:fs/promises";
 import { existsSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { site, topics, issues } from "./site-config.mjs";
+import { site, topics } from "./site-config.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const agentDir = path.join(root, "content", "blog-agent");
@@ -645,59 +646,188 @@ ${subscribeBand(`post-${draft.slug}`)}
 ${footer()}`;
 }
 
-function renderNewsletterIndex() {
+// ---------- newsletter ----------
+// Issues live in content/newsletter/<slug>.json and render three ways: the web archive page,
+// an email-ready HTML file and a plain-text file (content/newsletter/email/) for an email service.
+
+const absLink = (href) => (href.startsWith("/") ? abs(href) : href);
+
+function issueBlocks(section) {
+  const items = (section.bullets || []).map((b) => (typeof b === "string" ? { text: b } : b));
+  return { paragraphs: section.paragraphs || [], items, link: section.link };
+}
+
+function renderNewsletterIndex(issues) {
   return `${head({
     title: "Newsletter",
     description: "Past issues of the Merchants Digest newsletter for Shopify merchants.",
     canonical: "/newsletter",
-    image: issues[0]?.image,
     schema: { "@context": "https://schema.org", "@graph": [organization, website] }
   })}${header("newsletter")}
     <main id="main" class="wrap">
       <header class="page-head">
         <span class="kicker">Newsletter</span>
         <h1>The Merchants Digest newsletter</h1>
-        <p>Every past issue, newest first. Each one pulls together the articles and Shopify changes that mattered that month.</p>
+        <p>A short letter about what is worth fixing on a Shopify store, and which platform changes actually matter. Here is every past issue, newest first.</p>
       </header>
-${subscribeBand("newsletter")}
-      <div class="section-head"><h2>Past issues</h2></div>
-      <ul class="issue-list">
+      <ol class="letter-list">
         ${issues
           .map(
             (i) => `<li>
-          <img src="${i.image}" alt="" width="660" height="440" loading="lazy" />
+          <time datetime="${i.date}">${esc(i.label)}</time>
           <div>
-            <span class="kicker">${esc(i.label)}</span>
-            <h2><a href="/newsletter/${i.slug}">${esc(i.title)}</a></h2>
-            <p>${esc(i.summary)}</p>
+            <h2><a href="/newsletter/${i.slug}">${esc(i.subject)}</a></h2>
+            <p>${esc(i.preview)}</p>
           </div>
         </li>`
           )
           .join("\n        ")}
-      </ul>
+      </ol>
+${subscribeBand("newsletter")}
     </main>
 ${footer()}`;
 }
 
-function renderIssue(issue, fragment) {
-  const description = (fragment.match(/<!-- description: (.*?) -->/) || [])[1] || issue.summary;
-  const body = fragment.replace(/<!--[\s\S]*?-->\s*/g, "");
+function issueItemHtml(i) {
+  if (!i.href) return `<li>${esc(i.text)}</li>`;
+  const external = i.href.startsWith("http") ? ' rel="noopener" target="_blank"' : "";
+  return `<li>${esc(i.text)} <a href="${esc(i.href)}"${external}>${esc(i.label || "Read more")}</a></li>`;
+}
+
+function renderIssue(issue, { newer, older } = {}) {
+  const sections = issue.sections
+    .map((section) => {
+      const { paragraphs, items, link } = issueBlocks(section);
+      return [
+        `          <h2>${esc(section.heading)}</h2>`,
+        ...paragraphs.map((p) => `          <p>${esc(p)}</p>`),
+        items.length ? `          <ul>${items.map(issueItemHtml).join("")}</ul>` : "",
+        link ? `          <p><a href="${esc(link.href)}">${esc(link.text)} →</a></p>` : ""
+      ]
+        .filter(Boolean)
+        .join("\n");
+    })
+    .join("\n");
+
   return `${head({
-    title: issue.title,
-    description,
+    title: issue.subject,
+    description: issue.preview,
     canonical: `/newsletter/${issue.slug}`,
-    image: issue.image,
     type: "article",
-    schema: { "@context": "https://schema.org", "@graph": [organization, website] }
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        organization,
+        website,
+        {
+          "@type": "Article",
+          headline: issue.subject,
+          description: issue.preview,
+          datePublished: issue.date,
+          author: site.author.person ? { "@type": "Person", name: site.author.name } : { "@id": organization["@id"] },
+          publisher: { "@id": organization["@id"] },
+          mainEntityOfPage: abs(`/newsletter/${issue.slug}`)
+        }
+      ]
+    }
   })}${header("newsletter")}
     <main id="main" class="wrap">
-      <div class="issue-shell">
+      <div class="letter-shell">
         <nav class="crumbs" aria-label="Breadcrumb"><a href="/newsletter">Newsletter</a><span aria-hidden="true">/</span><span>${esc(issue.label)}</span></nav>
-        ${body}
+        <article class="letter">
+          <header class="letter-head">
+            <p class="letter-from"><img src="/assets/logo-mark.svg" alt="" width="28" height="16" /><span><strong>${esc(site.author.name)}</strong> at ${esc(site.name)}</span></p>
+            <h1>${esc(issue.subject)}</h1>
+            <p class="meta"><time datetime="${issue.date}">${esc(issue.label)}</time><span>Issue ${issue.number}</span></p>
+          </header>
+          <div class="letter-body prose">
+          <p>${esc(issue.greeting)}</p>
+${issue.intro.map((p) => `          <p>${esc(p)}</p>`).join("\n")}
+${sections}
+${issue.closing.map((p) => `          <p>${esc(p)}</p>`).join("\n")}
+          <p class="signoff">${esc(site.author.name)}<br /><span>${esc(site.author.role)}</span></p>
+          </div>
+        </article>
+        <nav class="pager${newer && older ? "" : " pager--single"}" aria-label="More issues">
+          ${newer ? `<a class="prev" href="/newsletter/${newer.slug}"><small>← Newer issue</small><strong>${esc(newer.subject)}</strong></a>` : ""}
+          ${older ? `<a class="next" href="/newsletter/${older.slug}"><small>Older issue →</small><strong>${esc(older.subject)}</strong></a>` : ""}
+        </nav>
       </div>
 ${subscribeBand(`issue-${issue.slug}`)}
     </main>
 ${footer()}`;
+}
+
+// Email version: table layout and inline styles so it renders in Gmail, Outlook and Apple Mail.
+// Paste into the email service's HTML editor and keep the service's own unsubscribe footer.
+function renderIssueEmail(issue) {
+  const ink = "#1b2a23";
+  const p = (t) => `<p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:${ink};">${t}</p>`;
+  const a = (href, text) => `<a href="${esc(absLink(href))}" style="color:#0e7a50;">${esc(text)}</a>`;
+  const li = (i) =>
+    `<li style="margin:0 0 8px;font-size:16px;line-height:1.55;color:${ink};">${esc(i.text)}${i.href ? ` ${a(i.href, i.label || "Read more")}` : ""}</li>`;
+  const body = issue.sections
+    .map((section) => {
+      const { paragraphs, items, link } = issueBlocks(section);
+      return [
+        `<h2 style="margin:28px 0 10px;font-family:Georgia,'Times New Roman',serif;font-size:21px;line-height:1.3;color:${ink};">${esc(section.heading)}</h2>`,
+        ...paragraphs.map((t) => p(esc(t))),
+        items.length ? `<ul style="margin:0 0 16px;padding-left:20px;">${items.map(li).join("")}</ul>` : "",
+        link ? p(a(link.href, `${link.text} →`)) : ""
+      ]
+        .filter(Boolean)
+        .join("\n");
+    })
+    .join("\n");
+  const webUrl = abs(`/newsletter/${issue.slug}`);
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${esc(issue.subject)}</title>
+</head>
+<body style="margin:0;padding:0;background:#ffffff;">
+<span style="display:none;max-height:0;overflow:hidden;">${esc(issue.preview)}</span>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:24px 16px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
+<tr><td style="padding:0 0 20px;font-size:13px;color:#6b766f;">${esc(site.name)} · ${esc(issue.label)} · <a href="${webUrl}" style="color:#6b766f;">Read on the web</a></td></tr>
+<tr><td>
+${p(esc(issue.greeting))}
+${issue.intro.map((t) => p(esc(t))).join("\n")}
+${body}
+${issue.closing.map((t) => p(esc(t))).join("\n")}
+${p(`${esc(site.author.name)}<br /><span style="color:#6b766f;font-size:14px;">${esc(site.author.role)}</span>`)}
+</td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>
+`;
+}
+
+function renderIssueText(issue) {
+  const lines = [`Subject: ${issue.subject}`, `Preview: ${issue.preview}`, "", issue.greeting, ""];
+  issue.intro.forEach((t) => lines.push(t, ""));
+  for (const section of issue.sections) {
+    const { paragraphs, items, link } = issueBlocks(section);
+    lines.push(section.heading.toUpperCase(), "");
+    paragraphs.forEach((t) => lines.push(t, ""));
+    if (items.length) lines.push(...items.map((i) => `- ${i.text}${i.href ? ` ${absLink(i.href)}` : ""}`), "");
+    if (link) lines.push(`${link.text}: ${absLink(link.href)}`, "");
+  }
+  issue.closing.forEach((t) => lines.push(t, ""));
+  lines.push(site.author.name, site.author.role, "", `Read on the web: ${abs(`/newsletter/${issue.slug}`)}`);
+  return `${lines.join("\n")}\n`;
+}
+
+export async function loadIssues() {
+  const dir = path.join(root, "content", "newsletter");
+  const files = (await readdir(dir)).filter((f) => f.endsWith(".json"));
+  const issues = await Promise.all(files.map((f) => readJson(path.join(dir, f))));
+  issues.sort((a, b) => a.date.localeCompare(b.date));
+  issues.forEach((issue, index) => (issue.number = index + 1));
+  return issues.reverse();
 }
 
 function renderPrivacy(fragment) {
@@ -775,7 +905,7 @@ ${items}
 `;
 }
 
-function renderSitemap(posts) {
+function renderSitemap(posts, issues) {
   const latest = posts[0].publishDate;
   const urls = [
     ["/", latest],
@@ -793,7 +923,7 @@ ${urls.map(([u, d]) => `  <url><loc>${abs(u)}</loc>${d ? `<lastmod>${d}</lastmod
 `;
 }
 
-export function renderVercelConfig(posts) {
+export function renderVercelConfig(posts, issues = []) {
   const rewrites = [
     ["/", "/index.html"],
     ["/home", "/index.html"],
@@ -842,17 +972,20 @@ export async function buildSite({ quiet = false } = {}) {
   await out("index.html", renderHome(posts));
   await out("articles.html", renderArchive(posts));
   for (const topic of topics) await out(`topic-${topic.slug}.html`, renderTopic(topic, posts));
-  await out("newsletter.html", renderNewsletterIndex());
-  for (const issue of issues) {
-    const fragment = await readFile(path.join(root, "content", "newsletter", `${issue.slug}.html`), "utf8");
-    await out(`newsletter-${issue.slug}.html`, renderIssue(issue, fragment));
+  const issues = await loadIssues();
+  await out("newsletter.html", renderNewsletterIndex(issues));
+  await mkdir(path.join(root, "content", "newsletter", "email"), { recursive: true });
+  for (const [i, issue] of issues.entries()) {
+    await out(`newsletter-${issue.slug}.html`, renderIssue(issue, { newer: issues[i - 1], older: issues[i + 1] }));
+    await out(`content/newsletter/email/${issue.slug}.html`, renderIssueEmail(issue));
+    await out(`content/newsletter/email/${issue.slug}.txt`, renderIssueText(issue));
   }
   await out("privacy-policy.html", renderPrivacy(await readFile(path.join(root, "content", "pages", "privacy-policy.html"), "utf8")));
   await out("404.html", render404(posts));
   await out("feed.xml", renderFeed(posts));
-  await out("sitemap.xml", renderSitemap(posts));
+  await out("sitemap.xml", renderSitemap(posts, issues));
   await out("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${abs("/sitemap.xml")}\n`);
-  await out("vercel.json", renderVercelConfig(posts));
+  await out("vercel.json", renderVercelConfig(posts, issues));
 
   if (!quiet) console.log(`Built ${written.length} files from ${posts.length} published posts.`);
   return written;
