@@ -1,0 +1,59 @@
+Subject: Summer '26, AI shopping agents, and the Scripts switch-off
+Preview: What AI agents need before they recommend you, why answering questions earlier converts, and the June 30 deadline.
+
+Hi,
+
+June was busy. Shopify's Summer '26 Edition landed on June 17 with a long list of updates, and Shopify Scripts stop running on June 30. If you only read one section this month, read the platform one.
+
+IN THIS ISSUE
+1. What AI shopping agents need from you
+2. Why earlier answers convert better
+3. Shopify changes worth knowing
+4. Make your policy pages work
+
+AI AGENTS NEED FACTS, NOT ADJECTIVES
+
+Summer '26 leaned heavily into what Shopify calls agentic commerce. By default, your products are shared with AI channels through the Shopify Catalog, so assistants can find and compare them without you doing anything.
+
+What they cannot do is guess. An agent comparing three similar products will lean towards the one with clear sizes, materials, delivery times and return terms. 'Premium quality' tells it nothing. '100% linen, ships in 2 days, 30-day returns' tells it plenty.
+
+"An AI agent can only recommend what it can confirm."
+
+From the blog: What AI Shopping Agents Need From Your Shopify Store Before They Recommend You https://www.merchantsdigest.com/blog/ai-shopping-agent-ready-store
+
+ANSWER THE QUESTION BEFORE IT BECOMES A DOUBT
+
+Stores that convert well rarely have more information than everyone else. They put it earlier. Sizing next to the size selector, delivery next to the button, returns in one line rather than a separate page.
+
+Hesitation builds while a buyer goes looking for an answer. The shorter that search, the fewer people give up.
+
+From the blog: The Stores That Convert Better Usually Answer Questions Earlier https://www.merchantsdigest.com/blog/stores-that-convert-better-answer-questions-earlier
+
+SHOPIFY CHANGES WORTH KNOWING
+
+- Shopify Scripts stop running on June 30. Anything still built on Scripts, such as tiered discounts or hidden shipping rates, will silently stop working. Check before the end of the month, not after. https://changelog.shopify.com/
+- The Summer '26 Edition (June 17) included more than 150 updates. Coverage highlighted native testing for themes and checkout, more flexible theme blocks in Horizon, and AI channels becoming a standard part of every store. https://www.shopify.com/editions
+- Google's May core update finished in early June. If traffic dipped in late May, compare the full weeks after June 2 before changing anything. https://status.search.google.com/
+
+MAKE YOUR POLICY PAGES PULL THEIR WEIGHT
+
+Shipping, returns and sizing pages are now read by buyers and by AI systems trying to summarise your store. They are worth an afternoon.
+
+- Put an estimated delivery date next to the buy button.
+- Summarise your returns policy in one sentence on every product page.
+- Write sizing as text, not only as an image of a chart.
+- Confirm nothing in your store still depends on Scripts.
+
+From the blog: Why Your Shipping, Returns, and Sizing Pages Are Now Growth Pages https://www.merchantsdigest.com/blog/policy-pages-growth-pages
+
+That is June. If the Scripts switch-off broke something on your store, reply and say what. I will share the common fixes next month.
+
+The editor
+Merchants Digest
+
+SOURCES
+- Shopify Editions: https://www.shopify.com/editions
+- Shopify Changelog: https://changelog.shopify.com/
+- Google Search Status Dashboard: https://status.search.google.com/
+
+Read on the web: https://www.merchantsdigest.com/newsletter/jun-2026

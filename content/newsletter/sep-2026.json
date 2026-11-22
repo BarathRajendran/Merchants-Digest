@@ -1,0 +1,78 @@
+{
+  "slug": "sep-2026",
+  "label": "September 2026",
+  "date": "2026-09-18",
+  "compiled": "November 2026",
+  "readMinutes": 5,
+  "subject": "Google can now check out for you. Decide if you want that.",
+  "preview": "Checkout inside AI Mode reaches Shopify stores, Meta becomes an AI channel, and why your conversion rate may suddenly look different.",
+  "greeting": "Hi,",
+  "intro": [
+    "September is when AI shopping stopped being something to read about and started showing up in the admin. If you sell in the US, there may be a setting waiting for you."
+  ],
+  "sections": [
+    {
+      "heading": "Checkout inside Google AI Mode is reaching Shopify stores",
+      "short": "Google AI Mode checkout reaches Shopify",
+      "topic": "ai-search",
+      "paragraphs": [
+        "Google has been rolling out checkout inside AI Mode and Gemini, built on its Universal Commerce Protocol. In September, eligible US Shopify merchants started getting emails about it, and reports say enrollment was automatic. You stay the merchant of record, and you can opt out under Sales channels > Agentic.",
+        "Meta also appeared as a separate AI channel in the admin on September 8, with products shared through the Shopify Catalog by default.",
+        "Neither is good or bad on its own. The question is whether your product data and policies are clear enough to sell without a buyer ever seeing your product page."
+      ],
+      "pullquote": "If a buyer can purchase without seeing your page, your product data is your page.",
+      "article": "ai-shopping-agent-ready-store"
+    },
+    {
+      "heading": "Your conversion rate may change without anything changing",
+      "short": "Why your conversion rate may jump",
+      "topic": "conversion",
+      "paragraphs": [
+        "Shopify updated how sessions are counted in analytics later in September, including how some bot traffic is filtered. Session counts, and therefore conversion rates, may not line up with earlier months.",
+        "Before you celebrate a jump or panic about a drop, check whether it lines up with the date the change rolled out. Add a note in your own records so next year's comparison makes sense."
+      ],
+      "article": "stores-that-convert-better-answer-questions-earlier"
+    },
+    {
+      "heading": "Shopify changes worth knowing",
+      "short": "Shopify changes worth knowing",
+      "style": "updates",
+      "bullets": [
+        {
+          "text": "A redesigned admin started rolling out on September 15 to every store. Things are in slightly different places, but nothing you rely on was removed.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "Variants can now hold up to 20 barcodes, which helps if the same item has different GTINs across suppliers or marketplaces.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "You can collect WhatsApp marketing consent at checkout, and POS can now create local delivery orders.",
+          "href": "https://www.shopify.com/blog/shopify-retail-roundup-september-2026-v11-15-11-16",
+          "label": "September roundup"
+        }
+      ]
+    },
+    {
+      "heading": "Twenty minutes in your admin",
+      "short": "Twenty minutes in your admin",
+      "style": "action",
+      "bullets": [
+        "Open Sales channels > Agentic and check which AI channels can see your products. Make a deliberate choice about each one.",
+        "Make sure every product has a correct barcode or GTIN. AI shopping surfaces use it to match your products.",
+        "Write down the date of the analytics change next to your September numbers."
+      ],
+      "article": "policy-pages-growth-pages"
+    }
+  ],
+  "closing": [
+    "That is September. If you opted out of Google's checkout, or decided to stay in, reply and tell me why. I would like to share how other merchants are thinking about it."
+  ],
+  "sources": [
+    { "title": "Google Merchant Center Help", "url": "https://support.google.com/merchants" },
+    { "title": "Shopify Changelog", "url": "https://changelog.shopify.com/" },
+    { "title": "Shopify Retail Roundup, September 2026", "url": "https://www.shopify.com/blog/shopify-retail-roundup-september-2026-v11-15-11-16" }
+  ]
+}

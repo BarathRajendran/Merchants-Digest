@@ -1,0 +1,56 @@
+Subject: AI traffic is small, growing fast, and worth measuring
+Preview: What Shopify said about AI-referred orders, why your thank-you page changed, and the first holiday prep worth doing.
+
+Hi,
+
+Two things happened this month that most stores will notice without realising why: AI traffic kept growing, and the order confirmation page changed for most merchants. Both are worth ten minutes.
+
+IN THIS ISSUE
+1. AI-referred orders keep growing
+2. Your thank-you page changed
+3. Shopify changes worth knowing
+4. Start holiday prep now
+
+AI-REFERRED ORDERS ARE GROWING FROM A SMALL BASE
+
+On its second-quarter earnings call, Shopify said traffic and orders coming from AI tools had roughly tripled compared with a year earlier. For most stores that is still a small share of total traffic, but it is the fastest-growing source many of them have.
+
+Shopify also added WebMCP tools to every Liquid storefront on August 5. In plain terms, AI agents now have a standard way to understand and act on your store, and you do not need to set anything up.
+
+Do not reorganise your store around AI. Measure it. The Agentic channel page in your admin shows sessions and orders by assistant.
+
+"Small but growing fast is exactly when to start measuring, not when to panic."
+
+YOUR THANK-YOU PAGE CHANGED. CHECK IT.
+
+Non-Plus stores were moved to the new Thank You and Order Status pages on August 26. Anything that ran through the old additional scripts box, such as tracking pixels, post-purchase surveys or upsell code, stops running there.
+
+If your conversion tracking dropped at the end of August, this is the most likely reason. It is not a sales problem. It is a measurement one.
+
+SHOPIFY CHANGES WORTH KNOWING
+
+- Thank You and Order Status pages auto-upgraded on August 26 for non-Plus stores. Old additional scripts no longer run on them. https://changelog.shopify.com/
+- Shopify Managed Markets stopped supporting Delivered Duty Unpaid on August 24. If you ship internationally through Managed Markets, check how duties are now handled for your customers. https://changelog.shopify.com/
+- POS can now show abandoned online carts and find variants by any associated barcode. https://www.shopify.com/blog/shopify-retail-roundup-august-2026-v11-12-11-13
+
+START HOLIDAY PREP NOW, NOT IN NOVEMBER
+
+Black Friday is November 27 this year. The stores that have a calm one make their decisions in August and September.
+
+- Place a test order and confirm your tracking still fires on the new thank-you page.
+- Decide on your holiday offer now, while you can still think about margin calmly.
+- Note your current AI channel numbers so you can compare them after the holidays.
+
+From the blog: How to Make Bundle Offers Feel Helpful Instead of Pushy https://www.merchantsdigest.com/blog/bundle-offers-helpful-instead-of-pushy
+
+That is August. If your numbers looked strange after the thank-you page change, reply with what you saw.
+
+The editor
+Merchants Digest
+
+SOURCES
+- PYMNTS: Shopify's AI traffic triples: https://www.pymnts.com/earnings/2026/shopifys-ai-traffic-triples-as-shoppers-skip-the-search-bar
+- Shopify Changelog: https://changelog.shopify.com/
+- Shopify Retail Roundup, August 2026: https://www.shopify.com/blog/shopify-retail-roundup-august-2026-v11-12-11-13
+
+Read on the web: https://www.merchantsdigest.com/newsletter/aug-2026

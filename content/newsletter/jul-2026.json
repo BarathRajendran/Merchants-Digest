@@ -1,0 +1,77 @@
+{
+  "slug": "jul-2026",
+  "label": "July 2026",
+  "date": "2026-07-17",
+  "compiled": "November 2026",
+  "readMinutes": 4,
+  "subject": "Discover in AI, buy on your site",
+  "preview": "Why AI checkout stalled, how rebuilt collections help both buyers and search, and quieter summer updates worth knowing.",
+  "greeting": "Hi,",
+  "intro": [
+    "July is usually slow, which makes it the right time for the store work that never feels urgent. This month's theme: structure. Clear collections and clear product data help buyers, search engines and AI assistants at the same time."
+  ],
+  "sections": [
+    {
+      "heading": "AI checkout stalled. AI discovery did not.",
+      "short": "AI checkout stalled, discovery did not",
+      "topic": "ai-search",
+      "paragraphs": [
+        "By mid-summer the pattern was clear. Very few stores had any working in-chat checkout, and most AI assistants were sending buyers to the merchant's own site to pay. Discovery happens in the assistant. The purchase happens on your store.",
+        "That means visitors arriving from AI tools usually land mid-decision. They have already compared you with alternatives. Your product page needs to confirm what the assistant said, quickly, rather than starting the pitch from scratch."
+      ],
+      "pullquote": "Visitors from AI arrive halfway through a decision. Do not make them start again.",
+      "article": "faster-way-improve-conversion-better-product-context"
+    },
+    {
+      "heading": "Collections are a conversion tool",
+      "short": "Collections are a conversion tool",
+      "topic": "conversion",
+      "paragraphs": [
+        "Most stores treat collections as navigation. Buyers treat them as a shortlist. A collection page that groups products the way people actually shop, by use, size or problem, does a lot of selling before anyone opens a product page.",
+        "Shopify rebuilt collections this month, so it is a good moment to look at yours again."
+      ],
+      "article": "collection-pages-matter-more"
+    },
+    {
+      "heading": "Shopify changes worth knowing",
+      "short": "Shopify changes worth knowing",
+      "style": "updates",
+      "bullets": [
+        {
+          "text": "Collections can now be built from several product sources at once and can target specific variants. Handy for 'all blue items' or 'everything in size S' collections without workarounds.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "You can now combine more than one product discount on the same item when the products qualify. Useful, but check your margins before you let discounts stack.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "US merchants can create UPS return labels for domestic orders straight from the admin, and Shopify Messaging added WhatsApp campaigns.",
+          "href": "https://www.shopify.com/blog/shopify-retail-roundup-july-2026",
+          "label": "July roundup"
+        }
+      ]
+    },
+    {
+      "heading": "A summer clean-up",
+      "short": "A summer clean-up",
+      "style": "action",
+      "bullets": [
+        "List your collections and delete or merge any that a new visitor could not tell apart.",
+        "Rename collections after how people shop, not how your warehouse is organised.",
+        "If you enable discount stacking, test the worst-case cart before you go live."
+      ],
+      "article": "better-product-grouping-conversion-discovery"
+    }
+  ],
+  "closing": [
+    "That is July. Enjoy the quieter weeks. August is when holiday planning should start."
+  ],
+  "sources": [
+    { "title": "Shopify Changelog", "url": "https://changelog.shopify.com/" },
+    { "title": "Shopify Retail Roundup, July 2026", "url": "https://www.shopify.com/blog/shopify-retail-roundup-july-2026" },
+    { "title": "Shopify: Agentic commerce", "url": "https://www.shopify.com/blog/agentic-commerce" }
+  ]
+}

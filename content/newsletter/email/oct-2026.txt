@@ -1,0 +1,57 @@
+Subject: Your last month to change things before Black Friday
+Preview: Google's Universal Cart tracks your prices, scheduling BFCM changes instead of editing live, and what Fall '26 brought.
+
+Hi,
+
+Black Friday is four weeks away. From here, the goal is fewer changes, made deliberately, and tested before customers see them.
+
+IN THIS ISSUE
+1. Universal Cart watches your prices
+2. Schedule BFCM changes, do not edit live
+3. Shopify changes worth knowing
+4. Your BFCM preparation list
+
+GOOGLE IS NOW WATCHING YOUR PRICES FOR SHOPPERS
+
+Google's Universal Cart was reported as launching in the US on October 15 across Search, AI Mode and the Gemini app. Shoppers can save products and get alerts when prices drop or stock changes.
+
+That has one clear consequence for sale season. Price history is visible. Raising a compare-at price in October so the November discount looks bigger is easier to spot than ever, and it erodes exactly the trust you want from a holiday buyer.
+
+"Price history is public now. Make your discount real."
+
+From the blog: Search Visibility Improves When Product Data Stops Being an Afterthought https://www.merchantsdigest.com/blog/search-visibility-product-data-afterthought
+
+SCHEDULE YOUR HOLIDAY CHANGES INSTEAD OF EDITING LIVE
+
+Shopify's new Rollouts feature lets you schedule theme, discount and catalog changes, and test offers, instead of editing your live store at midnight. If you have ever broken a homepage on Black Friday morning, this is the fix.
+
+Separately, checkout started showing payment methods in a tiled layout on October 22 for stores with four or fewer methods. No action needed, but look at it once so it does not surprise you.
+
+From the blog: Shopify Theme Decisions Hurt When Merchants Optimize for Looks Before Clarity https://www.merchantsdigest.com/blog/theme-decisions-looks-before-clarity
+
+SHOPIFY CHANGES WORTH KNOWING
+
+- The Fall '26 Edition arrived at the end of October with more than 150 updates. Coverage highlighted Campaign Autopilot for ads, Shop Pay inside AI agents and GTIN autocomplete for products. https://www.shopify.com/editions
+- Buy X Get Y offers can now use whole collections, and free-shipping or bundle thresholds can be set in fixed amounts per currency. https://changelog.shopify.com/
+- Shop Promise's limited guarantee stopped taking new coverage at the end of October. Earlier qualifying orders can still be claimed until December 16. https://changelog.shopify.com/
+
+YOUR BFCM PREPARATION LIST
+
+- Build every discount with an end date and test how they combine in a real cart.
+- Check compare-at prices against what you actually charged in the last few months.
+- Pick a code freeze date for theme and app changes and tell everyone who touches the store.
+- Put holiday delivery cut-off dates on your product pages, not only in an email.
+
+From the blog: Clear Sizing Content Belongs Closer to the Buy Decision https://www.merchantsdigest.com/blog/clear-sizing-content-belongs-near-the-buy-decision
+
+That is October. If you want a second pair of eyes on your BFCM offer before it goes live, reply with it.
+
+The editor
+Merchants Digest
+
+SOURCES
+- Shopify Editions: https://www.shopify.com/editions
+- Shopify Changelog: https://changelog.shopify.com/
+- Google: 100 things announced at I/O 2026 (Universal Cart): https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/
+
+Read on the web: https://www.merchantsdigest.com/newsletter/oct-2026

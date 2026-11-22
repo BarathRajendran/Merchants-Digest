@@ -725,7 +725,7 @@ function renderNewsletterIndex(issues) {
       <header class="page-head">
         <span class="kicker">Newsletter</span>
         <h1>The Merchants Digest newsletter</h1>
-        <p>A short letter about what is worth fixing on a Shopify store, and which platform changes actually matter. Here is every past issue, newest first.</p>
+        <p>A short letter about what is worth fixing on a Shopify store, and which platform changes actually matter. Here is every past issue, newest first. Issues from March to October were compiled in November 2026 as monthly roundups.</p>
       </header>
       <ol class="letter-list">
         ${issues
@@ -862,7 +862,7 @@ function renderIssue(issue, { newer, older, postsBySlug = new Map() } = {}) {
             </div>
             <h1>${esc(issue.subject)}</h1>
             <p class="nl-dek">${esc(issue.preview)}</p>
-            <p class="nl-meta">${esc(site.author.name)} at ${esc(site.name)} · ${issue.readMinutes || 4} min read</p>
+            <p class="nl-meta">${esc(site.author.name)} at ${esc(site.name)} · ${issue.readMinutes || 4} min read${issue.compiled ? ` · Monthly roundup, compiled ${esc(issue.compiled)}` : ""}</p>
           </header>
 
           <div class="letter-body prose">
@@ -881,6 +881,14 @@ ${sections}
               ${issue.closing.map((p) => `<p>${esc(p)}</p>`).join("\n              ")}
               <p class="signoff"><img src="/assets/logo-mark.svg" alt="" width="34" height="19" /><span>${esc(site.author.name)}<br /><small>${esc(site.author.role)}</small></span></p>
             </div>
+            ${
+              issue.sources?.length
+                ? `<aside class="sources" aria-labelledby="issue-sources">
+              <h2 id="issue-sources">Sources</h2>
+              <ol>${issue.sources.map((x) => `<li><a href="${esc(x.url)}" rel="noopener" target="_blank">${esc(x.title)}</a></li>`).join("")}</ol>
+            </aside>`
+                : ""
+            }
           </div>
         </article>
         <nav class="pager${newer && older ? "" : " pager--single"}" aria-label="More issues">
@@ -988,6 +996,7 @@ ${body}
 ${issue.closing.map((t) => p(esc(t))).join("\n")}
 ${p(`<strong>${esc(site.author.name)}</strong><br /><span style="color:${muted};font-size:14px;">${esc(site.author.role)}</span>`)}
 </td></tr>
+${issue.sources?.length ? `<tr><td style="padding:0 28px 18px;font-size:13px;line-height:1.6;color:${muted};"><strong>Sources:</strong> ${issue.sources.map((x) => `<a href="${esc(x.url)}" style="color:${muted};">${esc(x.title)}</a>`).join(" · ")}</td></tr>` : ""}
 <tr><td style="padding:16px 28px 22px;border-top:1px solid #e7e4dc;font-size:13px;color:${muted};"><a href="${webUrl}" style="color:${muted};">Read this issue on the web</a> · <a href="${site.origin}" style="color:${muted};">merchantsdigest.com</a></td></tr>
 </table>
 </td></tr></table>
@@ -1012,7 +1021,9 @@ function renderIssueText(issue, { postsBySlug = new Map() } = {}) {
     if (link) lines.push(`${link.text}: ${absLink(link.href)}`, "");
   }
   issue.closing.forEach((t) => lines.push(t, ""));
-  lines.push(site.author.name, site.author.role, "", `Read on the web: ${abs(`/newsletter/${issue.slug}`)}`);
+  lines.push(site.author.name, site.author.role, "");
+  if (issue.sources?.length) lines.push("SOURCES", ...issue.sources.map((x) => `- ${x.title}: ${x.url}`), "");
+  lines.push(`Read on the web: ${abs(`/newsletter/${issue.slug}`)}`);
   return `${lines.join("\n")}\n`;
 }
 

@@ -1,0 +1,56 @@
+Subject: Discover in AI, buy on your site
+Preview: Why AI checkout stalled, how rebuilt collections help both buyers and search, and quieter summer updates worth knowing.
+
+Hi,
+
+July is usually slow, which makes it the right time for the store work that never feels urgent. This month's theme: structure. Clear collections and clear product data help buyers, search engines and AI assistants at the same time.
+
+IN THIS ISSUE
+1. AI checkout stalled, discovery did not
+2. Collections are a conversion tool
+3. Shopify changes worth knowing
+4. A summer clean-up
+
+AI CHECKOUT STALLED. AI DISCOVERY DID NOT.
+
+By mid-summer the pattern was clear. Very few stores had any working in-chat checkout, and most AI assistants were sending buyers to the merchant's own site to pay. Discovery happens in the assistant. The purchase happens on your store.
+
+That means visitors arriving from AI tools usually land mid-decision. They have already compared you with alternatives. Your product page needs to confirm what the assistant said, quickly, rather than starting the pitch from scratch.
+
+"Visitors from AI arrive halfway through a decision. Do not make them start again."
+
+From the blog: The Fastest Way to Improve Conversion Is Usually Better Product Context https://www.merchantsdigest.com/blog/faster-way-improve-conversion-better-product-context
+
+COLLECTIONS ARE A CONVERSION TOOL
+
+Most stores treat collections as navigation. Buyers treat them as a shortlist. A collection page that groups products the way people actually shop, by use, size or problem, does a lot of selling before anyone opens a product page.
+
+Shopify rebuilt collections this month, so it is a good moment to look at yours again.
+
+From the blog: Why Collection Pages Matter More Than Most Shopify Merchants Think https://www.merchantsdigest.com/blog/collection-pages-matter-more
+
+SHOPIFY CHANGES WORTH KNOWING
+
+- Collections can now be built from several product sources at once and can target specific variants. Handy for 'all blue items' or 'everything in size S' collections without workarounds. https://changelog.shopify.com/
+- You can now combine more than one product discount on the same item when the products qualify. Useful, but check your margins before you let discounts stack. https://changelog.shopify.com/
+- US merchants can create UPS return labels for domestic orders straight from the admin, and Shopify Messaging added WhatsApp campaigns. https://www.shopify.com/blog/shopify-retail-roundup-july-2026
+
+A SUMMER CLEAN-UP
+
+- List your collections and delete or merge any that a new visitor could not tell apart.
+- Rename collections after how people shop, not how your warehouse is organised.
+- If you enable discount stacking, test the worst-case cart before you go live.
+
+From the blog: How Better Product Grouping Improves Both Conversion and Discovery https://www.merchantsdigest.com/blog/better-product-grouping-conversion-discovery
+
+That is July. Enjoy the quieter weeks. August is when holiday planning should start.
+
+The editor
+Merchants Digest
+
+SOURCES
+- Shopify Changelog: https://changelog.shopify.com/
+- Shopify Retail Roundup, July 2026: https://www.shopify.com/blog/shopify-retail-roundup-july-2026
+- Shopify: Agentic commerce: https://www.shopify.com/blog/agentic-commerce
+
+Read on the web: https://www.merchantsdigest.com/newsletter/jul-2026

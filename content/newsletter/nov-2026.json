@@ -1,0 +1,89 @@
+{
+  "slug": "nov-2026",
+  "label": "November 2026",
+  "date": "2026-11-20",
+  "readMinutes": 4,
+  "subject": "BFCM week: what to leave alone",
+  "preview": "A core update during peak season, clarity beats countdown timers, and the deadlines waiting in January.",
+  "greeting": "Hi,",
+  "intro": [
+    "Black Friday is November 27 and Cyber Monday is November 30. This issue is short on purpose. The best thing most stores can do this week is stop changing things."
+  ],
+  "sections": [
+    {
+      "heading": "A core update is rolling out during peak season",
+      "short": "A core update during peak season",
+      "topic": "ai-search",
+      "paragraphs": [
+        "Google started its November core update on November 10. Rankings may move around for a couple of weeks, right as holiday traffic peaks.",
+        "Do not respond by rewriting pages or changing URLs mid-rollout. Let it finish, then compare full weeks. Meanwhile, more buyers are checking deals through AI assistants and price trackers, which reward clear, honest pricing more than clever copy."
+      ],
+      "pullquote": "During a core update in BFCM week, the best SEO move is usually no move.",
+      "article": "ai-search"
+    },
+    {
+      "heading": "Clarity beats countdown timers",
+      "short": "Clarity beats countdown timers",
+      "topic": "conversion",
+      "paragraphs": [
+        "Holiday buyers are comparing more stores than usual, and they are tired of fake urgency. What actually moves them is certainty: the real discount, the real delivery date, and what happens if the gift does not fit.",
+        "If you change only one thing this week, make your delivery cut-off and return window visible near the buy button."
+      ],
+      "article": "trustworthy-without-looking-corporate"
+    },
+    {
+      "heading": "Shopify changes worth knowing",
+      "short": "Shopify changes worth knowing",
+      "style": "updates",
+      "paragraphs": [
+        "Nothing here needs action this week. These are dates to put in the calendar for January."
+      ],
+      "bullets": [
+        {
+          "text": "Apps must move to expiring offline access tokens before January 1, 2027. If you use custom or private apps, ask whoever built them whether they are ready.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "POS receipts customised with the Liquid editor need to move to the new unified receipt template by January 1, 2027.",
+          "href": "https://www.shopify.com/blog/shopify-retail-roundup-july-2026",
+          "label": "Retail roundup"
+        },
+        {
+          "text": "Shop Promise claims for earlier qualifying orders close on December 16.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        }
+      ]
+    },
+    {
+      "heading": "Final checks before Friday",
+      "short": "Final checks before Friday",
+      "style": "action",
+      "bullets": [
+        "Place a full test order with your sale discount applied, on a phone.",
+        "Check stock levels on your top ten products and set low-stock alerts.",
+        "Confirm who is watching orders and support messages over the weekend.",
+        "Freeze theme and app changes until December 1."
+      ],
+      "article": "remove-buyer-doubts"
+    }
+  ],
+  "closing": [
+    "Good luck this week. After the weekend, reply and tell me one thing that worked and one that did not. I will share what merchants learned in December's issue."
+  ],
+  "sources": [
+    {
+      "title": "Google Search Status Dashboard",
+      "url": "https://status.search.google.com/"
+    },
+    {
+      "title": "Shopify Changelog",
+      "url": "https://changelog.shopify.com/"
+    },
+    {
+      "title": "Shopify Retail Roundup, July 2026",
+      "url": "https://www.shopify.com/blog/shopify-retail-roundup-july-2026"
+    }
+  ]
+}

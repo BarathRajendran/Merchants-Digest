@@ -1,0 +1,85 @@
+{
+  "slug": "apr-2026",
+  "label": "April 2026",
+  "date": "2026-04-17",
+  "compiled": "November 2026",
+  "readMinutes": 5,
+  "subject": "Write the part the spec sheet leaves out",
+  "preview": "What the March core update seemed to reward, bundles that help instead of push, and B2B tools reaching every plan.",
+  "greeting": "Hi,",
+  "intro": [
+    "Google's March core update finished rolling out on April 8. Updates like this are never fully explained, but the pattern people noticed is useful for any store, whether or not your rankings moved."
+  ],
+  "sections": [
+    {
+      "heading": "Pages that only repeat the manufacturer lost ground",
+      "short": "What the March core update seemed to reward",
+      "topic": "ai-search",
+      "paragraphs": [
+        "The March 2026 core update ran from late March to April 8. Analyses of the results kept pointing the same way: generic pages that offered nothing beyond the manufacturer's spec sheet tended to drop, and brands with a clear product range and their own point of view tended to hold up.",
+        "That matches what AI answers look for too. A page that only lists dimensions gives a search engine or an assistant nothing to quote. A page that explains who the product suits, how it compares and what people usually ask gives it plenty."
+      ],
+      "bullets": [
+        "Add one paragraph per product that only you could write: who it is really for, and who should pick something else.",
+        "Answer the two or three questions customers email you about, on the page itself.",
+        "Do not rewrite everything at once. Start with the products that already get traffic."
+      ],
+      "article": "faq-content-revenue-content"
+    },
+    {
+      "heading": "Bundles should feel like advice",
+      "short": "Bundles that help instead of push",
+      "topic": "conversion",
+      "paragraphs": [
+        "A good bundle answers the question 'what else will I need?' before the buyer has to work it out. A bad one is a discount wrapped around things nobody asked for.",
+        "Test your bundles against one question: would a knowledgeable shop assistant suggest this combination? If not, the bundle is probably hurting trust more than it is helping order value."
+      ],
+      "pullquote": "The best bundles feel like guidance. The worst feel like a quota.",
+      "article": "bundle-offers-helpful-instead-of-pushy"
+    },
+    {
+      "heading": "Shopify changes worth knowing",
+      "short": "Shopify changes worth knowing",
+      "style": "updates",
+      "bullets": [
+        {
+          "text": "Core B2B features, such as company accounts and wholesale pricing, were reported as moving to Basic, Grow and Advanced plans in early April, not just Plus. Worth a look if you handle wholesale orders by email today.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "Scripts editing locked on April 15. Existing scripts keep running until June 30, then stop.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "POS updates through April changed how some custom discounts are calculated. If you sell in person, check a few discounted receipts.",
+          "href": "https://www.shopify.com/blog/retail-release-roundup",
+          "label": "Retail roundup"
+        }
+      ]
+    },
+    {
+      "heading": "Fix the basics before you chase more reviews",
+      "short": "Fix the basics before more reviews",
+      "style": "action",
+      "paragraphs": [
+        "Reviews help most when the product page has already done its job. If buyers cannot tell the size, the materials or the delivery time, five stars will not save the sale."
+      ],
+      "bullets": [
+        "Pick one top product and rewrite its first paragraph so it says something the spec sheet does not.",
+        "Move your three most-asked questions next to the buy button.",
+        "If you use Scripts, confirm your migration plan is in place before June."
+      ],
+      "article": "product-reviews-help-less-when-basics-unclear"
+    }
+  ],
+  "closing": [
+    "That is April. If your traffic moved during the core update and you want a second opinion on why, reply with the page and I will take a look."
+  ],
+  "sources": [
+    { "title": "Google Search Status Dashboard", "url": "https://status.search.google.com/" },
+    { "title": "Shopify Changelog", "url": "https://changelog.shopify.com/" },
+    { "title": "Shopify Retail Roundup", "url": "https://www.shopify.com/blog/retail-release-roundup" }
+  ]
+}

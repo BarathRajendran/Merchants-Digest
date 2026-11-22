@@ -1,0 +1,80 @@
+{
+  "slug": "mar-2026",
+  "label": "March 2026",
+  "date": "2026-03-20",
+  "compiled": "November 2026",
+  "readMinutes": 5,
+  "subject": "AI is taking over discovery. Your store still closes the sale.",
+  "preview": "OpenAI steps back from in-chat checkout, the Scripts deadline gets a date, and why returning visitors still leave.",
+  "greeting": "Hi,",
+  "intro": [
+    "March made one thing clearer about AI shopping: the assistants want to help people find products, but the buying still happens on your store. That is good news if your product pages are clear, and a problem if they are not."
+  ],
+  "sections": [
+    {
+      "heading": "ChatGPT is a discovery channel, not a checkout",
+      "short": "ChatGPT steps back from in-chat checkout",
+      "topic": "ai-search",
+      "paragraphs": [
+        "Late in March, OpenAI was reported to be moving away from Instant Checkout, the feature that let people buy without leaving ChatGPT. The focus is now on product discovery, with buyers sent to the merchant's own site to pay.",
+        "Around the same time, Shopify began rolling out Agentic Storefronts more widely, which shares store catalogs with AI assistants such as ChatGPT, Perplexity and Copilot. You do not have to apply for anything. Your product data is what gets read.",
+        "So the work is the same as it was: product titles that say what the thing is, descriptions that answer real questions, and policies written as plain text on the page."
+      ],
+      "pullquote": "The assistant decides whether you get recommended. Your product page decides whether you get paid.",
+      "article": "ai-friendly-stores-better-structured-stores"
+    },
+    {
+      "heading": "Returning visitors are not a lost cause",
+      "short": "Why returning visitors still leave",
+      "topic": "conversion",
+      "paragraphs": [
+        "Someone who comes back to your store is not starting over. They are trying to finish a decision. If they leave again, it is usually because the question that stopped them the first time is still unanswered.",
+        "Look at what a returning visitor sees: the same hero, the same generic copy, the same buried delivery details. Making the answers to their likely doubts easier to find usually does more than another discount pop-up."
+      ],
+      "article": "returning-visitors-still-leave-without-buying"
+    },
+    {
+      "heading": "Shopify changes worth knowing",
+      "short": "Shopify changes worth knowing",
+      "style": "updates",
+      "bullets": [
+        {
+          "text": "Shopify Scripts now has an end date. Scripts can no longer be edited or published from April 15, and they stop running on June 30. If any of your discounts, shipping or payment rules run on Scripts, they need to move to Shopify Functions or an app.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "Advanced and Plus merchants can now set checkout branding, settings and blocks per market in the checkout editor. Useful if one checkout does not fit every country you sell to.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "POS picked up several updates this month, including shared cash drawers across devices. Only relevant if you sell in person.",
+          "href": "https://www.shopify.com/blog/shopify-retail-roundup-march-2026",
+          "label": "Retail roundup"
+        }
+      ]
+    },
+    {
+      "heading": "Two checks to do this week",
+      "short": "Two checks for this week",
+      "style": "action",
+      "paragraphs": [
+        "Both take less than an hour and both get more expensive the longer you leave them."
+      ],
+      "bullets": [
+        "Open Settings and check whether the Script Editor app is installed. If it is, write down every script and what it does before April 15.",
+        "Open your best-selling product page on your phone. If the first screen does not say what it is, who it is for and when it arrives, fix that before anything else."
+      ],
+      "article": "audit-mobile-product-pages-before-more-traffic"
+    }
+  ],
+  "closing": [
+    "That is March. If you are mid-way through a Scripts migration and stuck on something, hit reply. Other merchants are likely stuck on the same thing."
+  ],
+  "sources": [
+    { "title": "Shopify Changelog", "url": "https://changelog.shopify.com/" },
+    { "title": "Shopify Retail Roundup, March 2026", "url": "https://www.shopify.com/blog/shopify-retail-roundup-march-2026" },
+    { "title": "Shopify: Agentic commerce", "url": "https://www.shopify.com/blog/agentic-commerce" }
+  ]
+}

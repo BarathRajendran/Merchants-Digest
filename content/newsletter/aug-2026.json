@@ -1,0 +1,88 @@
+{
+  "slug": "aug-2026",
+  "label": "August 2026",
+  "date": "2026-08-21",
+  "compiled": "November 2026",
+  "readMinutes": 5,
+  "subject": "AI traffic is small, growing fast, and worth measuring",
+  "preview": "What Shopify said about AI-referred orders, why your thank-you page changed, and the first holiday prep worth doing.",
+  "greeting": "Hi,",
+  "intro": [
+    "Two things happened this month that most stores will notice without realising why: AI traffic kept growing, and the order confirmation page changed for most merchants. Both are worth ten minutes."
+  ],
+  "sections": [
+    {
+      "heading": "AI-referred orders are growing from a small base",
+      "short": "AI-referred orders keep growing",
+      "topic": "ai-search",
+      "paragraphs": [
+        "On its second-quarter earnings call, Shopify said traffic and orders coming from AI tools had roughly tripled compared with a year earlier. For most stores that is still a small share of total traffic, but it is the fastest-growing source many of them have.",
+        "Shopify also added WebMCP tools to every Liquid storefront on August 5. In plain terms, AI agents now have a standard way to understand and act on your store, and you do not need to set anything up.",
+        "Do not reorganise your store around AI. Measure it. The Agentic channel page in your admin shows sessions and orders by assistant."
+      ],
+      "pullquote": "Small but growing fast is exactly when to start measuring, not when to panic."
+    },
+    {
+      "heading": "Your thank-you page changed. Check it.",
+      "short": "Your thank-you page changed",
+      "topic": "conversion",
+      "paragraphs": [
+        "Non-Plus stores were moved to the new Thank You and Order Status pages on August 26. Anything that ran through the old additional scripts box, such as tracking pixels, post-purchase surveys or upsell code, stops running there.",
+        "If your conversion tracking dropped at the end of August, this is the most likely reason. It is not a sales problem. It is a measurement one."
+      ]
+    },
+    {
+      "heading": "Shopify changes worth knowing",
+      "short": "Shopify changes worth knowing",
+      "style": "updates",
+      "bullets": [
+        {
+          "text": "Thank You and Order Status pages auto-upgraded on August 26 for non-Plus stores. Old additional scripts no longer run on them.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "Shopify Managed Markets stopped supporting Delivered Duty Unpaid on August 24. If you ship internationally through Managed Markets, check how duties are now handled for your customers.",
+          "href": "https://changelog.shopify.com/",
+          "label": "Shopify changelog"
+        },
+        {
+          "text": "POS can now show abandoned online carts and find variants by any associated barcode.",
+          "href": "https://www.shopify.com/blog/shopify-retail-roundup-august-2026-v11-12-11-13",
+          "label": "August roundup"
+        }
+      ]
+    },
+    {
+      "heading": "Start holiday prep now, not in November",
+      "short": "Start holiday prep now",
+      "style": "action",
+      "paragraphs": [
+        "Black Friday is November 27 this year. The stores that have a calm one make their decisions in August and September."
+      ],
+      "bullets": [
+        "Place a test order and confirm your tracking still fires on the new thank-you page.",
+        "Decide on your holiday offer now, while you can still think about margin calmly.",
+        "Note your current AI channel numbers so you can compare them after the holidays."
+      ],
+      "article": "bundle-offers-helpful-instead-of-pushy"
+    }
+  ],
+  "closing": [
+    "That is August. If your numbers looked strange after the thank-you page change, reply with what you saw."
+  ],
+  "sources": [
+    {
+      "title": "PYMNTS: Shopify's AI traffic triples",
+      "url": "https://www.pymnts.com/earnings/2026/shopifys-ai-traffic-triples-as-shoppers-skip-the-search-bar"
+    },
+    {
+      "title": "Shopify Changelog",
+      "url": "https://changelog.shopify.com/"
+    },
+    {
+      "title": "Shopify Retail Roundup, August 2026",
+      "url": "https://www.shopify.com/blog/shopify-retail-roundup-august-2026-v11-12-11-13"
+    }
+  ]
+}
