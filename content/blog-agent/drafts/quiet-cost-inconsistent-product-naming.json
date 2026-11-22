@@ -73,5 +73,6 @@
   "imageArchetype": "structure",
   "overlayKicker": "Names shape discovery",
   "imagePrompt": "Photographic editorial cover showing physical catalog labels, grouped products, naming cards, and merchandising structure. No generic laptop desk. No readable text.",
-  "imageStyleNotes": "Show organization and grouping rather than software. The image should feel systemic and tactile."
+  "imageStyleNotes": "Show organization and grouping rather than software. The image should feel systemic and tactile.",
+  "topic": "catalog"
 }

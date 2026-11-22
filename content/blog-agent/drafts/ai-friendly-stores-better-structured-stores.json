@@ -73,5 +73,6 @@
   "imageArchetype": "structure",
   "overlayKicker": "Structure wins trust",
   "imagePrompt": "Photographic editorial cover showing clear product evaluation and confidence signals in a structured retail environment. No robots, no sci-fi, no generic desk scene.",
-  "imageStyleNotes": "The image should feel like clarity and evaluation, not tech fantasy."
+  "imageStyleNotes": "The image should feel like clarity and evaluation, not tech fantasy.",
+  "topic": "ai-search"
 }

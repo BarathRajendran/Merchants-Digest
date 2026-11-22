@@ -73,5 +73,6 @@
   "imageArchetype": "pathway",
   "overlayKicker": "Timing changes conversion",
   "imagePrompt": "Photographic editorial cover showing buyer questions being answered earlier in a decision path. The image should communicate timing and guidance, not a generic workspace.",
-  "imageStyleNotes": "Use a pathway or sequence concept that feels human and editorial."
+  "imageStyleNotes": "Use a pathway or sequence concept that feels human and editorial.",
+  "topic": "conversion"
 }

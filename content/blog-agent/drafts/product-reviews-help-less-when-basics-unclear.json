@@ -73,5 +73,6 @@
   "imageArchetype": "proof",
   "overlayKicker": "Proof works better with clarity",
   "imagePrompt": "Photographic editorial cover showing product proof and review validation supporting a clearly presented item. No generic desk. No readable text.",
-  "imageStyleNotes": "The image should show proof reinforcing clarity, not a review widget screenshot."
+  "imageStyleNotes": "The image should show proof reinforcing clarity, not a review widget screenshot.",
+  "topic": "trust"
 }

@@ -73,5 +73,6 @@
   "imageArchetype": "evaluation",
   "overlayKicker": "Traffic cannot rescue friction",
   "imagePrompt": "Photographic editorial cover focused on mobile product-page review and buyer friction. Real phone-based evaluation scene, not a generic desk. No readable text.",
-  "imageStyleNotes": "Show the smaller-screen decision problem clearly. Human, grounded, conversion-focused."
+  "imageStyleNotes": "Show the smaller-screen decision problem clearly. Human, grounded, conversion-focused.",
+  "topic": "product-pages"
 }

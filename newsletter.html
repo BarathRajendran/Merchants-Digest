@@ -3,280 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Newsletter — Merchants Digest</title>
-    <meta
-      name="description"
-      content="Subscribe to the Merchants Digest newsletter for Shopify merchants."
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://www.merchantsdigest.com/#organization",
-            "name": "Merchants Digest",
-            "url": "https://www.merchantsdigest.com",
-            "logo": "https://www.merchantsdigest.com/Primary%20Logo.png"
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://www.merchantsdigest.com/#website",
-            "url": "https://www.merchantsdigest.com",
-            "name": "Merchants Digest",
-            "publisher": { "@id": "https://www.merchantsdigest.com/#organization" },
-            "inLanguage": "en"
-          },
-          {
-            "@type": "CollectionPage",
-            "@id": "https://www.merchantsdigest.com/newsletter.html",
-            "url": "https://www.merchantsdigest.com/newsletter.html",
-            "name": "Newsletter — Merchants Digest",
-            "isPartOf": { "@id": "https://www.merchantsdigest.com/#website" },
-            "about": { "@id": "https://www.merchantsdigest.com/#organization" }
-          }
-        ]
-      }
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-5FQK2WSDWH"
-    ></script>
+    <title>Newsletter | Merchants Digest</title>
+    <meta name="description" content="Past issues of the Merchants Digest newsletter for Shopify merchants." />
+    <link rel="canonical" href="https://www.merchantsdigest.com/newsletter" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:site_name" content="Merchants Digest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Newsletter" />
+    <meta property="og:description" content="Past issues of the Merchants Digest newsletter for Shopify merchants." />
+    <meta property="og:url" content="https://www.merchantsdigest.com/newsletter" />
+    <meta property="og:image" content="https://www.merchantsdigest.com/images/Newsletter/feb-hero.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Merchants Digest" href="/feed.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap" />
+    <link rel="stylesheet" href="/assets/site.css?v=0f9547d4" />
+    
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.merchantsdigest.com/#organization","name":"Merchants Digest","url":"https://www.merchantsdigest.com","logo":"https://www.merchantsdigest.com/Primary%20Logo.png"},{"@type":"WebSite","@id":"https://www.merchantsdigest.com/#website","url":"https://www.merchantsdigest.com","name":"Merchants Digest","description":"Practical articles for Shopify merchants on conversion, product pages, trust, catalog structure, and how AI search finds what you sell.","publisher":{"@id":"https://www.merchantsdigest.com/#organization"},"inLanguage":"en"}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FQK2WSDWH"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-5FQK2WSDWH");
     </script>
-    <style>
-      :root {
-        --ink: #111114;
-        --ink-muted: #4a4b57;
-        --paper: #ffffff;
-        --shadow: 0 18px 40px rgba(17, 17, 20, 0.12);
-        --radius: 20px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Space Grotesk", "Segoe UI", Tahoma, Geneva, Verdana,
-          sans-serif;
-        color: var(--ink);
-        background: #ffffff;
-        min-height: 100vh;
-      }
-
-      h1,
-      h2 {
-        font-family: "Fraunces", Georgia, serif;
-        margin: 0;
-      }
-
-      p {
-        color: var(--ink-muted);
-        line-height: 1.7;
-        margin: 0;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 26px 6vw;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background: #ffffff;
-      }
-
-      .brand-logo {
-        height: 44px;
-        width: auto;
-        display: block;
-        border: none;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-        font-weight: 500;
-        font-size: 15px;
-      }
-
-      .nav-links a {
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-      }
-
-      .nav-links a:hover {
-        opacity: 1;
-      }
-
-      .cta {
-        padding: 10px 18px;
-        border-radius: 999px;
-        border: 1px solid rgba(17, 17, 20, 0.2);
-        font-weight: 600;
-      }
-
-      .section {
-        padding: 60px 6vw 40px;
-        display: grid;
-        gap: 14px;
-      }
-
-      .section p {
-        max-width: 640px;
-      }
-
-      .newsletter-grid {
-        padding: 0 6vw 70px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 22px;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      .newsletter-card {
-        background: var(--paper);
-        border-radius: 18px;
-        padding: 18px;
-        border: 1px solid rgba(17, 17, 20, 0.08);
-        box-shadow: 0 12px 26px rgba(17, 17, 20, 0.08);
-        display: grid;
-        gap: 12px;
-      }
-
-      .newsletter-thumb {
-        height: 200px;
-        border-radius: 14px;
-        background: #f1f4f6;
-        overflow: hidden;
-      }
-
-      .newsletter-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .pill {
-        width: fit-content;
-        padding: 6px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(17, 17, 20, 0.15);
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: #1e5f4d;
-      }
-
-      .meta {
-        color: rgba(17, 17, 20, 0.55);
-        font-size: 0.85rem;
-      }
-
-      .footer {
-        padding: 30px 6vw 50px;
-        border-top: 1px solid rgba(17, 17, 20, 0.08);
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      @media (max-width: 600px) {
-        .newsletter-card.featured {
-          max-width: 100%;
-        }
-      }
-    
-
-      .footer small,
-      .footer a {
-        color: rgba(17, 17, 20, 0.6);
-      }
-
-      .footer a:hover {
-        text-decoration: underline;
-      }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <nav class="nav">
-      <a href="/">
-        <img class="brand-logo" src="/Primary Logo.png" alt="Merchants Digest" />
-      </a>
-      <div class="nav-links">
-        <a href="/blogs">Blogs</a>
-        <a href="/newsletter">Newsletter</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Merchants Digest home">
+          <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="34" height="19" />
+          <span class="brand-name"><b>Merchants</b> <span>Digest</span></span>
+        </a>
+        <a class="button button--small header-cta" href="#subscribe">Subscribe</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/blogs">Articles</a>
+          <a href="/topics/conversion">Conversion</a>
+          <a href="/topics/product-pages">Product pages</a>
+          <a href="/topics/trust">Trust</a>
+          <a href="/topics/ai-search">AI search</a>
+          <a href="/topics/catalog">Catalog</a>
+          <a href="/newsletter" aria-current="page">Newsletter</a>
+          <a class="button button--small" href="#subscribe">Subscribe</a>
+        </nav>
       </div>
-    </nav>
+    </header>
+    <main id="main" class="wrap">
+      <header class="page-head">
+        <span class="kicker">Newsletter</span>
+        <h1>The Merchants Digest newsletter</h1>
+        <p>Every past issue, newest first. Each one pulls together the articles and Shopify changes that mattered that month.</p>
+      </header>
 
-    <section class="section">
-      <h1>Latest Newsletters</h1>
-      <p>
-        Fresh updates, smart features, and operator insights on building Shopify
-        stores with more leverage.
-      </p>
-    </section>
-
-    <section class="newsletter-grid">
-      <a class="newsletter-card" href="/newsletter/feb-2026">
-        <div class="newsletter-thumb">
-          <img
-            src="/images/Home%20Page/NL%20header.jpg"
-            alt="February 2026 newsletter cover"
-          />
+      <section class="subscribe-band" id="subscribe" aria-labelledby="subscribe-title">
+        <div>
+          <h2 id="subscribe-title">Get new articles in your inbox.</h2>
+          <p>Merchants Digest is free. Each email brings the latest articles and the Shopify changes worth knowing about, written for the person who actually runs the store.</p>
         </div>
-        <span class="pill">Latest · 2026</span>
-        <h2>February 2026 Edition | Merchants Digest</h2>
-        <p>
-          February highlights the channels and cleanups driving conversions
-          right now, from Reddit discovery to message alignment.
-        </p>
-        <div class="meta">Feb 2026 · 9 min read</div>
-      </a>
-      <a class="newsletter-card" href="/newsletter/jan-2026">
-        <div class="newsletter-thumb">
-          <img
-            src="/images/Home%20Page/NL%20header.jpg"
-            alt="January 2026 newsletter cover"
-          />
-        </div>
-        <span class="pill">January 2026</span>
-        <h2>January 2026 Edition | Merchants Digest</h2>
-        <p>
-          A new year kickoff packed with high-leverage plays for Shopify
-          merchants, from growth systems to retention strategy.
-        </p>
-        <div class="meta">Jan 2026 · 8 min read</div>
-      </a>
-    </section>
+        <form class="subscribe-form js-subscribe" data-source="newsletter">
+          <label class="visually-hidden" for="email-newsletter">Email address</label>
+          <input id="email-newsletter" type="email" name="email" placeholder="you@yourstore.com" autocomplete="email" required />
+          <button class="button" type="submit">Subscribe</button>
+          <p class="form-message" role="status" aria-live="polite"></p>
+          <p class="fineprint">Free. Unsubscribe anytime. <a href="/privacy-policy" style="color:inherit">Privacy policy</a>.</p>
+        </form>
+      </section>
+      <div class="section-head"><h2>Past issues</h2></div>
+      <ul class="issue-list">
+        <li>
+          <img src="/images/Newsletter/feb-hero.png" alt="" width="660" height="440" loading="lazy" />
+          <div>
+            <span class="kicker">February 2026</span>
+            <h2><a href="/newsletter/feb-2026">February 2026: clarity beats complexity</a></h2>
+            <p>Growth is coming from cleanups, not experiments: Reddit as a buyer discovery channel, message alignment, and the Shopify updates worth acting on.</p>
+          </div>
+        </li>
+        <li>
+          <img src="/images/Home%20Page/NL%20header.jpg" alt="" width="660" height="440" loading="lazy" />
+          <div>
+            <span class="kicker">January 2026</span>
+            <h2><a href="/newsletter/jan-2026">January 2026: resetting how you think about growth</a></h2>
+            <p>Why AI-ready product pages matter for organic discovery, what is building trust in social ads, and the quiet fixes top Shopify stores make.</p>
+          </div>
+        </li>
+      </ul>
+    </main>
 
-    <footer class="footer">
-      <small>© 2026 Merchantsdigest.com. Crafted for Shopify merchants.</small>
-      <small><a href="/privacy-policy">Privacy Policy</a></small>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="/">
+              <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="34" height="19" />
+              <span class="brand-name"><b>Merchants</b> <span>Digest</span></span>
+            </a>
+            <p>Independent, practical writing for Shopify merchants, operators, and founders. Clear trade-offs, real store situations, no fluff.</p>
+          </div>
+          <div>
+            <h2>Topics</h2>
+            <ul>
+              <li><a href="/topics/conversion">Conversion</a></li>
+              <li><a href="/topics/product-pages">Product pages</a></li>
+              <li><a href="/topics/trust">Trust &amp; policies</a></li>
+              <li><a href="/topics/ai-search">AI search &amp; discovery</a></li>
+              <li><a href="/topics/catalog">Catalog &amp; merchandising</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Read</h2>
+            <ul>
+              <li><a href="/blogs">All articles</a></li>
+              <li><a href="/newsletter">Newsletter archive</a></li>
+              <li><a href="/feed.xml">RSS feed</a></li>
+              <li><a href="/privacy-policy">Privacy policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-base">
+          <span>&copy; 2026 merchantsdigest.com. Independent writing for Shopify merchants.</span>
+          <span>Not affiliated with Shopify Inc.</span>
+        </div>
+      </div>
     </footer>
+    <script src="/assets/site.js?v=0f9547d4" defer></script>
   </body>
 </html>

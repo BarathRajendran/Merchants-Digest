@@ -73,5 +73,6 @@
   "imageArchetype": "contrast",
   "overlayKicker": "Looks are not enough",
   "imagePrompt": "Photographic editorial cover contrasting an overdesigned storefront presentation with a clearer, calmer buying path. Human and grounded. No readable text.",
-  "imageStyleNotes": "The image should show the tension between beautiful and buyable."
+  "imageStyleNotes": "The image should show the tension between beautiful and buyable.",
+  "topic": "conversion"
 }

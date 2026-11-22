@@ -73,5 +73,6 @@
   "imageArchetype": "evaluation",
   "overlayKicker": "Curate, do not pressure",
   "imagePrompt": "Photographic editorial cover showing a thoughtful ecommerce bundle being assembled from complementary products. Premium retail styling, no aggressive promo feel, no readable text.",
-  "imageStyleNotes": "The image should communicate useful curation, not hard selling."
+  "imageStyleNotes": "The image should communicate useful curation, not hard selling.",
+  "topic": "conversion"
 }

@@ -73,5 +73,6 @@
   "imageArchetype": "pathway",
   "overlayKicker": "Questions drive revenue too",
   "imagePrompt": "Photographic editorial cover showing buyer questions being answered through clear structured content. No generic desk. Real human decision-support scene, no readable text.",
-  "imageStyleNotes": "Show movement from uncertainty to understanding. The image should feel useful, not corporate."
+  "imageStyleNotes": "Show movement from uncertainty to understanding. The image should feel useful, not corporate.",
+  "topic": "product-pages"
 }

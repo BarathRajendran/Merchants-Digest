@@ -13,9 +13,18 @@ The repo now includes a zero-dependency blog agent that can:
 - queue drafts for scheduled release
 - mark drafts approved and release them when due
 - publish a new standalone blog page
-- generate a default blog cover SVG when no custom image is supplied
-- update `articles.html`
-- update `vercel.json`
+- generate a placeholder cover SVG when no custom image is supplied
+- rebuild the whole site (home, archive, topic pages, articles, RSS, sitemap, `vercel.json`) via `scripts/build-site.mjs`
+
+## Site
+
+```bash
+npm run site:images   # web-sized covers in images/covers (macOS)
+npm run site:build    # regenerate every page from content/
+npm run site:dev      # local server on http://localhost:4173 with production routes
+```
+
+See `AGENTS.md` → Site generator for which files are sources and which are generated.
 
 ## Standing command
 

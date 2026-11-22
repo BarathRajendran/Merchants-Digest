@@ -13,7 +13,8 @@
       "imagePrompt": "Photographic editorial cover showing a merchant packing an order at a side-angle workstation with folded garments, tape measure, clipboard forms, shipping label, boxes, and a laptop nearby. Warm tactile materials, afternoon light, human ecommerce operations, shallow depth of field, headline space on one side, no template graphics, no surreal effects.",
       "imageStyleNotes": "Match the site's existing covers by using a distinct scene and camera angle. This one should feel warmer, more human, and more operational than the AI-trust article.",
       "featured": true,
-      "status": "published"
+      "status": "published",
+      "topic": "trust"
     },
     {
       "title": "What AI Shopping Agents Need From Your Shopify Store Before They Recommend You",
@@ -28,7 +29,8 @@
       "imagePrompt": "Photographic editorial cover for a commerce article: top-down merchant workspace with laptop product page, smartphone assistant chat, printed trust checklist, shipping box, labels, tissue paper, and a pen. Real materials, natural daylight, believable small-business desk, clean negative space for headline, no sci-fi imagery, no robot characters, no glossy template graphics.",
       "imageStyleNotes": "Match the existing Merchants Digest pattern: scene-based hero image, not vector art. Use realistic ecommerce props, tactile texture, and distinct composition from other posts.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "ai-search"
     },
     {
       "title": "The Stores That Convert Better Usually Answer Questions Earlier",
@@ -43,7 +45,8 @@
       "imagePrompt": "Photographic editorial cover showing buyer questions being answered earlier in a decision path. The image should communicate timing and guidance, not a generic workspace.",
       "imageStyleNotes": "Use a pathway or sequence concept that feels human and editorial.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     },
     {
       "title": "Clear Sizing Content Belongs Closer to the Buy Decision",
@@ -58,7 +61,8 @@
       "imagePrompt": "Photographic editorial cover showing sizing guidance, garment measurement cues, and buyer fit reassurance close to the product decision. No readable text.",
       "imageStyleNotes": "Focus on confidence and proximity, not generic policy paperwork.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "product-pages"
     },
     {
       "title": "Search Visibility Improves When Product Data Stops Being an Afterthought",
@@ -73,7 +77,8 @@
       "imagePrompt": "Photographic editorial cover showing product data structure, attributes, categories, and discovery logic in a tactile retail setup. No generic desk. No readable text.",
       "imageStyleNotes": "The concept is structured discovery, not software for its own sake.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "ai-search"
     },
     {
       "title": "Your Store Can Feel More Trustworthy Without Looking More Corporate",
@@ -88,7 +93,8 @@
       "imagePrompt": "Photographic editorial cover showing a warm, credible retail scene that feels trustworthy without feeling corporate. No readable text.",
       "imageStyleNotes": "The image should show confidence, calm, and human credibility.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "trust"
     },
     {
       "title": "How Better Product Grouping Improves Both Conversion and Discovery",
@@ -103,7 +109,8 @@
       "imagePrompt": "Photographic editorial cover showing products being arranged into coherent groups for browsing and discovery. No generic laptop desk. No readable text.",
       "imageStyleNotes": "Focus on physical grouping, hierarchy, and navigation logic.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "catalog"
     },
     {
       "title": "The PDP Elements Buyers Notice First Are Not Always the Ones Merchants Obsess Over",
@@ -118,7 +125,8 @@
       "imagePrompt": "Photographic editorial cover showing a shopper or merchant prioritizing the first signals on a product page. The image should communicate scan order and decision focus. No readable text.",
       "imageStyleNotes": "The concept is attention hierarchy, not just a generic product page.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "product-pages"
     },
     {
       "title": "How to Make Bundle Offers Feel Helpful Instead of Pushy",
@@ -133,7 +141,8 @@
       "imagePrompt": "Photographic editorial cover showing a thoughtful ecommerce bundle being assembled from complementary products. Premium retail styling, no aggressive promo feel, no readable text.",
       "imageStyleNotes": "The image should communicate useful curation, not hard selling.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     },
     {
       "title": "Shopify Theme Decisions Hurt When Merchants Optimize for Looks Before Clarity",
@@ -148,7 +157,8 @@
       "imagePrompt": "Photographic editorial cover contrasting an overdesigned storefront presentation with a clearer, calmer buying path. Human and grounded. No readable text.",
       "imageStyleNotes": "The image should show the tension between beautiful and buyable.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     },
     {
       "title": "Why Shopify Merchants Should Treat FAQ Content as Revenue Content",
@@ -163,7 +173,8 @@
       "imagePrompt": "Photographic editorial cover showing buyer questions being answered through clear structured content. No generic desk. Real human decision-support scene, no readable text.",
       "imageStyleNotes": "Show movement from uncertainty to understanding. The image should feel useful, not corporate.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "product-pages"
     },
     {
       "title": "Product Reviews Help Less When Your Product Page Doesn't Explain the Basics",
@@ -178,7 +189,8 @@
       "imagePrompt": "Photographic editorial cover showing product proof and review validation supporting a clearly presented item. No generic desk. No readable text.",
       "imageStyleNotes": "The image should show proof reinforcing clarity, not a review widget screenshot.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "trust"
     },
     {
       "title": "AI-Friendly Stores Are Usually Just Better-Structured Stores",
@@ -193,7 +205,8 @@
       "imagePrompt": "Photographic editorial cover showing clear product evaluation and confidence signals in a structured retail environment. No robots, no sci-fi, no generic desk scene.",
       "imageStyleNotes": "The image should feel like clarity and evaluation, not tech fantasy.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "ai-search"
     },
     {
       "title": "Audit Your Mobile Product Pages Before You Buy More Traffic",
@@ -208,7 +221,8 @@
       "imagePrompt": "Photographic editorial cover focused on mobile product-page review and buyer friction. Real phone-based evaluation scene, not a generic desk. No readable text.",
       "imageStyleNotes": "Show the smaller-screen decision problem clearly. Human, grounded, conversion-focused.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "product-pages"
     },
     {
       "title": "The Quiet Cost of Inconsistent Product Naming on Shopify",
@@ -223,7 +237,8 @@
       "imagePrompt": "Photographic editorial cover showing physical catalog labels, grouped products, naming cards, and merchandising structure. No generic laptop desk. No readable text.",
       "imageStyleNotes": "Show organization and grouping rather than software. The image should feel systemic and tactile.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "catalog"
     },
     {
       "title": "Why Returning Visitors Still Leave Without Buying on Shopify",
@@ -238,7 +253,8 @@
       "imagePrompt": "Photographic editorial cover showing a buyer revisiting a product decision with unresolved hesitation. Realistic ecommerce evaluation moment, premium retail feel, no readable text, no generic desk scene.",
       "imageStyleNotes": "Use contrast between interest and uncertainty. The image should feel like a near-purchase that still has friction.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     },
     {
       "title": "Shopify Search Gets Better When Your Catalog Stops Fighting It",
@@ -253,7 +269,8 @@
       "imagePrompt": "Photographic editorial cover for a Shopify search and catalog article. Show a merchandising review desk with laptop search results, category cards, product tags, sorting notes, filter chips, and catalog structure materials. Distinct organized composition, realistic ecommerce props, no readable text, no glossy UI fantasy, headline-safe negative space.",
       "imageStyleNotes": "Structured catalog scene with a stronger systems feel than other covers. Still photographic and grounded.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "catalog"
     },
     {
       "title": "The Fastest Way to Improve Conversion Is Usually Better Product Context",
@@ -268,7 +285,8 @@
       "imagePrompt": "Photographic editorial cover for a product-context article. Show a merchant desk with a laptop product page, printed product photos, fit or use-case notes, simple comparison marks, and tactile product materials nearby. Natural daylight, clean composition, calm premium ecommerce feel, no readable text, no template graphics.",
       "imageStyleNotes": "Use a grounded workspace scene with product-decision cues. More explanatory and tactile than abstract.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "product-pages"
     },
     {
       "title": "Your Best-Selling Product Page Is Teaching You What the Rest of Your Store Lacks",
@@ -283,7 +301,8 @@
       "imagePrompt": "Photographic editorial cover showing a merchant reviewing a strong Shopify product page on a laptop with printed notes, comparison marks, product photos, and a notebook nearby. Side-angle desk scene, calm daylight, premium but grounded, no readable text, no fake UI gibberish, headline-safe negative space.",
       "imageStyleNotes": "Decision-oriented product review scene. More analytical than lifestyle, but still photographic and human.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "product-pages"
     },
     {
       "title": "Why Collection Pages Matter More Than Most Shopify Merchants Think",
@@ -298,7 +317,8 @@
       "imagePrompt": "Photographic editorial cover for a Shopify collections article. Show a merchant workspace with printed product groupings, category notes, filter tags, laptop with a clean collection grid, sticky sort labels, and product cards. Natural light, believable ecommerce planning scene, no readable text, no fake glossy infographic look, headline-safe negative space.",
       "imageStyleNotes": "Scene-based cover with structured merchandising cues. Distinct from product-page and shipping visuals. Clean, credible, editorial.",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "catalog"
     },
     {
       "title": "Reddit Is Becoming a Buyer Discovery Channel (And Most Merchants Are Missing It)",
@@ -313,7 +333,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "ai-search"
     },
     {
       "title": "If Your Shopify Store Needs Explaining, It's Already Losing Sales",
@@ -328,7 +349,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     },
     {
       "title": "Trust Is a System, Not a Section on Your Shopify Store",
@@ -343,7 +365,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "trust"
     },
     {
       "title": "How to Make Your Shopify Store and Products Visible in AI Search",
@@ -358,7 +381,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "ai-search"
     },
     {
       "title": "Stop Adding Features to Your Product Page. Start Removing Buyer Doubts",
@@ -373,7 +397,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "trust"
     },
     {
       "title": "How to Increase Average Order Value on Shopify Without Relying on Discounts",
@@ -388,7 +413,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     },
     {
       "title": "Why Some Shopify Stores Feel Premium Without Looking Fancy",
@@ -403,7 +429,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "trust"
     },
     {
       "title": "Shopify App Overload: How Too Many Tools Hurt Performance, Conversion, and Profit",
@@ -418,7 +445,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     },
     {
       "title": "Not All Traffic Is Equal: How to Attract Buyers, Not Just Visitors, to Your Shopify Store",
@@ -433,7 +461,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     },
     {
       "title": "You're Getting Traffic - So Why Is Nobody Buying?",
@@ -448,7 +477,8 @@
       "imagePrompt": "",
       "imageStyleNotes": "",
       "featured": false,
-      "status": "published"
+      "status": "published",
+      "topic": "conversion"
     }
   ]
 }

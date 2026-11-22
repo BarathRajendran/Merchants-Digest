@@ -1,0 +1,280 @@
+{
+  "title": "You're Getting Traffic - So Why Is Nobody Buying?",
+  "slug": "traffic-no-sales",
+  "description": "A practical guide to diagnosing why Shopify stores get visits without conversion, and which friction points matter first.",
+  "excerpt": "When traffic is present but sales lag, the problem is usually friction, mismatch, or missing reassurance. This piece breaks down the pattern.",
+  "publishDate": "2026-01-05",
+  "scheduledDate": "2026-01-05",
+  "readTimeMinutes": 9,
+  "heroImagePath": "/images/You%27re%20Getting%20Traffic.jpg",
+  "heroImageAlt": "Traffic but no sales",
+  "lead": "If you have opened Shopify analytics and thought, “People are visiting my store, but nothing is happening.”",
+  "introParagraphs": [
+    "You are not alone.",
+    "This is one of the most common (and frustrating) phases every Shopify merchant goes through. You do the hard work — run ads, post content, maybe even get influencer traffic — and then… nothing. No orders. No notifications. Just sessions going up and revenue staying flat.",
+    "Here is the truth most people avoid saying clearly."
+  ],
+  "sections": [
+    {
+      "heading": "First, Let’s Get One Thing Straight",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If your store is getting traffic but no sales, it usually means something on the site is stopping people from feeling confident enough to buy."
+        },
+        {
+          "type": "p",
+          "text": "It is rarely because Shopify is bad. It is rarely because ads do not work. And it is almost never fixed by simply getting more traffic."
+        },
+        {
+          "type": "p",
+          "text": "Most of the time, it is a small set of issues stacking on top of each other."
+        }
+      ]
+    },
+    {
+      "heading": "What Visitors Are Really Thinking When They Land on Your Store",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nobody arrives hoping to be converted."
+        },
+        {
+          "type": "p",
+          "text": "They’re thinking things like:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Is this store legit?",
+            "Will this actually arrive?",
+            "Is this worth the price?",
+            "What happens if something goes wrong?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "If your store does not quietly answer those questions, they leave. Even if they like the product."
+        },
+        {
+          "type": "p",
+          "text": "That is why stores with worse products but better presentation often sell more."
+        }
+      ]
+    },
+    {
+      "heading": "The Silent Killer: Your Store Does Not Feel Trustworthy Yet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This is not personal. It is behavioral."
+        },
+        {
+          "type": "p",
+          "text": "Most Shopify stores are first-time encounters. Visitors do not know you and they do not owe you confidence."
+        },
+        {
+          "type": "p",
+          "text": "Common trust gaps merchants overlook:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "No clear brand story",
+            "Product photos that look like supplier images",
+            "Reviews buried too far down or missing",
+            "Shipping information hidden until checkout",
+            "No obvious way to contact you"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Even one of these can cause hesitation. Two or three almost guarantees drop-off."
+        },
+        {
+          "type": "p",
+          "text": "Trust is not a section on your site. It is a feeling."
+        }
+      ]
+    },
+    {
+      "heading": "Your Product Page Is Either Overwhelming or Under-Explaining",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most merchants spend weeks driving traffic and minutes reviewing their product page. That is backwards."
+        },
+        {
+          "type": "p",
+          "text": "Your product page has one job."
+        },
+        {
+          "type": "callout",
+          "text": "Make buying feel obvious and safe."
+        },
+        {
+          "type": "p",
+          "text": "If someone has to scroll too much to understand what the product does, who it is for, why it is better, or when it arrives, they will not convert."
+        },
+        {
+          "type": "p",
+          "text": "What consistently works:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "A clear benefit-led headline",
+            "Simple explanations instead of feature dumps",
+            "Social proof near the “Add to Cart” button",
+            "Shipping and returns visible before checkout",
+            "A mobile-first layout that feels effortless"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "A Hard Truth About Ads: You Might Be Attracting the Wrong People",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "This one is uncomfortable."
+        },
+        {
+          "type": "p",
+          "text": "If you’re optimizing ads for:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "clicks",
+            "engagement",
+            "views"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "You are often paying for curiosity, not intent."
+        },
+        {
+          "type": "p",
+          "text": "That is why some stores see high traffic, high bounce rates, and zero add-to-carts."
+        },
+        {
+          "type": "p",
+          "text": "Ads are not broken. They are just bringing people who were never ready to buy."
+        },
+        {
+          "type": "p",
+          "text": "When the promise in the ad does not match the experience on the page, people leave quickly."
+        }
+      ]
+    },
+    {
+      "heading": "Checkout Is Where Motivation Quietly Disappears",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Even interested buyers abandon carts when checkout feels risky or annoying."
+        },
+        {
+          "type": "p",
+          "text": "The most common issues:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Surprise shipping costs",
+            "Too many form fields",
+            "No express checkout options",
+            "Payment methods people do not recognize",
+            "Forced account creation"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "By the time someone reaches checkout, they are already half sold. Do not undo that work."
+        },
+        {
+          "type": "p",
+          "text": "Simple improvements that matter:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Enable Shop Pay, Apple Pay, and Google Pay",
+            "Show the total cost earlier",
+            "Remove unnecessary steps"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "How to Diagnose Your Store Without Overthinking It",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ask yourself honestly:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Would I trust this store if I had never seen it before?",
+            "Can I understand the product in five seconds?",
+            "Is shipping info obvious?",
+            "Does checkout feel easy on mobile?",
+            "Am I bringing buyers or browsers?"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Fix these in order. Not all at once. One layer at a time."
+        }
+      ]
+    },
+    {
+      "heading": "The Biggest Mistake Merchants Make at This Stage",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "They panic."
+        },
+        {
+          "type": "p",
+          "text": "They change everything. They install more apps. They launch new ads."
+        },
+        {
+          "type": "p",
+          "text": "And they never fix the root issue."
+        },
+        {
+          "type": "p",
+          "text": "Conversion problems do not need chaos. They need clarity."
+        }
+      ]
+    },
+    {
+      "heading": "Final Thought From One Merchant to Another",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If your Shopify store is getting traffic but no sales, you’re not failing."
+        },
+        {
+          "type": "p",
+          "text": "You are just at the trust gap stage. Every real store passes through it."
+        },
+        {
+          "type": "p",
+          "text": "Fix the experience. Make buying feel safe. Remove friction."
+        },
+        {
+          "type": "p",
+          "text": "That is when traffic finally starts working for you instead of against you."
+        }
+      ]
+    }
+  ],
+  "status": "published",
+  "source": "migrated-from-legacy-html",
+  "topic": "conversion"
+}

@@ -73,5 +73,6 @@
   "imageArchetype": "structure",
   "overlayKicker": "Structure guides choice",
   "imagePrompt": "Photographic editorial cover showing products being arranged into coherent groups for browsing and discovery. No generic laptop desk. No readable text.",
-  "imageStyleNotes": "Focus on physical grouping, hierarchy, and navigation logic."
+  "imageStyleNotes": "Focus on physical grouping, hierarchy, and navigation logic.",
+  "topic": "catalog"
 }

@@ -73,5 +73,6 @@
   "imageArchetype": "structure",
   "overlayKicker": "Data shapes discovery",
   "imagePrompt": "Photographic editorial cover showing product data structure, attributes, categories, and discovery logic in a tactile retail setup. No generic desk. No readable text.",
-  "imageStyleNotes": "The concept is structured discovery, not software for its own sake."
+  "imageStyleNotes": "The concept is structured discovery, not software for its own sake.",
+  "topic": "ai-search"
 }

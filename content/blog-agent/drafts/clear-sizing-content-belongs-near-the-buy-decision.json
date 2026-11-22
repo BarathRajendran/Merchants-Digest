@@ -73,5 +73,6 @@
   "imageArchetype": "proof",
   "overlayKicker": "Fit confidence needs proximity",
   "imagePrompt": "Photographic editorial cover showing sizing guidance, garment measurement cues, and buyer fit reassurance close to the product decision. No readable text.",
-  "imageStyleNotes": "Focus on confidence and proximity, not generic policy paperwork."
+  "imageStyleNotes": "Focus on confidence and proximity, not generic policy paperwork.",
+  "topic": "product-pages"
 }
